@@ -9,8 +9,12 @@
 /* Begin PBXBuildFile section */
 		00247210AD235F03CD70772B /* Pods_KasakasaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C295FFCD9D3790E42636402 /* Pods_KasakasaUITests.framework */; };
 		348FDC85CD45EF7BCC1C6BC4 /* Pods_Kasakasa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BDAF283B5727552E6FF69A1 /* Pods_Kasakasa.framework */; };
+		45129C5B21DFC59C00F585FA /* IntroPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45129C5A21DFC59C00F585FA /* IntroPageViewController.swift */; };
 		459DEBBA21DFB82B009F0BE0 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 459DEBB921DFB82B009F0BE0 /* Onboarding.storyboard */; };
 		459DEBBC21DFB84E009F0BE0 /* MainApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 459DEBBB21DFB84E009F0BE0 /* MainApp.storyboard */; };
+		459DEBBE21DFBCAA009F0BE0 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459DEBBD21DFBCAA009F0BE0 /* AppConstants.swift */; };
+		459DEBC021DFBCBB009F0BE0 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459DEBBF21DFBCBB009F0BE0 /* AppStyle.swift */; };
+		459DEBC221DFBCDE009F0BE0 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459DEBC121DFBCDE009F0BE0 /* Config.swift */; };
 		45B7A42721DEC293005A1124 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A42621DEC293005A1124 /* AppDelegate.swift */; };
 		45B7A42921DEC293005A1124 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A42821DEC293005A1124 /* RootViewController.swift */; };
 		45B7A42B21DEC293005A1124 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A42A21DEC293005A1124 /* DataViewController.swift */; };
@@ -43,8 +47,12 @@
 /* Begin PBXFileReference section */
 		2BE48006DBE2F72B09F393EF /* Pods-Kasakasa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kasakasa.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kasakasa/Pods-Kasakasa.release.xcconfig"; sourceTree = "<group>"; };
 		2DFC66DB9636E4E7A2CBEE15 /* Pods-KasakasaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KasakasaTests/Pods-KasakasaTests.release.xcconfig"; sourceTree = "<group>"; };
+		45129C5A21DFC59C00F585FA /* IntroPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPageViewController.swift; sourceTree = "<group>"; };
 		459DEBB921DFB82B009F0BE0 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		459DEBBB21DFB84E009F0BE0 /* MainApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainApp.storyboard; sourceTree = "<group>"; };
+		459DEBBD21DFBCAA009F0BE0 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		459DEBBF21DFBCBB009F0BE0 /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
+		459DEBC121DFBCDE009F0BE0 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		45B7A42321DEC293005A1124 /* Kasakasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kasakasa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B7A42621DEC293005A1124 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45B7A42821DEC293005A1124 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -120,10 +128,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		45129C5821DFC50700F585FA /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				45129C5921DFC51B00F585FA /* Tutorial */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		45129C5921DFC51B00F585FA /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				45129C5A21DFC59C00F585FA /* IntroPageViewController.swift */,
+			);
+			path = Tutorial;
+			sourceTree = "<group>";
+		};
 		459DEBB421DFB415009F0BE0 /* Application */ = {
 			isa = PBXGroup;
 			children = (
 				45B7A42621DEC293005A1124 /* AppDelegate.swift */,
+				459DEBBD21DFBCAA009F0BE0 /* AppConstants.swift */,
+				459DEBBF21DFBCBB009F0BE0 /* AppStyle.swift */,
+				459DEBC121DFBCDE009F0BE0 /* Config.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -138,6 +165,7 @@
 		459DEBB621DFB4D2009F0BE0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				45129C5821DFC50700F585FA /* Onboarding */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -471,10 +499,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45129C5B21DFC59C00F585FA /* IntroPageViewController.swift in Sources */,
 				45B7A42921DEC293005A1124 /* RootViewController.swift in Sources */,
 				45B7A42D21DEC293005A1124 /* ModelController.swift in Sources */,
 				45B7A42B21DEC293005A1124 /* DataViewController.swift in Sources */,
+				459DEBC221DFBCDE009F0BE0 /* Config.swift in Sources */,
+				459DEBC021DFBCBB009F0BE0 /* AppStyle.swift in Sources */,
 				45B7A42721DEC293005A1124 /* AppDelegate.swift in Sources */,
+				459DEBBE21DFBCAA009F0BE0 /* AppConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
