@@ -1,0 +1,812 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00247210AD235F03CD70772B /* Pods_KasakasaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C295FFCD9D3790E42636402 /* Pods_KasakasaUITests.framework */; };
+		348FDC85CD45EF7BCC1C6BC4 /* Pods_Kasakasa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BDAF283B5727552E6FF69A1 /* Pods_Kasakasa.framework */; };
+		459DEBBA21DFB82B009F0BE0 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 459DEBB921DFB82B009F0BE0 /* Onboarding.storyboard */; };
+		459DEBBC21DFB84E009F0BE0 /* MainApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 459DEBBB21DFB84E009F0BE0 /* MainApp.storyboard */; };
+		45B7A42721DEC293005A1124 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A42621DEC293005A1124 /* AppDelegate.swift */; };
+		45B7A42921DEC293005A1124 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A42821DEC293005A1124 /* RootViewController.swift */; };
+		45B7A42B21DEC293005A1124 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A42A21DEC293005A1124 /* DataViewController.swift */; };
+		45B7A42D21DEC293005A1124 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A42C21DEC293005A1124 /* ModelController.swift */; };
+		45B7A43021DEC293005A1124 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B7A42E21DEC293005A1124 /* Main.storyboard */; };
+		45B7A43221DEC295005A1124 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45B7A43121DEC295005A1124 /* Assets.xcassets */; };
+		45B7A43521DEC295005A1124 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B7A43321DEC295005A1124 /* LaunchScreen.storyboard */; };
+		45B7A44021DEC295005A1124 /* KasakasaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A43F21DEC295005A1124 /* KasakasaTests.swift */; };
+		45B7A44B21DEC295005A1124 /* KasakasaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A44A21DEC295005A1124 /* KasakasaUITests.swift */; };
+		A7BCDBA0C2ED35F469C72A42 /* Pods_KasakasaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5584CE083FB7220D618592D8 /* Pods_KasakasaTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		45B7A43C21DEC295005A1124 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45B7A41B21DEC293005A1124 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45B7A42221DEC293005A1124;
+			remoteInfo = Kasakasa;
+		};
+		45B7A44721DEC295005A1124 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45B7A41B21DEC293005A1124 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45B7A42221DEC293005A1124;
+			remoteInfo = Kasakasa;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2BE48006DBE2F72B09F393EF /* Pods-Kasakasa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kasakasa.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kasakasa/Pods-Kasakasa.release.xcconfig"; sourceTree = "<group>"; };
+		2DFC66DB9636E4E7A2CBEE15 /* Pods-KasakasaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KasakasaTests/Pods-KasakasaTests.release.xcconfig"; sourceTree = "<group>"; };
+		459DEBB921DFB82B009F0BE0 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		459DEBBB21DFB84E009F0BE0 /* MainApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainApp.storyboard; sourceTree = "<group>"; };
+		45B7A42321DEC293005A1124 /* Kasakasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kasakasa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		45B7A42621DEC293005A1124 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		45B7A42821DEC293005A1124 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		45B7A42A21DEC293005A1124 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		45B7A42C21DEC293005A1124 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
+		45B7A42F21DEC293005A1124 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		45B7A43121DEC295005A1124 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		45B7A43421DEC295005A1124 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		45B7A43621DEC295005A1124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45B7A43B21DEC295005A1124 /* KasakasaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KasakasaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		45B7A43F21DEC295005A1124 /* KasakasaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KasakasaTests.swift; sourceTree = "<group>"; };
+		45B7A44121DEC295005A1124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45B7A44621DEC295005A1124 /* KasakasaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KasakasaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		45B7A44A21DEC295005A1124 /* KasakasaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KasakasaUITests.swift; sourceTree = "<group>"; };
+		45B7A44C21DEC295005A1124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C295FFCD9D3790E42636402 /* Pods_KasakasaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KasakasaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5584CE083FB7220D618592D8 /* Pods_KasakasaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KasakasaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BDAF283B5727552E6FF69A1 /* Pods_Kasakasa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kasakasa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1419431964EA23390FB4E73 /* Pods-KasakasaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KasakasaUITests/Pods-KasakasaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E56289B5654C2A629070D370 /* Pods-KasakasaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KasakasaUITests/Pods-KasakasaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FB9C2D3AA918F72EC9903CAE /* Pods-Kasakasa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kasakasa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kasakasa/Pods-Kasakasa.debug.xcconfig"; sourceTree = "<group>"; };
+		FCC148DACD9F1BE537B940E0 /* Pods-KasakasaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KasakasaTests/Pods-KasakasaTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		45B7A42021DEC293005A1124 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				348FDC85CD45EF7BCC1C6BC4 /* Pods_Kasakasa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45B7A43821DEC295005A1124 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7BCDBA0C2ED35F469C72A42 /* Pods_KasakasaTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45B7A44321DEC295005A1124 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00247210AD235F03CD70772B /* Pods_KasakasaUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07C13E62D82E42FD76F86AE5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB9C2D3AA918F72EC9903CAE /* Pods-Kasakasa.debug.xcconfig */,
+				2BE48006DBE2F72B09F393EF /* Pods-Kasakasa.release.xcconfig */,
+				FCC148DACD9F1BE537B940E0 /* Pods-KasakasaTests.debug.xcconfig */,
+				2DFC66DB9636E4E7A2CBEE15 /* Pods-KasakasaTests.release.xcconfig */,
+				E56289B5654C2A629070D370 /* Pods-KasakasaUITests.debug.xcconfig */,
+				C1419431964EA23390FB4E73 /* Pods-KasakasaUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3CF08B60A192843763B6C888 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5BDAF283B5727552E6FF69A1 /* Pods_Kasakasa.framework */,
+				5584CE083FB7220D618592D8 /* Pods_KasakasaTests.framework */,
+				4C295FFCD9D3790E42636402 /* Pods_KasakasaUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		459DEBB421DFB415009F0BE0 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		459DEBB521DFB4A5009F0BE0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		459DEBB621DFB4D2009F0BE0 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		459DEBB721DFB507009F0BE0 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		459DEBB821DFB806009F0BE0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				459DEBB921DFB82B009F0BE0 /* Onboarding.storyboard */,
+				459DEBBB21DFB84E009F0BE0 /* MainApp.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		45B7A41A21DEC293005A1124 = {
+			isa = PBXGroup;
+			children = (
+				45B7A42521DEC293005A1124 /* Kasakasa */,
+				45B7A43E21DEC295005A1124 /* KasakasaTests */,
+				45B7A44921DEC295005A1124 /* KasakasaUITests */,
+				45B7A42421DEC293005A1124 /* Products */,
+				07C13E62D82E42FD76F86AE5 /* Pods */,
+				3CF08B60A192843763B6C888 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		45B7A42421DEC293005A1124 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45B7A42321DEC293005A1124 /* Kasakasa.app */,
+				45B7A43B21DEC295005A1124 /* KasakasaTests.xctest */,
+				45B7A44621DEC295005A1124 /* KasakasaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		45B7A42521DEC293005A1124 /* Kasakasa */ = {
+			isa = PBXGroup;
+			children = (
+				459DEBB421DFB415009F0BE0 /* Application */,
+				459DEBB621DFB4D2009F0BE0 /* Scenes */,
+				459DEBB521DFB4A5009F0BE0 /* Views */,
+				459DEBB821DFB806009F0BE0 /* Storyboards */,
+				459DEBB721DFB507009F0BE0 /* Assets */,
+				45B7A42621DEC293005A1124 /* AppDelegate.swift */,
+				45B7A42821DEC293005A1124 /* RootViewController.swift */,
+				45B7A42A21DEC293005A1124 /* DataViewController.swift */,
+				45B7A42C21DEC293005A1124 /* ModelController.swift */,
+				45B7A42E21DEC293005A1124 /* Main.storyboard */,
+				45B7A43121DEC295005A1124 /* Assets.xcassets */,
+				45B7A43321DEC295005A1124 /* LaunchScreen.storyboard */,
+				45B7A43621DEC295005A1124 /* Info.plist */,
+			);
+			path = Kasakasa;
+			sourceTree = "<group>";
+		};
+		45B7A43E21DEC295005A1124 /* KasakasaTests */ = {
+			isa = PBXGroup;
+			children = (
+				45B7A43F21DEC295005A1124 /* KasakasaTests.swift */,
+				45B7A44121DEC295005A1124 /* Info.plist */,
+			);
+			path = KasakasaTests;
+			sourceTree = "<group>";
+		};
+		45B7A44921DEC295005A1124 /* KasakasaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				45B7A44A21DEC295005A1124 /* KasakasaUITests.swift */,
+				45B7A44C21DEC295005A1124 /* Info.plist */,
+			);
+			path = KasakasaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		45B7A42221DEC293005A1124 /* Kasakasa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45B7A44F21DEC295005A1124 /* Build configuration list for PBXNativeTarget "Kasakasa" */;
+			buildPhases = (
+				14E892E004F6036FD78E405A /* [CP] Check Pods Manifest.lock */,
+				45B7A41F21DEC293005A1124 /* Sources */,
+				45B7A42021DEC293005A1124 /* Frameworks */,
+				45B7A42121DEC293005A1124 /* Resources */,
+				499ECE5659562335612FAE5E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kasakasa;
+			productName = Kasakasa;
+			productReference = 45B7A42321DEC293005A1124 /* Kasakasa.app */;
+			productType = "com.apple.product-type.application";
+		};
+		45B7A43A21DEC295005A1124 /* KasakasaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45B7A45221DEC295005A1124 /* Build configuration list for PBXNativeTarget "KasakasaTests" */;
+			buildPhases = (
+				D379D9C9AFF6EFB7CF48DA55 /* [CP] Check Pods Manifest.lock */,
+				45B7A43721DEC295005A1124 /* Sources */,
+				45B7A43821DEC295005A1124 /* Frameworks */,
+				45B7A43921DEC295005A1124 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45B7A43D21DEC295005A1124 /* PBXTargetDependency */,
+			);
+			name = KasakasaTests;
+			productName = KasakasaTests;
+			productReference = 45B7A43B21DEC295005A1124 /* KasakasaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		45B7A44521DEC295005A1124 /* KasakasaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45B7A45521DEC295005A1124 /* Build configuration list for PBXNativeTarget "KasakasaUITests" */;
+			buildPhases = (
+				1354E4462CD5FFE7B11D42E1 /* [CP] Check Pods Manifest.lock */,
+				45B7A44221DEC295005A1124 /* Sources */,
+				45B7A44321DEC295005A1124 /* Frameworks */,
+				45B7A44421DEC295005A1124 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45B7A44821DEC295005A1124 /* PBXTargetDependency */,
+			);
+			name = KasakasaUITests;
+			productName = KasakasaUITests;
+			productReference = 45B7A44621DEC295005A1124 /* KasakasaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		45B7A41B21DEC293005A1124 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Tip Blockchain";
+				TargetAttributes = {
+					45B7A42221DEC293005A1124 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					45B7A43A21DEC295005A1124 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 45B7A42221DEC293005A1124;
+					};
+					45B7A44521DEC295005A1124 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 45B7A42221DEC293005A1124;
+					};
+				};
+			};
+			buildConfigurationList = 45B7A41E21DEC293005A1124 /* Build configuration list for PBXProject "Kasakasa" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 45B7A41A21DEC293005A1124;
+			productRefGroup = 45B7A42421DEC293005A1124 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				45B7A42221DEC293005A1124 /* Kasakasa */,
+				45B7A43A21DEC295005A1124 /* KasakasaTests */,
+				45B7A44521DEC295005A1124 /* KasakasaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		45B7A42121DEC293005A1124 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				459DEBBC21DFB84E009F0BE0 /* MainApp.storyboard in Resources */,
+				45B7A43521DEC295005A1124 /* LaunchScreen.storyboard in Resources */,
+				45B7A43221DEC295005A1124 /* Assets.xcassets in Resources */,
+				45B7A43021DEC293005A1124 /* Main.storyboard in Resources */,
+				459DEBBA21DFB82B009F0BE0 /* Onboarding.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45B7A43921DEC295005A1124 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45B7A44421DEC295005A1124 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1354E4462CD5FFE7B11D42E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KasakasaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		14E892E004F6036FD78E405A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kasakasa-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		499ECE5659562335612FAE5E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Kasakasa/Pods-Kasakasa-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
+				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework",
+				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
+				"${BUILT_PRODUCTS_DIR}/keccak.c/keccak.framework",
+				"${BUILT_PRODUCTS_DIR}/scrypt.c/scrypt.framework",
+				"${BUILT_PRODUCTS_DIR}/secp256k1.c/secp256k1.framework",
+				"${BUILT_PRODUCTS_DIR}/web3swift/web3swift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigInt.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCode.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/keccak.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/scrypt.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/secp256k1.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/web3swift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kasakasa/Pods-Kasakasa-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D379D9C9AFF6EFB7CF48DA55 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KasakasaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		45B7A41F21DEC293005A1124 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45B7A42921DEC293005A1124 /* RootViewController.swift in Sources */,
+				45B7A42D21DEC293005A1124 /* ModelController.swift in Sources */,
+				45B7A42B21DEC293005A1124 /* DataViewController.swift in Sources */,
+				45B7A42721DEC293005A1124 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45B7A43721DEC295005A1124 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45B7A44021DEC295005A1124 /* KasakasaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45B7A44221DEC295005A1124 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45B7A44B21DEC295005A1124 /* KasakasaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		45B7A43D21DEC295005A1124 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45B7A42221DEC293005A1124 /* Kasakasa */;
+			targetProxy = 45B7A43C21DEC295005A1124 /* PBXContainerItemProxy */;
+		};
+		45B7A44821DEC295005A1124 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45B7A42221DEC293005A1124 /* Kasakasa */;
+			targetProxy = 45B7A44721DEC295005A1124 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		45B7A42E21DEC293005A1124 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45B7A42F21DEC293005A1124 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		45B7A43321DEC295005A1124 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45B7A43421DEC295005A1124 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		45B7A44D21DEC295005A1124 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		45B7A44E21DEC295005A1124 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		45B7A45021DEC295005A1124 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB9C2D3AA918F72EC9903CAE /* Pods-Kasakasa.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3P2XQDN98J;
+				INFOPLIST_FILE = Kasakasa/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.Kasakasa;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		45B7A45121DEC295005A1124 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BE48006DBE2F72B09F393EF /* Pods-Kasakasa.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3P2XQDN98J;
+				INFOPLIST_FILE = Kasakasa/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.Kasakasa;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		45B7A45321DEC295005A1124 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCC148DACD9F1BE537B940E0 /* Pods-KasakasaTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KasakasaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.KasakasaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kasakasa.app/Kasakasa";
+			};
+			name = Debug;
+		};
+		45B7A45421DEC295005A1124 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DFC66DB9636E4E7A2CBEE15 /* Pods-KasakasaTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KasakasaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.KasakasaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kasakasa.app/Kasakasa";
+			};
+			name = Release;
+		};
+		45B7A45621DEC295005A1124 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E56289B5654C2A629070D370 /* Pods-KasakasaUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KasakasaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.KasakasaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Kasakasa;
+			};
+			name = Debug;
+		};
+		45B7A45721DEC295005A1124 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1419431964EA23390FB4E73 /* Pods-KasakasaUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KasakasaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.KasakasaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Kasakasa;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		45B7A41E21DEC293005A1124 /* Build configuration list for PBXProject "Kasakasa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45B7A44D21DEC295005A1124 /* Debug */,
+				45B7A44E21DEC295005A1124 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45B7A44F21DEC295005A1124 /* Build configuration list for PBXNativeTarget "Kasakasa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45B7A45021DEC295005A1124 /* Debug */,
+				45B7A45121DEC295005A1124 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45B7A45221DEC295005A1124 /* Build configuration list for PBXNativeTarget "KasakasaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45B7A45321DEC295005A1124 /* Debug */,
+				45B7A45421DEC295005A1124 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45B7A45521DEC295005A1124 /* Build configuration list for PBXNativeTarget "KasakasaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45B7A45621DEC295005A1124 /* Debug */,
+				45B7A45721DEC295005A1124 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 45B7A41B21DEC293005A1124 /* Project object */;
+}
