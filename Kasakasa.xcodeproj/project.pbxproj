@@ -24,6 +24,9 @@
 		45B7A43521DEC295005A1124 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B7A43321DEC295005A1124 /* LaunchScreen.storyboard */; };
 		45B7A44021DEC295005A1124 /* KasakasaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A43F21DEC295005A1124 /* KasakasaTests.swift */; };
 		45B7A44B21DEC295005A1124 /* KasakasaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A44A21DEC295005A1124 /* KasakasaUITests.swift */; };
+		45FD5B5021E0333900C247F0 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FD5B4F21E0333900C247F0 /* TutorialViewController.swift */; };
+		45FD5B5421E0688E00C247F0 /* config.local.json in Resources */ = {isa = PBXBuildFile; fileRef = 45FD5B5321E0688E00C247F0 /* config.local.json */; };
+		45FD5B5621E069A600C247F0 /* config.dev.json in Resources */ = {isa = PBXBuildFile; fileRef = 45FD5B5521E069A600C247F0 /* config.dev.json */; };
 		A7BCDBA0C2ED35F469C72A42 /* Pods_KasakasaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5584CE083FB7220D618592D8 /* Pods_KasakasaTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +71,9 @@
 		45B7A44621DEC295005A1124 /* KasakasaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KasakasaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B7A44A21DEC295005A1124 /* KasakasaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KasakasaUITests.swift; sourceTree = "<group>"; };
 		45B7A44C21DEC295005A1124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45FD5B4F21E0333900C247F0 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		45FD5B5321E0688E00C247F0 /* config.local.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = config.local.json; sourceTree = "<group>"; };
+		45FD5B5521E069A600C247F0 /* config.dev.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = config.dev.json; sourceTree = "<group>"; };
 		4C295FFCD9D3790E42636402 /* Pods_KasakasaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KasakasaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5584CE083FB7220D618592D8 /* Pods_KasakasaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KasakasaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BDAF283B5727552E6FF69A1 /* Pods_Kasakasa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kasakasa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				45129C5A21DFC59C00F585FA /* IntroPageViewController.swift */,
+				45FD5B4F21E0333900C247F0 /* TutorialViewController.swift */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -147,6 +154,7 @@
 		459DEBB421DFB415009F0BE0 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				45FD5B5121E0685100C247F0 /* Config files */,
 				45B7A42621DEC293005A1124 /* AppDelegate.swift */,
 				459DEBBD21DFBCAA009F0BE0 /* AppConstants.swift */,
 				459DEBBF21DFBCBB009F0BE0 /* AppStyle.swift */,
@@ -217,6 +225,7 @@
 				459DEBB421DFB415009F0BE0 /* Application */,
 				459DEBB621DFB4D2009F0BE0 /* Scenes */,
 				459DEBB521DFB4A5009F0BE0 /* Views */,
+				45FD5B5721E06B3300C247F0 /* Util */,
 				459DEBB821DFB806009F0BE0 /* Storyboards */,
 				459DEBB721DFB507009F0BE0 /* Assets */,
 				45B7A42821DEC293005A1124 /* RootViewController.swift */,
@@ -243,6 +252,30 @@
 				45B7A44C21DEC295005A1124 /* Info.plist */,
 			);
 			path = KasakasaUITests;
+			sourceTree = "<group>";
+		};
+		45FD5B5121E0685100C247F0 /* Config files */ = {
+			isa = PBXGroup;
+			children = (
+				45FD5B5321E0688E00C247F0 /* config.local.json */,
+				45FD5B5521E069A600C247F0 /* config.dev.json */,
+			);
+			path = "Config files";
+			sourceTree = "<group>";
+		};
+		45FD5B5721E06B3300C247F0 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				45FD5B5821E06B4600C247F0 /* Networking */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		45FD5B5821E06B4600C247F0 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,9 +388,11 @@
 			files = (
 				459DEBBC21DFB84E009F0BE0 /* MainApp.storyboard in Resources */,
 				45B7A43521DEC295005A1124 /* LaunchScreen.storyboard in Resources */,
+				45FD5B5421E0688E00C247F0 /* config.local.json in Resources */,
 				45B7A43221DEC295005A1124 /* Assets.xcassets in Resources */,
 				45B7A43021DEC293005A1124 /* Main.storyboard in Resources */,
 				459DEBBA21DFB82B009F0BE0 /* Onboarding.storyboard in Resources */,
+				45FD5B5621E069A600C247F0 /* config.dev.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +535,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45129C5B21DFC59C00F585FA /* IntroPageViewController.swift in Sources */,
+				45FD5B5021E0333900C247F0 /* TutorialViewController.swift in Sources */,
 				45B7A42921DEC293005A1124 /* RootViewController.swift in Sources */,
 				45B7A42D21DEC293005A1124 /* ModelController.swift in Sources */,
 				45B7A42B21DEC293005A1124 /* DataViewController.swift in Sources */,
