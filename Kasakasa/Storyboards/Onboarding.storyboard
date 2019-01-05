@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="coY-a9-nbl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,10 +18,10 @@
             </objects>
             <point key="canvasLocation" x="809" y="145"/>
         </scene>
-        <!--View Controller-->
+        <!--Tutorial View Controller-->
         <scene sceneID="jSp-3y-tjc">
             <objects>
-                <viewController id="QR7-nw-W11" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialViewControllerWelcome" id="QR7-nw-W11" customClass="TutorialViewController" customModule="Kasakasa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Mj-oN-ySQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,13 +63,13 @@
                             <constraint firstItem="hzl-4e-fDf" firstAttribute="trailing" secondItem="w6l-tz-NYO" secondAttribute="trailing" id="KlP-YX-tkh"/>
                             <constraint firstItem="tAy-aV-PjP" firstAttribute="centerX" secondItem="2Mj-oN-ySQ" secondAttribute="centerX" id="YgL-ye-te3"/>
                             <constraint firstItem="oeS-Nj-Jr6" firstAttribute="centerX" secondItem="2Mj-oN-ySQ" secondAttribute="centerX" id="aZB-by-HTb"/>
-                            <constraint firstItem="77e-QN-kiF" firstAttribute="bottom" secondItem="w6l-tz-NYO" secondAttribute="bottom" id="enZ-An-Q9q"/>
+                            <constraint firstItem="77e-QN-kiF" firstAttribute="bottom" secondItem="2Mj-oN-ySQ" secondAttribute="bottom" id="enZ-An-Q9q"/>
                             <constraint firstItem="77e-QN-kiF" firstAttribute="trailing" secondItem="w6l-tz-NYO" secondAttribute="trailing" id="h3o-9M-Eud"/>
                             <constraint firstItem="w6l-tz-NYO" firstAttribute="trailing" secondItem="oeS-Nj-Jr6" secondAttribute="trailing" constant="20" id="iEZ-Bn-O80"/>
                             <constraint firstItem="tAy-aV-PjP" firstAttribute="top" secondItem="Mce-yb-V8K" secondAttribute="bottom" constant="60" id="ife-U5-5kl"/>
                             <constraint firstItem="77e-QN-kiF" firstAttribute="top" secondItem="2Mj-oN-ySQ" secondAttribute="top" id="kIC-Qc-e5G"/>
                             <constraint firstItem="hzl-4e-fDf" firstAttribute="top" secondItem="2Mj-oN-ySQ" secondAttribute="top" id="wju-Dq-naJ"/>
-                            <constraint firstItem="hzl-4e-fDf" firstAttribute="bottom" secondItem="w6l-tz-NYO" secondAttribute="bottom" id="zEs-zC-wP0"/>
+                            <constraint firstItem="hzl-4e-fDf" firstAttribute="bottom" secondItem="2Mj-oN-ySQ" secondAttribute="bottom" id="zEs-zC-wP0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w6l-tz-NYO"/>
                     </view>
@@ -78,10 +78,10 @@
             </objects>
             <point key="canvasLocation" x="1792.8" y="137.18140929535232"/>
         </scene>
-        <!--View Controller-->
+        <!--Tutorial View Controller-->
         <scene sceneID="UO1-8a-tbF">
             <objects>
-                <viewController id="zrs-qb-CO0" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialViewControllerSmartAddresses" id="zrs-qb-CO0" customClass="TutorialViewController" customModule="Kasakasa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W7r-KI-hU1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,8 +131,8 @@
                                     <constraint firstItem="CV1-eY-2l5" firstAttribute="trailing" secondItem="0eO-Zg-b6d" secondAttribute="trailing" id="ilz-mL-4jK"/>
                                     <constraint firstItem="TYW-se-feS" firstAttribute="leading" secondItem="0eO-Zg-b6d" secondAttribute="leading" id="kuj-zU-6Ii"/>
                                     <constraint firstItem="TYW-se-feS" firstAttribute="top" secondItem="RaG-3a-MB2" secondAttribute="top" id="mPO-YO-en3"/>
-                                    <constraint firstItem="TYW-se-feS" firstAttribute="bottom" secondItem="0eO-Zg-b6d" secondAttribute="bottom" id="pa4-MW-fqU"/>
-                                    <constraint firstItem="CV1-eY-2l5" firstAttribute="bottom" secondItem="0eO-Zg-b6d" secondAttribute="bottom" id="vCI-Op-JX4"/>
+                                    <constraint firstItem="TYW-se-feS" firstAttribute="bottom" secondItem="RaG-3a-MB2" secondAttribute="bottom" id="pa4-MW-fqU"/>
+                                    <constraint firstItem="CV1-eY-2l5" firstAttribute="bottom" secondItem="RaG-3a-MB2" secondAttribute="bottom" id="vCI-Op-JX4"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="0eO-Zg-b6d"/>
                             </view>
@@ -151,10 +151,10 @@
             </objects>
             <point key="canvasLocation" x="2470" y="141"/>
         </scene>
-        <!--View Controller-->
+        <!--Tutorial View Controller-->
         <scene sceneID="cJu-gw-X9W">
             <objects>
-                <viewController id="lr7-gJ-h2w" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialViewControllerSearch" id="lr7-gJ-h2w" customClass="TutorialViewController" customModule="Kasakasa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x5I-iY-1DO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,7 +194,7 @@
                                     <constraint firstItem="daw-is-afn" firstAttribute="leading" secondItem="fXS-Sd-QtZ" secondAttribute="leading" id="186-xO-csx"/>
                                     <constraint firstItem="eUF-Pj-VxE" firstAttribute="centerX" secondItem="xJs-LO-2rf" secondAttribute="centerX" id="35p-qZ-eZl"/>
                                     <constraint firstItem="Fa8-GN-zWN" firstAttribute="trailing" secondItem="fXS-Sd-QtZ" secondAttribute="trailing" id="3dJ-L7-0c1"/>
-                                    <constraint firstItem="daw-is-afn" firstAttribute="bottom" secondItem="fXS-Sd-QtZ" secondAttribute="bottom" id="BqF-Ij-B0o"/>
+                                    <constraint firstItem="daw-is-afn" firstAttribute="bottom" secondItem="xJs-LO-2rf" secondAttribute="bottom" id="BqF-Ij-B0o"/>
                                     <constraint firstItem="BIi-BI-xYw" firstAttribute="top" secondItem="aMs-kv-Foz" secondAttribute="bottom" constant="60" id="E8u-Io-X4E"/>
                                     <constraint firstItem="aMs-kv-Foz" firstAttribute="centerX" secondItem="xJs-LO-2rf" secondAttribute="centerX" id="Emt-NO-tlG"/>
                                     <constraint firstItem="daw-is-afn" firstAttribute="trailing" secondItem="fXS-Sd-QtZ" secondAttribute="trailing" id="FuU-kd-xey"/>
@@ -206,7 +206,7 @@
                                     <constraint firstItem="Fa8-GN-zWN" firstAttribute="leading" secondItem="fXS-Sd-QtZ" secondAttribute="leading" id="agW-F7-gZ5"/>
                                     <constraint firstItem="Fa8-GN-zWN" firstAttribute="top" secondItem="xJs-LO-2rf" secondAttribute="top" id="e6Y-Mt-57E"/>
                                     <constraint firstItem="BIi-BI-xYw" firstAttribute="centerX" secondItem="xJs-LO-2rf" secondAttribute="centerX" id="eFE-5S-h1o"/>
-                                    <constraint firstItem="Fa8-GN-zWN" firstAttribute="bottom" secondItem="fXS-Sd-QtZ" secondAttribute="bottom" id="nNe-6b-aTE"/>
+                                    <constraint firstItem="Fa8-GN-zWN" firstAttribute="bottom" secondItem="xJs-LO-2rf" secondAttribute="bottom" id="nNe-6b-aTE"/>
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="fXS-Sd-QtZ"/>
                             </view>
@@ -225,10 +225,10 @@
             </objects>
             <point key="canvasLocation" x="3177" y="144"/>
         </scene>
-        <!--View Controller-->
+        <!--Tutorial View Controller-->
         <scene sceneID="xxj-za-JOl">
             <objects>
-                <viewController id="9gi-12-Vns" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorialViewControllerMessaging" id="9gi-12-Vns" customClass="TutorialViewController" customModule="Kasakasa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aj8-Ge-7oO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -255,14 +255,14 @@
                                             <constraint firstAttribute="height" constant="200" id="vMW-4F-3aJ"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat securely with your friends and family and transfer cryptocurrency over instant messaging." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clw-Np-uLY">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat securely with your friends and family and transfer cryptocurrency over end-to-end encrypted instant messaging." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clw-Np-uLY">
                                         <rect key="frame" x="20" y="433" width="335" height="66"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ikJ-6a-7oF">
-                                        <rect key="frame" x="50" y="539" width="275" height="44"/>
+                                        <rect key="frame" x="50" y="583" width="275" height="44"/>
                                         <state key="normal" title="Create Account" backgroundImage="primary_button">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -275,12 +275,12 @@
                                     <constraint firstItem="clw-Np-uLY" firstAttribute="top" secondItem="OfP-js-laG" secondAttribute="bottom" constant="60" id="HK0-ln-ter"/>
                                     <constraint firstItem="yBb-Ne-JWC" firstAttribute="top" secondItem="0e9-Kl-bJQ" secondAttribute="top" id="HPd-D6-w2b"/>
                                     <constraint firstItem="MKR-d8-XrY" firstAttribute="centerX" secondItem="0e9-Kl-bJQ" secondAttribute="centerX" id="LyP-mU-4XX"/>
-                                    <constraint firstItem="yBb-Ne-JWC" firstAttribute="bottom" secondItem="fUD-Q1-65d" secondAttribute="bottom" id="PXt-bA-4N7"/>
+                                    <constraint firstItem="yBb-Ne-JWC" firstAttribute="bottom" secondItem="0e9-Kl-bJQ" secondAttribute="bottom" id="PXt-bA-4N7"/>
                                     <constraint firstItem="xOL-Wi-XS8" firstAttribute="top" secondItem="0e9-Kl-bJQ" secondAttribute="top" id="S9h-dc-ijH"/>
                                     <constraint firstItem="clw-Np-uLY" firstAttribute="centerX" secondItem="0e9-Kl-bJQ" secondAttribute="centerX" id="Tl0-rI-7tF"/>
+                                    <constraint firstItem="fUD-Q1-65d" firstAttribute="bottom" secondItem="ikJ-6a-7oF" secondAttribute="bottom" constant="40" id="WtS-fL-bxB"/>
                                     <constraint firstItem="xOL-Wi-XS8" firstAttribute="leading" secondItem="fUD-Q1-65d" secondAttribute="leading" id="YWK-0O-lLo"/>
-                                    <constraint firstItem="ikJ-6a-7oF" firstAttribute="top" secondItem="clw-Np-uLY" secondAttribute="bottom" constant="40" id="iqV-cr-xY2"/>
-                                    <constraint firstItem="xOL-Wi-XS8" firstAttribute="bottom" secondItem="fUD-Q1-65d" secondAttribute="bottom" id="oNK-oA-rNK"/>
+                                    <constraint firstItem="xOL-Wi-XS8" firstAttribute="bottom" secondItem="0e9-Kl-bJQ" secondAttribute="bottom" id="oNK-oA-rNK"/>
                                     <constraint firstItem="OfP-js-laG" firstAttribute="top" secondItem="MKR-d8-XrY" secondAttribute="bottom" constant="60" id="s0s-ju-JxH"/>
                                     <constraint firstItem="yBb-Ne-JWC" firstAttribute="leading" secondItem="fUD-Q1-65d" secondAttribute="leading" id="s1P-nh-lOn"/>
                                     <constraint firstItem="fUD-Q1-65d" firstAttribute="trailing" secondItem="ikJ-6a-7oF" secondAttribute="trailing" constant="50" id="tNb-4h-zji"/>

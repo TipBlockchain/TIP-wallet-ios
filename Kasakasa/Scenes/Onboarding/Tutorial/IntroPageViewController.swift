@@ -10,9 +10,25 @@ import UIKit
 
 class IntroPageViewController: UIPageViewController {
 
+    lazy var subViewControllers: [UIViewController] = {
+        return [
+        UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "TutorialViewControllerWelcome"),
+        UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "TutorialViewControllerSmartAddresses"),
+        UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "TutorialViewControllerSearch"),
+        UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "TutorialViewControllerMessaging"),
+        ]
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.dataSource = self
+        self.delegate = self
+
+        if let firstViewController = self.subViewControllers.first {
+            setViewControllers([firstViewController], direction: UIPageViewController.NavigationDirection.forward, animated: true) { (flipped) in
+            }
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -35,10 +51,16 @@ extension IntroPageViewController: UIPageViewControllerDelegate {
 
 extension IntroPageViewController: UIPageViewControllerDataSource {
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        if let index = subViewControllers.firstIndex(of: viewController), index > 0 {
+            return subViewControllers[index - 1]
+        }
         return nil
     }
 
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        if let index = subViewControllers.firstIndex(of: viewController), index < subViewControllers.count - 1 {
+            return subViewControllers[index + 1]
+        }
         return nil
     }
 
@@ -46,7 +68,7 @@ extension IntroPageViewController: UIPageViewControllerDataSource {
     // A page indicator will be visible if both methods are implemented, transition style is 'UIPageViewControllerTransitionStyleScroll', and navigation orientation is 'UIPageViewControllerNavigationOrientationHorizontal'.
     // Both methods are called in response to a 'setViewControllers:...' call, but the presentation index is updated automatically in the case of gesture-driven navigation.
     public func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return 4
+        return subViewControllers.count
     }
 
     public func presentationIndex(for pageViewController: UIPageViewController) -> Int {
