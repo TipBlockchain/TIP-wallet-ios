@@ -266,6 +266,9 @@
                                         <state key="normal" title="Create Account" backgroundImage="primary_button">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="createAccountButtonTapped:" destination="9gi-12-Vns" eventType="touchUpInside" id="Zqd-ip-V9C"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
