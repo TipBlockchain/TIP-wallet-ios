@@ -10,13 +10,14 @@ import UIKit
 
 class IntroPageViewController: UIPageViewController {
 
-    lazy var subViewControllers: [UIViewController] = {
-        return [
-        UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "TutorialViewControllerWelcome"),
-        UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "TutorialViewControllerSmartAddresses"),
-        UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "TutorialViewControllerSearch"),
-        UIStoryboard(name: "Onboarding", bundle: nil).instantiateViewController(withIdentifier: "TutorialViewControllerMessaging"),
+    lazy var subViewControllers: [TutorialViewController] = {
+        let controllers: [TutorialViewController] = [
+            UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: "TutorialViewControllerWelcome") as! TutorialViewController,
+        UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: "TutorialViewControllerSmartAddresses") as! TutorialViewController,
+        UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: "TutorialViewControllerSearch") as! TutorialViewController,
+        UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: "TutorialViewControllerMessaging") as! TutorialViewController,
         ]
+        return controllers
     }()
 
     override func viewDidLoad() {
@@ -28,6 +29,9 @@ class IntroPageViewController: UIPageViewController {
         if let firstViewController = self.subViewControllers.first {
             setViewControllers([firstViewController], direction: UIPageViewController.NavigationDirection.forward, animated: true) { (flipped) in
             }
+        }
+        if let lastViewController = self.subViewControllers.last {
+            lastViewController.delegate = self
         }
         // Do any additional setup after loading the view.
     }
@@ -51,14 +55,16 @@ extension IntroPageViewController: UIPageViewControllerDelegate {
 
 extension IntroPageViewController: UIPageViewControllerDataSource {
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        if let index = subViewControllers.firstIndex(of: viewController), index > 0 {
+        if let viewController = viewController as? TutorialViewController,
+            let index = subViewControllers.firstIndex(of: viewController), index > 0 {
             return subViewControllers[index - 1]
         }
         return nil
     }
 
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        if let index = subViewControllers.firstIndex(of: viewController), index < subViewControllers.count - 1 {
+        if let viewController = viewController as? TutorialViewController,
+            let index = subViewControllers.firstIndex(of: viewController), index < subViewControllers.count - 1 {
             return subViewControllers[index + 1]
         }
         return nil
@@ -73,5 +79,12 @@ extension IntroPageViewController: UIPageViewControllerDataSource {
 
     public func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         return 0
+    }
+}
+
+extension IntroPageViewController: TutorialDelegate {
+    func tutorialComplete() {
+        let onboardingVc = UIStoryboard(name: "Onboarding", bundle: nil).instantiateInitialViewController()
+        self.view.window?.rootViewController = onboardingVc
     }
 }

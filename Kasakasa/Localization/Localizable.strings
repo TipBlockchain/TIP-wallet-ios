@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Kasakasa
+
+  Created by John Warmann on 2019-01-06.
+  Copyright © 2019 Tip Blockchain. All rights reserved.
+*/
+
+"Unknown Error" = "An unknown error occured.";
+"Sorry" = "Sorry";
+"Select your country" = "Select your country";

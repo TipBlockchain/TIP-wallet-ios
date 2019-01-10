@@ -10,11 +10,28 @@
 		00247210AD235F03CD70772B /* Pods_KasakasaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C295FFCD9D3790E42636402 /* Pods_KasakasaUITests.framework */; };
 		348FDC85CD45EF7BCC1C6BC4 /* Pods_Kasakasa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BDAF283B5727552E6FF69A1 /* Pods_Kasakasa.framework */; };
 		45129C5B21DFC59C00F585FA /* IntroPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45129C5A21DFC59C00F585FA /* IntroPageViewController.swift */; };
-		459DEBBA21DFB82B009F0BE0 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 459DEBB921DFB82B009F0BE0 /* Onboarding.storyboard */; };
+		459DEBBA21DFB82B009F0BE0 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 459DEBB921DFB82B009F0BE0 /* Tutorial.storyboard */; };
 		459DEBBC21DFB84E009F0BE0 /* MainApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 459DEBBB21DFB84E009F0BE0 /* MainApp.storyboard */; };
 		459DEBBE21DFBCAA009F0BE0 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459DEBBD21DFBCAA009F0BE0 /* AppConstants.swift */; };
 		459DEBC021DFBCBB009F0BE0 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459DEBBF21DFBCBB009F0BE0 /* AppStyle.swift */; };
-		459DEBC221DFBCDE009F0BE0 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459DEBC121DFBCDE009F0BE0 /* Config.swift */; };
+		459DEBC221DFBCDE009F0BE0 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459DEBC121DFBCDE009F0BE0 /* AppConfig.swift */; };
+		45AD3A2621E33FBC00198D6F /* EnterPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A2521E33FBC00198D6F /* EnterPhoneNumberViewController.swift */; };
+		45AD3A2821E3405E00198D6F /* EnterPhoneNumberPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A2721E3405E00198D6F /* EnterPhoneNumberPresenterImpl.swift */; };
+		45AD3A2A21E3409900198D6F /* EnterPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A2921E3409900198D6F /* EnterPhoneNumber.swift */; };
+		45AD3A2D21E3411300198D6F /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A2C21E3411300198D6F /* BasePresenter.swift */; };
+		45AD3A2F21E3412B00198D6F /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A2E21E3412B00198D6F /* BaseView.swift */; };
+		45AD3A3221E3444900198D6F /* PhoneVerificationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A3121E3444900198D6F /* PhoneVerificationRequest.swift */; };
+		45AD3A3621E3DCD400198D6F /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A3521E3DCD400198D6F /* UITextFieldExtension.swift */; };
+		45AD3A3821E3E56600198D6F /* FlagKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45AD3A3721E3E56600198D6F /* FlagKit.xcassets */; };
+		45AD3A3A21E42B8500198D6F /* SelectCountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A3921E42B8500198D6F /* SelectCountryViewController.swift */; };
+		45AD3A3D21E42C4C00198D6F /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A3B21E42C4C00198D6F /* CountryTableViewCell.swift */; };
+		45AD3A3E21E42C4C00198D6F /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45AD3A3C21E42C4C00198D6F /* CountryTableViewCell.xib */; };
+		45AD3A4021E5635100198D6F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A3F21E5635100198D6F /* BaseViewController.swift */; };
+		45AD3A4221E5673C00198D6F /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A4121E5673C00198D6F /* ModalViewController.swift */; };
+		45AD3A4421E5862200198D6F /* InsetTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A4321E5862200198D6F /* InsetTextField.swift */; };
+		45AD3A4621E71B6000198D6F /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A4521E71B6000198D6F /* UIViewExtension.swift */; };
+		45AD3A4821E71D2D00198D6F /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A4721E71D2D00198D6F /* UIColorExtension.swift */; };
+		45AD3A4C21E71EA300198D6F /* ColoredButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A4B21E71EA300198D6F /* ColoredButton.swift */; };
 		45B7A42721DEC293005A1124 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A42621DEC293005A1124 /* AppDelegate.swift */; };
 		45B7A42921DEC293005A1124 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A42821DEC293005A1124 /* RootViewController.swift */; };
 		45B7A42B21DEC293005A1124 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A42A21DEC293005A1124 /* DataViewController.swift */; };
@@ -24,9 +41,21 @@
 		45B7A43521DEC295005A1124 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B7A43321DEC295005A1124 /* LaunchScreen.storyboard */; };
 		45B7A44021DEC295005A1124 /* KasakasaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A43F21DEC295005A1124 /* KasakasaTests.swift */; };
 		45B7A44B21DEC295005A1124 /* KasakasaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A44A21DEC295005A1124 /* KasakasaUITests.swift */; };
+		45BBF05821E1C46B0042EC5D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BBF05721E1C46B0042EC5D /* NetworkService.swift */; };
+		45BBF05A21E1C48A0042EC5D /* TipApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BBF05921E1C48A0042EC5D /* TipApiService.swift */; };
+		45BBF05F21E1C86C0042EC5D /* AppErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BBF05E21E1C86C0042EC5D /* AppErrors.swift */; };
+		45BBF06221E1C8C90042EC5D /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BBF06121E1C8C90042EC5D /* Json.swift */; };
+		45BBF06421E1D2D50042EC5D /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BBF06321E1D2D50042EC5D /* StringExtension.swift */; };
+		45BBF06721E1D3450042EC5D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45BBF06621E1D3450042EC5D /* Localizable.strings */; };
+		45BBF07121E1E0C20042EC5D /* UrlRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BBF07021E1E0C20042EC5D /* UrlRequestConvertible.swift */; };
+		45BBF07421E1E1BD0042EC5D /* TipApiServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BBF07321E1E1BD0042EC5D /* TipApiServiceTests.swift */; };
+		45BBF07621E2C29D0042EC5D /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BBF07521E2C29D0042EC5D /* Country.swift */; };
+		45BBF07821E2CDAE0042EC5D /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45BBF07721E2CDAE0042EC5D /* Onboarding.storyboard */; };
+		45BBF07A21E2DBFD0042EC5D /* Flags.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45BBF07921E2DBFD0042EC5D /* Flags.xcassets */; };
 		45FD5B5021E0333900C247F0 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FD5B4F21E0333900C247F0 /* TutorialViewController.swift */; };
 		45FD5B5421E0688E00C247F0 /* config.local.json in Resources */ = {isa = PBXBuildFile; fileRef = 45FD5B5321E0688E00C247F0 /* config.local.json */; };
 		45FD5B5621E069A600C247F0 /* config.dev.json in Resources */ = {isa = PBXBuildFile; fileRef = 45FD5B5521E069A600C247F0 /* config.dev.json */; };
+		45FD5B5A21E06BEF00C247F0 /* TipNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FD5B5921E06BEF00C247F0 /* TipNetworkRequest.swift */; };
 		A7BCDBA0C2ED35F469C72A42 /* Pods_KasakasaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5584CE083FB7220D618592D8 /* Pods_KasakasaTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,11 +80,28 @@
 		2BE48006DBE2F72B09F393EF /* Pods-Kasakasa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kasakasa.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kasakasa/Pods-Kasakasa.release.xcconfig"; sourceTree = "<group>"; };
 		2DFC66DB9636E4E7A2CBEE15 /* Pods-KasakasaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KasakasaTests/Pods-KasakasaTests.release.xcconfig"; sourceTree = "<group>"; };
 		45129C5A21DFC59C00F585FA /* IntroPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPageViewController.swift; sourceTree = "<group>"; };
-		459DEBB921DFB82B009F0BE0 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		459DEBB921DFB82B009F0BE0 /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		459DEBBB21DFB84E009F0BE0 /* MainApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainApp.storyboard; sourceTree = "<group>"; };
 		459DEBBD21DFBCAA009F0BE0 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		459DEBBF21DFBCBB009F0BE0 /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
-		459DEBC121DFBCDE009F0BE0 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		459DEBC121DFBCDE009F0BE0 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		45AD3A2521E33FBC00198D6F /* EnterPhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberViewController.swift; sourceTree = "<group>"; };
+		45AD3A2721E3405E00198D6F /* EnterPhoneNumberPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberPresenterImpl.swift; sourceTree = "<group>"; };
+		45AD3A2921E3409900198D6F /* EnterPhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumber.swift; sourceTree = "<group>"; };
+		45AD3A2C21E3411300198D6F /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		45AD3A2E21E3412B00198D6F /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		45AD3A3121E3444900198D6F /* PhoneVerificationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationRequest.swift; sourceTree = "<group>"; };
+		45AD3A3521E3DCD400198D6F /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		45AD3A3721E3E56600198D6F /* FlagKit.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FlagKit.xcassets; sourceTree = "<group>"; };
+		45AD3A3921E42B8500198D6F /* SelectCountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCountryViewController.swift; sourceTree = "<group>"; };
+		45AD3A3B21E42C4C00198D6F /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
+		45AD3A3C21E42C4C00198D6F /* CountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
+		45AD3A3F21E5635100198D6F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		45AD3A4121E5673C00198D6F /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		45AD3A4321E5862200198D6F /* InsetTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetTextField.swift; sourceTree = "<group>"; };
+		45AD3A4521E71B6000198D6F /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		45AD3A4721E71D2D00198D6F /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		45AD3A4B21E71EA300198D6F /* ColoredButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredButton.swift; sourceTree = "<group>"; };
 		45B7A42321DEC293005A1124 /* Kasakasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kasakasa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B7A42621DEC293005A1124 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45B7A42821DEC293005A1124 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -71,9 +117,21 @@
 		45B7A44621DEC295005A1124 /* KasakasaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KasakasaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B7A44A21DEC295005A1124 /* KasakasaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KasakasaUITests.swift; sourceTree = "<group>"; };
 		45B7A44C21DEC295005A1124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45BBF05721E1C46B0042EC5D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		45BBF05921E1C48A0042EC5D /* TipApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipApiService.swift; sourceTree = "<group>"; };
+		45BBF05E21E1C86C0042EC5D /* AppErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrors.swift; sourceTree = "<group>"; };
+		45BBF06121E1C8C90042EC5D /* Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
+		45BBF06321E1D2D50042EC5D /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		45BBF06621E1D3450042EC5D /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		45BBF07021E1E0C20042EC5D /* UrlRequestConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlRequestConvertible.swift; sourceTree = "<group>"; };
+		45BBF07321E1E1BD0042EC5D /* TipApiServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipApiServiceTests.swift; sourceTree = "<group>"; };
+		45BBF07521E2C29D0042EC5D /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		45BBF07721E2CDAE0042EC5D /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		45BBF07921E2DBFD0042EC5D /* Flags.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Flags.xcassets; sourceTree = "<group>"; };
 		45FD5B4F21E0333900C247F0 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		45FD5B5321E0688E00C247F0 /* config.local.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = config.local.json; sourceTree = "<group>"; };
 		45FD5B5521E069A600C247F0 /* config.dev.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = config.dev.json; sourceTree = "<group>"; };
+		45FD5B5921E06BEF00C247F0 /* TipNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipNetworkRequest.swift; sourceTree = "<group>"; };
 		4C295FFCD9D3790E42636402 /* Pods_KasakasaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KasakasaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5584CE083FB7220D618592D8 /* Pods_KasakasaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KasakasaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BDAF283B5727552E6FF69A1 /* Pods_Kasakasa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kasakasa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +195,8 @@
 		45129C5821DFC50700F585FA /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				45AD3A3321E3CEDB00198D6F /* Select Country */,
+				45AD3A2421E33F9B00198D6F /* Enter Phone Number */,
 				45129C5921DFC51B00F585FA /* Tutorial */,
 			);
 			path = Onboarding;
@@ -158,7 +218,7 @@
 				45B7A42621DEC293005A1124 /* AppDelegate.swift */,
 				459DEBBD21DFBCAA009F0BE0 /* AppConstants.swift */,
 				459DEBBF21DFBCBB009F0BE0 /* AppStyle.swift */,
-				459DEBC121DFBCDE009F0BE0 /* Config.swift */,
+				459DEBC121DFBCDE009F0BE0 /* AppConfig.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -166,6 +226,8 @@
 		459DEBB521DFB4A5009F0BE0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				45AD3A4321E5862200198D6F /* InsetTextField.swift */,
+				45AD3A4B21E71EA300198D6F /* ColoredButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +235,7 @@
 		459DEBB621DFB4D2009F0BE0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				45AD3A2B21E340FE00198D6F /* Common */,
 				45129C5821DFC50700F585FA /* Onboarding */,
 			);
 			path = Scenes;
@@ -182,6 +245,8 @@
 			isa = PBXGroup;
 			children = (
 				45B7A43121DEC295005A1124 /* Assets.xcassets */,
+				45AD3A3721E3E56600198D6F /* FlagKit.xcassets */,
+				45BBF07921E2DBFD0042EC5D /* Flags.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -190,11 +255,63 @@
 			isa = PBXGroup;
 			children = (
 				45B7A42E21DEC293005A1124 /* Main.storyboard */,
-				459DEBB921DFB82B009F0BE0 /* Onboarding.storyboard */,
+				459DEBB921DFB82B009F0BE0 /* Tutorial.storyboard */,
 				459DEBBB21DFB84E009F0BE0 /* MainApp.storyboard */,
 				45B7A43321DEC295005A1124 /* LaunchScreen.storyboard */,
+				45BBF07721E2CDAE0042EC5D /* Onboarding.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		45AD3A2421E33F9B00198D6F /* Enter Phone Number */ = {
+			isa = PBXGroup;
+			children = (
+				45AD3A2521E33FBC00198D6F /* EnterPhoneNumberViewController.swift */,
+				45AD3A2721E3405E00198D6F /* EnterPhoneNumberPresenterImpl.swift */,
+				45AD3A2921E3409900198D6F /* EnterPhoneNumber.swift */,
+			);
+			path = "Enter Phone Number";
+			sourceTree = "<group>";
+		};
+		45AD3A2B21E340FE00198D6F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				45AD3A2C21E3411300198D6F /* BasePresenter.swift */,
+				45AD3A2E21E3412B00198D6F /* BaseView.swift */,
+				45AD3A3F21E5635100198D6F /* BaseViewController.swift */,
+				45AD3A4121E5673C00198D6F /* ModalViewController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		45AD3A3021E3440A00198D6F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				45BBF07521E2C29D0042EC5D /* Country.swift */,
+				45AD3A3121E3444900198D6F /* PhoneVerificationRequest.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		45AD3A3321E3CEDB00198D6F /* Select Country */ = {
+			isa = PBXGroup;
+			children = (
+				45AD3A3921E42B8500198D6F /* SelectCountryViewController.swift */,
+				45AD3A3B21E42C4C00198D6F /* CountryTableViewCell.swift */,
+				45AD3A3C21E42C4C00198D6F /* CountryTableViewCell.xib */,
+			);
+			path = "Select Country";
+			sourceTree = "<group>";
+		};
+		45AD3A3421E3DCAA00198D6F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				45BBF06321E1D2D50042EC5D /* StringExtension.swift */,
+				45AD3A3521E3DCD400198D6F /* UITextFieldExtension.swift */,
+				45AD3A4521E71B6000198D6F /* UIViewExtension.swift */,
+				45AD3A4721E71D2D00198D6F /* UIColorExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		45B7A41A21DEC293005A1124 = {
@@ -222,9 +339,11 @@
 		45B7A42521DEC293005A1124 /* Kasakasa */ = {
 			isa = PBXGroup;
 			children = (
+				45BBF06521E1D32D0042EC5D /* Localization */,
 				459DEBB421DFB415009F0BE0 /* Application */,
 				459DEBB621DFB4D2009F0BE0 /* Scenes */,
 				459DEBB521DFB4A5009F0BE0 /* Views */,
+				45BBF05521E1C42D0042EC5D /* Model */,
 				45FD5B5721E06B3300C247F0 /* Util */,
 				459DEBB821DFB806009F0BE0 /* Storyboards */,
 				459DEBB721DFB507009F0BE0 /* Assets */,
@@ -239,6 +358,7 @@
 		45B7A43E21DEC295005A1124 /* KasakasaTests */ = {
 			isa = PBXGroup;
 			children = (
+				45BBF07221E1E1A30042EC5D /* util */,
 				45B7A43F21DEC295005A1124 /* KasakasaTests.swift */,
 				45B7A44121DEC295005A1124 /* Info.plist */,
 			);
@@ -254,6 +374,55 @@
 			path = KasakasaUITests;
 			sourceTree = "<group>";
 		};
+		45BBF05521E1C42D0042EC5D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				45AD3A3021E3440A00198D6F /* Networking */,
+				45BBF06021E1C8BA0042EC5D /* General */,
+				45BBF05B21E1C83E0042EC5D /* Errors */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		45BBF05621E1C43C0042EC5D /* Database */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		45BBF05B21E1C83E0042EC5D /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				45BBF05E21E1C86C0042EC5D /* AppErrors.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		45BBF06021E1C8BA0042EC5D /* General */ = {
+			isa = PBXGroup;
+			children = (
+				45BBF06121E1C8C90042EC5D /* Json.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		45BBF06521E1D32D0042EC5D /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				45BBF06621E1D3450042EC5D /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		45BBF07221E1E1A30042EC5D /* util */ = {
+			isa = PBXGroup;
+			children = (
+				45BBF07321E1E1BD0042EC5D /* TipApiServiceTests.swift */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
 		45FD5B5121E0685100C247F0 /* Config files */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +435,8 @@
 		45FD5B5721E06B3300C247F0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				45AD3A3421E3DCAA00198D6F /* Extensions */,
+				45BBF05621E1C43C0042EC5D /* Database */,
 				45FD5B5821E06B4600C247F0 /* Networking */,
 			);
 			path = Util;
@@ -274,6 +445,10 @@
 		45FD5B5821E06B4600C247F0 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				45FD5B5921E06BEF00C247F0 /* TipNetworkRequest.swift */,
+				45BBF05721E1C46B0042EC5D /* NetworkService.swift */,
+				45BBF05921E1C48A0042EC5D /* TipApiService.swift */,
+				45BBF07021E1E0C20042EC5D /* UrlRequestConvertible.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -386,12 +561,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45AD3A3E21E42C4C00198D6F /* CountryTableViewCell.xib in Resources */,
 				459DEBBC21DFB84E009F0BE0 /* MainApp.storyboard in Resources */,
 				45B7A43521DEC295005A1124 /* LaunchScreen.storyboard in Resources */,
 				45FD5B5421E0688E00C247F0 /* config.local.json in Resources */,
 				45B7A43221DEC295005A1124 /* Assets.xcassets in Resources */,
 				45B7A43021DEC293005A1124 /* Main.storyboard in Resources */,
-				459DEBBA21DFB82B009F0BE0 /* Onboarding.storyboard in Resources */,
+				45BBF07A21E2DBFD0042EC5D /* Flags.xcassets in Resources */,
+				45BBF06721E1D3450042EC5D /* Localizable.strings in Resources */,
+				45BBF07821E2CDAE0042EC5D /* Onboarding.storyboard in Resources */,
+				459DEBBA21DFB82B009F0BE0 /* Tutorial.storyboard in Resources */,
+				45AD3A3821E3E56600198D6F /* FlagKit.xcassets in Resources */,
 				45FD5B5621E069A600C247F0 /* config.dev.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,15 +714,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45AD3A4621E71B6000198D6F /* UIViewExtension.swift in Sources */,
+				45BBF05821E1C46B0042EC5D /* NetworkService.swift in Sources */,
+				45AD3A2D21E3411300198D6F /* BasePresenter.swift in Sources */,
 				45129C5B21DFC59C00F585FA /* IntroPageViewController.swift in Sources */,
 				45FD5B5021E0333900C247F0 /* TutorialViewController.swift in Sources */,
+				45AD3A2621E33FBC00198D6F /* EnterPhoneNumberViewController.swift in Sources */,
+				45AD3A4021E5635100198D6F /* BaseViewController.swift in Sources */,
+				45AD3A4421E5862200198D6F /* InsetTextField.swift in Sources */,
 				45B7A42921DEC293005A1124 /* RootViewController.swift in Sources */,
+				45AD3A3221E3444900198D6F /* PhoneVerificationRequest.swift in Sources */,
 				45B7A42D21DEC293005A1124 /* ModelController.swift in Sources */,
+				45AD3A3D21E42C4C00198D6F /* CountryTableViewCell.swift in Sources */,
+				45FD5B5A21E06BEF00C247F0 /* TipNetworkRequest.swift in Sources */,
+				45AD3A2821E3405E00198D6F /* EnterPhoneNumberPresenterImpl.swift in Sources */,
+				45AD3A2F21E3412B00198D6F /* BaseView.swift in Sources */,
+				45AD3A3621E3DCD400198D6F /* UITextFieldExtension.swift in Sources */,
 				45B7A42B21DEC293005A1124 /* DataViewController.swift in Sources */,
-				459DEBC221DFBCDE009F0BE0 /* Config.swift in Sources */,
+				45AD3A4821E71D2D00198D6F /* UIColorExtension.swift in Sources */,
+				45AD3A4C21E71EA300198D6F /* ColoredButton.swift in Sources */,
+				45BBF06221E1C8C90042EC5D /* Json.swift in Sources */,
+				45AD3A3A21E42B8500198D6F /* SelectCountryViewController.swift in Sources */,
+				45AD3A2A21E3409900198D6F /* EnterPhoneNumber.swift in Sources */,
+				45BBF05F21E1C86C0042EC5D /* AppErrors.swift in Sources */,
+				45BBF07621E2C29D0042EC5D /* Country.swift in Sources */,
+				45AD3A4221E5673C00198D6F /* ModalViewController.swift in Sources */,
+				459DEBC221DFBCDE009F0BE0 /* AppConfig.swift in Sources */,
+				45BBF06421E1D2D50042EC5D /* StringExtension.swift in Sources */,
 				459DEBC021DFBCBB009F0BE0 /* AppStyle.swift in Sources */,
 				45B7A42721DEC293005A1124 /* AppDelegate.swift in Sources */,
+				45BBF05A21E1C48A0042EC5D /* TipApiService.swift in Sources */,
 				459DEBBE21DFBCAA009F0BE0 /* AppConstants.swift in Sources */,
+				45BBF07121E1E0C20042EC5D /* UrlRequestConvertible.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +753,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45BBF07421E1E1BD0042EC5D /* TipApiServiceTests.swift in Sources */,
 				45B7A44021DEC295005A1124 /* KasakasaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,6 +805,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APP_ENVIRONMENT = DEV;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -653,7 +858,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG ENV_$(APP_ENVIRONMENT)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -662,6 +867,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APP_ENVIRONMENT = PROD;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -707,6 +913,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "ENV_$(APP_ENVIRONMENT)";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -835,6 +1042,252 @@
 			};
 			name = Release;
 		};
+		45BBF06821E1DC400042EC5D /* Local */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APP_ENVIRONMENT = LOCAL;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG ENV_$(APP_ENVIRONMENT)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Local;
+		};
+		45BBF06921E1DC400042EC5D /* Local */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB9C2D3AA918F72EC9903CAE /* Pods-Kasakasa.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3P2XQDN98J;
+				INFOPLIST_FILE = Kasakasa/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.Kasakasa;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Local;
+		};
+		45BBF06A21E1DC400042EC5D /* Local */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCC148DACD9F1BE537B940E0 /* Pods-KasakasaTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KasakasaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.KasakasaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kasakasa.app/Kasakasa";
+			};
+			name = Local;
+		};
+		45BBF06B21E1DC400042EC5D /* Local */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E56289B5654C2A629070D370 /* Pods-KasakasaUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KasakasaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.KasakasaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Kasakasa;
+			};
+			name = Local;
+		};
+		45BBF06C21E1DC480042EC5D /* Dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APP_ENVIRONMENT = DEV;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG ENV_$(APP_ENVIRONMENT)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Dev;
+		};
+		45BBF06D21E1DC480042EC5D /* Dev */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB9C2D3AA918F72EC9903CAE /* Pods-Kasakasa.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3P2XQDN98J;
+				INFOPLIST_FILE = Kasakasa/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.Kasakasa;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Dev;
+		};
+		45BBF06E21E1DC480042EC5D /* Dev */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCC148DACD9F1BE537B940E0 /* Pods-KasakasaTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KasakasaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.KasakasaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kasakasa.app/Kasakasa";
+			};
+			name = Dev;
+		};
+		45BBF06F21E1DC480042EC5D /* Dev */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E56289B5654C2A629070D370 /* Pods-KasakasaUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KasakasaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.KasakasaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Kasakasa;
+			};
+			name = Dev;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -842,6 +1295,8 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				45B7A44D21DEC295005A1124 /* Debug */,
+				45BBF06821E1DC400042EC5D /* Local */,
+				45BBF06C21E1DC480042EC5D /* Dev */,
 				45B7A44E21DEC295005A1124 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -851,6 +1306,8 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				45B7A45021DEC295005A1124 /* Debug */,
+				45BBF06921E1DC400042EC5D /* Local */,
+				45BBF06D21E1DC480042EC5D /* Dev */,
 				45B7A45121DEC295005A1124 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -860,6 +1317,8 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				45B7A45321DEC295005A1124 /* Debug */,
+				45BBF06A21E1DC400042EC5D /* Local */,
+				45BBF06E21E1DC480042EC5D /* Dev */,
 				45B7A45421DEC295005A1124 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -869,6 +1328,8 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				45B7A45621DEC295005A1124 /* Debug */,
+				45BBF06B21E1DC400042EC5D /* Local */,
+				45BBF06F21E1DC480042EC5D /* Dev */,
 				45B7A45721DEC295005A1124 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
