@@ -27,8 +27,25 @@ class EnterPhoneNumberPresenterImpl: EnterPhoneNumberPresenter {
         }
     }
 
-    func validatePhoneNumber(_ request: PhoneVerificationRequest) {
+    func validatePhoneNumber(_ verificationRequest: PhoneVerificationRequest) {
+        if verificationRequest.countryCode.isEmpty || verificationRequest.phoneNumber.isEmpty {
+            view?.onEmptyPhoneNumberError()
+            return
+        }
+        if verificationRequest.phoneNumber.count < 5 {
+            view?.onInvalidPhoneNumberError()
+            return
+        }
 
+        tipApiService.startPhoneVerification(verificationRequest: verificationRequest) { (response, error) in
+            DispatchQueue.main.async {
+                if let error = error {
+                    self.view?.onVerificationError(err: error)
+                } else {
+                    self.view?.onVerificationStartedSuccessfully()
+                }
+            }
+        }
     }
 
 }

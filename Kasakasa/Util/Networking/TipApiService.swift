@@ -47,4 +47,36 @@ public class TipApiService: NSObject {
             }
         }
     }
+
+    public func startPhoneVerification(verificationRequest: PhoneVerificationRequest, completion: @escaping (PhoneVerificationResponse?, AppErrors?) -> Void) {
+       let request = TipNetworkRequest.startPhoneVerification(verification: verificationRequest)
+
+        networkService.sendRequest(request: request) { (result, error) in
+            if let error = error {
+                completion(nil, error)
+            } else {
+                if let data = result as? Data, let response = try? JSONDecoder().decode(PhoneVerificationResponse.self, from: data) {
+                    completion(response, nil)
+                } else {
+                    completion(nil, AppErrors.unknowkError)
+                }
+            }
+        }
+    }
+
+    public func checkPhoneVerification(verificationRequest: PhoneVerificationRequest, completion: @escaping (PhoneVerificationResponse?, AppErrors?) -> Void) {
+        let request = TipNetworkRequest.checkPhoneVerification(verification: verificationRequest)
+
+        networkService.sendRequest(request: request) { (result, error) in
+            if let error = error {
+                completion(nil, error)
+            } else {
+                if let data = result as? Data, let response = try? JSONDecoder().decode(PhoneVerificationResponse.self, from: data) {
+                    completion(response, nil)
+                } else {
+                    completion(nil, AppErrors.unknowkError)
+                }
+            }
+        }
+    }
 }

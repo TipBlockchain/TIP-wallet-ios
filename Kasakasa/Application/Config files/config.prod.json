@@ -1,0 +1,9 @@
+{
+    "tip_api_url": "https://ksapi.tipblockchain.io",
+    "eth_node_url": "https://mainnet.infura.io/SSWOxqisHlJoSVWYy09p",
+    "tip_contract_address": "0x59ae863232238a8BD7953bDFC1B4796f8E9A5b4e",
+    "etherscan_api_key": "H6ZGN9CC83YFHAPNHD1QMYG5M1UEVPYKAA",
+    "etherscan_base_url": "https://api.etherscan.io",
+    "buy_tip_url": "https://idex.market/eth/tip",
+    "app_start_block": 6197652,
+}

@@ -8,12 +8,14 @@
 
 import Foundation
 
-struct PhoneVerificationRequest: Codable {
+public struct PhoneVerificationRequest: Codable, DictionaryEncodable {
+    
     var countryCode: String
     var phoneNumber: String
-    var verificationCode: String
+    var verificationCode: String?
 
     var fullPhoneNumber: String {
         return "\(countryCode)\(phoneNumber)"
     }
 }
+

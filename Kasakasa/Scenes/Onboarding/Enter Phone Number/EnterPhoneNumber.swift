@@ -13,8 +13,8 @@ protocol EnterPhoneNumberView: BaseView {
     func onCountryListError(err: AppErrors)
     func onEmptyPhoneNumberError()
     func onInvalidPhoneNumberError()
-    func onVerificationError()
-    func onVerificationSuccess()
+    func onVerificationError(err: AppErrors)
+    func onVerificationStartedSuccessfully()
 }
 
 protocol EnterPhoneNumberPresenter: BasePresenter {

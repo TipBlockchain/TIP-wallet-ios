@@ -7,14 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00247210AD235F03CD70772B /* Pods_KasakasaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C295FFCD9D3790E42636402 /* Pods_KasakasaUITests.framework */; };
-		348FDC85CD45EF7BCC1C6BC4 /* Pods_Kasakasa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BDAF283B5727552E6FF69A1 /* Pods_Kasakasa.framework */; };
+		01144A43431581EB3D87D095 /* Pods_Kasakasa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED5FA10BA8F1816EDA46952B /* Pods_Kasakasa.framework */; };
 		45129C5B21DFC59C00F585FA /* IntroPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45129C5A21DFC59C00F585FA /* IntroPageViewController.swift */; };
+		452AD7F121EFAB13007F11E2 /* TextUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AD7F021EFAB13007F11E2 /* TextUtils.swift */; };
+		452AD7F421EFB839007F11E2 /* VerifyPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AD7F321EFB839007F11E2 /* VerifyPhoneNumberViewController.swift */; };
+		452AD7F621EFBBAB007F11E2 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 452AD7F521EFBBAB007F11E2 /* Icons.xcassets */; };
 		459DEBBA21DFB82B009F0BE0 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 459DEBB921DFB82B009F0BE0 /* Tutorial.storyboard */; };
 		459DEBBC21DFB84E009F0BE0 /* MainApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 459DEBBB21DFB84E009F0BE0 /* MainApp.storyboard */; };
 		459DEBBE21DFBCAA009F0BE0 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459DEBBD21DFBCAA009F0BE0 /* AppConstants.swift */; };
 		459DEBC021DFBCBB009F0BE0 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459DEBBF21DFBCBB009F0BE0 /* AppStyle.swift */; };
 		459DEBC221DFBCDE009F0BE0 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459DEBC121DFBCDE009F0BE0 /* AppConfig.swift */; };
+		45A6D7A521EFD782007A6F42 /* VerifyPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6D7A421EFD782007A6F42 /* VerifyPhone.swift */; };
+		45A6D7A721EFD8A7007A6F42 /* VerifyPhoneNumberPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6D7A621EFD8A7007A6F42 /* VerifyPhoneNumberPresenterImpl.swift */; };
+		45A6D7AB21EFE20E007A6F42 /* ExistingAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6D7AA21EFE20E007A6F42 /* ExistingAccountViewController.swift */; };
+		45A6D7AD21EFE220007A6F42 /* RecoveryPhraseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6D7AC21EFE220007A6F42 /* RecoveryPhraseViewController.swift */; };
+		45A6D7B021EFE242007A6F42 /* VerifyRecoveryPhraseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6D7AF21EFE242007A6F42 /* VerifyRecoveryPhraseViewController.swift */; };
+		45A6D7B321EFE298007A6F42 /* ChoosePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6D7B221EFE298007A6F42 /* ChoosePasswordViewController.swift */; };
+		45A6D7B621EFE2FF007A6F42 /* OnboardingUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6D7B521EFE2FF007A6F42 /* OnboardingUserProfileViewController.swift */; };
+		45A6D7B921F01DF7007A6F42 /* RestoreWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6D7B821F01DF7007A6F42 /* RestoreWalletViewController.swift */; };
 		45AD3A2621E33FBC00198D6F /* EnterPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A2521E33FBC00198D6F /* EnterPhoneNumberViewController.swift */; };
 		45AD3A2821E3405E00198D6F /* EnterPhoneNumberPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A2721E3405E00198D6F /* EnterPhoneNumberPresenterImpl.swift */; };
 		45AD3A2A21E3409900198D6F /* EnterPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A2921E3409900198D6F /* EnterPhoneNumber.swift */; };
@@ -32,6 +42,15 @@
 		45AD3A4621E71B6000198D6F /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A4521E71B6000198D6F /* UIViewExtension.swift */; };
 		45AD3A4821E71D2D00198D6F /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A4721E71D2D00198D6F /* UIColorExtension.swift */; };
 		45AD3A4C21E71EA300198D6F /* ColoredButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A4B21E71EA300198D6F /* ColoredButton.swift */; };
+		45AD3A4E21E72CAD00198D6F /* config.prod.json in Resources */ = {isa = PBXBuildFile; fileRef = 45AD3A4D21E72CAD00198D6F /* config.prod.json */; };
+		45AD3A5021E7308800198D6F /* PhoneVerificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A4F21E7308800198D6F /* PhoneVerificationResponse.swift */; };
+		45AD3A5221E730EC00198D6F /* PhoneVerificationConfirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A5121E730EC00198D6F /* PhoneVerificationConfirmation.swift */; };
+		45AD3A5421E731B100198D6F /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A5321E731B100198D6F /* Authorization.swift */; };
+		45AD3A5721E7375900198D6F /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A5621E7375900198D6F /* DateFormatterExtension.swift */; };
+		45AD3A5921E73D7500198D6F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A5821E73D7500198D6F /* User.swift */; };
+		45AD3A5B21E73E0200198D6F /* UserPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A5A21E73E0200198D6F /* UserPhotos.swift */; };
+		45AD3A5D21E73EEC00198D6F /* PendingSignup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A5C21E73EEC00198D6F /* PendingSignup.swift */; };
+		45AD3A5F21E7440400198D6F /* DictionaryEncodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A5E21E7440400198D6F /* DictionaryEncodable.swift */; };
 		45B7A42721DEC293005A1124 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A42621DEC293005A1124 /* AppDelegate.swift */; };
 		45B7A42921DEC293005A1124 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A42821DEC293005A1124 /* RootViewController.swift */; };
 		45B7A42B21DEC293005A1124 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A42A21DEC293005A1124 /* DataViewController.swift */; };
@@ -56,7 +75,8 @@
 		45FD5B5421E0688E00C247F0 /* config.local.json in Resources */ = {isa = PBXBuildFile; fileRef = 45FD5B5321E0688E00C247F0 /* config.local.json */; };
 		45FD5B5621E069A600C247F0 /* config.dev.json in Resources */ = {isa = PBXBuildFile; fileRef = 45FD5B5521E069A600C247F0 /* config.dev.json */; };
 		45FD5B5A21E06BEF00C247F0 /* TipNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FD5B5921E06BEF00C247F0 /* TipNetworkRequest.swift */; };
-		A7BCDBA0C2ED35F469C72A42 /* Pods_KasakasaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5584CE083FB7220D618592D8 /* Pods_KasakasaTests.framework */; };
+		AA3D42796523BAD22597BF78 /* Pods_KasakasaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4294AC8A23AC5001206D179D /* Pods_KasakasaUITests.framework */; };
+		E9E9120409A0EA851B856B96 /* Pods_KasakasaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64C1F411CBAB9DA207033196 /* Pods_KasakasaTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,14 +97,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2BE48006DBE2F72B09F393EF /* Pods-Kasakasa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kasakasa.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kasakasa/Pods-Kasakasa.release.xcconfig"; sourceTree = "<group>"; };
-		2DFC66DB9636E4E7A2CBEE15 /* Pods-KasakasaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KasakasaTests/Pods-KasakasaTests.release.xcconfig"; sourceTree = "<group>"; };
+		0CE4858EE3673508D37A0CA7 /* Pods-KasakasaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KasakasaUITests/Pods-KasakasaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		16F5D9A5D9BDF5820E80BB19 /* Pods-KasakasaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KasakasaUITests/Pods-KasakasaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3C93976B3D352ECDF6EE0E05 /* Pods-KasakasaTests.dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaTests.dev.xcconfig"; path = "Pods/Target Support Files/Pods-KasakasaTests/Pods-KasakasaTests.dev.xcconfig"; sourceTree = "<group>"; };
+		4294AC8A23AC5001206D179D /* Pods_KasakasaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KasakasaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43FEF94EE03D10C56C32CBF2 /* Pods-KasakasaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KasakasaTests/Pods-KasakasaTests.release.xcconfig"; sourceTree = "<group>"; };
 		45129C5A21DFC59C00F585FA /* IntroPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPageViewController.swift; sourceTree = "<group>"; };
+		452AD7F021EFAB13007F11E2 /* TextUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextUtils.swift; sourceTree = "<group>"; };
+		452AD7F321EFB839007F11E2 /* VerifyPhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneNumberViewController.swift; sourceTree = "<group>"; };
+		452AD7F521EFBBAB007F11E2 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		459DEBB921DFB82B009F0BE0 /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		459DEBBB21DFB84E009F0BE0 /* MainApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainApp.storyboard; sourceTree = "<group>"; };
 		459DEBBD21DFBCAA009F0BE0 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		459DEBBF21DFBCBB009F0BE0 /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		459DEBC121DFBCDE009F0BE0 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		45A6D7A421EFD782007A6F42 /* VerifyPhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhone.swift; sourceTree = "<group>"; };
+		45A6D7A621EFD8A7007A6F42 /* VerifyPhoneNumberPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneNumberPresenterImpl.swift; sourceTree = "<group>"; };
+		45A6D7AA21EFE20E007A6F42 /* ExistingAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingAccountViewController.swift; sourceTree = "<group>"; };
+		45A6D7AC21EFE220007A6F42 /* RecoveryPhraseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPhraseViewController.swift; sourceTree = "<group>"; };
+		45A6D7AF21EFE242007A6F42 /* VerifyRecoveryPhraseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyRecoveryPhraseViewController.swift; sourceTree = "<group>"; };
+		45A6D7B221EFE298007A6F42 /* ChoosePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePasswordViewController.swift; sourceTree = "<group>"; };
+		45A6D7B521EFE2FF007A6F42 /* OnboardingUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingUserProfileViewController.swift; sourceTree = "<group>"; };
+		45A6D7B821F01DF7007A6F42 /* RestoreWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreWalletViewController.swift; sourceTree = "<group>"; };
 		45AD3A2521E33FBC00198D6F /* EnterPhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberViewController.swift; sourceTree = "<group>"; };
 		45AD3A2721E3405E00198D6F /* EnterPhoneNumberPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberPresenterImpl.swift; sourceTree = "<group>"; };
 		45AD3A2921E3409900198D6F /* EnterPhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumber.swift; sourceTree = "<group>"; };
@@ -102,6 +136,15 @@
 		45AD3A4521E71B6000198D6F /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		45AD3A4721E71D2D00198D6F /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		45AD3A4B21E71EA300198D6F /* ColoredButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredButton.swift; sourceTree = "<group>"; };
+		45AD3A4D21E72CAD00198D6F /* config.prod.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = config.prod.json; sourceTree = "<group>"; };
+		45AD3A4F21E7308800198D6F /* PhoneVerificationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationResponse.swift; sourceTree = "<group>"; };
+		45AD3A5121E730EC00198D6F /* PhoneVerificationConfirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationConfirmation.swift; sourceTree = "<group>"; };
+		45AD3A5321E731B100198D6F /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
+		45AD3A5621E7375900198D6F /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
+		45AD3A5821E73D7500198D6F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		45AD3A5A21E73E0200198D6F /* UserPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotos.swift; sourceTree = "<group>"; };
+		45AD3A5C21E73EEC00198D6F /* PendingSignup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingSignup.swift; sourceTree = "<group>"; };
+		45AD3A5E21E7440400198D6F /* DictionaryEncodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryEncodable.swift; sourceTree = "<group>"; };
 		45B7A42321DEC293005A1124 /* Kasakasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kasakasa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B7A42621DEC293005A1124 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45B7A42821DEC293005A1124 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -132,13 +175,16 @@
 		45FD5B5321E0688E00C247F0 /* config.local.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = config.local.json; sourceTree = "<group>"; };
 		45FD5B5521E069A600C247F0 /* config.dev.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = config.dev.json; sourceTree = "<group>"; };
 		45FD5B5921E06BEF00C247F0 /* TipNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipNetworkRequest.swift; sourceTree = "<group>"; };
-		4C295FFCD9D3790E42636402 /* Pods_KasakasaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KasakasaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5584CE083FB7220D618592D8 /* Pods_KasakasaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KasakasaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BDAF283B5727552E6FF69A1 /* Pods_Kasakasa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kasakasa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1419431964EA23390FB4E73 /* Pods-KasakasaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KasakasaUITests/Pods-KasakasaUITests.release.xcconfig"; sourceTree = "<group>"; };
-		E56289B5654C2A629070D370 /* Pods-KasakasaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KasakasaUITests/Pods-KasakasaUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		FB9C2D3AA918F72EC9903CAE /* Pods-Kasakasa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kasakasa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kasakasa/Pods-Kasakasa.debug.xcconfig"; sourceTree = "<group>"; };
-		FCC148DACD9F1BE537B940E0 /* Pods-KasakasaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KasakasaTests/Pods-KasakasaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4BB4EA9BF6C53D08F857D53C /* Pods-KasakasaUITests.dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaUITests.dev.xcconfig"; path = "Pods/Target Support Files/Pods-KasakasaUITests/Pods-KasakasaUITests.dev.xcconfig"; sourceTree = "<group>"; };
+		5B822B6A0B8CF57EDF8796E3 /* Pods-KasakasaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KasakasaTests/Pods-KasakasaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		64C1F411CBAB9DA207033196 /* Pods_KasakasaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KasakasaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66CE91E446407E27A30B1A18 /* Pods-Kasakasa.local.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kasakasa.local.xcconfig"; path = "Pods/Target Support Files/Pods-Kasakasa/Pods-Kasakasa.local.xcconfig"; sourceTree = "<group>"; };
+		80BB20FB1BD2793A79682353 /* Pods-Kasakasa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kasakasa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kasakasa/Pods-Kasakasa.debug.xcconfig"; sourceTree = "<group>"; };
+		9F11CB047134BD6DA539ABBC /* Pods-KasakasaTests.local.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaTests.local.xcconfig"; path = "Pods/Target Support Files/Pods-KasakasaTests/Pods-KasakasaTests.local.xcconfig"; sourceTree = "<group>"; };
+		A1B4F9D7FE168D9F05D47CD2 /* Pods-KasakasaUITests.local.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaUITests.local.xcconfig"; path = "Pods/Target Support Files/Pods-KasakasaUITests/Pods-KasakasaUITests.local.xcconfig"; sourceTree = "<group>"; };
+		CDDE4411DA422C48C9E293AE /* Pods-Kasakasa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kasakasa.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kasakasa/Pods-Kasakasa.release.xcconfig"; sourceTree = "<group>"; };
+		E632409FE437217F5D86E092 /* Pods-Kasakasa.dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kasakasa.dev.xcconfig"; path = "Pods/Target Support Files/Pods-Kasakasa/Pods-Kasakasa.dev.xcconfig"; sourceTree = "<group>"; };
+		ED5FA10BA8F1816EDA46952B /* Pods_Kasakasa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kasakasa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +192,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				348FDC85CD45EF7BCC1C6BC4 /* Pods_Kasakasa.framework in Frameworks */,
+				01144A43431581EB3D87D095 /* Pods_Kasakasa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,7 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7BCDBA0C2ED35F469C72A42 /* Pods_KasakasaTests.framework in Frameworks */,
+				E9E9120409A0EA851B856B96 /* Pods_KasakasaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,39 +208,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00247210AD235F03CD70772B /* Pods_KasakasaUITests.framework in Frameworks */,
+				AA3D42796523BAD22597BF78 /* Pods_KasakasaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		07C13E62D82E42FD76F86AE5 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				FB9C2D3AA918F72EC9903CAE /* Pods-Kasakasa.debug.xcconfig */,
-				2BE48006DBE2F72B09F393EF /* Pods-Kasakasa.release.xcconfig */,
-				FCC148DACD9F1BE537B940E0 /* Pods-KasakasaTests.debug.xcconfig */,
-				2DFC66DB9636E4E7A2CBEE15 /* Pods-KasakasaTests.release.xcconfig */,
-				E56289B5654C2A629070D370 /* Pods-KasakasaUITests.debug.xcconfig */,
-				C1419431964EA23390FB4E73 /* Pods-KasakasaUITests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		3CF08B60A192843763B6C888 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5BDAF283B5727552E6FF69A1 /* Pods_Kasakasa.framework */,
-				5584CE083FB7220D618592D8 /* Pods_KasakasaTests.framework */,
-				4C295FFCD9D3790E42636402 /* Pods_KasakasaUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		45129C5821DFC50700F585FA /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				45A6D7B721F01DDE007A6F42 /* Restore Wallet */,
+				45A6D7B421EFE2ED007A6F42 /* User Profile */,
+				45A6D7B121EFE288007A6F42 /* Choose Password */,
+				45A6D7AE21EFE22C007A6F42 /* Verify Recovery Phrase */,
+				45A6D7A921EFE1E5007A6F42 /* Recovery Phrase */,
+				45A6D7A821EFE1CC007A6F42 /* Existing Account */,
+				452AD7F221EFB814007F11E2 /* Verify Phone Number */,
 				45AD3A3321E3CEDB00198D6F /* Select Country */,
 				45AD3A2421E33F9B00198D6F /* Enter Phone Number */,
 				45129C5921DFC51B00F585FA /* Tutorial */,
@@ -209,6 +239,24 @@
 				45FD5B4F21E0333900C247F0 /* TutorialViewController.swift */,
 			);
 			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		452AD7EF21EFAB01007F11E2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				452AD7F021EFAB13007F11E2 /* TextUtils.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		452AD7F221EFB814007F11E2 /* Verify Phone Number */ = {
+			isa = PBXGroup;
+			children = (
+				452AD7F321EFB839007F11E2 /* VerifyPhoneNumberViewController.swift */,
+				45A6D7A421EFD782007A6F42 /* VerifyPhone.swift */,
+				45A6D7A621EFD8A7007A6F42 /* VerifyPhoneNumberPresenterImpl.swift */,
+			);
+			path = "Verify Phone Number";
 			sourceTree = "<group>";
 		};
 		459DEBB421DFB415009F0BE0 /* Application */ = {
@@ -247,6 +295,7 @@
 				45B7A43121DEC295005A1124 /* Assets.xcassets */,
 				45AD3A3721E3E56600198D6F /* FlagKit.xcassets */,
 				45BBF07921E2DBFD0042EC5D /* Flags.xcassets */,
+				452AD7F521EFBBAB007F11E2 /* Icons.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -261,6 +310,54 @@
 				45BBF07721E2CDAE0042EC5D /* Onboarding.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		45A6D7A821EFE1CC007A6F42 /* Existing Account */ = {
+			isa = PBXGroup;
+			children = (
+				45A6D7AA21EFE20E007A6F42 /* ExistingAccountViewController.swift */,
+			);
+			path = "Existing Account";
+			sourceTree = "<group>";
+		};
+		45A6D7A921EFE1E5007A6F42 /* Recovery Phrase */ = {
+			isa = PBXGroup;
+			children = (
+				45A6D7AC21EFE220007A6F42 /* RecoveryPhraseViewController.swift */,
+			);
+			path = "Recovery Phrase";
+			sourceTree = "<group>";
+		};
+		45A6D7AE21EFE22C007A6F42 /* Verify Recovery Phrase */ = {
+			isa = PBXGroup;
+			children = (
+				45A6D7AF21EFE242007A6F42 /* VerifyRecoveryPhraseViewController.swift */,
+			);
+			path = "Verify Recovery Phrase";
+			sourceTree = "<group>";
+		};
+		45A6D7B121EFE288007A6F42 /* Choose Password */ = {
+			isa = PBXGroup;
+			children = (
+				45A6D7B221EFE298007A6F42 /* ChoosePasswordViewController.swift */,
+			);
+			path = "Choose Password";
+			sourceTree = "<group>";
+		};
+		45A6D7B421EFE2ED007A6F42 /* User Profile */ = {
+			isa = PBXGroup;
+			children = (
+				45A6D7B521EFE2FF007A6F42 /* OnboardingUserProfileViewController.swift */,
+			);
+			path = "User Profile";
+			sourceTree = "<group>";
+		};
+		45A6D7B721F01DDE007A6F42 /* Restore Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				45A6D7B821F01DF7007A6F42 /* RestoreWalletViewController.swift */,
+			);
+			path = "Restore Wallet";
 			sourceTree = "<group>";
 		};
 		45AD3A2421E33F9B00198D6F /* Enter Phone Number */ = {
@@ -289,6 +386,10 @@
 			children = (
 				45BBF07521E2C29D0042EC5D /* Country.swift */,
 				45AD3A3121E3444900198D6F /* PhoneVerificationRequest.swift */,
+				45AD3A4F21E7308800198D6F /* PhoneVerificationResponse.swift */,
+				45AD3A5121E730EC00198D6F /* PhoneVerificationConfirmation.swift */,
+				45AD3A5321E731B100198D6F /* Authorization.swift */,
+				45AD3A5C21E73EEC00198D6F /* PendingSignup.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -310,8 +411,18 @@
 				45AD3A3521E3DCD400198D6F /* UITextFieldExtension.swift */,
 				45AD3A4521E71B6000198D6F /* UIViewExtension.swift */,
 				45AD3A4721E71D2D00198D6F /* UIColorExtension.swift */,
+				45AD3A5621E7375900198D6F /* DateFormatterExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		45AD3A5521E731E100198D6F /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				45AD3A5821E73D7500198D6F /* User.swift */,
+				45AD3A5A21E73E0200198D6F /* UserPhotos.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 		45B7A41A21DEC293005A1124 = {
@@ -321,8 +432,8 @@
 				45B7A43E21DEC295005A1124 /* KasakasaTests */,
 				45B7A44921DEC295005A1124 /* KasakasaUITests */,
 				45B7A42421DEC293005A1124 /* Products */,
-				07C13E62D82E42FD76F86AE5 /* Pods */,
-				3CF08B60A192843763B6C888 /* Frameworks */,
+				BCD637CE6D797AC8324EF6DC /* Pods */,
+				8CDDF1A7BAF9DD15EC5E65BA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -377,6 +488,7 @@
 		45BBF05521E1C42D0042EC5D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				45AD3A5521E731E100198D6F /* Database */,
 				45AD3A3021E3440A00198D6F /* Networking */,
 				45BBF06021E1C8BA0042EC5D /* General */,
 				45BBF05B21E1C83E0042EC5D /* Errors */,
@@ -403,6 +515,7 @@
 			isa = PBXGroup;
 			children = (
 				45BBF06121E1C8C90042EC5D /* Json.swift */,
+				45AD3A5E21E7440400198D6F /* DictionaryEncodable.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -428,6 +541,7 @@
 			children = (
 				45FD5B5321E0688E00C247F0 /* config.local.json */,
 				45FD5B5521E069A600C247F0 /* config.dev.json */,
+				45AD3A4D21E72CAD00198D6F /* config.prod.json */,
 			);
 			path = "Config files";
 			sourceTree = "<group>";
@@ -435,6 +549,7 @@
 		45FD5B5721E06B3300C247F0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				452AD7EF21EFAB01007F11E2 /* Utilities */,
 				45AD3A3421E3DCAA00198D6F /* Extensions */,
 				45BBF05621E1C43C0042EC5D /* Database */,
 				45FD5B5821E06B4600C247F0 /* Networking */,
@@ -453,6 +568,35 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		8CDDF1A7BAF9DD15EC5E65BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED5FA10BA8F1816EDA46952B /* Pods_Kasakasa.framework */,
+				64C1F411CBAB9DA207033196 /* Pods_KasakasaTests.framework */,
+				4294AC8A23AC5001206D179D /* Pods_KasakasaUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BCD637CE6D797AC8324EF6DC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				80BB20FB1BD2793A79682353 /* Pods-Kasakasa.debug.xcconfig */,
+				66CE91E446407E27A30B1A18 /* Pods-Kasakasa.local.xcconfig */,
+				E632409FE437217F5D86E092 /* Pods-Kasakasa.dev.xcconfig */,
+				CDDE4411DA422C48C9E293AE /* Pods-Kasakasa.release.xcconfig */,
+				5B822B6A0B8CF57EDF8796E3 /* Pods-KasakasaTests.debug.xcconfig */,
+				9F11CB047134BD6DA539ABBC /* Pods-KasakasaTests.local.xcconfig */,
+				3C93976B3D352ECDF6EE0E05 /* Pods-KasakasaTests.dev.xcconfig */,
+				43FEF94EE03D10C56C32CBF2 /* Pods-KasakasaTests.release.xcconfig */,
+				0CE4858EE3673508D37A0CA7 /* Pods-KasakasaUITests.debug.xcconfig */,
+				A1B4F9D7FE168D9F05D47CD2 /* Pods-KasakasaUITests.local.xcconfig */,
+				4BB4EA9BF6C53D08F857D53C /* Pods-KasakasaUITests.dev.xcconfig */,
+				16F5D9A5D9BDF5820E80BB19 /* Pods-KasakasaUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -460,11 +604,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45B7A44F21DEC295005A1124 /* Build configuration list for PBXNativeTarget "Kasakasa" */;
 			buildPhases = (
-				14E892E004F6036FD78E405A /* [CP] Check Pods Manifest.lock */,
+				FEA1074F8D4200A5670C4ECD /* [CP] Check Pods Manifest.lock */,
 				45B7A41F21DEC293005A1124 /* Sources */,
 				45B7A42021DEC293005A1124 /* Frameworks */,
 				45B7A42121DEC293005A1124 /* Resources */,
-				499ECE5659562335612FAE5E /* [CP] Embed Pods Frameworks */,
+				0922C7889A7788E1024186D3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -479,7 +623,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45B7A45221DEC295005A1124 /* Build configuration list for PBXNativeTarget "KasakasaTests" */;
 			buildPhases = (
-				D379D9C9AFF6EFB7CF48DA55 /* [CP] Check Pods Manifest.lock */,
+				C6C150BFD076DE229FD3E588 /* [CP] Check Pods Manifest.lock */,
 				45B7A43721DEC295005A1124 /* Sources */,
 				45B7A43821DEC295005A1124 /* Frameworks */,
 				45B7A43921DEC295005A1124 /* Resources */,
@@ -498,7 +642,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45B7A45521DEC295005A1124 /* Build configuration list for PBXNativeTarget "KasakasaUITests" */;
 			buildPhases = (
-				1354E4462CD5FFE7B11D42E1 /* [CP] Check Pods Manifest.lock */,
+				5107D660C8D77AEE4B43E0D5 /* [CP] Check Pods Manifest.lock */,
 				45B7A44221DEC295005A1124 /* Sources */,
 				45B7A44321DEC295005A1124 /* Frameworks */,
 				45B7A44421DEC295005A1124 /* Resources */,
@@ -561,7 +705,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45AD3A4E21E72CAD00198D6F /* config.prod.json in Resources */,
 				45AD3A3E21E42C4C00198D6F /* CountryTableViewCell.xib in Resources */,
+				452AD7F621EFBBAB007F11E2 /* Icons.xcassets in Resources */,
 				459DEBBC21DFB84E009F0BE0 /* MainApp.storyboard in Resources */,
 				45B7A43521DEC295005A1124 /* LaunchScreen.storyboard in Resources */,
 				45FD5B5421E0688E00C247F0 /* config.local.json in Resources */,
@@ -593,7 +739,57 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1354E4462CD5FFE7B11D42E1 /* [CP] Check Pods Manifest.lock */ = {
+		0922C7889A7788E1024186D3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Kasakasa/Pods-Kasakasa-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
+				"${BUILT_PRODUCTS_DIR}/GRDB.swift/GRDB.framework",
+				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework",
+				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
+				"${BUILT_PRODUCTS_DIR}/keccak.c/keccak.framework",
+				"${BUILT_PRODUCTS_DIR}/scrypt.c/scrypt.framework",
+				"${BUILT_PRODUCTS_DIR}/secp256k1.c/secp256k1.framework",
+				"${BUILT_PRODUCTS_DIR}/web3swift/web3swift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigInt.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCode.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/keccak.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/scrypt.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/secp256k1.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/web3swift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kasakasa/Pods-Kasakasa-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5107D660C8D77AEE4B43E0D5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -615,77 +811,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		14E892E004F6036FD78E405A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Kasakasa-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		499ECE5659562335612FAE5E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Kasakasa/Pods-Kasakasa-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
-				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
-				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework",
-				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
-				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
-				"${BUILT_PRODUCTS_DIR}/keccak.c/keccak.framework",
-				"${BUILT_PRODUCTS_DIR}/scrypt.c/scrypt.framework",
-				"${BUILT_PRODUCTS_DIR}/secp256k1.c/secp256k1.framework",
-				"${BUILT_PRODUCTS_DIR}/web3swift/web3swift.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigInt.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCode.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/keccak.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/scrypt.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/secp256k1.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/web3swift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kasakasa/Pods-Kasakasa-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D379D9C9AFF6EFB7CF48DA55 /* [CP] Check Pods Manifest.lock */ = {
+		C6C150BFD076DE229FD3E588 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -707,6 +833,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FEA1074F8D4200A5670C4ECD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kasakasa-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -714,37 +862,55 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45A6D7A521EFD782007A6F42 /* VerifyPhone.swift in Sources */,
 				45AD3A4621E71B6000198D6F /* UIViewExtension.swift in Sources */,
 				45BBF05821E1C46B0042EC5D /* NetworkService.swift in Sources */,
+				452AD7F121EFAB13007F11E2 /* TextUtils.swift in Sources */,
+				45AD3A5721E7375900198D6F /* DateFormatterExtension.swift in Sources */,
 				45AD3A2D21E3411300198D6F /* BasePresenter.swift in Sources */,
 				45129C5B21DFC59C00F585FA /* IntroPageViewController.swift in Sources */,
 				45FD5B5021E0333900C247F0 /* TutorialViewController.swift in Sources */,
 				45AD3A2621E33FBC00198D6F /* EnterPhoneNumberViewController.swift in Sources */,
 				45AD3A4021E5635100198D6F /* BaseViewController.swift in Sources */,
 				45AD3A4421E5862200198D6F /* InsetTextField.swift in Sources */,
+				45AD3A5B21E73E0200198D6F /* UserPhotos.swift in Sources */,
 				45B7A42921DEC293005A1124 /* RootViewController.swift in Sources */,
 				45AD3A3221E3444900198D6F /* PhoneVerificationRequest.swift in Sources */,
 				45B7A42D21DEC293005A1124 /* ModelController.swift in Sources */,
+				45A6D7B021EFE242007A6F42 /* VerifyRecoveryPhraseViewController.swift in Sources */,
+				45A6D7B321EFE298007A6F42 /* ChoosePasswordViewController.swift in Sources */,
 				45AD3A3D21E42C4C00198D6F /* CountryTableViewCell.swift in Sources */,
+				45A6D7B921F01DF7007A6F42 /* RestoreWalletViewController.swift in Sources */,
 				45FD5B5A21E06BEF00C247F0 /* TipNetworkRequest.swift in Sources */,
+				45A6D7AB21EFE20E007A6F42 /* ExistingAccountViewController.swift in Sources */,
 				45AD3A2821E3405E00198D6F /* EnterPhoneNumberPresenterImpl.swift in Sources */,
 				45AD3A2F21E3412B00198D6F /* BaseView.swift in Sources */,
 				45AD3A3621E3DCD400198D6F /* UITextFieldExtension.swift in Sources */,
 				45B7A42B21DEC293005A1124 /* DataViewController.swift in Sources */,
 				45AD3A4821E71D2D00198D6F /* UIColorExtension.swift in Sources */,
 				45AD3A4C21E71EA300198D6F /* ColoredButton.swift in Sources */,
+				45AD3A5421E731B100198D6F /* Authorization.swift in Sources */,
 				45BBF06221E1C8C90042EC5D /* Json.swift in Sources */,
+				45A6D7A721EFD8A7007A6F42 /* VerifyPhoneNumberPresenterImpl.swift in Sources */,
+				45AD3A5021E7308800198D6F /* PhoneVerificationResponse.swift in Sources */,
+				45AD3A5921E73D7500198D6F /* User.swift in Sources */,
 				45AD3A3A21E42B8500198D6F /* SelectCountryViewController.swift in Sources */,
 				45AD3A2A21E3409900198D6F /* EnterPhoneNumber.swift in Sources */,
 				45BBF05F21E1C86C0042EC5D /* AppErrors.swift in Sources */,
 				45BBF07621E2C29D0042EC5D /* Country.swift in Sources */,
 				45AD3A4221E5673C00198D6F /* ModalViewController.swift in Sources */,
+				45A6D7B621EFE2FF007A6F42 /* OnboardingUserProfileViewController.swift in Sources */,
+				45AD3A5221E730EC00198D6F /* PhoneVerificationConfirmation.swift in Sources */,
+				45AD3A5F21E7440400198D6F /* DictionaryEncodable.swift in Sources */,
 				459DEBC221DFBCDE009F0BE0 /* AppConfig.swift in Sources */,
 				45BBF06421E1D2D50042EC5D /* StringExtension.swift in Sources */,
+				452AD7F421EFB839007F11E2 /* VerifyPhoneNumberViewController.swift in Sources */,
 				459DEBC021DFBCBB009F0BE0 /* AppStyle.swift in Sources */,
 				45B7A42721DEC293005A1124 /* AppDelegate.swift in Sources */,
 				45BBF05A21E1C48A0042EC5D /* TipApiService.swift in Sources */,
+				45AD3A5D21E73EEC00198D6F /* PendingSignup.swift in Sources */,
 				459DEBBE21DFBCAA009F0BE0 /* AppConstants.swift in Sources */,
+				45A6D7AD21EFE220007A6F42 /* RecoveryPhraseViewController.swift in Sources */,
 				45BBF07121E1E0C20042EC5D /* UrlRequestConvertible.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -922,7 +1088,7 @@
 		};
 		45B7A45021DEC295005A1124 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB9C2D3AA918F72EC9903CAE /* Pods-Kasakasa.debug.xcconfig */;
+			baseConfigurationReference = 80BB20FB1BD2793A79682353 /* Pods-Kasakasa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -942,7 +1108,7 @@
 		};
 		45B7A45121DEC295005A1124 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2BE48006DBE2F72B09F393EF /* Pods-Kasakasa.release.xcconfig */;
+			baseConfigurationReference = CDDE4411DA422C48C9E293AE /* Pods-Kasakasa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -962,7 +1128,7 @@
 		};
 		45B7A45321DEC295005A1124 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCC148DACD9F1BE537B940E0 /* Pods-KasakasaTests.debug.xcconfig */;
+			baseConfigurationReference = 5B822B6A0B8CF57EDF8796E3 /* Pods-KasakasaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -983,7 +1149,7 @@
 		};
 		45B7A45421DEC295005A1124 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2DFC66DB9636E4E7A2CBEE15 /* Pods-KasakasaTests.release.xcconfig */;
+			baseConfigurationReference = 43FEF94EE03D10C56C32CBF2 /* Pods-KasakasaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1004,7 +1170,7 @@
 		};
 		45B7A45621DEC295005A1124 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E56289B5654C2A629070D370 /* Pods-KasakasaUITests.debug.xcconfig */;
+			baseConfigurationReference = 0CE4858EE3673508D37A0CA7 /* Pods-KasakasaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1024,7 +1190,7 @@
 		};
 		45B7A45721DEC295005A1124 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1419431964EA23390FB4E73 /* Pods-KasakasaUITests.release.xcconfig */;
+			baseConfigurationReference = 16F5D9A5D9BDF5820E80BB19 /* Pods-KasakasaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1106,7 +1272,7 @@
 		};
 		45BBF06921E1DC400042EC5D /* Local */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB9C2D3AA918F72EC9903CAE /* Pods-Kasakasa.debug.xcconfig */;
+			baseConfigurationReference = 66CE91E446407E27A30B1A18 /* Pods-Kasakasa.local.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1126,7 +1292,7 @@
 		};
 		45BBF06A21E1DC400042EC5D /* Local */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCC148DACD9F1BE537B940E0 /* Pods-KasakasaTests.debug.xcconfig */;
+			baseConfigurationReference = 9F11CB047134BD6DA539ABBC /* Pods-KasakasaTests.local.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1147,7 +1313,7 @@
 		};
 		45BBF06B21E1DC400042EC5D /* Local */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E56289B5654C2A629070D370 /* Pods-KasakasaUITests.debug.xcconfig */;
+			baseConfigurationReference = A1B4F9D7FE168D9F05D47CD2 /* Pods-KasakasaUITests.local.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1229,7 +1395,7 @@
 		};
 		45BBF06D21E1DC480042EC5D /* Dev */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB9C2D3AA918F72EC9903CAE /* Pods-Kasakasa.debug.xcconfig */;
+			baseConfigurationReference = E632409FE437217F5D86E092 /* Pods-Kasakasa.dev.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1249,7 +1415,7 @@
 		};
 		45BBF06E21E1DC480042EC5D /* Dev */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCC148DACD9F1BE537B940E0 /* Pods-KasakasaTests.debug.xcconfig */;
+			baseConfigurationReference = 3C93976B3D352ECDF6EE0E05 /* Pods-KasakasaTests.dev.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1270,7 +1436,7 @@
 		};
 		45BBF06F21E1DC480042EC5D /* Dev */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E56289B5654C2A629070D370 /* Pods-KasakasaUITests.debug.xcconfig */;
+			baseConfigurationReference = 4BB4EA9BF6C53D08F857D53C /* Pods-KasakasaUITests.dev.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

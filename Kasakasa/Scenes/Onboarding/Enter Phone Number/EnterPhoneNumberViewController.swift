@@ -14,6 +14,8 @@ class EnterPhoneNumberViewController: BaseViewController {
     private var presenter: EnterPhoneNumberPresenterImpl? = nil
     private var countries: [Country]?
     private var countriesFetched = false
+    private var selectedCountry: Country?
+
     @IBOutlet private var selectCountryTextField: UITextField!
     @IBOutlet private var enterPhoneTextField: UITextField!
     @IBOutlet private var flagImageView: UIImageView!
@@ -21,6 +23,8 @@ class EnterPhoneNumberViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.navigationItem.title = "Enter your phone number".localized
         self.endEditingOnTap = true
         
         presenter = EnterPhoneNumberPresenterImpl()
@@ -55,6 +59,14 @@ class EnterPhoneNumberViewController: BaseViewController {
     }
     
     @IBAction func checkPhoneNumber(_ sender: Any) {
+        if let countryCode = selectedCountry?.countryCode,
+            let phoneNumber = enterPhoneTextField.text {
+            let verificationRequest = PhoneVerificationRequest(countryCode: String(countryCode), phoneNumber: phoneNumber, verificationCode: nil)
+            showActivityIndicator()
+            presenter?.validatePhoneNumber(verificationRequest)
+        } else {
+            self.onInvalidPhoneNumberError()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -65,6 +77,14 @@ class EnterPhoneNumberViewController: BaseViewController {
             destinationViewController.countries = countries
             destinationViewController.delegate = self
         }
+        if segue.identifier == "ShowVerifyPhoneNumber", let destinationViewController = segue.destination as? VerifyPhoneNumberViewController {
+            destinationViewController.phoneNumber = ""
+            destinationViewController.countryCode = ""
+        }
+    }
+
+    private func navigateToVerifyPhoneNumber() {
+        self.performSegue(withIdentifier: "ShowVerifyPhoneNumber", sender: self)
     }
 
     deinit {
@@ -75,17 +95,27 @@ class EnterPhoneNumberViewController: BaseViewController {
 
 // Mark: EnterPhoneNumberView
 extension EnterPhoneNumberViewController: EnterPhoneNumberView {
+    func onVerificationError(err: AppErrors) {
+        showActivityIndicator(false)
+        showError(err)
+    }
+
 
     func onEmptyPhoneNumberError() {
+        showActivityIndicator(false)
+        let error = AppErrors.genericError(message: "Phone number can not be empty. Please enter a valid phone number".localized)
+        showError(error)
     }
 
     func onInvalidPhoneNumberError() {
+        showActivityIndicator(false)
+        let error = AppErrors.genericError(message: "The phone number entered is invalid. Please enter a valid phone number".localized)
+        showError(error)
     }
 
-    func onVerificationError() {
-    }
-
-    func onVerificationSuccess() {
+    func onVerificationStartedSuccessfully() {
+        showActivityIndicator(false)
+        self.navigateToVerifyPhoneNumber()
     }
 
     func onCountryListFetched(_ countries: [Country]) {
@@ -114,6 +144,8 @@ extension EnterPhoneNumberViewController: UITextFieldDelegate {
 
 extension EnterPhoneNumberViewController: SelectCountryDelegate {
     func countrySelected(_ country: Country) {
+        selectedCountry = country
+
         flagImageView.isHidden = false
         flagImageView.image = country.flagImage
         selectCountryTextField.text = country.niceName

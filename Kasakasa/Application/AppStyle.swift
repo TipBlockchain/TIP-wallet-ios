@@ -9,6 +9,7 @@
 import UIKit
 
 class AppStyle {
+    
     init() {
         let navigationBarAppearance = UINavigationBar.appearance()
         navigationBarAppearance.tintColor = UIColor.white

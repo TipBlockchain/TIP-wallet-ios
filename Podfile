@@ -6,7 +6,7 @@ target 'Kasakasa' do
   use_frameworks!
 
   # Pods for Kasakasa
-  pod 'GRDB.swift', '~> 3.6.2'
+  pod 'GRDB.swift', '~> 3.6.1'
   pod 'Nuke', '~> 7.5.2'
   pod 'QRCode', '~> 2.0'
   pod 'QRCodeReader.swift', '~> 9.0.1'

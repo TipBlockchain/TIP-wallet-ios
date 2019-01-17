@@ -8,6 +8,8 @@
 
 import UIKit
 
+typealias VoidCompletionBlock = (() -> Void)
+
 class BaseViewController: UIViewController {
 
     private var activityIndicator: UIActivityIndicatorView?
@@ -36,13 +38,18 @@ class BaseViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    func showError(_ error: AppErrors) {
-        self.showError(withTitle: "Sorry".localized, message: error.message ?? "")
+    func showError(_ error: AppErrors, completion: VoidCompletionBlock? = nil) {
+        self.showError(withTitle: "Sorry".localized, message: error.message ?? "", completion: completion)
     }
 
-    func showError(withTitle title: String, message: String, style: UIAlertController.Style = .alert) {
+    func showError(withTitle title: String, message: String, style: UIAlertController.Style = .alert, completion: VoidCompletionBlock? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: style)
-        alert.show(self, sender: self)
+        let okAction = UIAlertAction(title: "Okay".localized, style: .cancel) { (action) in
+            alert.dismiss(animated: true, completion: completion)
+        }
+        alert.addAction(okAction)
+//        alert.show(self, sender: self)
+        self.present(alert, animated: true, completion: nil)
     }
 
     @objc func dismissKeyboard(_ force: Bool = true) {

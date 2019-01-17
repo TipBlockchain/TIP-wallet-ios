@@ -179,7 +179,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="GIH-pj-e5Q"/>
                     <connections>
-                        <segue destination="Lh2-Om-KHM" kind="show" id="6Kh-Xl-IX5"/>
+                        <segue destination="Lh2-Om-KHM" kind="show" identifier="ShowViewController" id="6Kh-Xl-IX5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LP0-mi-eoR" userLabel="First Responder" sceneMemberID="firstResponder"/>
