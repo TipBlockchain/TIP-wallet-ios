@@ -10,6 +10,8 @@ import UIKit
 
 class ExistingAccountViewController: BaseViewController {
 
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 

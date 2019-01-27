@@ -15,6 +15,8 @@ class EnterPhoneNumberViewController: BaseViewController {
     private var countries: [Country]?
     private var countriesFetched = false
     private var selectedCountry: Country?
+    private var countryCode: String? = ""
+    private var phoneNumber: String? = ""
 
     @IBOutlet private var selectCountryTextField: UITextField!
     @IBOutlet private var enterPhoneTextField: UITextField!
@@ -26,7 +28,6 @@ class EnterPhoneNumberViewController: BaseViewController {
 
         self.navigationItem.title = "Enter your phone number".localized
         self.endEditingOnTap = true
-        
         presenter = EnterPhoneNumberPresenterImpl()
         presenter?.attach(self)
         presenter?.fetchCountryList()
@@ -39,7 +40,6 @@ class EnterPhoneNumberViewController: BaseViewController {
         selectCountryTextField.delegate = self
         enterPhoneTextField.leftView = countryCodeLabel
         enterPhoneTextField.leftViewMode = .always
-
     }
 
     private func getCountries() {
@@ -61,6 +61,8 @@ class EnterPhoneNumberViewController: BaseViewController {
     @IBAction func checkPhoneNumber(_ sender: Any) {
         if let countryCode = selectedCountry?.countryCode,
             let phoneNumber = enterPhoneTextField.text {
+            self.phoneNumber = phoneNumber
+            self.countryCode = String(countryCode)
             let verificationRequest = PhoneVerificationRequest(countryCode: String(countryCode), phoneNumber: phoneNumber, verificationCode: nil)
             showActivityIndicator()
             presenter?.validatePhoneNumber(verificationRequest)
@@ -78,8 +80,8 @@ class EnterPhoneNumberViewController: BaseViewController {
             destinationViewController.delegate = self
         }
         if segue.identifier == "ShowVerifyPhoneNumber", let destinationViewController = segue.destination as? VerifyPhoneNumberViewController {
-            destinationViewController.phoneNumber = ""
-            destinationViewController.countryCode = ""
+            destinationViewController.phoneNumber = phoneNumber
+            destinationViewController.countryCode = countryCode
         }
     }
 
@@ -139,6 +141,11 @@ extension EnterPhoneNumberViewController: EnterPhoneNumberView {
 extension EnterPhoneNumberViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         return textField != self.selectCountryTextField
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
     }
 }
 

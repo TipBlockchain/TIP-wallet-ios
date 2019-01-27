@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfg-pV-7lM">
-                                <rect key="frame" x="20" y="160" width="335" height="66"/>
+                                <rect key="frame" x="20" y="150" width="335" height="66"/>
                                 <string key="text">Tip is a social platform. 
 Your phone number helps you connect with other people on the network</string>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
@@ -39,7 +39,7 @@ Your phone number helps you connect with other people on the network</string>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jBp-Xt-sKg">
-                                <rect key="frame" x="20" y="266" width="335" height="80"/>
+                                <rect key="frame" x="20" y="256" width="335" height="80"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qbD-HV-Zxu">
                                         <rect key="frame" x="10" y="0.0" width="315" height="30"/>
@@ -81,6 +81,9 @@ Your phone number helps you connect with other people on the network</string>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" smartDashesType="yes" textContentType="tel"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Kyx-96-4ba" id="ARm-ky-5cd"/>
+                                                </connections>
                                             </textField>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEa-Fv-8lg">
                                                 <rect key="frame" x="8" y="5" width="27" height="20"/>
@@ -131,7 +134,7 @@ Your phone number helps you connect with other people on the network</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bn5-Vr-Oll" firstAttribute="leading" secondItem="Ugi-Uz-kfl" secondAttribute="leading" id="5sg-23-gGG"/>
-                            <constraint firstItem="jfg-pV-7lM" firstAttribute="top" secondItem="tcA-RN-4t6" secondAttribute="bottom" constant="40" id="B0M-WX-8Ji"/>
+                            <constraint firstItem="jfg-pV-7lM" firstAttribute="top" secondItem="tcA-RN-4t6" secondAttribute="bottom" constant="30" id="B0M-WX-8Ji"/>
                             <constraint firstItem="IjG-YN-zh7" firstAttribute="leading" secondItem="Ugi-Uz-kfl" secondAttribute="leading" constant="30" id="Gx5-d7-AIX"/>
                             <constraint firstItem="bn5-Vr-Oll" firstAttribute="bottom" secondItem="Ugi-Uz-kfl" secondAttribute="bottom" id="IFk-GH-uLF"/>
                             <constraint firstItem="5gn-mY-uRY" firstAttribute="leading" secondItem="Ugi-Uz-kfl" secondAttribute="leading" id="Ij1-0K-wdK"/>
@@ -186,7 +189,7 @@ Your phone number helps you connect with other people on the network</string>
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verification code should arrive within a few seconds." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTw-s0-owG">
-                                        <rect key="frame" x="20" y="160" width="335" height="44"/>
+                                        <rect key="frame" x="20" y="150" width="335" height="44"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -199,13 +202,16 @@ Your phone number helps you connect with other people on the network</string>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bpu-sM-KeI">
-                                        <rect key="frame" x="20" y="244" width="335" height="30"/>
+                                        <rect key="frame" x="20" y="234" width="335" height="30"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your phone verification code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xeg-G7-eaW">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="i9a-iH-jU4" id="Cni-gO-m2P"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -250,7 +256,7 @@ Your phone number helps you connect with other people on the network</string>
                                     <constraint firstItem="Z8f-mN-jJa" firstAttribute="top" secondItem="SL9-uP-NN4" secondAttribute="top" id="adP-RU-JSt"/>
                                     <constraint firstAttribute="bottom" secondItem="xYU-Uc-fF3" secondAttribute="bottom" id="bT8-aV-kTs"/>
                                     <constraint firstItem="Zs2-yX-Yli" firstAttribute="leading" secondItem="fuA-vG-BI5" secondAttribute="leading" constant="30" id="eYV-Om-xmH"/>
-                                    <constraint firstItem="DTw-s0-owG" firstAttribute="top" secondItem="4lx-gs-4MN" secondAttribute="bottom" constant="40" id="mCY-po-zFP"/>
+                                    <constraint firstItem="DTw-s0-owG" firstAttribute="top" secondItem="4lx-gs-4MN" secondAttribute="bottom" constant="30" id="mCY-po-zFP"/>
                                     <constraint firstAttribute="trailing" secondItem="xYU-Uc-fF3" secondAttribute="trailing" id="oyb-F1-wFc"/>
                                     <constraint firstItem="xYU-Uc-fF3" firstAttribute="leading" secondItem="fuA-vG-BI5" secondAttribute="leading" id="s8z-s1-019"/>
                                     <constraint firstItem="Bpu-sM-KeI" firstAttribute="top" secondItem="DTw-s0-owG" secondAttribute="bottom" constant="40" id="tjT-q8-SqM"/>
@@ -270,6 +276,7 @@ Your phone number helps you connect with other people on the network</string>
                         <viewLayoutGuide key="safeArea" id="x5T-9f-RTc"/>
                     </view>
                     <connections>
+                        <outlet property="verificationCodeField" destination="xeg-G7-eaW" id="zcT-Iu-qLj"/>
                         <segue destination="aY9-oi-ayk" kind="show" identifier="ShowRecoveryPhrase" id="qDb-sP-VVL"/>
                         <segue destination="Ebu-36-f65" kind="show" identifier="ShowExistingAccount" id="VuI-ED-Ep7"/>
                     </connections>
@@ -296,14 +303,14 @@ Your phone number helps you connect with other people on the network</string>
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-user_credentials" translatesAutoresizingMaskIntoConstraints="NO" id="vtz-9d-ffp">
-                                        <rect key="frame" x="157.5" y="60" width="60" height="60"/>
+                                        <rect key="frame" x="157.5" y="40" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="SGw-gd-JaO"/>
                                             <constraint firstAttribute="width" constant="60" id="uoT-tQ-XTV"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write down your recovery phrase somewhere safe. If you lose this phrase you will lose access to your account." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OD8-Nq-6eJ">
-                                        <rect key="frame" x="20" y="160" width="335" height="66"/>
+                                        <rect key="frame" x="20" y="130" width="335" height="66"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -323,7 +330,7 @@ Your phone number helps you connect with other people on the network</string>
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="one two three four five six seven eight nine ten eleven twelve" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mQ8-lL-e1K">
-                                        <rect key="frame" x="20" y="246" width="335" height="123.5"/>
+                                        <rect key="frame" x="20" y="216" width="335" height="123.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -337,11 +344,14 @@ Your phone number helps you connect with other people on the network</string>
                                         </userDefinedRuntimeAttributes>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I16-pi-0TC">
-                                        <rect key="frame" x="20" y="389.5" width="125" height="30"/>
+                                        <rect key="frame" x="20" y="359.5" width="125" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <state key="normal" title="Copy to clipboard">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="copyToClipboardTapped:" destination="aY9-oi-ayk" eventType="touchUpInside" id="fG7-IC-Bzq"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wVj-bT-O0b">
                                         <rect key="frame" x="20" y="519" width="335" height="44"/>
@@ -358,6 +368,9 @@ Your phone number helps you connect with other people on the network</string>
                                                     <constraint firstAttribute="height" constant="31" id="2cl-G3-GQa"/>
                                                     <constraint firstAttribute="width" constant="49" id="7XE-Lh-HuX"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="recoverySavedSwitched:" destination="aY9-oi-ayk" eventType="valueChanged" id="aVI-fg-XFM"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -389,13 +402,13 @@ Your phone number helps you connect with other people on the network</string>
                                     <constraint firstAttribute="bottom" secondItem="xiJ-aL-Mmt" secondAttribute="bottom" id="V5c-Q1-jCS"/>
                                     <constraint firstItem="I16-pi-0TC" firstAttribute="top" secondItem="mQ8-lL-e1K" secondAttribute="bottom" constant="20" id="Zfg-v3-npB"/>
                                     <constraint firstAttribute="trailing" secondItem="wVj-bT-O0b" secondAttribute="trailing" constant="20" id="bSW-3n-Sh0"/>
-                                    <constraint firstItem="OD8-Nq-6eJ" firstAttribute="top" secondItem="vtz-9d-ffp" secondAttribute="bottom" constant="40" id="cBS-I5-qm5"/>
+                                    <constraint firstItem="OD8-Nq-6eJ" firstAttribute="top" secondItem="vtz-9d-ffp" secondAttribute="bottom" constant="30" id="cBS-I5-qm5"/>
                                     <constraint firstAttribute="trailing" secondItem="xiJ-aL-Mmt" secondAttribute="trailing" id="eeV-QX-8Of"/>
                                     <constraint firstItem="xiJ-aL-Mmt" firstAttribute="top" secondItem="QTE-VF-DRH" secondAttribute="top" id="hbW-os-MxX"/>
                                     <constraint firstItem="mQ8-lL-e1K" firstAttribute="top" secondItem="OD8-Nq-6eJ" secondAttribute="bottom" constant="20" id="idk-OF-vkf"/>
                                     <constraint firstAttribute="bottom" secondItem="JV4-xl-vK8" secondAttribute="bottom" constant="50" id="m8e-qj-2AG"/>
                                     <constraint firstAttribute="trailing" secondItem="OD8-Nq-6eJ" secondAttribute="trailing" constant="20" id="q7S-hk-hmz"/>
-                                    <constraint firstItem="vtz-9d-ffp" firstAttribute="top" secondItem="QTE-VF-DRH" secondAttribute="top" constant="60" id="r5b-0j-xdy"/>
+                                    <constraint firstItem="vtz-9d-ffp" firstAttribute="top" secondItem="QTE-VF-DRH" secondAttribute="top" constant="40" id="r5b-0j-xdy"/>
                                     <constraint firstAttribute="bottom" secondItem="5kv-0V-H0P" secondAttribute="bottom" id="tf4-fb-usG"/>
                                     <constraint firstItem="mQ8-lL-e1K" firstAttribute="leading" secondItem="QTE-VF-DRH" secondAttribute="leading" constant="20" id="uqo-pO-uZt"/>
                                     <constraint firstItem="JV4-xl-vK8" firstAttribute="top" secondItem="wVj-bT-O0b" secondAttribute="bottom" constant="20" id="wVA-dA-p7s"/>
@@ -412,6 +425,7 @@ Your phone number helps you connect with other people on the network</string>
                         <viewLayoutGuide key="safeArea" id="WHq-Ox-24q"/>
                     </view>
                     <connections>
+                        <outlet property="recoveryPhraseTextView" destination="mQ8-lL-e1K" id="Qor-R2-FU2"/>
                         <segue destination="xJM-7A-ydJ" kind="show" identifier="ShowVerifyRecoveryPhrase" id="cPD-Kn-O7B"/>
                     </connections>
                 </viewController>
@@ -440,14 +454,14 @@ Your phone number helps you connect with other people on the network</string>
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-user_credentials" translatesAutoresizingMaskIntoConstraints="NO" id="KSa-sB-jMY">
-                                                <rect key="frame" x="157.5" y="60" width="60" height="60"/>
+                                                <rect key="frame" x="157.5" y="40" width="60" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="Dfp-bh-DKO"/>
                                                     <constraint firstAttribute="height" constant="60" id="EK4-Rk-b5x"/>
                                                 </constraints>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="one two three ______ five six seven eight nine ten ______ twelve" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LQE-ly-QFG">
-                                                <rect key="frame" x="20" y="224" width="335" height="123.5"/>
+                                                <rect key="frame" x="20" y="194" width="335" height="123.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -459,24 +473,33 @@ Your phone number helps you connect with other people on the network</string>
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="xJM-7A-ydJ" id="FFh-AT-P4W"/>
+                                                </connections>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the missing words from the recovery phrase below." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOQ-PY-9qe">
-                                                <rect key="frame" x="20" y="160" width="335" height="44"/>
+                                                <rect key="frame" x="20" y="130" width="335" height="44"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter first missing word" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a9Z-tE-hg1">
-                                                <rect key="frame" x="20" y="367.5" width="335" height="30"/>
+                                                <rect key="frame" x="20" y="337.5" width="335" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="xJM-7A-ydJ" id="TA9-Hc-cqu"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter second missing word" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3f7-1p-dp8">
-                                                <rect key="frame" x="20" y="405.5" width="335" height="30"/>
+                                                <rect key="frame" x="20" y="375.5" width="335" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="xJM-7A-ydJ" id="L1Q-OF-hyc"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -487,14 +510,14 @@ Your phone number helps you connect with other people on the network</string>
                                             <constraint firstItem="LQE-ly-QFG" firstAttribute="top" secondItem="rOQ-PY-9qe" secondAttribute="bottom" constant="20" id="Ssy-zs-jxB"/>
                                             <constraint firstItem="KSa-sB-jMY" firstAttribute="centerX" secondItem="9xm-I7-Nls" secondAttribute="centerX" id="VNg-7w-IYc"/>
                                             <constraint firstAttribute="trailing" secondItem="rOQ-PY-9qe" secondAttribute="trailing" constant="20" id="b5F-eL-htO"/>
-                                            <constraint firstItem="KSa-sB-jMY" firstAttribute="top" secondItem="9xm-I7-Nls" secondAttribute="top" constant="60" id="klh-Pl-3XB"/>
+                                            <constraint firstItem="KSa-sB-jMY" firstAttribute="top" secondItem="9xm-I7-Nls" secondAttribute="top" constant="40" id="klh-Pl-3XB"/>
                                             <constraint firstAttribute="trailing" secondItem="a9Z-tE-hg1" secondAttribute="trailing" constant="20" id="mr8-6G-bCh"/>
                                             <constraint firstItem="LQE-ly-QFG" firstAttribute="leading" secondItem="9xm-I7-Nls" secondAttribute="leading" constant="20" id="tpG-rb-UWD"/>
                                             <constraint firstItem="a9Z-tE-hg1" firstAttribute="leading" secondItem="9xm-I7-Nls" secondAttribute="leading" constant="20" id="uMI-2b-xKi"/>
                                             <constraint firstItem="3f7-1p-dp8" firstAttribute="top" secondItem="a9Z-tE-hg1" secondAttribute="bottom" constant="8" id="vfQ-vJ-Zgw"/>
                                             <constraint firstItem="rOQ-PY-9qe" firstAttribute="leading" secondItem="9xm-I7-Nls" secondAttribute="leading" constant="20" id="xJK-MQ-xbN"/>
                                             <constraint firstItem="3f7-1p-dp8" firstAttribute="leading" secondItem="9xm-I7-Nls" secondAttribute="leading" constant="20" id="xTZ-D8-7ib"/>
-                                            <constraint firstItem="rOQ-PY-9qe" firstAttribute="top" secondItem="KSa-sB-jMY" secondAttribute="bottom" constant="40" id="zvz-IS-otu"/>
+                                            <constraint firstItem="rOQ-PY-9qe" firstAttribute="top" secondItem="KSa-sB-jMY" secondAttribute="bottom" constant="30" id="zvz-IS-otu"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gs8-6h-e46" customClass="ColoredButton" customModule="Kasakasa" customModuleProvider="target">
@@ -544,6 +567,9 @@ Your phone number helps you connect with other people on the network</string>
                         <viewLayoutGuide key="safeArea" id="Cl8-oS-mEU"/>
                     </view>
                     <connections>
+                        <outlet property="firstWordTextField" destination="a9Z-tE-hg1" id="N8U-FH-0lr"/>
+                        <outlet property="recoveryPhraseTextView" destination="LQE-ly-QFG" id="U7u-cn-wGe"/>
+                        <outlet property="secondWordTextField" destination="3f7-1p-dp8" id="MDI-6J-unK"/>
                         <segue destination="oSL-0d-zYA" kind="show" identifier="ShowChoosePassword" id="fzg-ht-6sU"/>
                     </connections>
                 </viewController>
@@ -585,29 +611,35 @@ Your phone number helps you connect with other people on the network</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-password" translatesAutoresizingMaskIntoConstraints="NO" id="cmQ-nb-bS7">
-                                        <rect key="frame" x="157.5" y="60" width="60" height="60"/>
+                                        <rect key="frame" x="157.5" y="40" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="2KU-1E-Fru"/>
                                             <constraint firstAttribute="width" constant="60" id="7zd-J1-fHg"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a secure password.  This password will be used to secure your account. You will need  it to send transactions." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atj-gu-iiV">
-                                        <rect key="frame" x="20" y="150" width="335" height="66"/>
+                                        <rect key="frame" x="20" y="130" width="335" height="66"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dMV-v0-6fz">
-                                        <rect key="frame" x="20" y="256" width="335" height="30"/>
+                                        <rect key="frame" x="20" y="236" width="335" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="oSL-0d-zYA" id="0E0-tr-fdK"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kWb-Ca-kwz">
-                                        <rect key="frame" x="20" y="294" width="335" height="30"/>
+                                        <rect key="frame" x="20" y="274" width="335" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="oSL-0d-zYA" id="jDe-d1-M09"/>
+                                        </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lQf-Un-ZeV">
                                         <rect key="frame" x="28" y="519" width="319" height="44"/>
@@ -624,6 +656,9 @@ Your phone number helps you connect with other people on the network</string>
                                                     <constraint firstAttribute="height" constant="31" id="MWK-LT-57w"/>
                                                     <constraint firstAttribute="width" constant="47" id="kuI-mf-GEV"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="passwordSavedSwitched:" destination="oSL-0d-zYA" eventType="valueChanged" id="c60-jv-flA"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -658,7 +693,7 @@ Your phone number helps you connect with other people on the network</string>
                                     <constraint firstItem="JzZ-gU-8Wx" firstAttribute="top" secondItem="lQf-Un-ZeV" secondAttribute="bottom" constant="20" id="3to-jJ-4f0"/>
                                     <constraint firstAttribute="trailing" secondItem="JzZ-gU-8Wx" secondAttribute="trailing" constant="20" id="4ag-1p-4uN"/>
                                     <constraint firstItem="atj-gu-iiV" firstAttribute="leading" secondItem="lRW-EO-sQ4" secondAttribute="leading" constant="20" id="BWb-BK-HkH"/>
-                                    <constraint firstItem="cmQ-nb-bS7" firstAttribute="top" secondItem="lRW-EO-sQ4" secondAttribute="top" constant="60" id="Ck8-Vp-Ct9"/>
+                                    <constraint firstItem="cmQ-nb-bS7" firstAttribute="top" secondItem="lRW-EO-sQ4" secondAttribute="top" constant="40" id="Ck8-Vp-Ct9"/>
                                     <constraint firstAttribute="trailing" secondItem="atj-gu-iiV" secondAttribute="trailing" constant="20" id="DUX-VB-eNs"/>
                                     <constraint firstItem="lQf-Un-ZeV" firstAttribute="centerX" secondItem="JzZ-gU-8Wx" secondAttribute="centerX" id="F20-vU-FdQ"/>
                                     <constraint firstItem="atj-gu-iiV" firstAttribute="top" secondItem="cmQ-nb-bS7" secondAttribute="bottom" constant="30" id="Mlm-kC-0ca"/>
@@ -688,6 +723,8 @@ Your phone number helps you connect with other people on the network</string>
                         <viewLayoutGuide key="safeArea" id="sQ3-H9-vgB"/>
                     </view>
                     <connections>
+                        <outlet property="confirmPasswordField" destination="kWb-Ca-kwz" id="hE8-B9-VYp"/>
+                        <outlet property="passwordField" destination="dMV-v0-6fz" id="nYG-62-FJi"/>
                         <segue destination="lGg-1I-xcH" kind="show" identifier="ShowOnboardingUserProfile" id="ELS-mP-iBI"/>
                     </connections>
                 </viewController>
@@ -716,25 +753,31 @@ Your phone number helps you connect with other people on the network</string>
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill out your profile so friends and family can find you easily." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQA-St-Dt2">
-                                                <rect key="frame" x="20" y="60" width="335" height="44"/>
+                                                <rect key="frame" x="20" y="40" width="335" height="44"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your firstname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="52I-ln-7Qa">
-                                                <rect key="frame" x="20" y="324" width="335" height="30"/>
+                                                <rect key="frame" x="20" y="304" width="335" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="lGg-1I-xcH" id="mLO-Ww-Hau"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose your username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KjL-hh-xqd">
-                                                <rect key="frame" x="20" y="400" width="335" height="30"/>
+                                                <rect key="frame" x="20" y="380" width="335" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="lGg-1I-xcH" id="0zk-AP-sCU"/>
+                                                </connections>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="btm-pc-Oq4" userLabel="AvatarContainer">
-                                                <rect key="frame" x="112.5" y="134" width="150" height="150"/>
+                                                <rect key="frame" x="112.5" y="114" width="150" height="150"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_profile_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="qgC-90-BQg">
                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
@@ -767,6 +810,9 @@ Your phone number helps you connect with other people on the network</string>
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="cameraButtonTapped:" destination="lGg-1I-xcH" eventType="touchUpInside" id="40G-SM-tny"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -780,10 +826,13 @@ Your phone number helps you connect with other people on the network</string>
                                                 </constraints>
                                             </view>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your lastname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qnN-XX-cmx">
-                                                <rect key="frame" x="20" y="362" width="335" height="30"/>
+                                                <rect key="frame" x="20" y="342" width="335" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="lGg-1I-xcH" id="3gp-cg-se6"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -797,7 +846,7 @@ Your phone number helps you connect with other people on the network</string>
                                             <constraint firstAttribute="trailing" secondItem="qnN-XX-cmx" secondAttribute="trailing" constant="20" id="QBr-Hq-gam"/>
                                             <constraint firstAttribute="trailing" secondItem="jQA-St-Dt2" secondAttribute="trailing" constant="20" id="UG7-R1-FqN"/>
                                             <constraint firstAttribute="trailing" secondItem="52I-ln-7Qa" secondAttribute="trailing" constant="20" id="WCE-YA-c9c"/>
-                                            <constraint firstItem="jQA-St-Dt2" firstAttribute="top" secondItem="PYU-wS-tyS" secondAttribute="top" constant="60" id="bcg-BC-sdK"/>
+                                            <constraint firstItem="jQA-St-Dt2" firstAttribute="top" secondItem="PYU-wS-tyS" secondAttribute="top" constant="40" id="bcg-BC-sdK"/>
                                             <constraint firstItem="KjL-hh-xqd" firstAttribute="top" secondItem="qnN-XX-cmx" secondAttribute="bottom" constant="8" id="eff-Ml-Yfs"/>
                                             <constraint firstItem="qnN-XX-cmx" firstAttribute="top" secondItem="52I-ln-7Qa" secondAttribute="bottom" constant="8" id="gLw-GY-NqX"/>
                                             <constraint firstItem="jQA-St-Dt2" firstAttribute="leading" secondItem="PYU-wS-tyS" secondAttribute="leading" constant="20" id="mGU-cO-Kgp"/>
@@ -851,6 +900,12 @@ Your phone number helps you connect with other people on the network</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kec-1d-Nh6"/>
                     </view>
+                    <connections>
+                        <outlet property="firstnameField" destination="52I-ln-7Qa" id="u03-1g-X4j"/>
+                        <outlet property="lastnameField" destination="qnN-XX-cmx" id="I6d-KN-w3D"/>
+                        <outlet property="profileImageView" destination="qgC-90-BQg" id="3MY-Oh-giQ"/>
+                        <outlet property="usernameField" destination="KjL-hh-xqd" id="Kh6-kS-B2x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CN1-0a-CMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -880,10 +935,10 @@ Your phone number helps you connect with other people on the network</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W2g-4c-XNl">
-                                        <rect key="frame" x="127.5" y="60" width="120" height="120"/>
+                                        <rect key="frame" x="117.5" y="40" width="140" height="140"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="120" id="MXL-Vb-Iza"/>
-                                            <constraint firstAttribute="height" constant="120" id="sx0-Dp-gWh"/>
+                                            <constraint firstAttribute="width" constant="140" id="MXL-Vb-Iza"/>
+                                            <constraint firstAttribute="height" constant="140" id="sx0-Dp-gWh"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -935,7 +990,7 @@ Your phone number helps you connect with other people on the network</string>
                                     <constraint firstItem="sKk-fx-NJJ" firstAttribute="leading" secondItem="y3G-UB-hzi" secondAttribute="leading" constant="20" id="pa6-CT-FI5"/>
                                     <constraint firstItem="UQy-aR-Nhb" firstAttribute="leading" secondItem="y3G-UB-hzi" secondAttribute="leading" id="tcl-i8-AVi"/>
                                     <constraint firstItem="W2g-4c-XNl" firstAttribute="centerX" secondItem="y3G-UB-hzi" secondAttribute="centerX" id="u8q-5p-TxO"/>
-                                    <constraint firstItem="W2g-4c-XNl" firstAttribute="top" secondItem="y3G-UB-hzi" secondAttribute="top" constant="60" id="wlf-El-0RN"/>
+                                    <constraint firstItem="W2g-4c-XNl" firstAttribute="top" secondItem="y3G-UB-hzi" secondAttribute="top" constant="40" id="wlf-El-0RN"/>
                                     <constraint firstAttribute="trailing" secondItem="iXm-de-vPg" secondAttribute="trailing" id="wpz-4K-q01"/>
                                 </constraints>
                             </view>
@@ -950,6 +1005,8 @@ Your phone number helps you connect with other people on the network</string>
                         <viewLayoutGuide key="safeArea" id="bdx-W1-aEL"/>
                     </view>
                     <connections>
+                        <outlet property="profileImageView" destination="W2g-4c-XNl" id="yci-Sm-5vk"/>
+                        <outlet property="usernameLabel" destination="oaa-8O-Oht" id="AjB-Ze-R6a"/>
                         <segue destination="Ifx-ms-Lqc" kind="show" identifier="ShowRestoreWallet" id="LVE-N5-ZlM"/>
                     </connections>
                 </viewController>
@@ -975,14 +1032,14 @@ Your phone number helps you connect with other people on the network</string>
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-user_credentials" translatesAutoresizingMaskIntoConstraints="NO" id="b3v-lS-yQe">
-                                        <rect key="frame" x="157.5" y="60" width="60" height="60"/>
+                                        <rect key="frame" x="157.5" y="40" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="DZV-qI-3Mg"/>
                                             <constraint firstAttribute="width" constant="60" id="GTR-IH-dum"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your recovery phrase below. This must be the same phrase used to create your account." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcP-Hn-yVe">
-                                        <rect key="frame" x="20" y="160" width="335" height="66"/>
+                                        <rect key="frame" x="20" y="130" width="335" height="66"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -999,10 +1056,11 @@ Your phone number helps you connect with other people on the network</string>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="checkPhoneNumber:" destination="Kyx-96-4ba" eventType="touchUpInside" id="Mqu-EV-y28"/>
+                                            <action selector="nextButtonTapped:" destination="Ifx-ms-Lqc" eventType="touchUpInside" id="CjL-nW-15z"/>
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="one two three four five six seven eight nine ten eleven twelve" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aCk-5S-H19">
-                                        <rect key="frame" x="20" y="318" width="335" height="123.5"/>
+                                        <rect key="frame" x="20" y="278" width="335" height="123.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1014,9 +1072,12 @@ Your phone number helps you connect with other people on the network</string>
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="Ifx-ms-Lqc" id="Jxh-ok-Uz9"/>
+                                        </connections>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This phrase is used to restore your account on your device. It is never sent over the network." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDP-7Y-dWV">
-                                        <rect key="frame" x="20" y="234" width="335" height="44"/>
+                                        <rect key="frame" x="20" y="204" width="335" height="44"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1030,9 +1091,9 @@ Your phone number helps you connect with other people on the network</string>
                                     <constraint firstAttribute="trailing" secondItem="jcP-Hn-yVe" secondAttribute="trailing" constant="20" id="CTz-GP-sba"/>
                                     <constraint firstItem="nDP-7Y-dWV" firstAttribute="top" secondItem="jcP-Hn-yVe" secondAttribute="bottom" constant="8" id="DSV-eZ-Ii2"/>
                                     <constraint firstAttribute="bottom" secondItem="uD6-NE-17K" secondAttribute="bottom" constant="50" id="E9m-wp-Hg9"/>
-                                    <constraint firstItem="aCk-5S-H19" firstAttribute="top" secondItem="nDP-7Y-dWV" secondAttribute="bottom" constant="40" id="EB4-pT-jwj"/>
+                                    <constraint firstItem="aCk-5S-H19" firstAttribute="top" secondItem="nDP-7Y-dWV" secondAttribute="bottom" constant="30" id="EB4-pT-jwj"/>
                                     <constraint firstItem="uD6-NE-17K" firstAttribute="leading" secondItem="UUO-DP-a4k" secondAttribute="leading" constant="20" id="F5I-SH-qVY"/>
-                                    <constraint firstItem="jcP-Hn-yVe" firstAttribute="top" secondItem="b3v-lS-yQe" secondAttribute="bottom" constant="40" id="IEm-lO-9t7"/>
+                                    <constraint firstItem="jcP-Hn-yVe" firstAttribute="top" secondItem="b3v-lS-yQe" secondAttribute="bottom" constant="30" id="IEm-lO-9t7"/>
                                     <constraint firstItem="uD6-NE-17K" firstAttribute="centerX" secondItem="UUO-DP-a4k" secondAttribute="centerX" id="JFs-qT-Ori"/>
                                     <constraint firstItem="b3v-lS-yQe" firstAttribute="centerX" secondItem="UUO-DP-a4k" secondAttribute="centerX" id="Lhv-KF-K31"/>
                                     <constraint firstAttribute="trailing" secondItem="uD6-NE-17K" secondAttribute="trailing" constant="20" id="P80-mR-XB3"/>
@@ -1045,7 +1106,7 @@ Your phone number helps you connect with other people on the network</string>
                                     <constraint firstItem="vGP-lv-wfe" firstAttribute="leading" secondItem="UUO-DP-a4k" secondAttribute="leading" id="fme-F2-NKR"/>
                                     <constraint firstAttribute="bottom" secondItem="vGP-lv-wfe" secondAttribute="bottom" id="m23-hV-DIF"/>
                                     <constraint firstAttribute="trailing" secondItem="aCk-5S-H19" secondAttribute="trailing" constant="20" id="m2y-4e-ptY"/>
-                                    <constraint firstItem="b3v-lS-yQe" firstAttribute="top" secondItem="UUO-DP-a4k" secondAttribute="top" constant="60" id="opz-u3-6j7"/>
+                                    <constraint firstItem="b3v-lS-yQe" firstAttribute="top" secondItem="UUO-DP-a4k" secondAttribute="top" constant="40" id="opz-u3-6j7"/>
                                     <constraint firstAttribute="trailing" secondItem="vGP-lv-wfe" secondAttribute="trailing" id="qIb-z5-SR7"/>
                                     <constraint firstItem="TpO-lM-gdI" firstAttribute="leading" secondItem="UUO-DP-a4k" secondAttribute="leading" id="u7b-Hf-6D6"/>
                                 </constraints>
@@ -1061,6 +1122,7 @@ Your phone number helps you connect with other people on the network</string>
                         <viewLayoutGuide key="safeArea" id="tfz-r3-Cgz"/>
                     </view>
                     <connections>
+                        <outlet property="recoveryPhraseTextView" destination="aCk-5S-H19" id="6M8-Vl-Kc6"/>
                         <segue destination="oSL-0d-zYA" kind="show" identifier="ShowEnterPassword" id="xxk-wj-SsD"/>
                     </connections>
                 </viewController>

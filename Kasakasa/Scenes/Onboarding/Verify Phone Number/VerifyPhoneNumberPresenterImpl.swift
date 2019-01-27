@@ -15,9 +15,25 @@ class VerifyPhoneNumberPresenterImpl: VerifyPhoneNumberPresenter {
 
     func verifyPhoneNumber(_ verificationRequest: PhoneVerificationRequest) {
         apiService.checkPhoneVerification(verificationRequest: verificationRequest) { (response, error) in
-            if let error = error {
-                self.view?.onPhoneVerificationError(error: error)
-            } else if let response = response {
+            DispatchQueue.main.async {
+                if let error = error {
+                    self.view?.onPhoneVerificationError(error)
+                } else if let response = response {
+                    if let existingAccount = response.account, let authorization = response.authorization {
+                        AuthorizationRepository.shared.currentAuthorization = authorization
+                        UserRepository.shared.currentUser = existingAccount
+                        self.view?.onPhoneVerified(withExistingAccount: existingAccount)
+                    } else if let demoAccount = response.demoAccount, let pendingSignup = response.pendingSignup {
+                        UserRepository.shared.demoAccountUser = demoAccount
+                        self.view?.onPhoneVerified(withPendingSignup: pendingSignup, andDemoAccount: demoAccount)
+                    } else if let pendingSignup = response.pendingSignup {
+                        self.view?.onPhoneVerified(withPendingSignup: pendingSignup)
+                    } else {
+                        self.view?.onUnknownError(AppErrors.unknowkError)
+                    }
+                } else {
+                    self.view?.onUnknownError(AppErrors.unknowkError)
+                }
             }
         }
     }

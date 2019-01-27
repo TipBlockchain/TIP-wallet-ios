@@ -9,11 +9,11 @@
 import Foundation
 
 protocol VerifyPhoneNumberView: BaseView {
-    func onPhoneVerifiedWithExistingAccount(_: User)
-    func onPhoneVerifiedWithPendingAccount(_: User)
-    func onPhoneVerifiedWithPendingAndDemoAccount(pendingAccount: User, demoAccount: User)
-    func onUnknownError(err: AppErrors)
-    func onPhoneVerificationError(error: AppErrors)
+    func onPhoneVerified(withExistingAccount account: User)
+    func onPhoneVerified(withPendingSignup signup: PendingSignup)
+    func onPhoneVerified(withPendingSignup signup: PendingSignup, andDemoAccount account: User)
+    func onUnknownError(_ error: AppErrors)
+    func onPhoneVerificationError(_ error: AppErrors)
 }
 
 protocol VerifyPhoneNumberPresenter: BasePresenter {

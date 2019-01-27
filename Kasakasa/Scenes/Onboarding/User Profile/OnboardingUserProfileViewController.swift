@@ -10,9 +10,14 @@ import UIKit
 
 class OnboardingUserProfileViewController: BaseViewController {
 
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var firstnameField: UITextField!
+    @IBOutlet weak var lastnameField: UITextField!
+    @IBOutlet weak var usernameField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.endEditingOnTap = true
         self.navigationItem.title = "My Profile".localized
         // Do any additional setup after loading the view.
     }
@@ -21,6 +26,8 @@ class OnboardingUserProfileViewController: BaseViewController {
         debugPrint("Continue button tapped")
     }
 
+    @IBAction func cameraButtonTapped(_ sender: Any) {
+    }
     /*
     // MARK: - Navigation
 
@@ -31,4 +38,11 @@ class OnboardingUserProfileViewController: BaseViewController {
     }
     */
 
+}
+
+extension OnboardingUserProfileViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
 }

@@ -107,11 +107,14 @@ extension SelectCountryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let country = self.country(atIndexPath: indexPath) {
             self.selectedCountry = country
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
+                self.close()
+            }
         }
     }
 }
 
-// Note: bMust use class not struct. Structs will not work for building sectioned list due to pass by value
+// Note: Must use class not struct. Structs will not work for building sectioned list due to pass by value
 class NamedSection<T> {
     var key: String
     var items: [T]

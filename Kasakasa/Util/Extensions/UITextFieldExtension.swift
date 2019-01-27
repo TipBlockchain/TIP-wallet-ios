@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UITextField {
-    
+
     enum Direction {
         case Left
         case Right

@@ -12,4 +12,36 @@ extension String {
     var localized: String {
         return NSLocalizedString(self, comment: "")
     }
+
+    func localized(withParams arguments: [CVarArg]) -> String {
+        let localizedString = self.localized
+        return String(format: localizedString, arguments: arguments)
+    }
+
+    func containsSpace() -> Bool {
+        return self.contains(" ")
+    }
+
+    static func isUsername(_ str: String?) -> Bool {
+        let regex = "\\w{2,32}"
+        return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: self)
+    }
+
+    static func isEthAddress(_ str: String?) -> Bool {
+        return false
+    }
+
+    func isNumeric() -> Bool {
+        let regex = "^[0-9]+(\\.)?[0-9]*$"
+        return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: self)
+    }
+
+    func isValidPassword() -> Bool {
+        let passwordRegex = "\\w{8,255}"
+        return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: self)
+    }
+
+    private static func isChecksumAddress(str: String) -> Bool {
+        return false
+    }
 }

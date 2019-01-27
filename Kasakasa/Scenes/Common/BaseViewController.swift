@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 typealias VoidCompletionBlock = (() -> Void)
 
@@ -34,7 +35,6 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -42,13 +42,22 @@ class BaseViewController: UIViewController {
         self.showError(withTitle: "Sorry".localized, message: error.message ?? "", completion: completion)
     }
 
+
     func showError(withTitle title: String, message: String, style: UIAlertController.Style = .alert, completion: VoidCompletionBlock? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: style)
         let okAction = UIAlertAction(title: "Okay".localized, style: .cancel) { (action) in
             alert.dismiss(animated: true, completion: completion)
         }
         alert.addAction(okAction)
-//        alert.show(self, sender: self)
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    func showAlert(withTitle title: String, message: String, style: UIAlertController.Style = .alert, completion: VoidCompletionBlock? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
+        let okAction = UIAlertAction(title: "Okay".localized, style: .cancel) { (action) in
+            alert.dismiss(animated: true, completion: completion)
+        }
+        alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
     }
 
@@ -70,5 +79,9 @@ class BaseViewController: UIViewController {
         } else {
             activityIndicator?.stopAnimating()
         }
+    }
+
+    func showToast(_ message: String) {
+        self.view.makeToast(message)
     }
 }

@@ -20,4 +20,12 @@ extension DateFormatter {
         formatter.locale = Locale(identifier: "en_US_POSIX")
         return formatter
     }()
+
+    static let keystoreFileDateFormatter: DateFormatter = {
+        let dateFormat = "YYYY-MM-dd'T'hh-mm-ss'Z'"
+        let formatter = DateFormatter()
+        formatter.dateFormat = dateFormat
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        return formatter
+    }()
 }

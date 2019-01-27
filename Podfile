@@ -6,6 +6,9 @@ target 'Kasakasa' do
   use_frameworks!
 
   # Pods for Kasakasa
+
+  pod 'BigInt', '~>3.1.0'
+  pod 'CropViewController', '~>2.4.0'
   pod 'GRDB.swift', '~> 3.6.1'
   pod 'Nuke', '~> 7.5.2'
   pod 'QRCode', '~> 2.0'
@@ -13,6 +16,7 @@ target 'Kasakasa' do
   pod 'RxCocoa', '~> 4.4.0'
   pod 'RxSwift', '~> 4.4.0'
   pod 'SQLite.swift', '~> 0.11.5'
+  pod 'Toast-Swift', '~> 4.0.0'
   pod 'web3swift', :git => 'https://github.com/TipBlockchain/web3swift.git'
 
   target 'KasakasaTests' do

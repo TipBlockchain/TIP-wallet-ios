@@ -27,7 +27,13 @@ class TextUtils {
     }
 
     static func isNumeric(_ str: String) -> Bool {
-        return false
+        let regex = "^[0-9]+(\\.)?[0-9]*$"
+        return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: str)
+    }
+
+    static func isValidPassword(_ str: String) -> Bool {
+        let passwordRegex = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*()\\-_=+{}|?>.<,:;~`’]{8,}$"
+        return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: str)
     }
 
     private static func isChecksumAddress(str: String) -> Bool {

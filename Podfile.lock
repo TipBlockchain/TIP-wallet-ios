@@ -26,6 +26,7 @@ PODS:
   - SQLite.swift (0.11.5):
     - SQLite.swift/standard (= 0.11.5)
   - SQLite.swift/standard (0.11.5)
+  - Toast-Swift (4.0.1)
   - web3swift (2.1.3):
     - BigInt (~> 3.1)
     - keccak.c (~> 0.1)
@@ -34,6 +35,7 @@ PODS:
     - secp256k1.c (~> 0.1)
 
 DEPENDENCIES:
+  - BigInt (~> 3.1.0)
   - GRDB.swift (~> 3.6.1)
   - Nuke (~> 7.5.2)
   - QRCode (~> 2.0)
@@ -41,6 +43,7 @@ DEPENDENCIES:
   - RxCocoa (~> 4.4.0)
   - RxSwift (~> 4.4.0)
   - SQLite.swift (~> 0.11.5)
+  - Toast-Swift (~> 4.0.0)
   - web3swift (from `https://github.com/TipBlockchain/web3swift.git`)
 
 SPEC REPOS:
@@ -59,6 +62,7 @@ SPEC REPOS:
     - secp256k1.c
     - SipHash
     - SQLite.swift
+    - Toast-Swift
 
 EXTERNAL SOURCES:
   web3swift:
@@ -84,8 +88,9 @@ SPEC CHECKSUMS:
   secp256k1.c: db47b726585d80f027423682eb369729e61b3b20
   SipHash: fad90a4683e420c52ef28063063dbbce248ea6d4
   SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
+  Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
   web3swift: 7a54c1e8a5c5b7619e7ab549e38ebffe888d1612
 
-PODFILE CHECKSUM: b9d161c51d7b4b07c8797780d546d66df5a24b2a
+PODFILE CHECKSUM: b8a133d39eaec7251536ab9430c7525445952909
 
 COCOAPODS: 1.5.3

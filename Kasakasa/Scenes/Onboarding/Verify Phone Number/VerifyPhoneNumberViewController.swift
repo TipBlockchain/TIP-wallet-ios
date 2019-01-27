@@ -21,6 +21,7 @@ class VerifyPhoneNumberViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.endEditingOnTap = true
         self.navigationItem.title = "Verify Phone Number".localized
         presenter = VerifyPhoneNumberPresenterImpl()
         presenter?.attach(self)
@@ -31,14 +32,11 @@ class VerifyPhoneNumberViewController: BaseViewController {
     }
 
     @IBAction func verifyButtonTapped(_ sender: Any) {
-        self.navigateToRecoveryPhrase()
-        return
-        
         guard let phoneNumber = phoneNumber, let countryCode = countryCode else {
             showNoPhoneNumberProvidedError()
             return
         }
-        guard let verificationCode = verificationCodeField.text else {
+        guard let verificationCode = verificationCodeField.text, !verificationCode.isEmpty else {
             showError(AppErrors.genericError(message: "Verification code must be provided".localized))
             return
         }
@@ -56,24 +54,48 @@ class VerifyPhoneNumberViewController: BaseViewController {
     private func navigateToRecoveryPhrase() {
         self.performSegue(withIdentifier: "ShowRecoveryPhrase", sender: self)
     }
+
+    private func navigateToExistingAccount() {
+        self.performSegue(withIdentifier: "ShowExistingAccount", sender: self)
+    }
     
 }
 
 extension VerifyPhoneNumberViewController: VerifyPhoneNumberView {
-    func onPhoneVerifiedWithExistingAccount(_: User) {
+    func onPhoneVerified(withExistingAccount account: User) {
+        showToast("Phone number verified".localized)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) {
+            self.navigateToExistingAccount()
+        }
     }
 
-    func onPhoneVerifiedWithPendingAccount(_: User) {
+    func onPhoneVerified(withPendingSignup signup: PendingSignup) {
+        showToast("Phone number verified".localized)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) {
+            self.navigateToRecoveryPhrase()
+        }
     }
 
-    func onPhoneVerifiedWithPendingAndDemoAccount(pendingAccount: User, demoAccount: User) {
+    func onPhoneVerified(withPendingSignup signup: PendingSignup, andDemoAccount account: User) {
+        showToast("Phone number verified".localized)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) {
+            self.navigateToExistingAccount()
+        }
     }
 
-    func onUnknownError(err: AppErrors) {
+    func onUnknownError(_ error: AppErrors) {
+        showError(error)
     }
 
-    func onPhoneVerificationError(error: AppErrors) {
+    func onPhoneVerificationError(_ error: AppErrors) {
+        showError(error)
     }
 
+}
 
+extension VerifyPhoneNumberViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
 }
