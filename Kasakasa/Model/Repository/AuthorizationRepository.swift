@@ -22,4 +22,20 @@ class AuthorizationRepository: NSObject {
             AppDefaults.sharedInstance.authorization = newValue
         }
     }
+
+    func getNewAuthorization(completion: @escaping (Authorization?, AppErrors?) -> Void) {
+        if let user = UserRepository.shared.currentUser {
+            let secureMessage = SecureMessage(message: "", address: user.address, username: user.username, signature: "")
+            TipApiService.sharedInstance.authorize(secureMessage) { (authorization, error) in
+                if let authorization = authorization {
+                    self.currentAuthorization = authorization
+                    completion(authorization, nil)
+                } else if let error = error {
+                    completion(nil, error)
+                } else {
+                    completion(nil, AppErrors.unknowkError)
+                }
+            }
+        }
+    }
 }

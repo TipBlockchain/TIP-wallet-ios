@@ -9,7 +9,7 @@
 import Foundation
 import BigInt
 
-struct Wallet: Codable {
+public struct Wallet: Codable {
     var address: String
     var filePath: String
     var created: Date

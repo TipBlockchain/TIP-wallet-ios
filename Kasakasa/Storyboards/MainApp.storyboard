@@ -62,7 +62,7 @@
             </objects>
             <point key="canvasLocation" x="-126" y="106"/>
         </scene>
-        <!--Account-->
+        <!--View Controller-->
         <scene sceneID="0YU-Nm-E9f">
             <objects>
                 <viewController id="j3G-Jh-gyA" sceneMemberID="viewController">
@@ -71,13 +71,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="AZm-2c-SKI">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shapes_background" translatesAutoresizingMaskIntoConstraints="NO" id="9rN-bd-JiI">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rzA-Oy-LMi">
-                                <rect key="frame" x="0.0" y="20" width="375" height="250"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="250"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="GAB-vo-H7j"/>
@@ -100,11 +100,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wKP-aU-bEO"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Account" id="v4q-EI-9BM"/>
+                    <navigationItem key="navigationItem" id="jW5-XL-TpI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CnE-Jb-NpD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-886" y="857"/>
+            <point key="canvasLocation" x="52" y="856.82158920539734"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="fBG-S1-Nr8">
@@ -122,7 +122,7 @@
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FqX-0h-u4W">
-                                <rect key="frame" x="0.0" y="56" width="375" height="562"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="611"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -179,7 +179,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="GIH-pj-e5Q"/>
                     <connections>
-                        <segue destination="Lh2-Om-KHM" kind="show" identifier="ShowViewController" id="6Kh-Xl-IX5"/>
+                        <segue destination="Lh2-Om-KHM" kind="presentation" identifier="ShowViewController" id="6Kh-Xl-IX5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LP0-mi-eoR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -194,11 +194,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.71372549019999998" green="0.16862745100000001" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="uA8-0b-4fv" kind="relationship" relationship="viewControllers" id="xNR-j4-N1s"/>
                         <segue destination="MRZ-sX-CHm" kind="relationship" relationship="viewControllers" id="GnS-xG-akh"/>
-                        <segue destination="j3G-Jh-gyA" kind="relationship" relationship="viewControllers" id="xv7-ep-cyR"/>
+                        <segue destination="fxQ-h4-7RR" kind="relationship" relationship="viewControllers" id="xv7-ep-cyR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rwM-Bo-uKt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -209,11 +210,12 @@
         <scene sceneID="lek-zM-hFO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uA8-0b-4fv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Contacts" id="ofd-rh-zlB"/>
+                    <tabBarItem key="tabBarItem" title="Contacts" image="icons8-contact_card" id="ofd-rh-zlB"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7SF-Ow-Ci1">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.71372549019999998" green="0.16862745100000001" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -228,11 +230,12 @@
         <scene sceneID="Odn-nc-C85">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MRZ-sX-CHm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Wallet" id="2cA-1W-hEL"/>
+                    <tabBarItem key="tabBarItem" title="Wallet" image="icons8-wallet_copy_2" id="2cA-1W-hEL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FlY-EI-qvT">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.67343860860000004" green="0.1672935784" blue="0.54986947770000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -243,9 +246,33 @@
             </objects>
             <point key="canvasLocation" x="-908" y="106"/>
         </scene>
+        <!--Account-->
+        <scene sceneID="LbB-lw-zmL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fxQ-h4-7RR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Account" selectedImage="icons8-guest_male" id="v4q-EI-9BM"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OZ5-kj-of7">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.67343860860000004" green="0.1672935784" blue="0.54986947770000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="j3G-Jh-gyA" kind="relationship" relationship="rootViewController" id="mi8-we-X3i"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sFO-bk-g3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-887.20000000000005" y="856.82158920539734"/>
+        </scene>
     </scenes>
     <resources>
         <image name="gradient" width="375" height="812"/>
+        <image name="icons8-contact_card" width="50" height="50"/>
+        <image name="icons8-guest_male" width="50" height="50"/>
+        <image name="icons8-wallet_copy_2" width="48" height="48"/>
         <image name="shapes_background" width="375" height="812"/>
     </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

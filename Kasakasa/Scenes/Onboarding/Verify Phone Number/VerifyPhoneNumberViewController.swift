@@ -15,6 +15,9 @@ class VerifyPhoneNumberViewController: BaseViewController {
     public var countryCode: String?
     public var phoneNumber: String?
 
+    private var demoAccount: User?
+    private var existingAccount: User?
+
     private var presenter: VerifyPhoneNumberPresenterImpl?
     @IBOutlet private var verificationCodeField: UITextField!
 
@@ -58,12 +61,20 @@ class VerifyPhoneNumberViewController: BaseViewController {
     private func navigateToExistingAccount() {
         self.performSegue(withIdentifier: "ShowExistingAccount", sender: self)
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowExistingAccount", let viewController = segue.destination as? ExistingAccountViewController {
+            viewController.existingUser = self.existingAccount
+            viewController.demoAccountUser = self.demoAccount
+        }
+    }
     
 }
 
 extension VerifyPhoneNumberViewController: VerifyPhoneNumberView {
     func onPhoneVerified(withExistingAccount account: User) {
         showToast("Phone number verified".localized)
+        self.existingAccount = account
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) {
             self.navigateToExistingAccount()
         }
@@ -78,6 +89,7 @@ extension VerifyPhoneNumberViewController: VerifyPhoneNumberView {
 
     func onPhoneVerified(withPendingSignup signup: PendingSignup, andDemoAccount account: User) {
         showToast("Phone number verified".localized)
+        self.demoAccount = account
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) {
             self.navigateToExistingAccount()
         }

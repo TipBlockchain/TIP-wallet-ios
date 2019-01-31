@@ -13,7 +13,7 @@ class WalletUtils: NSObject {
 
     static func generateBip39Wallet(fromSeedPhrase phrase: String, password: String) throws -> BIP32Keystore {
         let mnemonics = try Mnemonics(phrase)
-        let keystore = try BIP32Keystore(mnemonics: mnemonics, password: password)
+        let keystore = try BIP32Keystore(mnemonics: mnemonics, password: password, aesMode: "aes-128-ctr")
         return keystore
     }
 

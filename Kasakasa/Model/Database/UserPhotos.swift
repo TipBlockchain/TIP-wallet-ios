@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct UserPhotos: Codable {
+public struct UserPhotos: Codable {
     var original: String?
     var medium: String?
     var small: String?

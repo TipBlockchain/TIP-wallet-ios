@@ -15,14 +15,26 @@ class ChoosePasswordPresenter: BasePresenter {
     private var existingUser: User?
     private var walletRepository = WalletRepository.shared
 
-    func setExistingUser(_ user: User) {
+    func setExistingUser(_ user: User?) {
         existingUser = user
     }
 
     func generateWallet(fromSeedPhrase phrase: String, andPassword password: String) {
         do {
-            try walletRepository.newWallet(withPhrase: phrase, andPassword: password)
-            view?.onWalletCreated()
+            if let wallet = try walletRepository.newWallet(withPhrase: phrase, andPassword: password) {
+                if let existingUser = existingUser {
+                    if wallet.address != existingUser.address {
+                        walletRepository.delete(byAddress: wallet.address)
+                        view?.onWalletNotMatchingExistingError()
+                    } else {
+                        view?.onWalletRestored()
+                    }
+                } else {
+                    view?.onWalletCreated()
+                }
+            } else {
+                view?.onWalletCreationError(AppErrors.genericError(message: "An error occurred while creating your wallet".localized))
+            }
         } catch {
             let appError = AppErrors.error(error: error)
             view?.onWalletCreationError(appError)

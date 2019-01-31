@@ -6,7 +6,7 @@
 //  Copyright © 2019 Tip Blockchain. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum HTTPMethod: String {
     case GET
@@ -19,49 +19,112 @@ enum HTTPMethod: String {
 }
 
 enum TipNetworkRequest {
-    
+
+    private var multipartBoundary: String {
+        return "XXX"
+    }
+
+    //TODO: Implement secure authorization
+    case authorize(message: SecureMessage)
+
     case getCountries
     case getCountry(code: String)
     case startPhoneVerification(verification: PhoneVerificationRequest)
     case checkPhoneVerification(verification: PhoneVerificationRequest)
 
+    case checkUsername(_ username: String)
+    case createAccount(user: User, signupToken: String, claimDemoAccount: Bool)
+    case getMyAccount()
+    case uploadPhoto(photo: UIImage)
+
     var baseUrl: URL {
         return URL(string: AppConfig.tipApiBaseUrl)!
     }
 
+    var contentType: String {
+        switch self {
+        case .uploadPhoto:
+            return "multipart/form-data; boundary=\(multipartBoundary)"
+        default:
+            return "application/json"
+        }
+    }
+
     var method: HTTPMethod {
         switch self {
-        case .startPhoneVerification, .checkPhoneVerification:
+        case .authorize, .startPhoneVerification, .checkPhoneVerification, .createAccount, .uploadPhoto:
             return .POST
         default:
             return .GET
         }
     }
 
-    var headers: Json? {
+    var headers: [String: String] {
         switch self {
+        case .createAccount(_, let signupToken, let claimDemoAccount):
+            return ["X-Signup-Token": signupToken, "X-Claim-Demo-Account": String(claimDemoAccount)]
         default:
             return [:]
         }
     }
 
-    var body: Json? {
+    var jsonBody: Json? {
         switch self {
+        case .authorize(let message):
+            return message.dictionary()
         case .startPhoneVerification(let verification), .checkPhoneVerification(let verification):
             return verification.dictionary()
+        case .createAccount(let user, _, _):
+            return user.dictionary()
         default:
             return nil
         }
     }
 
+    var httpBody: Data? {
+        switch self {
+        case .authorize, .startPhoneVerification, .checkPhoneVerification, .createAccount:
+            if let jsonBody = self.jsonBody, let data = try? JSONSerialization.data(withJSONObject: jsonBody, options: .prettyPrinted) {
+                return data
+            }
+        case .uploadPhoto(let photo):
+            if let imageData = photo.jpegData(compressionQuality: 0.9) {
+                let multipartData = self.multipartFormData(data: imageData, boundary: multipartBoundary, fileName: "image")
+                return multipartData
+            }
+        default:
+            return nil
+        }
+        return nil
+    }
+
+    var queryParams: [String:String] {
+        switch self {
+        case .checkUsername(let username):
+            return ["username": username]
+        default:
+            return [:]
+        }
+    }
+
     var url: URL {
         switch self {
+        case .authorize:
+            return baseUrl.appendingPathComponent("/secure/authorize")
         case .getCountries:
             return baseUrl.appendingPathComponent("/countries")
         case .startPhoneVerification:
             return baseUrl.appendingPathComponent("/phones/verificationStart")
         case .checkPhoneVerification:
             return baseUrl.appendingPathComponent("/phones/verificationCheck")
+        case .checkUsername:
+            return baseUrl.appendingPathComponent("/accounts/check")
+        case .createAccount:
+            return baseUrl.appendingPathComponent("/secure/identity")
+        case .getMyAccount:
+            return baseUrl.appendingPathComponent("/accounts/my")
+        case .uploadPhoto:
+            return baseUrl.appendingPathComponent("/accounts/photos")
         default:
             return baseUrl.appendingPathComponent("/")
         }
@@ -69,18 +132,78 @@ enum TipNetworkRequest {
 }
 
 extension TipNetworkRequest: UrlRequestConvertible {
+
     func toUrlRequest() -> URLRequest {
         let url = self.url
-        let request = NSMutableURLRequest(url: url)
-        request.httpMethod = self.method.rawValue
 
-        if let jsonBody = self.body, let data = try? JSONSerialization.data(withJSONObject: jsonBody, options: .prettyPrinted) {
-//            let jsonString = jsonBody.JSONRe
-            request.httpBody = data
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
+        if !self.queryParams.isEmpty {
+            urlComponents!.queryItems = [URLQueryItem]()
+            for (key, value) in queryParams {
+                let queryItem = URLQueryItem(name: key, value: value)
+                urlComponents?.queryItems?.append(queryItem)
+            }
+            let escapedComponents = urlComponents?.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
+            urlComponents?.percentEncodedQuery = escapedComponents
+        }
+
+        let request = NSMutableURLRequest(url: urlComponents!.url!)
+        request.httpMethod = self.method.rawValue
+        if request.allHTTPHeaderFields == nil {
+            request.allHTTPHeaderFields = [:]
+        }
+        let headers = request.allHTTPHeaderFields?.merging(self.headers, uniquingKeysWith: { (first, _) -> String in
+            first
+        })
+        request.allHTTPHeaderFields = headers
+
+        if let httpBody = self.httpBody {
+            request.httpBody = httpBody
+            request.addValue(self.contentType, forHTTPHeaderField: "Content-Type")
             request.addValue("application/json", forHTTPHeaderField: "Accept")
         }
 
         return request as URLRequest
+    }
+
+    // 
+    private func multipartFormData(data: Data, boundary: String, fileName: String) -> Data {
+        var fullData = Data()
+
+        // 1 - Boundary should start with --
+        let lineOne = "--" + boundary + "\r\n"
+        fullData.append(lineOne.data(
+            using: String.Encoding.utf8,
+            allowLossyConversion: false)!)
+
+        // 2
+        let lineTwo = "Content-Disposition: form-data; name=\"image\"; filename=\"" + fileName + "\"\r\n"
+        NSLog(lineTwo)
+        fullData.append(lineTwo.data(
+            using: String.Encoding.utf8,
+            allowLossyConversion: false)!)
+
+        // 3
+        let lineThree = "Content-Type: image/jpg\r\n\r\n"
+        fullData.append(lineThree.data(
+            using: String.Encoding.utf8,
+            allowLossyConversion: false)!)
+
+        // 4
+        fullData.append(data as Data)
+
+        // 5
+        let lineFive = "\r\n"
+        fullData.append(lineFive.data(
+            using: String.Encoding.utf8,
+            allowLossyConversion: false)!)
+
+        // 6 - The end. Notice -- at the start and at the end
+        let lineSix = "--" + boundary + "--\r\n"
+        fullData.append(lineSix.data(
+            using: String.Encoding.utf8,
+            allowLossyConversion: false)!)
+
+        return fullData
     }
 }

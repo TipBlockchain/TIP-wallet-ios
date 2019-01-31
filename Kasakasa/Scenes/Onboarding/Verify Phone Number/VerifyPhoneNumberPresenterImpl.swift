@@ -27,6 +27,7 @@ class VerifyPhoneNumberPresenterImpl: VerifyPhoneNumberPresenter {
                         UserRepository.shared.demoAccountUser = demoAccount
                         self.view?.onPhoneVerified(withPendingSignup: pendingSignup, andDemoAccount: demoAccount)
                     } else if let pendingSignup = response.pendingSignup {
+                        AppDefaults.sharedInstance.pendingSignupToken = pendingSignup.token
                         self.view?.onPhoneVerified(withPendingSignup: pendingSignup)
                     } else {
                         self.view?.onUnknownError(AppErrors.unknowkError)

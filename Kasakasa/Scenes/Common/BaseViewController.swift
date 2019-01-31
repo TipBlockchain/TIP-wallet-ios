@@ -38,8 +38,13 @@ class BaseViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+   func navigateToMainApp() {
+        let mainAppRootVC = UIStoryboard(name: "MainApp", bundle: nil).instantiateInitialViewController()
+        UIApplication.shared.keyWindow?.rootViewController = mainAppRootVC
+    }
+
     func showError(_ error: AppErrors, completion: VoidCompletionBlock? = nil) {
-        self.showError(withTitle: "Sorry".localized, message: error.message ?? "", completion: completion)
+        self.showError(withTitle: "Sorry".localized, message: error.message, completion: completion)
     }
 
 
@@ -55,7 +60,8 @@ class BaseViewController: UIViewController {
     func showAlert(withTitle title: String, message: String, style: UIAlertController.Style = .alert, completion: VoidCompletionBlock? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: style)
         let okAction = UIAlertAction(title: "Okay".localized, style: .cancel) { (action) in
-            alert.dismiss(animated: true, completion: completion)
+            completion?()
+//            alert.dismiss(animated: true, completion: completion)
         }
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)

@@ -13,9 +13,6 @@ target 'Kasakasa' do
   pod 'Nuke', '~> 7.5.2'
   pod 'QRCode', '~> 2.0'
   pod 'QRCodeReader.swift', '~> 9.0.1'
-  pod 'RxCocoa', '~> 4.4.0'
-  pod 'RxSwift', '~> 4.4.0'
-  pod 'SQLite.swift', '~> 0.11.5'
   pod 'Toast-Swift', '~> 4.0.0'
   pod 'web3swift', :git => 'https://github.com/TipBlockchain/web3swift.git'
 

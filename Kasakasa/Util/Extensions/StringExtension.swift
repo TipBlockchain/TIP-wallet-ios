@@ -22,12 +22,12 @@ extension String {
         return self.contains(" ")
     }
 
-    static func isUsername(_ str: String?) -> Bool {
+    func isUsername() -> Bool {
         let regex = "\\w{2,32}"
         return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: self)
     }
 
-    static func isEthAddress(_ str: String?) -> Bool {
+    func isEthAddress() -> Bool {
         return false
     }
 

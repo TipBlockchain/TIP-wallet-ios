@@ -11,6 +11,7 @@ import Foundation
 protocol DictionaryEncodable: Encodable {}
 
 extension DictionaryEncodable {
+    
     func dictionary() -> Json? {
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .iso8601

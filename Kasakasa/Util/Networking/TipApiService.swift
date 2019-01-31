@@ -6,7 +6,7 @@
 //  Copyright © 2019 Tip Blockchain. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public class TipApiService: NSObject {
 
@@ -14,13 +14,27 @@ public class TipApiService: NSObject {
 
     public static var sharedInstance: TipApiService = TipApiService()
 
-    private override init() {
+    private override init() {}
 
+    public func authorize(_ message: SecureMessage, completion: @escaping (Authorization?, AppErrors?) -> Void) {
+        let request = TipNetworkRequest.authorize(message: message)
+        networkService.sendRequest(request: request) { (result, error) in
+            if let error = error {
+                completion(nil, error)
+            } else {
+                if let data = result as? Data, let response = try? JSONDecoder().decode(Authorization.self, from: data) {
+                    completion(response, nil)
+                } else {
+                    completion(nil, AppErrors.unknowkError)
+                }
+            }
+        }
     }
 
+    //MARK:- Countries
     public func getCountries(completion: @escaping ([Country]?, AppErrors?) -> Void) {
         let request = TipNetworkRequest.getCountries
-
+        
         networkService.sendRequest(request: request) { (result, error) in
             debugPrint("result = \(String(describing: result)), error = \(String(describing: error))")
             if let resultData = result as? Data, let countries: [Country] = try? JSONDecoder().decode([Country].self, from: resultData) {
@@ -48,6 +62,7 @@ public class TipApiService: NSObject {
         }
     }
 
+    // MARK: - Phone Verification
     public func startPhoneVerification(verificationRequest: PhoneVerificationRequest, completion: @escaping (PhoneVerificationResponse?, AppErrors?) -> Void) {
        let request = TipNetworkRequest.startPhoneVerification(verification: verificationRequest)
 
@@ -79,4 +94,66 @@ public class TipApiService: NSObject {
             }
         }
     }
+
+    public func checkUsername(_ username: String, completion: @escaping (UsernameResponse?, AppErrors?) -> Void) {
+        let request = TipNetworkRequest.checkUsername(username)
+        networkService.sendRequest(request: request) { (result, error) in
+            if let error = error {
+                completion(nil, error)
+            } else {
+                if let data = result as? Data, let response = try? JSONDecoder().decode(UsernameResponse.self, from: data) {
+                    completion(response, nil)
+                } else {
+                    completion(nil, AppErrors.unknowkError)
+                }
+            }
+        }
+    }
+
+    func createAccount(user: User, signupToken: String, claimDemoAccount: Bool, completion: @escaping (User?, AppErrors?) -> Void) {
+        let request = TipNetworkRequest.createAccount(user: user, signupToken: signupToken, claimDemoAccount: claimDemoAccount)
+
+        networkService.sendRequest(request: request) { (result, error) in
+            if let error = error {
+                completion(nil, error)
+            } else {
+                if let data = result as? Data, let response = try? JSONDecoder().decode(User.self, from: data) {
+                    completion(response, nil)
+                } else {
+                    completion(nil, AppErrors.unknowkError)
+                }
+            }
+        }
+    }
+
+    func getMyAccount(completion: @escaping (User?, AppErrors?) -> Void) {
+        let request = TipNetworkRequest.getMyAccount()
+        networkService.sendRequest(request: request) { (result, error) in
+            if let error = error {
+                completion(nil, error)
+            } else {
+                if let data = result as? Data, let response = try? JSONDecoder().decode(User.self, from: data) {
+                    completion(response, nil)
+                } else {
+                    completion(nil, AppErrors.unknowkError)
+                }
+            }
+        }
+    }
+
+    func uploadPhoto(_ photo: UIImage, completion: @escaping (User?, AppErrors?) -> Void) {
+        let request = TipNetworkRequest.uploadPhoto(photo: photo)
+        networkService.sendRequest(request: request) { (result, error) in
+            if let error = error {
+                completion(nil, error)
+            } else {
+                if let data = result as? Data, let response = try? JSONDecoder().decode(User.self, from: data) {
+                    completion(response, nil)
+                } else {
+                    completion(nil, AppErrors.unknowkError)
+                }
+            }
+        }
+    }
+
 }

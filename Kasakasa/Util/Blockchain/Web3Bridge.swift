@@ -24,7 +24,7 @@ class Web3Bridge {
 
     func generateBip39Wallet(password: String, path: String) throws -> Mnemonics? {
         let mnemonics = Mnemonics()
-        let keystore = try! BIP32Keystore(mnemonics: mnemonics, password: password, prefixPath: path)
+        let keystore = try! BIP32Keystore(mnemonics: mnemonics, password: password, prefixPath: path, aesMode: "aes-128-ctr")
         self.setDefaultKeystore(keystore)
         return mnemonics
     }

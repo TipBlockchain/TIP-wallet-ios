@@ -14,6 +14,7 @@ class ChoosePasswordViewController: BaseViewController {
     var password: String  = ""
     var password2: String = ""
 
+    var existingUser: User?
     @IBOutlet private weak var passwordField: UITextField!
     @IBOutlet private weak var confirmPasswordField: UITextField!
 
@@ -32,6 +33,7 @@ class ChoosePasswordViewController: BaseViewController {
     private func setupPresenter() {
         presenter = ChoosePasswordPresenter()
         presenter?.attach(self)
+        presenter?.setExistingUser(self.existingUser)
     }
 
     deinit {
@@ -65,12 +67,6 @@ class ChoosePasswordViewController: BaseViewController {
 
     private func navigateToUserProfile() {
         self.performSegue(withIdentifier: "ShowOnboardingUserProfile", sender: self)
-    }
-
-    private func navigateToMainApp() {
-        let mainAppStoryboard = UIStoryboard(name: "MainApp", bundle: nil)
-        let mainAppRootVC = mainAppStoryboard.instantiateInitialViewController()
-       self.view.window?.rootViewController = mainAppRootVC
     }
 
     /*
@@ -112,6 +108,5 @@ extension ChoosePasswordViewController: ChoosePasswordView {
     func onWalletCreationError(_ error: AppErrors) {
         self.showError(error)
     }
-
 
 }

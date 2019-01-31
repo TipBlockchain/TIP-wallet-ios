@@ -1,33 +1,26 @@
 PODS:
   - BigInt (3.1.0):
     - SipHash (~> 1.2)
+  - CropViewController (2.4.0)
   - GRDB.swift (3.6.2)
   - keccak.c (0.1.3)
   - Nuke (7.5.2)
-  - PromiseKit (6.7.1):
-    - PromiseKit/CorePromise (= 6.7.1)
-    - PromiseKit/Foundation (= 6.7.1)
-    - PromiseKit/UIKit (= 6.7.1)
-  - PromiseKit/CorePromise (6.7.1)
-  - PromiseKit/Foundation (6.7.1):
+  - PromiseKit (6.8.2):
+    - PromiseKit/CorePromise (= 6.8.2)
+    - PromiseKit/Foundation (= 6.8.2)
+    - PromiseKit/UIKit (= 6.8.2)
+  - PromiseKit/CorePromise (6.8.2)
+  - PromiseKit/Foundation (6.8.2):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.7.1):
+  - PromiseKit/UIKit (6.8.2):
     - PromiseKit/CorePromise
   - QRCode (2.0)
   - QRCodeReader.swift (9.0.1)
-  - RxAtomic (4.4.0)
-  - RxCocoa (4.4.0):
-    - RxSwift (~> 4.0)
-  - RxSwift (4.4.0):
-    - RxAtomic (~> 4.4)
   - scrypt.c (0.1.1)
   - secp256k1.c (0.1.2)
   - SipHash (1.2.2)
-  - SQLite.swift (0.11.5):
-    - SQLite.swift/standard (= 0.11.5)
-  - SQLite.swift/standard (0.11.5)
   - Toast-Swift (4.0.1)
-  - web3swift (2.1.3):
+  - web3swift (2.1.8):
     - BigInt (~> 3.1)
     - keccak.c (~> 0.1)
     - PromiseKit (~> 6.4)
@@ -36,32 +29,27 @@ PODS:
 
 DEPENDENCIES:
   - BigInt (~> 3.1.0)
+  - CropViewController (~> 2.4.0)
   - GRDB.swift (~> 3.6.1)
   - Nuke (~> 7.5.2)
   - QRCode (~> 2.0)
   - QRCodeReader.swift (~> 9.0.1)
-  - RxCocoa (~> 4.4.0)
-  - RxSwift (~> 4.4.0)
-  - SQLite.swift (~> 0.11.5)
   - Toast-Swift (~> 4.0.0)
   - web3swift (from `https://github.com/TipBlockchain/web3swift.git`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - BigInt
+    - CropViewController
     - GRDB.swift
     - keccak.c
     - Nuke
     - PromiseKit
     - QRCode
     - QRCodeReader.swift
-    - RxAtomic
-    - RxCocoa
-    - RxSwift
     - scrypt.c
     - secp256k1.c
     - SipHash
-    - SQLite.swift
     - Toast-Swift
 
 EXTERNAL SOURCES:
@@ -70,27 +58,24 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   web3swift:
-    :commit: 514b53821cddda74738e5ac730a8bb83d3f0045f
+    :commit: e0aef686905c2f33dd02e8aa6486bb2bce9c808f
     :git: https://github.com/TipBlockchain/web3swift.git
 
 SPEC CHECKSUMS:
   BigInt: 76b5dfdfa3e2e478d4ffdf161aeede5502e2742f
+  CropViewController: a090820b15fc3da68e694d7c192a4708c576828b
   GRDB.swift: e10787d857b6b8135354b9e08fb23b4bb8e2fab7
   keccak.c: 859583afdaccb4e4fcc0f0096064d101580313f4
   Nuke: 0350d346a688426e8f2331253ef28dc2fc4f6178
-  PromiseKit: ef376fb8b4e92edfeb66bd403b983eaa07fbde0c
+  PromiseKit: 8200c4555a5b433ac26f5143093cb792ee2c3426
   QRCode: f98a1886c8f37523704a7512a4c0cd45b34c18a4
   QRCodeReader.swift: 96292a5612fbc2fd9a0b26f93fa5164c8d02f59d
-  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
-  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
-  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   scrypt.c: b42ae06183251329d2b2c620c226fb541a4a3592
   secp256k1.c: db47b726585d80f027423682eb369729e61b3b20
   SipHash: fad90a4683e420c52ef28063063dbbce248ea6d4
-  SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
   Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
-  web3swift: 7a54c1e8a5c5b7619e7ab549e38ebffe888d1612
+  web3swift: e70841411121e9deb47539046862c9d043570368
 
-PODFILE CHECKSUM: b8a133d39eaec7251536ab9430c7525445952909
+PODFILE CHECKSUM: e3c5d941033a56ba569792c52415f4ea51f272f4
 
 COCOAPODS: 1.5.3
