@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let _  = AppStyle()
         try! FileUtils.createWalletDirectoryIfNotExists()
+        try! self.setupDatabase(application)
         // Override point for customization after application launch.
         return true
     }
@@ -45,5 +46,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    private func setupDatabase(_ application: UIApplication) throws {
+        try FileUtils.createDatabaseDirectoryIfNotExists()
+        let dbUrl = FileUtils.databaseDirectoryUrl()?.appendingPathComponent("db.sqlite")
+        let dbPool = try AppDatabase.openDatabase(atPath: dbUrl!.path)
+        dbPool.setupMemoryManagement(in: application)
+    }
 }
 

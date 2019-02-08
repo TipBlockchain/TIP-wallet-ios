@@ -20,12 +20,16 @@ class OnboardingUserProfilePresenter: NSObject, BasePresenter {
 
     func attach(_ v: OnboardingUserProfileView) {
         self.view = v
-        if let wallet = walletRepository.primaryWallet {
-            primaryWallet = wallet
-        } else {
+        do {
+            if let wallet = try walletRepository.primaryWallet() {
+                primaryWallet = wallet
+            } else {
+                view?.onWalletNotSetupError()
+            }
+            self.signupToken = AppDefaults.sharedInstance.pendingSignupToken
+        } catch {
             view?.onWalletNotSetupError()
         }
-        self.signupToken = AppDefaults.sharedInstance.pendingSignupToken
     }
 
     func checkUsername(_ username: String) {

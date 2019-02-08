@@ -21,12 +21,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="xLT-c7-wog">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tip_logo" translatesAutoresizingMaskIntoConstraints="NO" id="pDF-JR-tLl">
+                                <rect key="frame" x="159.5" y="175" width="56" height="102"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="pDF-JR-tLl" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="0N0-hc-EXs"/>
                             <constraint firstItem="xLT-c7-wog" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4on-O0-pZv"/>
                             <constraint firstItem="xLT-c7-wog" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FnA-PO-O8E"/>
                             <constraint firstItem="xLT-c7-wog" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="eqn-fu-Az2"/>
+                            <constraint firstItem="pDF-JR-tLl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="155" id="mFy-Zb-rDo"/>
                             <constraint firstItem="xLT-c7-wog" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="rEX-bZ-N2O"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -39,5 +44,6 @@
     </scenes>
     <resources>
         <image name="gradient" width="375" height="812"/>
+        <image name="tip_logo" width="56" height="102"/>
     </resources>
 </document>

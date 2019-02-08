@@ -39,8 +39,17 @@ class BaseViewController: UIViewController {
     }
 
    func navigateToMainApp() {
-        let mainAppRootVC = UIStoryboard(name: "MainApp", bundle: nil).instantiateInitialViewController()
-        UIApplication.shared.keyWindow?.rootViewController = mainAppRootVC
+        if let viewController = UIStoryboard(name: "MainApp", bundle: nil).instantiateInitialViewController(),
+            let keyWindow = UIApplication.shared.keyWindow {
+            switchRootViewController(viewController, inWindow: keyWindow)
+        }
+    }
+
+    func navigateToOnboarding() {
+        if let viewController = UIStoryboard(name: "Onboarding", bundle: nil).instantiateInitialViewController(),
+            let keyWindow = UIApplication.shared.keyWindow {
+            switchRootViewController(viewController, inWindow: keyWindow)
+        }
     }
 
     func showError(_ error: AppErrors, completion: VoidCompletionBlock? = nil) {
@@ -89,5 +98,22 @@ class BaseViewController: UIViewController {
 
     func showToast(_ message: String) {
         self.view.makeToast(message)
+    }
+
+    private func switchRootViewController(_ rootViewController: UIViewController, inWindow window: UIWindow, animated: Bool = true, completion: (() -> Void)? = nil) {
+        if animated {
+            UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {
+                let oldState: Bool = UIView.areAnimationsEnabled
+                UIView.setAnimationsEnabled(false)
+                window.rootViewController = rootViewController
+                UIView.setAnimationsEnabled(oldState)
+            }, completion: { (finished: Bool) -> () in
+                if (completion != nil) {
+                    completion!()
+                }
+            })
+        } else {
+            window.rootViewController = rootViewController
+        }
     }
 }

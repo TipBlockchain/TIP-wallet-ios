@@ -1249,10 +1249,9 @@ Your phone number helps you connect with other people on the network</string>
         <image name="user_profile_placeholder" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LVE-N5-ZlM"/>
         <segue reference="xxk-wj-SsD"/>
         <segue reference="oTx-2s-9Uq"/>
-        <segue reference="Qhm-80-gvm"/>
+        <segue reference="FjN-Vb-TQN"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.71372549019607845" green="0.16862745098039217" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

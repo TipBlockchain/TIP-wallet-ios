@@ -24,7 +24,7 @@ class ChoosePasswordPresenter: BasePresenter {
             if let wallet = try walletRepository.newWallet(withPhrase: phrase, andPassword: password) {
                 if let existingUser = existingUser {
                     if wallet.address != existingUser.address {
-                        walletRepository.delete(byAddress: wallet.address)
+                        try? walletRepository.delete(byAddress: wallet.address)
                         view?.onWalletNotMatchingExistingError()
                     } else {
                         view?.onWalletRestored()

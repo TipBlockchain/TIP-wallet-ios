@@ -29,6 +29,20 @@ class FileUtils {
         return nil
     }
 
+    static func databaseDirectoryUrl() -> URL? {
+        if let documentsDir = self.documentsDirectoryUrl() {
+            let dbDir = documentsDir.appendingPathComponent("database")
+            debugPrint("database dir = \(dbDir)")
+            return dbDir
+        }
+        return nil
+    }
+
+    static func createDatabaseDirectoryIfNotExists() throws -> Void {
+        let fileManager = FileManager.default
+        try fileManager.createDirectory(at: self.databaseDirectoryUrl()!, withIntermediateDirectories: true, attributes: nil)
+    }
+
     @discardableResult
     static func createWalletDirectoryIfNotExists() throws -> Bool {
         var isDirectory: ObjCBool = false
