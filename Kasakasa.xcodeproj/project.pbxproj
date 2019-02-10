@@ -30,6 +30,13 @@
 		456D856C21F41057005150F3 /* WalletRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456D856B21F41057005150F3 /* WalletRepository.swift */; };
 		456D856E21F411BA005150F3 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456D856D21F411BA005150F3 /* Wallet.swift */; };
 		456D857021F59AB7005150F3 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456D856F21F59AB7005150F3 /* Currency.swift */; };
+		4579A9EA220EA19000CBCFAE /* UserSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4579A9E9220EA19000CBCFAE /* UserSearchPresenter.swift */; };
+		4579A9EC220EA1B000CBCFAE /* UserSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4579A9EB220EA1B000CBCFAE /* UserSearch.swift */; };
+		4579A9EE220EB0E300CBCFAE /* ContactRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4579A9ED220EB0E300CBCFAE /* ContactRequest.swift */; };
+		4579A9F0220EB11100CBCFAE /* ContactListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4579A9EF220EB11100CBCFAE /* ContactListRequest.swift */; };
+		4579A9F2220EB12600CBCFAE /* ContactListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4579A9F1220EB12600CBCFAE /* ContactListResponse.swift */; };
+		4579A9F4220EB13E00CBCFAE /* ContactListStringResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4579A9F3220EB13E00CBCFAE /* ContactListStringResponse.swift */; };
+		4579A9F6220EB5A200CBCFAE /* UserSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4579A9F5220EB5A200CBCFAE /* UserSearchResponse.swift */; };
 		457F54DD21FD12C600EA25AC /* WalletUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457F54DC21FD12C600EA25AC /* WalletUtils.swift */; };
 		457F54DF21FD154300EA25AC /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457F54DE21FD154300EA25AC /* FileUtils.swift */; };
 		457F54E121FD904000EA25AC /* OnboardingUserProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457F54E021FD904000EA25AC /* OnboardingUserProfilePresenter.swift */; };
@@ -40,6 +47,9 @@
 		45828C66220D35A300594842 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45828C65220D35A300594842 /* SplashScreen.swift */; };
 		45828C68220D364C00594842 /* SplashScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45828C67220D364C00594842 /* SplashScreenPresenter.swift */; };
 		45828C6A220D399000594842 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45828C69220D399000594842 /* SplashScreen.storyboard */; };
+		45828C71220D5F4E00594842 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45828C70220D5F4E00594842 /* WalletViewController.swift */; };
+		45828C75220E851000594842 /* UserSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45828C74220E851000594842 /* UserSearchViewController.swift */; };
+		45828C77220E852700594842 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45828C76220E852700594842 /* ContactsViewController.swift */; };
 		459DEBBA21DFB82B009F0BE0 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 459DEBB921DFB82B009F0BE0 /* Tutorial.storyboard */; };
 		459DEBBC21DFB84E009F0BE0 /* MainApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 459DEBBB21DFB84E009F0BE0 /* MainApp.storyboard */; };
 		459DEBBE21DFBCAA009F0BE0 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459DEBBD21DFBCAA009F0BE0 /* AppConstants.swift */; };
@@ -152,6 +162,13 @@
 		456D856B21F41057005150F3 /* WalletRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletRepository.swift; sourceTree = "<group>"; };
 		456D856D21F411BA005150F3 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		456D856F21F59AB7005150F3 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		4579A9E9220EA19000CBCFAE /* UserSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchPresenter.swift; sourceTree = "<group>"; };
+		4579A9EB220EA1B000CBCFAE /* UserSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearch.swift; sourceTree = "<group>"; };
+		4579A9ED220EB0E300CBCFAE /* ContactRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRequest.swift; sourceTree = "<group>"; };
+		4579A9EF220EB11100CBCFAE /* ContactListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListRequest.swift; sourceTree = "<group>"; };
+		4579A9F1220EB12600CBCFAE /* ContactListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListResponse.swift; sourceTree = "<group>"; };
+		4579A9F3220EB13E00CBCFAE /* ContactListStringResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListStringResponse.swift; sourceTree = "<group>"; };
+		4579A9F5220EB5A200CBCFAE /* UserSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchResponse.swift; sourceTree = "<group>"; };
 		457F54DC21FD12C600EA25AC /* WalletUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletUtils.swift; sourceTree = "<group>"; };
 		457F54DE21FD154300EA25AC /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
 		457F54E021FD904000EA25AC /* OnboardingUserProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingUserProfilePresenter.swift; sourceTree = "<group>"; };
@@ -163,6 +180,9 @@
 		45828C67220D364C00594842 /* SplashScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenPresenter.swift; sourceTree = "<group>"; };
 		45828C69220D399000594842 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		45828C6D220D4E1A00594842 /* Kasakasa.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Kasakasa.playground; path = ../../Kasakasa.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		45828C70220D5F4E00594842 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		45828C74220E851000594842 /* UserSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchViewController.swift; sourceTree = "<group>"; };
+		45828C76220E852700594842 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		459DEBB921DFB82B009F0BE0 /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		459DEBBB21DFB84E009F0BE0 /* MainApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainApp.storyboard; sourceTree = "<group>"; };
 		459DEBBD21DFBCAA009F0BE0 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
@@ -355,6 +375,42 @@
 			path = Playground;
 			sourceTree = "<group>";
 		};
+		45828C6E220D5F2100594842 /* Main App */ = {
+			isa = PBXGroup;
+			children = (
+				45828C73220E84D700594842 /* User Search */,
+				45828C72220E84CE00594842 /* Contacts */,
+				45828C6F220D5F3B00594842 /* Wallet */,
+			);
+			path = "Main App";
+			sourceTree = "<group>";
+		};
+		45828C6F220D5F3B00594842 /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				45828C70220D5F4E00594842 /* WalletViewController.swift */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
+		45828C72220E84CE00594842 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				45828C76220E852700594842 /* ContactsViewController.swift */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		45828C73220E84D700594842 /* User Search */ = {
+			isa = PBXGroup;
+			children = (
+				45828C74220E851000594842 /* UserSearchViewController.swift */,
+				4579A9E9220EA19000CBCFAE /* UserSearchPresenter.swift */,
+				4579A9EB220EA1B000CBCFAE /* UserSearch.swift */,
+			);
+			path = "User Search";
+			sourceTree = "<group>";
+		};
 		459DEBB421DFB415009F0BE0 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +436,7 @@
 		459DEBB621DFB4D2009F0BE0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				45828C6E220D5F2100594842 /* Main App */,
 				45828C62220D355E00594842 /* Splash */,
 				45AD3A2B21E340FE00198D6F /* Common */,
 				45129C5821DFC50700F585FA /* Onboarding */,
@@ -502,6 +559,11 @@
 				45AD3A5C21E73EEC00198D6F /* PendingSignup.swift */,
 				457F54E421FE9C5800EA25AC /* UsernameResponse.swift */,
 				457F54E621FECE4400EA25AC /* SecureMessage.swift */,
+				4579A9ED220EB0E300CBCFAE /* ContactRequest.swift */,
+				4579A9EF220EB11100CBCFAE /* ContactListRequest.swift */,
+				4579A9F1220EB12600CBCFAE /* ContactListResponse.swift */,
+				4579A9F3220EB13E00CBCFAE /* ContactListStringResponse.swift */,
+				4579A9F5220EB5A200CBCFAE /* UserSearchResponse.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -994,13 +1056,16 @@
 				45AD3A2621E33FBC00198D6F /* EnterPhoneNumberViewController.swift in Sources */,
 				45AD3A4021E5635100198D6F /* BaseViewController.swift in Sources */,
 				45AD3A4421E5862200198D6F /* InsetTextField.swift in Sources */,
+				45828C71220D5F4E00594842 /* WalletViewController.swift in Sources */,
 				45AD3A5B21E73E0200198D6F /* UserPhotos.swift in Sources */,
 				45B7A42921DEC293005A1124 /* RootViewController.swift in Sources */,
+				4579A9EC220EA1B000CBCFAE /* UserSearch.swift in Sources */,
 				45AD3A3221E3444900198D6F /* PhoneVerificationRequest.swift in Sources */,
 				45B7A42D21DEC293005A1124 /* ModelController.swift in Sources */,
 				455F396622023D2600516286 /* RestoreWallet.swift in Sources */,
 				45A6D7B021EFE242007A6F42 /* VerifyRecoveryPhraseViewController.swift in Sources */,
 				45A6D7B321EFE298007A6F42 /* ChoosePasswordViewController.swift in Sources */,
+				4579A9EE220EB0E300CBCFAE /* ContactRequest.swift in Sources */,
 				45AD3A3D21E42C4C00198D6F /* CountryTableViewCell.swift in Sources */,
 				455F396022022EEF00516286 /* ExistingAccountPresenter.swift in Sources */,
 				45A6D7B921F01DF7007A6F42 /* RestoreWalletViewController.swift in Sources */,
@@ -1008,6 +1073,7 @@
 				4524159D21F1B257005B53A2 /* AuthorizationRepository.swift in Sources */,
 				45A6D7AB21EFE20E007A6F42 /* ExistingAccountViewController.swift in Sources */,
 				455F396422023C4000516286 /* RestoreWalletPresenter.swift in Sources */,
+				45828C75220E851000594842 /* UserSearchViewController.swift in Sources */,
 				45AD3A2821E3405E00198D6F /* EnterPhoneNumberPresenterImpl.swift in Sources */,
 				45AD3A2F21E3412B00198D6F /* BaseView.swift in Sources */,
 				45AD3A3621E3DCD400198D6F /* UITextFieldExtension.swift in Sources */,
@@ -1021,12 +1087,15 @@
 				455F396822042D5E00516286 /* AppDatabase.swift in Sources */,
 				45A6D7A721EFD8A7007A6F42 /* VerifyPhoneNumberPresenterImpl.swift in Sources */,
 				455F39622202348200516286 /* UIImageExtension.swift in Sources */,
+				4579A9F6220EB5A200CBCFAE /* UserSearchResponse.swift in Sources */,
 				45AD3A5021E7308800198D6F /* PhoneVerificationResponse.swift in Sources */,
 				45AD3A5921E73D7500198D6F /* User.swift in Sources */,
 				45AD3A3A21E42B8500198D6F /* SelectCountryViewController.swift in Sources */,
 				457F54DD21FD12C600EA25AC /* WalletUtils.swift in Sources */,
+				4579A9F0220EB11100CBCFAE /* ContactListRequest.swift in Sources */,
 				45AD3A2A21E3409900198D6F /* EnterPhoneNumber.swift in Sources */,
 				45BBF05F21E1C86C0042EC5D /* AppErrors.swift in Sources */,
+				4579A9EA220EA19000CBCFAE /* UserSearchPresenter.swift in Sources */,
 				456D856621F2C71C005150F3 /* VerifyRecoveryPhrase.swift in Sources */,
 				456D856421F2C6DB005150F3 /* VerifyRecoveryPhrasePresenter.swift in Sources */,
 				457F54E121FD904000EA25AC /* OnboardingUserProfilePresenter.swift in Sources */,
@@ -1044,13 +1113,16 @@
 				452AD7F421EFB839007F11E2 /* VerifyPhoneNumberViewController.swift in Sources */,
 				456D856A21F2E2D7005150F3 /* ChoosePassword.swift in Sources */,
 				456D857021F59AB7005150F3 /* Currency.swift in Sources */,
+				45828C77220E852700594842 /* ContactsViewController.swift in Sources */,
 				456D856821F2E296005150F3 /* ChoosePasswordPresenter.swift in Sources */,
 				459DEBC021DFBCBB009F0BE0 /* AppStyle.swift in Sources */,
 				45B7A42721DEC293005A1124 /* AppDelegate.swift in Sources */,
 				45BBF05A21E1C48A0042EC5D /* TipApiService.swift in Sources */,
 				45AD3A5D21E73EEC00198D6F /* PendingSignup.swift in Sources */,
+				4579A9F2220EB12600CBCFAE /* ContactListResponse.swift in Sources */,
 				459DEBBE21DFBCAA009F0BE0 /* AppConstants.swift in Sources */,
 				45828C66220D35A300594842 /* SplashScreen.swift in Sources */,
+				4579A9F4220EB13E00CBCFAE /* ContactListStringResponse.swift in Sources */,
 				45A6D7AD21EFE220007A6F42 /* RecoveryPhraseViewController.swift in Sources */,
 				45BBF07121E1E0C20042EC5D /* UrlRequestConvertible.swift in Sources */,
 				457F54E721FECE4400EA25AC /* SecureMessage.swift in Sources */,

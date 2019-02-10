@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct UserPhotos: Codable {
+public struct UserPhotos: Codable, DictionaryEncodable {
     var original: String?
     var medium: String?
     var small: String?

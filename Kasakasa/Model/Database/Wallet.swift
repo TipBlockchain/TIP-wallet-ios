@@ -11,6 +11,7 @@ import BigInt
 import GRDB
 
 public struct Wallet: Codable {
+    
     var address: String
     var filePath: String
     var created: Date
@@ -32,10 +33,6 @@ public struct Wallet: Codable {
         self.startBlockNumber = startBlockNumber
         self.lastSynced = lastSynced
     }
-
-    enum Columns: String, ColumnExpression {
-        case address, filePath, created, balance, currency, isPrimary, blockNumber, startBlockNumber, lastSynced
-    }
 }
 
 extension Wallet: TableRecord {
@@ -45,6 +42,10 @@ extension Wallet: TableRecord {
 }
 
 extension Wallet: FetchableRecord, MutablePersistableRecord {
+
+    enum Columns: String, ColumnExpression {
+        case address, filePath, created, balance, currency, isPrimary, blockNumber, startBlockNumber, lastSynced
+    }
 
     public init(row: Row) {
         self.address = row[Columns.address]

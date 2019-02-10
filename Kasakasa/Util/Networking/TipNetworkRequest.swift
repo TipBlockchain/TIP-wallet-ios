@@ -37,6 +37,13 @@ enum TipNetworkRequest {
     case getMyAccount()
     case uploadPhoto(photo: UIImage)
 
+    case contactList()
+    case addContact(_ contact: ContactRequest)
+    case addContacts(_ contacts: ContactListRequest)
+    case searchByUsername(_ query: String)
+    case deleteContact(_ contact: ContactRequest)
+
+
     var baseUrl: URL {
         return URL(string: AppConfig.tipApiBaseUrl)!
     }
@@ -52,8 +59,10 @@ enum TipNetworkRequest {
 
     var method: HTTPMethod {
         switch self {
-        case .authorize, .startPhoneVerification, .checkPhoneVerification, .createAccount, .uploadPhoto:
+        case .authorize, .startPhoneVerification, .checkPhoneVerification, .createAccount, .uploadPhoto, .addContact, .addContacts:
             return .POST
+        case .deleteContact:
+            return .DELETE
         default:
             return .GET
         }
@@ -76,6 +85,10 @@ enum TipNetworkRequest {
             return verification.dictionary()
         case .createAccount(let user, _, _):
             return user.dictionary()
+        case .addContact(let contact):
+            return contact.dictionary()
+        case .addContacts(let contacts):
+            return contacts.dictionary()
         default:
             return nil
         }
@@ -83,7 +96,7 @@ enum TipNetworkRequest {
 
     var httpBody: Data? {
         switch self {
-        case .authorize, .startPhoneVerification, .checkPhoneVerification, .createAccount:
+        case .authorize, .startPhoneVerification, .checkPhoneVerification, .createAccount, .addContact, .addContacts:
             if let jsonBody = self.jsonBody, let data = try? JSONSerialization.data(withJSONObject: jsonBody, options: .prettyPrinted) {
                 return data
             }
@@ -125,6 +138,10 @@ enum TipNetworkRequest {
             return baseUrl.appendingPathComponent("/accounts/my")
         case .uploadPhoto:
             return baseUrl.appendingPathComponent("/accounts/photos")
+        case .contactList, .addContact, .deleteContact:
+            return baseUrl.appendingPathComponent("/contacts")
+        case .addContacts:
+            return baseUrl.appendingPathComponent("/contacts/multiple")
         default:
             return baseUrl.appendingPathComponent("/")
         }

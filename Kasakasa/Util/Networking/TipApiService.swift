@@ -95,6 +95,7 @@ public class TipApiService: NSObject {
         }
     }
 
+    // MARk - Accounts
     public func checkUsername(_ username: String, completion: @escaping (UsernameResponse?, AppErrors?) -> Void) {
         let request = TipNetworkRequest.checkUsername(username)
         networkService.sendRequest(request: request) { (result, error) in
@@ -156,4 +157,68 @@ public class TipApiService: NSObject {
         }
     }
 
+    // MARK - Contacts
+
+    func contactList(completion: @escaping (ContactListResponse?, AppErrors?) -> Void) {
+        let request = TipNetworkRequest.contactList()
+        networkService.sendRequest(request: request) { (result, error) in
+            if let error = error {
+                completion(nil, error)
+            } else {
+                if let data = result as? Data, let response = try? JSONDecoder().decode(ContactListResponse.self, from: data) {
+                    completion(response, nil)
+                } else {
+                    completion(nil, AppErrors.unknowkError)
+                }
+            }
+        }
+    }
+
+    func search(byUsername query: String, completion: @escaping(UserSearchResponse?, AppErrors?) -> Void) {
+        let request = TipNetworkRequest.searchByUsername(query)
+        networkService.sendRequest(request: request) { (result, error) in
+            if let error = error {
+                completion(nil, error)
+            } else {
+                if let data = result as? Data, let response = try? JSONDecoder().decode(UserSearchResponse.self, from: data) {
+                    completion(response, nil)
+                } else {
+                    completion(nil, AppErrors.unknowkError)
+                }
+            }
+        }
+    }
+
+    func addContact(_ contact: User, completion: @escaping(ContactListStringResponse?, AppErrors?) -> Void) {
+        let request = TipNetworkRequest.addContact(ContactRequest(contactId: contact.id))
+        networkService.sendRequest(request: request) { (result, error) in
+            if let error = error {
+                completion(nil, error)
+            } else {
+                if let data = result as? Data, let response = try? JSONDecoder().decode(ContactListStringResponse.self, from: data) {
+                    completion(response, nil)
+                } else {
+                    completion(nil, AppErrors.unknowkError)
+                }
+            }
+        }
+    }
+
+    func addContacts(_ contacts: [User], completion: @escaping(ContactListStringResponse?, AppErrors?) -> Void) {
+        let request = TipNetworkRequest.addContacts(ContactListRequest(contactIds: contacts.map({ user -> String in
+            user.id
+        })))
+        networkService.sendRequest(request: request) { (result, error) in
+            if let error = error {
+                completion(nil, error)
+            } else {
+                if let data = result as? Data, let response = try? JSONDecoder().decode(ContactListStringResponse.self, from: data) {
+                    completion(response, nil)
+                } else {
+                    completion(nil, AppErrors.unknowkError)
+                }
+            }
+        }
+    }
 }
+

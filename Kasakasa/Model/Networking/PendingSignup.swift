@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct PendingSignup: Codable {
+public struct PendingSignup: Codable, DictionaryEncodable {
     var token: String
     var phone: String
     var countryCode: String

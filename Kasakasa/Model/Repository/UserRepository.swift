@@ -28,4 +28,36 @@ class UserRepository {
             AppDefaults.sharedInstance.demoAccountUser = newValue
         }
     }
+
+    func insert(_ user: User) {
+
+    }
+
+    func findUserById(_ id: String) -> User? {
+        return nil
+    }
+
+    func findUserByUsername(_ username: String) -> User? {
+        return nil
+    }
+
+    func fetchUserBySearch(_ query: String) -> [User] {
+        return []
+    }
+
+    func fetchContacts() {
+
+    }
+
+    func loadContacts() -> [User] {
+        return []
+    }
+
+    func addContact(_ contact: User) {
+
+    }
+
+    func removeContact(_ contact: User) {
+        
+    }
 }
