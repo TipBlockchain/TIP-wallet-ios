@@ -12,6 +12,7 @@ class UserSearchPresenter: NSObject, BasePresenter {
     typealias View = UserSearchView
     weak var view: UserSearchView?
     private var apiService = TipApiService.sharedInstance
+    private var userRepository = UserRepository.shared
 
     func searchForUser(query: String) {
         NSObject.cancelPreviousPerformRequests(withTarget: self)
@@ -22,10 +23,23 @@ class UserSearchPresenter: NSObject, BasePresenter {
 
     @objc
     private func instantSearch(_ query: String) {
+        userRepository.fetchUserBySearch(query) { (users, errors) in
+            if let users = users {
+                self.view?.refreshSearchList(users)
+            } else if let errors = errors {
+                self.view?.onSearchError(errors)
+            }
+        }
     }
 
     func addToContacts(_ contact: User) {
-
+        userRepository.addContact(contact) { (success, errror) in
+            if success {
+                self.view?.onContactAdded(contact)
+            } else {
+                self.view?.onContactAddedError()
+            }
+        }
     }
 
 }

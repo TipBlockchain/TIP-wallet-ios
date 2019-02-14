@@ -66,13 +66,27 @@ class BaseViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 
-    func showAlert(withTitle title: String, message: String, style: UIAlertController.Style = .alert, completion: VoidCompletionBlock? = nil) {
+    func showOkAlert(withTitle title: String, message: String, style: UIAlertController.Style = .alert, completion: VoidCompletionBlock? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: style)
         let okAction = UIAlertAction(title: "Okay".localized, style: .cancel) { (action) in
             completion?()
 //            alert.dismiss(animated: true, completion: completion)
         }
         alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    func showOkCancelAlert(withTitle title: String, message: String, style: UIAlertController.Style = .alert, onOkSelected okCompletionBlock: VoidCompletionBlock? = nil, onCancelSelected cancelCompletionBlock: VoidCompletionBlock? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
+        let okAction = UIAlertAction(title: "Okay".localized, style: .default) { (action) in
+            okCompletionBlock?()
+            //            alert.dismiss(animated: true, completion: completion)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel".localized, style: .cancel) { (action) in
+            cancelCompletionBlock?()
+        }
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
     }
 

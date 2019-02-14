@@ -20,7 +20,11 @@ class NetworkService: NSObject {
 
     func sendRequest(request: UrlRequestConvertible, completion: @escaping NetworkCompletionHandler) -> Void {
 
-        let task = session.dataTask(with: request.toUrlRequest()) { (data, response, error) in
+        var urlRequest = request.toUrlRequest()
+        if let authorization = AuthorizationRepository.shared.currentAuthorization {
+            urlRequest.setValue("Bearer \(authorization.token)", forHTTPHeaderField: "Authorization")
+        }
+        let task = session.dataTask(with: urlRequest) { (data, response, error) in
             var serializedResponse: Any? = nil
             if let data = data {
                 serializedResponse = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)

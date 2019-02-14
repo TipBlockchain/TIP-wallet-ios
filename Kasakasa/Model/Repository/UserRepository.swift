@@ -8,9 +8,12 @@
 
 import Foundation
 
+typealias userListResponse = ([User]?, AppErrors?) -> Void
 class UserRepository {
     static var shared = UserRepository()
+    private var dbPool = AppDatabase.dbPool
 
+    var apiService: TipApiService = TipApiService.sharedInstance
     var currentUser: User? {
         get {
             return AppDefaults.sharedInstance.currentUser
@@ -29,10 +32,6 @@ class UserRepository {
         }
     }
 
-    func insert(_ user: User) {
-
-    }
-
     func findUserById(_ id: String) -> User? {
         return nil
     }
@@ -41,8 +40,16 @@ class UserRepository {
         return nil
     }
 
-    func fetchUserBySearch(_ query: String) -> [User] {
-        return []
+    func fetchUserBySearch(_ query: String, completion: @escaping userListResponse) {
+        apiService.search(byUsername: query) { (response, errors) in
+            if let response = response, let users = response.users {
+                completion(users, nil)
+            } else if let errors = errors {
+                completion(nil, errors)
+            } else {
+                completion(nil, AppErrors.unknowkError)
+            }
+        }
     }
 
     func fetchContacts() {
@@ -53,11 +60,34 @@ class UserRepository {
         return []
     }
 
-    func addContact(_ contact: User) {
-
+    func addContact(_ contact: User, completion: @escaping (Bool, AppErrors?) -> Void) {
+        apiService.addContact(contact) { (response, error) in
+            if let response = response {
+                if response.contacts.contains(contact.id) {
+                    try? self.insertContact(contact)
+                    debugPrint("User inserted")
+                    completion(true, nil)
+                    return
+                }
+            } else {
+                if let error = error {
+                    completion(false, error)
+                } else {
+                    completion(false, AppErrors.unknowkError)
+                }
+            }
+        }
     }
 
     func removeContact(_ contact: User) {
         
+    }
+
+    func insertContact(_ user: User) throws {
+        var userToSave = user
+
+        try dbPool?.write({db in
+            try userToSave.save(db)
+        })
     }
 }

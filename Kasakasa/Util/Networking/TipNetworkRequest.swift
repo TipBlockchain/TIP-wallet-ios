@@ -113,7 +113,7 @@ enum TipNetworkRequest {
 
     var queryParams: [String:String] {
         switch self {
-        case .checkUsername(let username):
+        case .checkUsername(let username), .searchByUsername(let username):
             return ["username": username]
         default:
             return [:]
@@ -126,6 +126,8 @@ enum TipNetworkRequest {
             return baseUrl.appendingPathComponent("/secure/authorize")
         case .getCountries:
             return baseUrl.appendingPathComponent("/countries")
+        case .getCountry(let code):
+            return baseUrl.appendingPathComponent("/countries/\(code)")
         case .startPhoneVerification:
             return baseUrl.appendingPathComponent("/phones/verificationStart")
         case .checkPhoneVerification:
@@ -142,8 +144,8 @@ enum TipNetworkRequest {
             return baseUrl.appendingPathComponent("/contacts")
         case .addContacts:
             return baseUrl.appendingPathComponent("/contacts/multiple")
-        default:
-            return baseUrl.appendingPathComponent("/")
+        case .searchByUsername:
+            return baseUrl.appendingPathComponent("/accounts/search")
         }
     }
 }

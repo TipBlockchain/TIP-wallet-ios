@@ -12,5 +12,6 @@ protocol UserSearchView: class, BaseView {
     func onContactAdded(_ contact: User)
     func onContactAddedError()
     func onSearchSetupError()
+    func onSearchError(_ error: AppErrors)
     func refreshSearchList(_ users: [User])
 }

@@ -114,7 +114,7 @@ class OnboardingUserProfileViewController: BaseViewController {
     }
 
     private func showCongratsAlert() {
-        self.showAlert(withTitle: "Congrats".localized , message: "You successfully created your TIP account. Welcome to our network".localized, style: UIAlertController.Style.alert) {
+        self.showOkAlert(withTitle: "Congrats".localized , message: "You successfully created your TIP account. Welcome to our network".localized, style: UIAlertController.Style.alert) {
             self.navigateToMainApp()
         }
     }
@@ -174,13 +174,13 @@ extension OnboardingUserProfileViewController: OnboardingUserProfileView {
     }
 
     func onWalletNotSetupError() {
-        self.showAlert(withTitle: "Error".localized , message: "You do not have a valid wallet setup. Please create one to proceed".localized, style: UIAlertController.Style.alert) {
+        self.showOkAlert(withTitle: "Error".localized , message: "You do not have a valid wallet setup. Please create one to proceed".localized, style: UIAlertController.Style.alert) {
             self.navigateToCreateWallet()
         }
     }
 
     func onSignupTokenError() {
-        self.showAlert(withTitle: "Timeout".localized, message: "Your session has timed out. Signup must be completed withing 15 minutes from starting.".localized, style: .alert) {
+        self.showOkAlert(withTitle: "Timeout".localized, message: "Your session has timed out. Signup must be completed withing 15 minutes from starting.".localized, style: .alert) {
             self.navigateToEnterPhoneNubmer()
         }
     }

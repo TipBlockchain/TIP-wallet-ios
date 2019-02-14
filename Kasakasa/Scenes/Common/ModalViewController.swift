@@ -13,7 +13,7 @@ class ModalViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let closeButton = UIBarButtonItem(title: "Close".localized, style: .plain, target: self, action: #selector(ModalViewController.close))
+        let closeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.stop, target: self, action: #selector(ModalViewController.close))
         self.navigationItem.leftBarButtonItem = closeButton
 
         // Do any additional setup after loading the view.
