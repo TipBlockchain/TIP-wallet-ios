@@ -159,7 +159,7 @@ public class TipApiService: NSObject {
 
     // MARK - Contacts
 
-    func contactList(completion: @escaping (ContactListResponse?, AppErrors?) -> Void) {
+    func getContactList(completion: @escaping (ContactListResponse?, AppErrors?) -> Void) {
         let request = TipNetworkRequest.contactList()
         networkService.sendRequest(request: request) { (result, error) in
             if let error = error {

@@ -22,6 +22,10 @@ class WalletRepository: NSObject {
     }
 
     func newWallet(withPhrase phrase: String, andPassword password: String) throws -> Wallet? {
+
+        self.deleteAll()
+        WalletUtils.deleteAllWalletFiles()
+
         let now = Date()
         let keystore = try WalletUtils.generateBip39Wallet(fromSeedPhrase: phrase, password: password)
         let walletFileUrl = try WalletUtils.createNewWalletFile(keystore: keystore, password: password)
@@ -81,6 +85,12 @@ class WalletRepository: NSObject {
         var walletToSave = wallet
         try dbPool?.write({db in
             try walletToSave.save(db)
+        })
+    }
+
+    private func deleteAll() {
+        let _ = try! dbPool?.write({ db in
+            try Wallet.deleteAll(db)
         })
     }
 }

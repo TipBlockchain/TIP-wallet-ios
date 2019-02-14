@@ -79,7 +79,12 @@ class FileUtils {
         return nil
     }
 
+    static func deleteFile(atUrl url: URL) throws {
+        try FileManager.default.removeItem(at: url)
+    }
+
     private static func createWalletFile(withName filename: String, contents: Data) throws -> URL? {
+        try self.createWalletDirectoryIfNotExists()
         if let walletsDir = self.walletsDirectoryUrl() {
             let walletFileUrl = walletsDir.appendingPathComponent(filename)
             debugPrint(("Wallet file path = \(walletFileUrl)"))

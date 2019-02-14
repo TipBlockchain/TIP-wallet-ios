@@ -64,7 +64,7 @@ class UserRepository {
         apiService.addContact(contact) { (response, error) in
             if let response = response {
                 if response.contacts.contains(contact.id) {
-                    try? self.insertContact(contact)
+                    try! self.insertContact(contact)
                     debugPrint("User inserted")
                     completion(true, nil)
                     return
@@ -88,6 +88,15 @@ class UserRepository {
 
         try dbPool?.write({db in
             try userToSave.save(db)
+        })
+    }
+
+    func insert(_ contacts: [User]) throws {
+        try dbPool?.write({ db in
+            for var contact in contacts {
+                contact.isContact = true
+                try contact.save(db)
+            }
         })
     }
 }

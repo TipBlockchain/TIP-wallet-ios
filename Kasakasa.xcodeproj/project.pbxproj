@@ -21,6 +21,9 @@
 		455F396622023D2600516286 /* RestoreWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F396522023D2600516286 /* RestoreWallet.swift */; };
 		455F396822042D5E00516286 /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F396722042D5E00516286 /* AppDatabase.swift */; };
 		456012C52214DB5E003B04E2 /* UserSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456012C42214DB5E003B04E2 /* UserSearchTableViewCell.swift */; };
+		456012C722152689003B04E2 /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456012C622152689003B04E2 /* Contacts.swift */; };
+		456012C922152703003B04E2 /* ContactsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456012C822152703003B04E2 /* ContactsPresenter.swift */; };
+		456012CB22152FE9003B04E2 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456012CA22152FE9003B04E2 /* ContactTableViewCell.swift */; };
 		456D855E21F2A518005150F3 /* Web3Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456D855D21F2A518005150F3 /* Web3Bridge.swift */; };
 		456D856021F2A899005150F3 /* RecoveryPhrasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456D855F21F2A899005150F3 /* RecoveryPhrasePresenter.swift */; };
 		456D856221F2B511005150F3 /* RecoveryPhrase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456D856121F2B511005150F3 /* RecoveryPhrase.swift */; };
@@ -154,6 +157,9 @@
 		455F396522023D2600516286 /* RestoreWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreWallet.swift; sourceTree = "<group>"; };
 		455F396722042D5E00516286 /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 		456012C42214DB5E003B04E2 /* UserSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchTableViewCell.swift; sourceTree = "<group>"; };
+		456012C622152689003B04E2 /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
+		456012C822152703003B04E2 /* ContactsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsPresenter.swift; sourceTree = "<group>"; };
+		456012CA22152FE9003B04E2 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		456D855D21F2A518005150F3 /* Web3Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Web3Bridge.swift; sourceTree = "<group>"; };
 		456D855F21F2A899005150F3 /* RecoveryPhrasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPhrasePresenter.swift; sourceTree = "<group>"; };
 		456D856121F2B511005150F3 /* RecoveryPhrase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPhrase.swift; sourceTree = "<group>"; };
@@ -399,6 +405,8 @@
 			isa = PBXGroup;
 			children = (
 				45828C76220E852700594842 /* ContactsViewController.swift */,
+				456012C622152689003B04E2 /* Contacts.swift */,
+				456012C822152703003B04E2 /* ContactsPresenter.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -432,6 +440,7 @@
 				45AD3A4321E5862200198D6F /* InsetTextField.swift */,
 				45AD3A4B21E71EA300198D6F /* ColoredButton.swift */,
 				456012C42214DB5E003B04E2 /* UserSearchTableViewCell.swift */,
+				456012CA22152FE9003B04E2 /* ContactTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1066,6 +1075,7 @@
 				45AD3A3221E3444900198D6F /* PhoneVerificationRequest.swift in Sources */,
 				45B7A42D21DEC293005A1124 /* ModelController.swift in Sources */,
 				455F396622023D2600516286 /* RestoreWallet.swift in Sources */,
+				456012C722152689003B04E2 /* Contacts.swift in Sources */,
 				45A6D7B021EFE242007A6F42 /* VerifyRecoveryPhraseViewController.swift in Sources */,
 				45A6D7B321EFE298007A6F42 /* ChoosePasswordViewController.swift in Sources */,
 				4579A9EE220EB0E300CBCFAE /* ContactRequest.swift in Sources */,
@@ -1080,6 +1090,7 @@
 				45AD3A2821E3405E00198D6F /* EnterPhoneNumberPresenterImpl.swift in Sources */,
 				45AD3A2F21E3412B00198D6F /* BaseView.swift in Sources */,
 				45AD3A3621E3DCD400198D6F /* UITextFieldExtension.swift in Sources */,
+				456012CB22152FE9003B04E2 /* ContactTableViewCell.swift in Sources */,
 				45B7A42B21DEC293005A1124 /* DataViewController.swift in Sources */,
 				45AD3A4821E71D2D00198D6F /* UIColorExtension.swift in Sources */,
 				45AD3A4C21E71EA300198D6F /* ColoredButton.swift in Sources */,
@@ -1126,6 +1137,7 @@
 				4579A9F2220EB12600CBCFAE /* ContactListResponse.swift in Sources */,
 				459DEBBE21DFBCAA009F0BE0 /* AppConstants.swift in Sources */,
 				45828C66220D35A300594842 /* SplashScreen.swift in Sources */,
+				456012C922152703003B04E2 /* ContactsPresenter.swift in Sources */,
 				4579A9F4220EB13E00CBCFAE /* ContactListStringResponse.swift in Sources */,
 				45A6D7AD21EFE220007A6F42 /* RecoveryPhraseViewController.swift in Sources */,
 				45BBF07121E1E0C20042EC5D /* UrlRequestConvertible.swift in Sources */,

@@ -21,4 +21,10 @@ class WalletUtils: NSObject {
         let fileUrl = try FileUtils.createWalletFile(forKeystore: keystore)
         return fileUrl
     }
+
+    static func deleteAllWalletFiles() {
+        if let fileUrl = FileUtils.walletsDirectoryUrl() {
+            try? FileUtils.deleteFile(atUrl: fileUrl)
+        }
+    }
 }

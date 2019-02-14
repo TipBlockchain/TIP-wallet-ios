@@ -9,8 +9,8 @@
 import Foundation
 
 struct ContactListResponse: Codable {
-    var contacts: [User]?
-    var id: String?
+    var contacts: [User]
+    var id: String
 
     enum CodingKeys: String, CodingKey {
         case contacts

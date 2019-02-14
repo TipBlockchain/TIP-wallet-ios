@@ -7,24 +7,75 @@
 //
 
 import UIKit
+import GRDB
 
 class ContactsViewController: BaseViewController {
 
+    @IBOutlet private weak var tableView: UITableView!
+    private var presetner: ContactsPresenter?
+    private var controller: FetchedRecordsController<User>!
+    private var contactRequest = User.orderedByLastMessage()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.configureTableView()
         // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
+    private func configureTableView() {
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        controller = try! FetchedRecordsController(AppDatabase.dbPool, request: contactRequest)
+
+        controller.trackChanges(
+            willChange: { [unowned self] (controller) in
+                self.tableView.beginUpdates()
+        }, onChange: { [unowned self] (controller, record, change) in
+            switch change {
+            case .insertion(let indexPath):
+                self.tableView.insertRows(at: [indexPath], with: .automatic)
+            case .deletion(let indexPath):
+                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            default:
+                break
+            }
+        }, didChange: { [unowned self] (controller) in
+            self.tableView.endUpdates()
+        })
+
+        try? controller.performFetch()
+
+        self.tableView.tableFooterView = UIView()
+        self.tableView.reloadData()
     }
-    */
 
+    private func contact(atIndexPath indexPath: IndexPath) -> User? {
+        return controller.record(at: indexPath)
+    }
+}
+
+extension ContactsViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+    }
+
+}
+
+extension ContactsViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return controller.sections.count
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return controller.sections[section].numberOfRecords
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath) as! ContactTableViewCell
+        if let contact = self.contact(atIndexPath: indexPath) {
+            cell.user = contact
+        }
+        return cell
+    }
 }

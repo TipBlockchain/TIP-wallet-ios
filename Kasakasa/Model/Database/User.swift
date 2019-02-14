@@ -23,7 +23,7 @@ public struct User: Codable, DictionaryEncodable {
 
     var photos: UserPhotos?
 
-    enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey, ColumnExpression {
         case id = "_id"
         case fullname
         case username
@@ -35,7 +35,7 @@ public struct User: Codable, DictionaryEncodable {
         case lastMessage
     }
 
-    init(id: String, fullname: String, username: String, address: String, imageFileKey: String? = nil, pictureUrl: String? = nil, isContact: Bool? = false, isBlocked: Bool? = false, lastMessage: Date? = nil, photos: UserPhotos? = nil) {
+    init(id: String, fullname: String, username: String, address: String, imageFileKey: String? = nil, pictureUrl: String? = nil, isContact: Bool? = false, isBlocked: Bool? = false, lastMessage: Date? = Date(), photos: UserPhotos? = nil) {
         self.id = id
         self.fullname = fullname
         self.username = username
@@ -97,8 +97,8 @@ extension  User: TableRecord {
 
 extension User: FetchableRecord, MutablePersistableRecord {
 
-    enum Columns: String, ColumnExpression {
-        case id, fullname, username, address, imageFileKey, pictureUrl, isContact, isBlocked, lastMessage, originalPhoto, smallPhoto, mediumPhoto
+    enum Columns: String, CodingKey, ColumnExpression {
+        case id, fullname, username, address, imageFileKey, pictureUrl, isContact, isBlocked, lastMessage, originalPhotoUrl, smallPhotoUrl, mediumPhotoUrl
     }
 
     public init(row: Row) {
@@ -106,15 +106,15 @@ extension User: FetchableRecord, MutablePersistableRecord {
         let fullname = row[Columns.fullname] as String
         let username = row[Columns.username] as String
         let address = row[Columns.address] as String
-        let imageFileKey = row[Columns.imageFileKey] as String
-        let pictureUrl = row[Columns.imageFileKey] as String
-        let isContact = row[Columns.isContact] as Bool
-        let isBlocked = row[Columns.isBlocked] as Bool
-        let lastMessage = row[Columns.lastMessage] as Date
+        let imageFileKey = row[Columns.imageFileKey] as String?
+        let pictureUrl = row[Columns.imageFileKey] as String?
+        let isContact = row[Columns.isContact] as Bool?
+        let isBlocked = row[Columns.isBlocked] as Bool?
+        let lastMessage = row[Columns.lastMessage] as Date?
 
-        let originalPhoto = row[Columns.originalPhoto] as String
-        let mediumPhoto = row[Columns.mediumPhoto] as String
-        let smallPhoto = row[Columns.smallPhoto] as String
+        let originalPhoto = row[Columns.originalPhotoUrl] as String?
+        let mediumPhoto = row[Columns.mediumPhotoUrl] as String?
+        let smallPhoto = row[Columns.smallPhotoUrl] as String?
 
         let userPhotos = UserPhotos(original:  originalPhoto, medium: mediumPhoto, small: smallPhoto)
 
@@ -132,8 +132,15 @@ extension User: FetchableRecord, MutablePersistableRecord {
         container[Columns.isBlocked] = isBlocked
         container[Columns.lastMessage] = lastMessage
 
-        container[Columns.originalPhoto] = photos?.original
-        container[Columns.mediumPhoto] = photos?.medium
-        container[Columns.smallPhoto] = photos?.small
+        container[Columns.originalPhotoUrl] = photos?.original
+        container[Columns.mediumPhotoUrl] = photos?.medium
+        container[Columns.smallPhotoUrl] = photos?.small
+    }
+}
+
+extension User {
+
+    static func orderedByLastMessage() -> QueryInterfaceRequest<User> {
+        return User.order(Columns.lastMessage)
     }
 }

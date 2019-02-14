@@ -26,18 +26,18 @@ class AppDatabase {
 
         migrator.registerMigration("create initial db") { (db) in
             try db.create(table: "users") { t in
-                t.column("id", .text).primaryKey(onConflict: Database.ConflictResolution.replace, autoincrement: false)
-                t.column("name", .text).notNull()
-                t.column("username", .text).notNull().indexed()
-                t.column("address", .text).notNull().indexed()
-                t.column("imageFileKey", .text)
-                t.column("pictureUrl", .text)
-                t.column("isContact", .boolean).defaults(to: true)
-                t.column("isBlocked", .boolean).defaults(to: false)
-                t.column("lastMessage", .datetime)
-                t.column("smallPhotoUrl", .text)
-                t.column("mediumPhotoUrl", .text)
-                t.column("originalPhotoUrl", .text)
+                t.column(User.Columns.id.rawValue, .text).primaryKey(onConflict: Database.ConflictResolution.replace, autoincrement: false)
+                t.column(User.Columns.fullname.rawValue, .text).notNull()
+                t.column(User.Columns.username.rawValue, .text).notNull().indexed()
+                t.column(User.Columns.address.rawValue, .text).notNull().indexed()
+                t.column(User.Columns.imageFileKey.rawValue, .text)
+                t.column(User.Columns.pictureUrl.rawValue, .text)
+                t.column(User.Columns.isContact.rawValue, .boolean).defaults(to: true)
+                t.column(User.Columns.isBlocked.rawValue, .boolean).defaults(to: false)
+                t.column(User.Columns.lastMessage.rawValue, .datetime)
+                t.column(User.Columns.smallPhotoUrl.rawValue, .text)
+                t.column(User.Columns.mediumPhotoUrl.rawValue, .text)
+                t.column(User.Columns.originalPhotoUrl.rawValue, .text)
             }
 
             try db.create(table: "wallets") { t in
