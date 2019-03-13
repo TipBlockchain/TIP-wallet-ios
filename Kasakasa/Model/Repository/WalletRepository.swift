@@ -30,14 +30,13 @@ class WalletRepository: NSObject {
         let keystore = try WalletUtils.generateBip39Wallet(fromSeedPhrase: phrase, password: password)
         let walletFileUrl = try WalletUtils.createNewWalletFile(keystore: keystore, password: password)
         if walletFileUrl != nil, let address = keystore.addresses.first {
-            let wallet = Wallet(address: address.address, filePath: walletFileUrl!.path, created: now, balance: BigInt(0), currency: Currency.TIP, isPrimary: true, blockNumber: BigInt(0), startBlockNumber: BigInt(0), lastSynced: now)
-            tipWallet = wallet
-            try self.insert(wallet)
+            tipWallet = Wallet(address: address.address, filePath: walletFileUrl!.path, created: now, balance: BigUInt(0), currency: Currency.TIP, isPrimary: true, blockNumber: BigUInt(0), startBlockNumber: BigUInt(0), lastSynced: now)
+            try self.insert(tipWallet!)
 
-            ethWallet = Wallet(address: address.address, filePath: walletFileUrl!.path, created: now, balance: BigInt(0), currency: Currency.ETH, isPrimary: false, blockNumber: BigInt(0), startBlockNumber: BigInt(0), lastSynced: now)
+            ethWallet = Wallet(address: address.address, filePath: walletFileUrl!.path, created: now, balance: BigUInt(0), currency: Currency.ETH, isPrimary: false, blockNumber: BigUInt(0), startBlockNumber: BigUInt(0), lastSynced: now)
             try self.insert(ethWallet!)
-            debugPrint("Created wallet: \(wallet)")
-            return wallet
+
+            return tipWallet
         }
         return nil
     }
@@ -67,7 +66,13 @@ class WalletRepository: NSObject {
         })
     }
 
-    func updateWallet(_ wallet: Wallet, newBalance balance: BigInt) {
+    func allWallets() -> [Wallet]? {
+        return try! dbPool?.read({ db in
+            return try Wallet.fetchAll(db)
+        })
+    }
+
+    func updateWallet(_ wallet: Wallet, newBalance balance: BigUInt) {
         var walletToUpdate = wallet
         let _ = try! dbPool?.write({ db in
             walletToUpdate.balance = balance

@@ -114,6 +114,19 @@ class BaseViewController: UIViewController {
         self.view.makeToast(message)
     }
 
+    func setNavigationBarTransparent(_ transparent: Bool = true) {
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = UIColor.clear
+    }
+
+    func copyToClipboard(_ text: String) {
+        let pasteBoard = UIPasteboard.general
+        pasteBoard.string = text
+    }
+
     private func switchRootViewController(_ rootViewController: UIViewController, inWindow window: UIWindow, animated: Bool = true, completion: (() -> Void)? = nil) {
         if animated {
             UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {

@@ -76,5 +76,3 @@ class AppDatabase {
         return migrator
     }
 }
-
-

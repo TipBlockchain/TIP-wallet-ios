@@ -6,4 +6,6 @@
     "etherscan_base_url": "https://api.etherscan.io",
     "buy_tip_url": "https://idex.market/eth/tip",
     "app_start_block": 6197652,
+    "ethereum_network_id": 1,
+    "infura_access_token": "SSWOxqisHlJoSVWYy09p",
 }

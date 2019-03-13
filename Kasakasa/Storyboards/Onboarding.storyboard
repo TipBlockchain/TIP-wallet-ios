@@ -117,7 +117,7 @@ Your phone number helps you connect with other people on the network</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IjG-YN-zh7" customClass="ColoredButton" customModule="Kasakasa" customModuleProvider="target">
-                                <rect key="frame" x="30" y="583" width="315" height="34"/>
+                                <rect key="frame" x="20" y="583" width="335" height="34"/>
                                 <color key="backgroundColor" red="0.71372549019999998" green="0.16862745100000001" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <state key="normal" title="Next"/>
@@ -135,7 +135,7 @@ Your phone number helps you connect with other people on the network</string>
                         <constraints>
                             <constraint firstItem="bn5-Vr-Oll" firstAttribute="leading" secondItem="Ugi-Uz-kfl" secondAttribute="leading" id="5sg-23-gGG"/>
                             <constraint firstItem="jfg-pV-7lM" firstAttribute="top" secondItem="tcA-RN-4t6" secondAttribute="bottom" constant="30" id="B0M-WX-8Ji"/>
-                            <constraint firstItem="IjG-YN-zh7" firstAttribute="leading" secondItem="Ugi-Uz-kfl" secondAttribute="leading" constant="30" id="Gx5-d7-AIX"/>
+                            <constraint firstItem="IjG-YN-zh7" firstAttribute="leading" secondItem="Ugi-Uz-kfl" secondAttribute="leading" constant="20" id="Gx5-d7-AIX"/>
                             <constraint firstItem="bn5-Vr-Oll" firstAttribute="bottom" secondItem="Ugi-Uz-kfl" secondAttribute="bottom" id="IFk-GH-uLF"/>
                             <constraint firstItem="5gn-mY-uRY" firstAttribute="leading" secondItem="Ugi-Uz-kfl" secondAttribute="leading" id="Ij1-0K-wdK"/>
                             <constraint firstItem="bn5-Vr-Oll" firstAttribute="top" secondItem="1iS-Ge-4EP" secondAttribute="top" id="Klg-wa-rrp"/>
@@ -143,7 +143,7 @@ Your phone number helps you connect with other people on the network</string>
                             <constraint firstItem="5gn-mY-uRY" firstAttribute="top" secondItem="1iS-Ge-4EP" secondAttribute="top" id="OqS-vU-gAg"/>
                             <constraint firstItem="jBp-Xt-sKg" firstAttribute="top" secondItem="jfg-pV-7lM" secondAttribute="bottom" constant="40" id="TAv-jQ-tNi"/>
                             <constraint firstItem="IjG-YN-zh7" firstAttribute="centerX" secondItem="1iS-Ge-4EP" secondAttribute="centerX" id="ZuK-Fn-g9g"/>
-                            <constraint firstItem="Ugi-Uz-kfl" firstAttribute="trailing" secondItem="IjG-YN-zh7" secondAttribute="trailing" constant="30" id="clS-cZ-Jgs"/>
+                            <constraint firstItem="Ugi-Uz-kfl" firstAttribute="trailing" secondItem="IjG-YN-zh7" secondAttribute="trailing" constant="20" id="clS-cZ-Jgs"/>
                             <constraint firstItem="Ugi-Uz-kfl" firstAttribute="trailing" secondItem="jBp-Xt-sKg" secondAttribute="trailing" constant="20" id="dFg-bM-leJ"/>
                             <constraint firstItem="5gn-mY-uRY" firstAttribute="trailing" secondItem="Ugi-Uz-kfl" secondAttribute="trailing" id="dry-hl-uYt"/>
                             <constraint firstItem="tcA-RN-4t6" firstAttribute="top" secondItem="Ugi-Uz-kfl" secondAttribute="top" constant="40" id="fSd-oL-g30"/>
@@ -208,7 +208,7 @@ Your phone number helps you connect with other people on the network</string>
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="cc-number"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="i9a-iH-jU4" id="Cni-gO-m2P"/>
                                                 </connections>
@@ -223,7 +223,7 @@ Your phone number helps you connect with other people on the network</string>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zs2-yX-Yli" customClass="ColoredButton" customModule="Kasakasa" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="583" width="315" height="34"/>
+                                        <rect key="frame" x="20" y="583" width="335" height="34"/>
                                         <color key="backgroundColor" red="0.71372549019999998" green="0.16862745100000001" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                         <state key="normal" title="Verify Your Number"/>
@@ -246,7 +246,7 @@ Your phone number helps you connect with other people on the network</string>
                                     <constraint firstAttribute="trailing" secondItem="Bpu-sM-KeI" secondAttribute="trailing" constant="20" id="Cdd-8x-o2N"/>
                                     <constraint firstItem="Z8f-mN-jJa" firstAttribute="leading" secondItem="fuA-vG-BI5" secondAttribute="leading" id="G67-56-hH2"/>
                                     <constraint firstItem="Bpu-sM-KeI" firstAttribute="leading" secondItem="SL9-uP-NN4" secondAttribute="leading" constant="20" id="Ike-MH-zqE"/>
-                                    <constraint firstItem="fuA-vG-BI5" firstAttribute="trailing" secondItem="Zs2-yX-Yli" secondAttribute="trailing" constant="30" id="KnD-Kd-k9P"/>
+                                    <constraint firstItem="fuA-vG-BI5" firstAttribute="trailing" secondItem="Zs2-yX-Yli" secondAttribute="trailing" constant="20" id="KnD-Kd-k9P"/>
                                     <constraint firstItem="Z8f-mN-jJa" firstAttribute="top" secondItem="SL9-uP-NN4" secondAttribute="top" id="MCc-RZ-x9C"/>
                                     <constraint firstItem="Z8f-mN-jJa" firstAttribute="bottom" secondItem="fuA-vG-BI5" secondAttribute="bottom" id="TJb-E6-G4j"/>
                                     <constraint firstItem="fuA-vG-BI5" firstAttribute="trailing" secondItem="DTw-s0-owG" secondAttribute="trailing" constant="20" id="Wf8-z2-SJV"/>
@@ -255,7 +255,7 @@ Your phone number helps you connect with other people on the network</string>
                                     <constraint firstAttribute="bottom" secondItem="Z8f-mN-jJa" secondAttribute="bottom" id="ZV2-EK-tCF"/>
                                     <constraint firstItem="Z8f-mN-jJa" firstAttribute="top" secondItem="SL9-uP-NN4" secondAttribute="top" id="adP-RU-JSt"/>
                                     <constraint firstAttribute="bottom" secondItem="xYU-Uc-fF3" secondAttribute="bottom" id="bT8-aV-kTs"/>
-                                    <constraint firstItem="Zs2-yX-Yli" firstAttribute="leading" secondItem="fuA-vG-BI5" secondAttribute="leading" constant="30" id="eYV-Om-xmH"/>
+                                    <constraint firstItem="Zs2-yX-Yli" firstAttribute="leading" secondItem="fuA-vG-BI5" secondAttribute="leading" constant="20" id="eYV-Om-xmH"/>
                                     <constraint firstItem="DTw-s0-owG" firstAttribute="top" secondItem="4lx-gs-4MN" secondAttribute="bottom" constant="30" id="mCY-po-zFP"/>
                                     <constraint firstAttribute="trailing" secondItem="xYU-Uc-fF3" secondAttribute="trailing" id="oyb-F1-wFc"/>
                                     <constraint firstItem="xYU-Uc-fF3" firstAttribute="leading" secondItem="fuA-vG-BI5" secondAttribute="leading" id="s8z-s1-019"/>
@@ -1251,7 +1251,7 @@ Your phone number helps you connect with other people on the network</string>
     <inferredMetricsTieBreakers>
         <segue reference="xxk-wj-SsD"/>
         <segue reference="oTx-2s-9Uq"/>
-        <segue reference="FjN-Vb-TQN"/>
+        <segue reference="Qhm-80-gvm"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.71372549019607845" green="0.16862745098039217" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

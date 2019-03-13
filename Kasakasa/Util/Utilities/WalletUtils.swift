@@ -12,13 +12,14 @@ import web3swift
 class WalletUtils: NSObject {
 
     static func generateBip39Wallet(fromSeedPhrase phrase: String, password: String) throws -> BIP32Keystore {
-        let mnemonics = try Mnemonics(phrase)
-        let keystore = try BIP32Keystore(mnemonics: mnemonics, password: password, aesMode: "aes-128-ctr")
+        let mnemonics = Mnemonics.seed(from: phrase, password: password)
+
+        let keystore = try BIP32Keystore(seed: mnemonics, password: password, aesMode: "aes-128-ctr")
         return keystore
     }
 
     static func createNewWalletFile(keystore: BIP32Keystore, password: String) throws -> URL? {
-        let fileUrl = try FileUtils.createWalletFile(forKeystore: keystore)
+        let fileUrl = try FileUtils.createWalletFile(forKeystore: keystore, password: password)
         return fileUrl
     }
 

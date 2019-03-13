@@ -72,7 +72,7 @@ class FileUtils {
         return nil
     }
 
-    static func createWalletFile(forKeystore keystore: BIP32Keystore) throws -> URL? {
+    static func createWalletFile(forKeystore keystore: BIP32Keystore, password: String) throws -> URL? {
         if let filename = self.filename(forKeystore: keystore), let keyData = try? keystore.serialize() {
             return try self.createWalletFile(withName: filename, contents: keyData!)
         }

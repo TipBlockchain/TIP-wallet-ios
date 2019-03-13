@@ -40,8 +40,7 @@ class RecoveryPhraseViewController: BaseViewController {
     }
 
     @IBAction func copyToClipboardTapped(_ sender: Any) {
-        let pasteBoard = UIPasteboard.general
-        pasteBoard.string = recoveryPhraseTextView.text
+        self.copyToClipboard(recoveryPhraseTextView.text)
         showToast("Recovery phrase copied".localized)
     }
     

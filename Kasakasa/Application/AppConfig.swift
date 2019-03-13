@@ -13,7 +13,19 @@ class AppConfig {
     private static var configDict: Json = readConfigJson()
 
     static var tipApiBaseUrl: String {
-        return configDict[AppConstants.tipApiBaseUrl] as? String ?? ""
+        return configDict[AppConstants.tipApiBaseUrl] as! String
+    }
+
+    static var ethereumNetworkId: Int {
+        return configDict[AppConstants.ethereumNetworkId] as! Int
+    }
+
+    static var infuraAccessToken: String {
+        return configDict[AppConstants.infuraAccessToken] as! String
+    }
+
+    static var tipContractAddress: String {
+        return configDict[AppConstants.tipContractAddress] as! String
     }
 
     private static var configFilename: String {

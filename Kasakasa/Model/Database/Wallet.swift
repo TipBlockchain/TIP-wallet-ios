@@ -10,19 +10,19 @@ import Foundation
 import BigInt
 import GRDB
 
-public struct Wallet: Codable {
+public struct Wallet: Codable, FetchableRecord, MutablePersistableRecord {
     
     var address: String
     var filePath: String
     var created: Date
-    var balance: BigInt
+    var balance: BigUInt
     let currency: Currency
     var isPrimary: Bool
-    var blockNumber: BigInt
-    var startBlockNumber: BigInt
+    var blockNumber: BigUInt
+    var startBlockNumber: BigUInt
     var lastSynced: Date
 
-    init(address: String, filePath: String, created: Date, balance: BigInt, currency: Currency, isPrimary: Bool, blockNumber: BigInt, startBlockNumber: BigInt, lastSynced: Date) {
+    init(address: String, filePath: String, created: Date, balance: BigUInt, currency: Currency, isPrimary: Bool, blockNumber: BigUInt, startBlockNumber: BigUInt, lastSynced: Date) {
         self.address = address
         self.filePath = filePath
         self.created = created
@@ -33,15 +33,6 @@ public struct Wallet: Codable {
         self.startBlockNumber = startBlockNumber
         self.lastSynced = lastSynced
     }
-}
-
-extension Wallet: TableRecord {
-    public static var databaseTableName: String {
-        return "wallets"
-    }
-}
-
-extension Wallet: FetchableRecord, MutablePersistableRecord {
 
     enum Columns: String, ColumnExpression {
         case address, filePath, created, balance, currency, isPrimary, blockNumber, startBlockNumber, lastSynced
@@ -51,11 +42,11 @@ extension Wallet: FetchableRecord, MutablePersistableRecord {
         self.address = row[Columns.address]
         self.filePath = row[Columns.filePath]
         self.created = row[Columns.created]
-        self.balance = BigInt(row[Columns.balance] as? String ?? "0", radix: 10)!
-        self.currency = Currency.init(rawValue: row[Columns.currency] as? String ?? "TIP")!
+        self.balance = BigUInt(row[Columns.balance] as? String ?? "0", radix: 10)!
+        self.currency = Currency(rawValue: row[Columns.currency] as? String ?? "TIP")!
         self.isPrimary = row[Columns.isPrimary]
-        self.blockNumber = BigInt(row[Columns.blockNumber] as? String ?? "0", radix: 10)!
-        self.startBlockNumber = BigInt(row[Columns.startBlockNumber] as? String ?? "0", radix: 10)!
+        self.blockNumber = BigUInt(row[Columns.blockNumber] as? String ?? "0", radix: 10)!
+        self.startBlockNumber = BigUInt(row[Columns.startBlockNumber] as? String ?? "0", radix: 10)!
         self.lastSynced = row[Columns.lastSynced]
     }
 
@@ -69,5 +60,11 @@ extension Wallet: FetchableRecord, MutablePersistableRecord {
         container[Columns.blockNumber.rawValue] = String(blockNumber)
         container[Columns.startBlockNumber.rawValue] = String(startBlockNumber)
         container[Columns.lastSynced.rawValue] = lastSynced
+    }
+}
+
+extension Wallet: TableRecord {
+    public static var databaseTableName: String {
+        return "wallets"
     }
 }

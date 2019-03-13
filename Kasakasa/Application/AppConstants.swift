@@ -8,15 +8,6 @@
 
 import Foundation
 
-/*
- tip_api_url: "https://discoverapi1.dev.tipblockchain.io",
- eth_node_url: "https://rinkeby.infura.io/SSWOxqisHlJoSVWYy09p",
- tip_contract_address: "0xFE55d3E9583D1d7f9907367065737206F9751f6a",
- etherscan_api_key: "ZJPDFCKG8WSN5Y1NUERJM699QT615JWRNY",
- etherscan_base_url: "https://rinkeby.etherscan.io",
- buy_tip_url: "https://idex.market/eth/tip",
- app_start_block: 338200,
- */
 enum AppConstants {
     static let tipApiBaseUrl = "tip_api_url"
     static let ethNodeUrl = "eth_node_url"
@@ -25,4 +16,6 @@ enum AppConstants {
     static let etherscanBaseUrl = "etherscan_base_url"
     static let idexMarketUrl = "buy_tip_url"
     static let chainStartBlock = "app_start_block"
+    static let ethereumNetworkId = "ethereum_network_id"
+    static let infuraAccessToken = "infura_access_token"
 }

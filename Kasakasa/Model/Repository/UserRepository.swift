@@ -56,8 +56,10 @@ class UserRepository {
 
     }
 
-    func loadContacts() -> [User] {
-        return []
+    func loadContacts() throws -> [User]? {
+        return try dbPool?.read({ (db) in
+            return try User.fetchAll(db, "SELECT * FROM users WHERE isContact = ? ORDER BY lastMessage", arguments: [true])
+        })
     }
 
     func addContact(_ contact: User, completion: @escaping (Bool, AppErrors?) -> Void) {
@@ -87,6 +89,7 @@ class UserRepository {
         var userToSave = user
 
         try dbPool?.write({db in
+            userToSave.isContact = true
             try userToSave.save(db)
         })
     }

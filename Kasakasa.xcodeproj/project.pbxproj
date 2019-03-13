@@ -15,6 +15,14 @@
 		452AD7F121EFAB13007F11E2 /* TextUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AD7F021EFAB13007F11E2 /* TextUtils.swift */; };
 		452AD7F421EFB839007F11E2 /* VerifyPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AD7F321EFB839007F11E2 /* VerifyPhoneNumberViewController.swift */; };
 		452AD7F621EFBBAB007F11E2 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 452AD7F521EFBBAB007F11E2 /* Icons.xcassets */; };
+		453A7C502220CD2500E5E3C8 /* SendTransferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A7C4F2220CD2500E5E3C8 /* SendTransferView.swift */; };
+		453A7C522220CF8600E5E3C8 /* PendingTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A7C512220CF8600E5E3C8 /* PendingTransaction.swift */; };
+		453A7C54222116CC00E5E3C8 /* SendTransferPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A7C53222116CC00E5E3C8 /* SendTransferPresenter.swift */; };
+		453A7C562221E1F500E5E3C8 /* ChainProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A7C552221E1F500E5E3C8 /* ChainProcessor.swift */; };
+		453A7C582221E23300E5E3C8 /* EthProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A7C572221E23300E5E3C8 /* EthProcessor.swift */; };
+		453A7C5A2221E26500E5E3C8 /* TipProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A7C592221E26500E5E3C8 /* TipProcessor.swift */; };
+		453A7C5C2223BC9600E5E3C8 /* EthConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A7C5B2223BC9600E5E3C8 /* EthConvert.swift */; };
+		453A7C5E222A53BA00E5E3C8 /* TipTokenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A7C5D222A53BA00E5E3C8 /* TipTokenContract.swift */; };
 		455F396022022EEF00516286 /* ExistingAccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F395F22022EEF00516286 /* ExistingAccountPresenter.swift */; };
 		455F39622202348200516286 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F39612202348200516286 /* UIImageExtension.swift */; };
 		455F396422023C4000516286 /* RestoreWalletPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F396322023C4000516286 /* RestoreWalletPresenter.swift */; };
@@ -54,6 +62,10 @@
 		45828C71220D5F4E00594842 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45828C70220D5F4E00594842 /* WalletViewController.swift */; };
 		45828C75220E851000594842 /* UserSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45828C74220E851000594842 /* UserSearchViewController.swift */; };
 		45828C77220E852700594842 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45828C76220E852700594842 /* ContactsViewController.swift */; };
+		45949C9A222F404C008F8BC9 /* TipContractTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45949C99222F404C008F8BC9 /* TipContractTests.swift */; };
+		459747832215434B00EAD4B8 /* SendTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459747822215434B00EAD4B8 /* SendTransferViewController.swift */; };
+		459747852215435600EAD4B8 /* ConfirmTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459747842215435600EAD4B8 /* ConfirmTransferViewController.swift */; };
+		459747882217E60200EAD4B8 /* ReceiveTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459747872217E60200EAD4B8 /* ReceiveTransferViewController.swift */; };
 		459DEBBA21DFB82B009F0BE0 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 459DEBB921DFB82B009F0BE0 /* Tutorial.storyboard */; };
 		459DEBBC21DFB84E009F0BE0 /* MainApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 459DEBBB21DFB84E009F0BE0 /* MainApp.storyboard */; };
 		459DEBBE21DFBCAA009F0BE0 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459DEBBD21DFBCAA009F0BE0 /* AppConstants.swift */; };
@@ -151,6 +163,14 @@
 		452AD7F021EFAB13007F11E2 /* TextUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextUtils.swift; sourceTree = "<group>"; };
 		452AD7F321EFB839007F11E2 /* VerifyPhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneNumberViewController.swift; sourceTree = "<group>"; };
 		452AD7F521EFBBAB007F11E2 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		453A7C4F2220CD2500E5E3C8 /* SendTransferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendTransferView.swift; sourceTree = "<group>"; };
+		453A7C512220CF8600E5E3C8 /* PendingTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingTransaction.swift; sourceTree = "<group>"; };
+		453A7C53222116CC00E5E3C8 /* SendTransferPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendTransferPresenter.swift; sourceTree = "<group>"; };
+		453A7C552221E1F500E5E3C8 /* ChainProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainProcessor.swift; sourceTree = "<group>"; };
+		453A7C572221E23300E5E3C8 /* EthProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthProcessor.swift; sourceTree = "<group>"; };
+		453A7C592221E26500E5E3C8 /* TipProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipProcessor.swift; sourceTree = "<group>"; };
+		453A7C5B2223BC9600E5E3C8 /* EthConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthConvert.swift; sourceTree = "<group>"; };
+		453A7C5D222A53BA00E5E3C8 /* TipTokenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipTokenContract.swift; sourceTree = "<group>"; };
 		455F395F22022EEF00516286 /* ExistingAccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingAccountPresenter.swift; sourceTree = "<group>"; };
 		455F39612202348200516286 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		455F396322023C4000516286 /* RestoreWalletPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreWalletPresenter.swift; sourceTree = "<group>"; };
@@ -191,6 +211,10 @@
 		45828C70220D5F4E00594842 /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
 		45828C74220E851000594842 /* UserSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchViewController.swift; sourceTree = "<group>"; };
 		45828C76220E852700594842 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		45949C99222F404C008F8BC9 /* TipContractTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipContractTests.swift; sourceTree = "<group>"; };
+		459747822215434B00EAD4B8 /* SendTransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendTransferViewController.swift; sourceTree = "<group>"; };
+		459747842215435600EAD4B8 /* ConfirmTransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmTransferViewController.swift; sourceTree = "<group>"; };
+		459747872217E60200EAD4B8 /* ReceiveTransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveTransferViewController.swift; sourceTree = "<group>"; };
 		459DEBB921DFB82B009F0BE0 /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		459DEBBB21DFB84E009F0BE0 /* MainApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainApp.storyboard; sourceTree = "<group>"; };
 		459DEBBD21DFBCAA009F0BE0 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
@@ -361,6 +385,11 @@
 			isa = PBXGroup;
 			children = (
 				456D855D21F2A518005150F3 /* Web3Bridge.swift */,
+				453A7C552221E1F500E5E3C8 /* ChainProcessor.swift */,
+				453A7C572221E23300E5E3C8 /* EthProcessor.swift */,
+				453A7C592221E26500E5E3C8 /* TipProcessor.swift */,
+				453A7C5B2223BC9600E5E3C8 /* EthConvert.swift */,
+				453A7C5D222A53BA00E5E3C8 /* TipTokenContract.swift */,
 			);
 			path = Blockchain;
 			sourceTree = "<group>";
@@ -386,6 +415,9 @@
 		45828C6E220D5F2100594842 /* Main App */ = {
 			isa = PBXGroup;
 			children = (
+				459747862217E5EC00EAD4B8 /* Receive Transfer */,
+				459747812215431700EAD4B8 /* Confirm Transfer */,
+				459747802215430B00EAD4B8 /* Send Transfer */,
 				45828C73220E84D700594842 /* User Search */,
 				45828C72220E84CE00594842 /* Contacts */,
 				45828C6F220D5F3B00594842 /* Wallet */,
@@ -419,6 +451,47 @@
 				4579A9EB220EA1B000CBCFAE /* UserSearch.swift */,
 			);
 			path = "User Search";
+			sourceTree = "<group>";
+		};
+		45949C97222A5894008F8BC9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				45949C98222A58A5008F8BC9 /* ABI */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		45949C98222A58A5008F8BC9 /* ABI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ABI;
+			sourceTree = "<group>";
+		};
+		459747802215430B00EAD4B8 /* Send Transfer */ = {
+			isa = PBXGroup;
+			children = (
+				459747822215434B00EAD4B8 /* SendTransferViewController.swift */,
+				453A7C4F2220CD2500E5E3C8 /* SendTransferView.swift */,
+				453A7C53222116CC00E5E3C8 /* SendTransferPresenter.swift */,
+			);
+			path = "Send Transfer";
+			sourceTree = "<group>";
+		};
+		459747812215431700EAD4B8 /* Confirm Transfer */ = {
+			isa = PBXGroup;
+			children = (
+				459747842215435600EAD4B8 /* ConfirmTransferViewController.swift */,
+			);
+			path = "Confirm Transfer";
+			sourceTree = "<group>";
+		};
+		459747862217E5EC00EAD4B8 /* Receive Transfer */ = {
+			isa = PBXGroup;
+			children = (
+				459747872217E60200EAD4B8 /* ReceiveTransferViewController.swift */,
+			);
+			path = "Receive Transfer";
 			sourceTree = "<group>";
 		};
 		459DEBB421DFB415009F0BE0 /* Application */ = {
@@ -639,6 +712,7 @@
 		45B7A42521DEC293005A1124 /* Kasakasa */ = {
 			isa = PBXGroup;
 			children = (
+				45949C97222A5894008F8BC9 /* Supporting Files */,
 				45828C6B220D4C3E00594842 /* Playground */,
 				45BBF06521E1D32D0042EC5D /* Localization */,
 				459DEBB421DFB415009F0BE0 /* Application */,
@@ -707,6 +781,7 @@
 			children = (
 				45BBF06121E1C8C90042EC5D /* Json.swift */,
 				45AD3A5E21E7440400198D6F /* DictionaryEncodable.swift */,
+				453A7C512220CF8600E5E3C8 /* PendingTransaction.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -723,6 +798,7 @@
 			isa = PBXGroup;
 			children = (
 				45BBF07321E1E1BD0042EC5D /* TipApiServiceTests.swift */,
+				45949C99222F404C008F8BC9 /* TipContractTests.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -943,17 +1019,21 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Kasakasa/Pods-Kasakasa-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
 				"${BUILT_PRODUCTS_DIR}/CropViewController/CropViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/EthereumABI/EthereumABI.framework",
+				"${BUILT_PRODUCTS_DIR}/EthereumAddress/EthereumAddress.framework",
 				"${BUILT_PRODUCTS_DIR}/GRDB.swift/GRDB.framework",
 				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
 				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
+				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftRLP/SwiftRLP.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/keccak.c/keccak.framework",
-				"${BUILT_PRODUCTS_DIR}/scrypt.c/scrypt.framework",
-				"${BUILT_PRODUCTS_DIR}/secp256k1.c/secp256k1.framework",
-				"${BUILT_PRODUCTS_DIR}/web3swift/web3swift.framework",
+				"${BUILT_PRODUCTS_DIR}/scrypt/scrypt.framework",
+				"${BUILT_PRODUCTS_DIR}/secp256k1_swift/secp256k1_swift.framework",
+				"${BUILT_PRODUCTS_DIR}/web3swift/Web3swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -961,17 +1041,21 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigInt.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CropViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EthereumABI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EthereumAddress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftRLP.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/keccak.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/scrypt.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/secp256k1.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/web3swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/secp256k1_swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Web3swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1054,21 +1138,27 @@
 				457F54E321FD905D00EA25AC /* OnboardingUserProfile.swift in Sources */,
 				45828C68220D364C00594842 /* SplashScreenPresenter.swift in Sources */,
 				45A6D7A521EFD782007A6F42 /* VerifyPhone.swift in Sources */,
+				459747882217E60200EAD4B8 /* ReceiveTransferViewController.swift in Sources */,
+				453A7C5C2223BC9600E5E3C8 /* EthConvert.swift in Sources */,
 				4524159A21F1AF03005B53A2 /* AppDefaults.swift in Sources */,
 				45AD3A4621E71B6000198D6F /* UIViewExtension.swift in Sources */,
 				4524159F21F1B893005B53A2 /* UserRepository.swift in Sources */,
 				45BBF05821E1C46B0042EC5D /* NetworkService.swift in Sources */,
 				452AD7F121EFAB13007F11E2 /* TextUtils.swift in Sources */,
 				45AD3A5721E7375900198D6F /* DateFormatterExtension.swift in Sources */,
+				453A7C5A2221E26500E5E3C8 /* TipProcessor.swift in Sources */,
 				457F54E521FE9C5800EA25AC /* UsernameResponse.swift in Sources */,
 				45AD3A2D21E3411300198D6F /* BasePresenter.swift in Sources */,
 				45129C5B21DFC59C00F585FA /* IntroPageViewController.swift in Sources */,
 				457F54DF21FD154300EA25AC /* FileUtils.swift in Sources */,
 				45FD5B5021E0333900C247F0 /* TutorialViewController.swift in Sources */,
+				453A7C54222116CC00E5E3C8 /* SendTransferPresenter.swift in Sources */,
+				453A7C502220CD2500E5E3C8 /* SendTransferView.swift in Sources */,
 				45AD3A2621E33FBC00198D6F /* EnterPhoneNumberViewController.swift in Sources */,
 				45AD3A4021E5635100198D6F /* BaseViewController.swift in Sources */,
 				45AD3A4421E5862200198D6F /* InsetTextField.swift in Sources */,
 				45828C71220D5F4E00594842 /* WalletViewController.swift in Sources */,
+				453A7C5E222A53BA00E5E3C8 /* TipTokenContract.swift in Sources */,
 				45AD3A5B21E73E0200198D6F /* UserPhotos.swift in Sources */,
 				45B7A42921DEC293005A1124 /* RootViewController.swift in Sources */,
 				4579A9EC220EA1B000CBCFAE /* UserSearch.swift in Sources */,
@@ -1077,6 +1167,7 @@
 				455F396622023D2600516286 /* RestoreWallet.swift in Sources */,
 				456012C722152689003B04E2 /* Contacts.swift in Sources */,
 				45A6D7B021EFE242007A6F42 /* VerifyRecoveryPhraseViewController.swift in Sources */,
+				459747832215434B00EAD4B8 /* SendTransferViewController.swift in Sources */,
 				45A6D7B321EFE298007A6F42 /* ChoosePasswordViewController.swift in Sources */,
 				4579A9EE220EB0E300CBCFAE /* ContactRequest.swift in Sources */,
 				45AD3A3D21E42C4C00198D6F /* CountryTableViewCell.swift in Sources */,
@@ -1110,6 +1201,7 @@
 				45AD3A2A21E3409900198D6F /* EnterPhoneNumber.swift in Sources */,
 				45BBF05F21E1C86C0042EC5D /* AppErrors.swift in Sources */,
 				4579A9EA220EA19000CBCFAE /* UserSearchPresenter.swift in Sources */,
+				453A7C522220CF8600E5E3C8 /* PendingTransaction.swift in Sources */,
 				456D856621F2C71C005150F3 /* VerifyRecoveryPhrase.swift in Sources */,
 				456D856421F2C6DB005150F3 /* VerifyRecoveryPhrasePresenter.swift in Sources */,
 				457F54E121FD904000EA25AC /* OnboardingUserProfilePresenter.swift in Sources */,
@@ -1127,7 +1219,10 @@
 				452AD7F421EFB839007F11E2 /* VerifyPhoneNumberViewController.swift in Sources */,
 				456D856A21F2E2D7005150F3 /* ChoosePassword.swift in Sources */,
 				456D857021F59AB7005150F3 /* Currency.swift in Sources */,
+				459747852215435600EAD4B8 /* ConfirmTransferViewController.swift in Sources */,
+				453A7C562221E1F500E5E3C8 /* ChainProcessor.swift in Sources */,
 				45828C77220E852700594842 /* ContactsViewController.swift in Sources */,
+				453A7C582221E23300E5E3C8 /* EthProcessor.swift in Sources */,
 				456D856821F2E296005150F3 /* ChoosePasswordPresenter.swift in Sources */,
 				459DEBC021DFBCBB009F0BE0 /* AppStyle.swift in Sources */,
 				45B7A42721DEC293005A1124 /* AppDelegate.swift in Sources */,
@@ -1149,6 +1244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45949C9A222F404C008F8BC9 /* TipContractTests.swift in Sources */,
 				45BBF07421E1E1BD0042EC5D /* TipApiServiceTests.swift in Sources */,
 				45B7A44021DEC295005A1124 /* KasakasaTests.swift in Sources */,
 			);

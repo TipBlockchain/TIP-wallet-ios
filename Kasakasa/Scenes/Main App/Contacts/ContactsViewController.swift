@@ -15,6 +15,7 @@ class ContactsViewController: BaseViewController {
     private var presetner: ContactsPresenter?
     private var controller: FetchedRecordsController<User>!
     private var contactRequest = User.orderedByLastMessage()
+    private var selectedContact: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +50,12 @@ class ContactsViewController: BaseViewController {
         self.tableView.reloadData()
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? SendTransferViewController {
+            vc.targetUser = self.selectedContact
+        }
+    }
+
     private func contact(atIndexPath indexPath: IndexPath) -> User? {
         return controller.record(at: indexPath)
     }
@@ -57,7 +64,14 @@ class ContactsViewController: BaseViewController {
 extension ContactsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let selectedContact = self.contact(atIndexPath: indexPath) {
+            self.showOkCancelAlert(withTitle: "Send Transfer?".localized, message: "Do you want to send a transfer to \(selectedContact.username)", style: .actionSheet, onOkSelected: {
+                self.selectedContact = selectedContact
+                self.performSegue(withIdentifier: "ShowSendTransferFromContacts", sender: self)
+            }) {
 
+            }
+        }
     }
 
 }
