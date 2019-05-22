@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45103FE22295AAC9001C26D5 /* secp256k1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FD42295AAC7001C26D5 /* secp256k1.framework */; };
+		45103FE32295AAC9001C26D5 /* BigInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FD52295AAC7001C26D5 /* BigInt.framework */; };
+		45103FE42295AAC9001C26D5 /* QRCodeReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FD62295AAC7001C26D5 /* QRCodeReader.framework */; };
+		45103FE52295AAC9001C26D5 /* SkyFloatingLabelTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FD72295AAC8001C26D5 /* SkyFloatingLabelTextField.framework */; };
+		45103FE62295AAC9001C26D5 /* QRCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FD82295AAC8001C26D5 /* QRCode.framework */; };
+		45103FE72295AAC9001C26D5 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FD92295AAC8001C26D5 /* Nuke.framework */; };
+		45103FE82295AAC9001C26D5 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FDA2295AAC8001C26D5 /* PromiseKit.framework */; };
+		45103FE92295AAC9001C26D5 /* CropViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FDB2295AAC8001C26D5 /* CropViewController.framework */; };
+		45103FEB2295AAC9001C26D5 /* web3swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FDD2295AAC8001C26D5 /* web3swift.framework */; };
+		45103FEC2295AAC9001C26D5 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FDE2295AAC8001C26D5 /* CryptoSwift.framework */; };
+		45103FED2295AAC9001C26D5 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FDF2295AAC8001C26D5 /* Starscream.framework */; };
+		45103FEE2295AAC9001C26D5 /* ToastSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FE02295AAC8001C26D5 /* ToastSwiftFramework.framework */; };
+		45103FEF2295AAC9001C26D5 /* SipHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FE12295AAC8001C26D5 /* SipHash.framework */; };
+		45103FFC2295B6A8001C26D5 /* GRDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FFB2295B6A8001C26D5 /* GRDB.framework */; };
+		45103FFE2295B760001C26D5 /* GRDBCipher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FFD2295B760001C26D5 /* GRDBCipher.framework */; };
 		45129C5B21DFC59C00F585FA /* IntroPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45129C5A21DFC59C00F585FA /* IntroPageViewController.swift */; };
 		4524159A21F1AF03005B53A2 /* AppDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4524159921F1AF03005B53A2 /* AppDefaults.swift */; };
 		4524159D21F1B257005B53A2 /* AuthorizationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4524159C21F1B257005B53A2 /* AuthorizationRepository.swift */; };
@@ -130,9 +145,6 @@
 		45FD5B5421E0688E00C247F0 /* config.local.json in Resources */ = {isa = PBXBuildFile; fileRef = 45FD5B5321E0688E00C247F0 /* config.local.json */; };
 		45FD5B5621E069A600C247F0 /* config.dev.json in Resources */ = {isa = PBXBuildFile; fileRef = 45FD5B5521E069A600C247F0 /* config.dev.json */; };
 		45FD5B5A21E06BEF00C247F0 /* TipNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FD5B5921E06BEF00C247F0 /* TipNetworkRequest.swift */; };
-		AA91E4D09A921D7925F30F22 /* Pods_Kasakasa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F26EBD46D3A2E68681FD0AD /* Pods_Kasakasa.framework */; };
-		C4A16E661D3313996627779C /* Pods_KasakasaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3EF9B9DA030E0CE2F18AA5 /* Pods_KasakasaUITests.framework */; };
-		DEA84CBDF39877578EA24358 /* Pods_KasakasaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF3E5FCEC3ADB058C8813B3 /* Pods_KasakasaTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,10 +165,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1823EDCBA5306C7581EA2361 /* Pods-KasakasaTests.local.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaTests.local.xcconfig"; path = "Pods/Target Support Files/Pods-KasakasaTests/Pods-KasakasaTests.local.xcconfig"; sourceTree = "<group>"; };
-		2238658629F05D29A4198330 /* Pods-KasakasaUITests.dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaUITests.dev.xcconfig"; path = "Pods/Target Support Files/Pods-KasakasaUITests/Pods-KasakasaUITests.dev.xcconfig"; sourceTree = "<group>"; };
-		3D00D09683228BE33F4B1925 /* Pods-KasakasaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KasakasaUITests/Pods-KasakasaUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		432C0A52FEE4565F8C1673EE /* Pods-Kasakasa.local.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kasakasa.local.xcconfig"; path = "Pods/Target Support Files/Pods-Kasakasa/Pods-Kasakasa.local.xcconfig"; sourceTree = "<group>"; };
+		45103FD42295AAC7001C26D5 /* secp256k1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = secp256k1.framework; path = Carthage/Build/iOS/secp256k1.framework; sourceTree = "<group>"; };
+		45103FD52295AAC7001C26D5 /* BigInt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BigInt.framework; path = Carthage/Build/iOS/BigInt.framework; sourceTree = "<group>"; };
+		45103FD62295AAC7001C26D5 /* QRCodeReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QRCodeReader.framework; path = Carthage/Build/iOS/QRCodeReader.framework; sourceTree = "<group>"; };
+		45103FD72295AAC8001C26D5 /* SkyFloatingLabelTextField.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkyFloatingLabelTextField.framework; path = Carthage/Build/iOS/SkyFloatingLabelTextField.framework; sourceTree = "<group>"; };
+		45103FD82295AAC8001C26D5 /* QRCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QRCode.framework; path = Carthage/Build/iOS/QRCode.framework; sourceTree = "<group>"; };
+		45103FD92295AAC8001C26D5 /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
+		45103FDA2295AAC8001C26D5 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
+		45103FDB2295AAC8001C26D5 /* CropViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CropViewController.framework; path = Carthage/Build/iOS/CropViewController.framework; sourceTree = "<group>"; };
+		45103FDC2295AAC8001C26D5 /* TOCropViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TOCropViewController.framework; path = Carthage/Build/iOS/TOCropViewController.framework; sourceTree = "<group>"; };
+		45103FDD2295AAC8001C26D5 /* web3swift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = web3swift.framework; path = Carthage/Build/iOS/web3swift.framework; sourceTree = "<group>"; };
+		45103FDE2295AAC8001C26D5 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
+		45103FDF2295AAC8001C26D5 /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
+		45103FE02295AAC8001C26D5 /* ToastSwiftFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ToastSwiftFramework.framework; path = Carthage/Build/iOS/ToastSwiftFramework.framework; sourceTree = "<group>"; };
+		45103FE12295AAC8001C26D5 /* SipHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SipHash.framework; path = Carthage/Build/iOS/SipHash.framework; sourceTree = "<group>"; };
+		45103FFB2295B6A8001C26D5 /* GRDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GRDB.framework; path = Carthage/Build/iOS/GRDB.framework; sourceTree = "<group>"; };
+		45103FFD2295B760001C26D5 /* GRDBCipher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GRDBCipher.framework; path = Carthage/Build/iOS/GRDBCipher.framework; sourceTree = "<group>"; };
 		45129C5A21DFC59C00F585FA /* IntroPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPageViewController.swift; sourceTree = "<group>"; };
 		4524159921F1AF03005B53A2 /* AppDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefaults.swift; sourceTree = "<group>"; };
 		4524159C21F1B257005B53A2 /* AuthorizationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRepository.swift; sourceTree = "<group>"; };
@@ -287,17 +311,6 @@
 		45FD5B5321E0688E00C247F0 /* config.local.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = config.local.json; sourceTree = "<group>"; };
 		45FD5B5521E069A600C247F0 /* config.dev.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = config.dev.json; sourceTree = "<group>"; };
 		45FD5B5921E06BEF00C247F0 /* TipNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipNetworkRequest.swift; sourceTree = "<group>"; };
-		4F26EBD46D3A2E68681FD0AD /* Pods_Kasakasa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kasakasa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		54450E13E9861001970A9DFD /* Pods-Kasakasa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kasakasa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kasakasa/Pods-Kasakasa.debug.xcconfig"; sourceTree = "<group>"; };
-		8AF3E5FCEC3ADB058C8813B3 /* Pods_KasakasaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KasakasaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		93235F28C2127861AB1CE650 /* Pods-KasakasaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KasakasaTests/Pods-KasakasaTests.debug.xcconfig"; sourceTree = "<group>"; };
-		935E2912FBB49F3222DBE12C /* Pods-KasakasaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KasakasaTests/Pods-KasakasaTests.release.xcconfig"; sourceTree = "<group>"; };
-		A009DDFACFF917AEB30F06A4 /* Pods-KasakasaUITests.local.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaUITests.local.xcconfig"; path = "Pods/Target Support Files/Pods-KasakasaUITests/Pods-KasakasaUITests.local.xcconfig"; sourceTree = "<group>"; };
-		B5C3FB65A4432E539A364679 /* Pods-KasakasaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KasakasaUITests/Pods-KasakasaUITests.release.xcconfig"; sourceTree = "<group>"; };
-		B927B8F2F63DA5D5332EA0D1 /* Pods-KasakasaTests.dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaTests.dev.xcconfig"; path = "Pods/Target Support Files/Pods-KasakasaTests/Pods-KasakasaTests.dev.xcconfig"; sourceTree = "<group>"; };
-		B9F49B56CFE085FAB0826AB9 /* Pods-Kasakasa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kasakasa.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kasakasa/Pods-Kasakasa.release.xcconfig"; sourceTree = "<group>"; };
-		CF3EF9B9DA030E0CE2F18AA5 /* Pods_KasakasaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KasakasaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D59F8ADA3175FB31AE54F1BC /* Pods-Kasakasa.dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kasakasa.dev.xcconfig"; path = "Pods/Target Support Files/Pods-Kasakasa/Pods-Kasakasa.dev.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,7 +318,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA91E4D09A921D7925F30F22 /* Pods_Kasakasa.framework in Frameworks */,
+				45103FE22295AAC9001C26D5 /* secp256k1.framework in Frameworks */,
+				45103FE32295AAC9001C26D5 /* BigInt.framework in Frameworks */,
+				45103FE42295AAC9001C26D5 /* QRCodeReader.framework in Frameworks */,
+				45103FE52295AAC9001C26D5 /* SkyFloatingLabelTextField.framework in Frameworks */,
+				45103FE62295AAC9001C26D5 /* QRCode.framework in Frameworks */,
+				45103FE72295AAC9001C26D5 /* Nuke.framework in Frameworks */,
+				45103FE82295AAC9001C26D5 /* PromiseKit.framework in Frameworks */,
+				45103FE92295AAC9001C26D5 /* CropViewController.framework in Frameworks */,
+				45103FEB2295AAC9001C26D5 /* web3swift.framework in Frameworks */,
+				45103FEC2295AAC9001C26D5 /* CryptoSwift.framework in Frameworks */,
+				45103FED2295AAC9001C26D5 /* Starscream.framework in Frameworks */,
+				45103FEE2295AAC9001C26D5 /* ToastSwiftFramework.framework in Frameworks */,
+				45103FEF2295AAC9001C26D5 /* SipHash.framework in Frameworks */,
+				45103FFC2295B6A8001C26D5 /* GRDB.framework in Frameworks */,
+				45103FFE2295B760001C26D5 /* GRDBCipher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,7 +340,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEA84CBDF39877578EA24358 /* Pods_KasakasaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,30 +347,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4A16E661D3313996627779C /* Pods_KasakasaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		17F9DE88DA6D0617B78F45D7 /* Pods */ = {
+		45103FD32295AAC7001C26D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				54450E13E9861001970A9DFD /* Pods-Kasakasa.debug.xcconfig */,
-				432C0A52FEE4565F8C1673EE /* Pods-Kasakasa.local.xcconfig */,
-				D59F8ADA3175FB31AE54F1BC /* Pods-Kasakasa.dev.xcconfig */,
-				B9F49B56CFE085FAB0826AB9 /* Pods-Kasakasa.release.xcconfig */,
-				93235F28C2127861AB1CE650 /* Pods-KasakasaTests.debug.xcconfig */,
-				1823EDCBA5306C7581EA2361 /* Pods-KasakasaTests.local.xcconfig */,
-				B927B8F2F63DA5D5332EA0D1 /* Pods-KasakasaTests.dev.xcconfig */,
-				935E2912FBB49F3222DBE12C /* Pods-KasakasaTests.release.xcconfig */,
-				3D00D09683228BE33F4B1925 /* Pods-KasakasaUITests.debug.xcconfig */,
-				A009DDFACFF917AEB30F06A4 /* Pods-KasakasaUITests.local.xcconfig */,
-				2238658629F05D29A4198330 /* Pods-KasakasaUITests.dev.xcconfig */,
-				B5C3FB65A4432E539A364679 /* Pods-KasakasaUITests.release.xcconfig */,
+				45103FFD2295B760001C26D5 /* GRDBCipher.framework */,
+				45103FFB2295B6A8001C26D5 /* GRDB.framework */,
+				45103FD52295AAC7001C26D5 /* BigInt.framework */,
+				45103FDB2295AAC8001C26D5 /* CropViewController.framework */,
+				45103FDE2295AAC8001C26D5 /* CryptoSwift.framework */,
+				45103FD92295AAC8001C26D5 /* Nuke.framework */,
+				45103FDA2295AAC8001C26D5 /* PromiseKit.framework */,
+				45103FD82295AAC8001C26D5 /* QRCode.framework */,
+				45103FD62295AAC7001C26D5 /* QRCodeReader.framework */,
+				45103FD42295AAC7001C26D5 /* secp256k1.framework */,
+				45103FE12295AAC8001C26D5 /* SipHash.framework */,
+				45103FD72295AAC8001C26D5 /* SkyFloatingLabelTextField.framework */,
+				45103FDF2295AAC8001C26D5 /* Starscream.framework */,
+				45103FE02295AAC8001C26D5 /* ToastSwiftFramework.framework */,
+				45103FDC2295AAC8001C26D5 /* TOCropViewController.framework */,
+				45103FDD2295AAC8001C26D5 /* web3swift.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		45129C5821DFC50700F585FA /* Onboarding */ = {
@@ -718,8 +747,7 @@
 				45B7A43E21DEC295005A1124 /* KasakasaTests */,
 				45B7A44921DEC295005A1124 /* KasakasaUITests */,
 				45B7A42421DEC293005A1124 /* Products */,
-				17F9DE88DA6D0617B78F45D7 /* Pods */,
-				5CC979A25797000EBA6AE206 /* Frameworks */,
+				45103FD32295AAC7001C26D5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -861,16 +889,6 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		5CC979A25797000EBA6AE206 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4F26EBD46D3A2E68681FD0AD /* Pods_Kasakasa.framework */,
-				8AF3E5FCEC3ADB058C8813B3 /* Pods_KasakasaTests.framework */,
-				CF3EF9B9DA030E0CE2F18AA5 /* Pods_KasakasaUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -878,11 +896,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45B7A44F21DEC295005A1124 /* Build configuration list for PBXNativeTarget "Kasakasa" */;
 			buildPhases = (
-				1A582EA5FC5F660E5785B432 /* [CP] Check Pods Manifest.lock */,
 				45B7A41F21DEC293005A1124 /* Sources */,
 				45B7A42021DEC293005A1124 /* Frameworks */,
 				45B7A42121DEC293005A1124 /* Resources */,
-				80544FADD133167FF351C47D /* [CP] Embed Pods Frameworks */,
+				45103FF02295AB06001C26D5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -897,7 +914,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45B7A45221DEC295005A1124 /* Build configuration list for PBXNativeTarget "KasakasaTests" */;
 			buildPhases = (
-				B98DA0FD228A29D170BF7EE6 /* [CP] Check Pods Manifest.lock */,
 				45B7A43721DEC295005A1124 /* Sources */,
 				45B7A43821DEC295005A1124 /* Frameworks */,
 				45B7A43921DEC295005A1124 /* Resources */,
@@ -916,7 +932,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45B7A45521DEC295005A1124 /* Build configuration list for PBXNativeTarget "KasakasaUITests" */;
 			buildPhases = (
-				7E9F74779ED9490DC47CAD66 /* [CP] Check Pods Manifest.lock */,
 				45B7A44221DEC295005A1124 /* Sources */,
 				45B7A44321DEC295005A1124 /* Frameworks */,
 				45B7A44421DEC295005A1124 /* Resources */,
@@ -1015,7 +1030,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1A582EA5FC5F660E5785B432 /* [CP] Check Pods Manifest.lock */ = {
+		45103FF02295AB06001C26D5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1023,111 +1038,44 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
+				"$(SRCROOT)/Carthage/Build/iOS/BigInt.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CropViewController.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CryptoSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Nuke.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PromiseKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/QRCode.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/QRCodeReader.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/secp256k1.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SipHash.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SkyFloatingLabelTextField.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Starscream.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ToastSwiftFramework.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/web3swift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/GRDB.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/GRDBCipher.framework",
 			);
-			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Kasakasa-checkManifestLockResult.txt",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/BigInt.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CropViewController.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CryptoSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Nuke.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/PromiseKit.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/QRCode.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/QRCodeReader.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/secp256k1.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SipHash.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SkyFloatingLabelTextField.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Starscream.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ToastSwiftFramework.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/web3swift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/GRDB.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/GRDBCipher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7E9F74779ED9490DC47CAD66 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KasakasaUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		80544FADD133167FF351C47D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Kasakasa/Pods-Kasakasa-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
-				"${BUILT_PRODUCTS_DIR}/CropViewController/CropViewController.framework",
-				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/GRDB.swift/GRDB.framework",
-				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
-				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework",
-				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
-				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
-				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
-				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
-				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
-				"${BUILT_PRODUCTS_DIR}/secp256k1.c/secp256k1.framework",
-				"${BUILT_PRODUCTS_DIR}/web3swift/web3swift.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigInt.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CropViewController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRDB.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCode.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/secp256k1.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/web3swift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kasakasa/Pods-Kasakasa-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B98DA0FD228A29D170BF7EE6 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KasakasaTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1416,11 +1364,14 @@
 		};
 		45B7A45021DEC295005A1124 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 54450E13E9861001970A9DFD /* Pods-Kasakasa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3P2XQDN98J;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Kasakasa/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1436,11 +1387,14 @@
 		};
 		45B7A45121DEC295005A1124 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9F49B56CFE085FAB0826AB9 /* Pods-Kasakasa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3P2XQDN98J;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Kasakasa/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1456,7 +1410,6 @@
 		};
 		45B7A45321DEC295005A1124 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93235F28C2127861AB1CE650 /* Pods-KasakasaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1477,7 +1430,6 @@
 		};
 		45B7A45421DEC295005A1124 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 935E2912FBB49F3222DBE12C /* Pods-KasakasaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1498,7 +1450,6 @@
 		};
 		45B7A45621DEC295005A1124 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D00D09683228BE33F4B1925 /* Pods-KasakasaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1518,7 +1469,6 @@
 		};
 		45B7A45721DEC295005A1124 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5C3FB65A4432E539A364679 /* Pods-KasakasaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1600,11 +1550,14 @@
 		};
 		45BBF06921E1DC400042EC5D /* Local */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 432C0A52FEE4565F8C1673EE /* Pods-Kasakasa.local.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3P2XQDN98J;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Kasakasa/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1620,7 +1573,6 @@
 		};
 		45BBF06A21E1DC400042EC5D /* Local */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1823EDCBA5306C7581EA2361 /* Pods-KasakasaTests.local.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1641,7 +1593,6 @@
 		};
 		45BBF06B21E1DC400042EC5D /* Local */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A009DDFACFF917AEB30F06A4 /* Pods-KasakasaUITests.local.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1723,11 +1674,14 @@
 		};
 		45BBF06D21E1DC480042EC5D /* Dev */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D59F8ADA3175FB31AE54F1BC /* Pods-Kasakasa.dev.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3P2XQDN98J;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Kasakasa/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1743,7 +1697,6 @@
 		};
 		45BBF06E21E1DC480042EC5D /* Dev */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B927B8F2F63DA5D5332EA0D1 /* Pods-KasakasaTests.dev.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1764,7 +1717,6 @@
 		};
 		45BBF06F21E1DC480042EC5D /* Dev */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2238658629F05D29A4198330 /* Pods-KasakasaUITests.dev.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
