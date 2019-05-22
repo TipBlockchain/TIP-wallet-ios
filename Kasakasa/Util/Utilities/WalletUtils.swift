@@ -11,11 +11,11 @@ import web3swift
 
 class WalletUtils: NSObject {
 
-    static func generateBip39Wallet(fromSeedPhrase phrase: String, password: String) throws -> BIP32Keystore {
-        let mnemonics = Mnemonics.seed(from: phrase, password: password)
-
-        let keystore = try BIP32Keystore(seed: mnemonics, password: password, aesMode: "aes-128-ctr")
-        return keystore
+    static func generateBip39Wallet(fromSeedPhrase phrase: String, password: String, language: BIP39Language = .english) throws -> BIP32Keystore? {
+        if let bip32ks = try! BIP32Keystore.init(mnemonics: phrase, password: password, mnemonicsPassword: "", language: language) {
+            return bip32ks
+        }
+        return nil
     }
 
     static func createNewWalletFile(keystore: BIP32Keystore, password: String) throws -> URL? {
@@ -27,5 +27,14 @@ class WalletUtils: NSObject {
         if let fileUrl = FileUtils.walletsDirectoryUrl() {
             try? FileUtils.deleteFile(atUrl: fileUrl)
         }
+    }
+
+    static func walletFilesExist() -> Bool{
+        if let walletDirUrl = FileUtils.walletsDirectoryUrl() {
+            let bip32keystoreManager = KeystoreManager.managerForPath(walletDirUrl.path, scanForHDwallets: true)
+            return (bip32keystoreManager?.addresses?.count != 0)
+        }
+        return false
+
     }
 }

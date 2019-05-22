@@ -63,7 +63,7 @@ class FileUtils {
     }
 
     static func filename(forKeystore keystore: BIP32Keystore) -> String? {
-        if let address = keystore.addresses.first {
+        if let addresses = keystore.addresses, addresses.count > 0,  let address = addresses.first {
             let now = Date()
             let formatter = DateFormatter.keystoreFileDateFormatter
             let filename = "UTC--\(formatter.string(from: now))--\(address).json"
@@ -74,7 +74,7 @@ class FileUtils {
 
     static func createWalletFile(forKeystore keystore: BIP32Keystore, password: String) throws -> URL? {
         if let filename = self.filename(forKeystore: keystore), let keyData = try? keystore.serialize() {
-            return try self.createWalletFile(withName: filename, contents: keyData!)
+            return try self.createWalletFile(withName: filename, contents: keyData)
         }
         return nil
     }

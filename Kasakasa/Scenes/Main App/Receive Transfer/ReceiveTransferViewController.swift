@@ -57,8 +57,10 @@ class ReceiveTransferViewController: BaseViewController {
     }
     */
     @IBAction func copyAddressTapped(_ sender: Any) {
-        self.copyToClipboard("")
-        self.showToast("Address copied".localized)
+        if let address = addressLabel.text {
+            self.copyToClipboard(address)
+            self.showToast("Address copied".localized)
+        }
     }
     
 }

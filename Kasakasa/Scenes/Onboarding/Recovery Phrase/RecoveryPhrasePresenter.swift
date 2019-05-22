@@ -15,7 +15,7 @@ class RecoveryPhrasePresenter: BasePresenter {
         let web3Bridge = Web3Bridge()
         do {
             let mnemonic = try web3Bridge.generateMnemonic()
-            view?.onRecoveryPhraseCreated(mnemonic.string)
+            view?.onRecoveryPhraseCreated(mnemonic)
         } catch {
             view?.onError(AppErrors.genericError(message: error.localizedDescription))
         }

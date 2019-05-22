@@ -34,10 +34,10 @@ enum TipNetworkRequest {
 
     case checkUsername(_ username: String)
     case createAccount(user: User, signupToken: String, claimDemoAccount: Bool)
-    case getMyAccount()
+    case getMyAccount
     case uploadPhoto(photo: UIImage)
 
-    case contactList()
+    case contactList
     case addContact(_ contact: ContactRequest)
     case addContacts(_ contacts: ContactListRequest)
     case searchByUsername(_ query: String)

@@ -128,7 +128,7 @@ public class TipApiService: NSObject {
     }
 
     func getMyAccount(completion: @escaping (User?, AppErrors?) -> Void) {
-        let request = TipNetworkRequest.getMyAccount()
+        let request = TipNetworkRequest.getMyAccount
         networkService.sendRequest(request: request) { (result, error) in
             if let error = error {
                 completion(nil, error)
@@ -160,7 +160,7 @@ public class TipApiService: NSObject {
     // MARK - Contacts
 
     func getContactList(completion: @escaping (ContactListResponse?, AppErrors?) -> Void) {
-        let request = TipNetworkRequest.contactList()
+        let request = TipNetworkRequest.contactList
         networkService.sendRequest(request: request) { (result, error) in
             if let error = error {
                 completion(nil, error)

@@ -12,15 +12,17 @@ import BigInt
 
 class Web3Bridge {
 
-    private lazy var tipToken: ERC20 = ERC20(Address(AppConfig.tipContractAddress))
-    private lazy var web3: Web3 = Web3(infura: NetworkId(AppConfig.ethereumNetworkId), accessToken: AppConfig.infuraAccessToken)
-
+//    private lazy var tipToken: ERC20 = ERC20(Address(AppConfig.tipContractAddress))
+    private var keystoreManager = KeystoreManager.defaultManager
+    private let web3 = Web3.InfuraRinkebyWeb3()
     init() {
-        self.loadKeystores()
+//        self.loadKeystores()
     }
 
     private var _keystores: [BIP32Keystore]? = nil
     private var keystoreLoaded = false
+
+    public static let shared = Web3Bridge()
 
     public var keystores: [BIP32Keystore] {
         if _keystores == nil {
@@ -39,99 +41,144 @@ class Web3Bridge {
         return _keystores!
     }
 
-    func generateMnemonic() throws -> Mnemonics {
-        var mnemonics: Mnemonics?
-        repeat {
-            mnemonics = Mnemonics(entropySize: .b128)
-        } while (mnemonics != nil && !isValidSeedPhrase(mnemonics!.string))
+    func restoreAccounts() -> [BIP32Keystore] {
+        let dir = FileUtils.walletsDirectoryUrl()
+        let path = dir!.path
+        debugPrint("Wallet path = \(path)")
+        keystoreManager = KeystoreManager.managerForPath(path, scanForHDwallets: true)
+        debugPrint("Keystores are: \(keystoreManager!.bip32keystores)")
+        var wallets: [Wallet] = []
+//        for keystore in keystoreManager!.bip32keystores {
+//            if let firstAddress = keystore.addresses?.first?.address, let keyData = try? JSONEncoder().encode(keystore.keystoreParams) {
+//                let wallet = Wallet(address: firstAddress, data: keyData, name: "Some Wallet", isHD: true)
+//                wallets.append(wallet)
+//            }
+//        }
+        web3.addKeystoreManager(keystoreManager)
+        return keystoreManager!.bip32keystores
+    }
 
-        let keystore = try! BIP32Keystore(mnemonics: mnemonics!)
-        self.addToKeyStore(keystore)
+    func generateMnemonic() throws -> String {
+        let bitsOfEntropy: Int = 128 // Entropy is a measure of password strength. Usually used 128 or 256 bits.
+        var mnemonics: String? = nil
+        repeat {
+            mnemonics = try! BIP39.generateMnemonics(bitsOfEntropy: bitsOfEntropy)!
+        } while (mnemonics != nil && !isValidSeedPhrase(mnemonics!))
+
+//        guard let keystore = try! BIP32Keystore(mnemonics: mnemonics!) else { return nil }
+//        self.addToKeyStore(keystore)
         return mnemonics!
     }
 
-    func generateBip39Wallet(password: String, path: String) throws -> Mnemonics? {
-        let mnemonics = Mnemonics()
-        let keystore = try! BIP32Keystore(mnemonics: mnemonics, password: password, prefixPath: path, aesMode: "aes-128-ctr")
-        self.addToKeyStore(keystore)
-        return mnemonics
+    func createAccount(withPassword password: String) -> BIP32Keystore {
+        let bitsOfEntropy: Int = 128 // Entropy is a measure of password strength. Usually used 128 or 256 bits.
+        let mnemonics = try! BIP39.generateMnemonics(bitsOfEntropy: bitsOfEntropy)!
+        let keystore = try! BIP32Keystore(
+            mnemonics: mnemonics,
+            password: password,
+            mnemonicsPassword: password,
+            language: .english)!
+        let name = "New HD Wallet"
+        let keyData = try! JSONEncoder().encode(keystore.keystoreParams)
+        let address = keystore.addresses!.first!.address
+//        let wallet = Wallet(address: address, data: keyData, name: name, isHD: true)
+//
+//        try? FileUtils.createWalletFile(forKeystore: keystore, password: password)
+        debugPrint("Mnemonics: \(mnemonics)")
+        debugPrint("Address: \(address)")
+        keystoreManager = KeystoreManager([keystore])
+        return keystore
     }
 
-    private func loadKeystores() {
-        guard !keystoreLoaded else {
-            return
-        }
-        let _ = self.keystores
-        let keystoreManager = KeystoreManager(keystores)
-        Web3.default.keystoreManager = keystoreManager
-        keystoreLoaded = true
+    func createAccount(withSeedPhrase seedPhrase: String, andPassword password: String) -> BIP32Keystore {
+        let keystore = try! BIP32Keystore(
+            mnemonics: seedPhrase,
+            password: password,
+            mnemonicsPassword: password,
+            language: .english)!
+        let address = keystore.addresses!.first!.address
+        //        let wallet = Wallet(address: address, data: keyData, name: name, isHD: true)
+        //
+        //        try? FileUtils.createWalletFile(forKeystore: keystore, password: password)
+        debugPrint("Address: \(address)")
+        keystoreManager = KeystoreManager([keystore])
+        return keystore
     }
 
-    func addToKeyStore(_ keystore: BIP32Keystore) {
-        if !keystoreLoaded {
-            self.loadKeystores()
-        }
-        if var keystores = _keystores {
-            if !keystores.contains(where: { $0.addresses == keystore.addresses }) {
-                keystores.append(keystore)
-            }
-            let keystoreManager = KeystoreManager(keystores)
-            Web3.default.keystoreManager = keystoreManager
-            _keystores = keystores
-        }
+    func unsafeGetPrivateKey(forWallet wallet: Wallet, password: String = "") -> String? {
+        let ethereumAddress = EthereumAddress(wallet.address)!
+        let pkData = try? keystoreManager?.UNSAFE_getPrivateKeyData(password: password, account: ethereumAddress).toHexString()
+        return pkData
     }
 
-    func getTipBalanceInNaturalUnits(_ address: Address) throws -> String {
-        return try tipToken.naturalBalance(of: address)
+    func sendEthTransaction(value: String, fromAddress: String, toAddress toAddressString: String, withPassword password: String) throws -> TransactionSendingResult? {
+        let walletAddress = EthereumAddress(fromAddress)! // Your wallet address
+        let toAddress = EthereumAddress(toAddressString)!
+        let contract = web3.contract(Web3.Utils.coldWalletABI, at: toAddress, abiVersion: 2)!
+        let amount = Web3.Utils.parseToBigUInt(value, units: .eth)
+        var options = TransactionOptions.defaultOptions
+        options.value = amount
+        options.from = walletAddress
+        options.gasPrice = .automatic
+        options.gasLimit = .automatic
+        let tx = contract.write(
+            "fallback",
+            parameters: [AnyObject](),
+            extraData: Data(),
+            transactionOptions: options)!
+
+        return try tx.send(password: password, transactionOptions: nil)
     }
 
-    func getTipBalanceInWei(_ address: Address) throws -> BigUInt {
-        return try tipToken.balance(of: address)
+    func sendERC20Transaction(value: String, from fromAddress: String, toAddress toAddressString: String, withPassword password: String, token: ERC20Token) throws -> TransactionSendingResult? {
+        let walletAddress = EthereumAddress(fromAddress)! // Your wallet address
+        let toAddress = EthereumAddress(toAddressString)!
+        let erc20ContractAddress = EthereumAddress(token.address)
+        let contract = web3.contract(Web3.Utils.erc20ABI, at: erc20ContractAddress, abiVersion: 2)!
+        let amount = Web3.Utils.parseToBigUInt(value, units: .eth)
+        var options = TransactionOptions.defaultOptions
+        options.from = walletAddress
+        options.gasPrice = .manual(BigUInt("21000000000"))
+        options.gasLimit = .manual(BigUInt("90000"))
+        let method = "transfer"
+        let tx = contract.write(
+            method,
+            parameters: [toAddress, amount] as [AnyObject],
+            extraData: Data(),
+            transactionOptions: options)!
+        return try tx.send(password: password, transactionOptions: nil)
     }
 
-    func sendTipTransaction(from: Address, to: Address, amount: String, password: String, gasPrice: BigUInt, gasLimit: BigUInt) throws -> TransactionSendingResult {
-        let token = ERC20(Address(AppConfig.tipContractAddress), from: from, password: password)
-        let from: Address = Web3.default.keystoreManager.addresses[0]
-
-        // Sending 0.05 BKX
-        let value = try NaturalUnits(amount)
-
-        token.options.from = from
-        token.options.gasPrice = gasPrice
-        token.options.gasLimit = gasLimit
-        let transaction = try token.transfer(to: to, amount: value)
-        return transaction
+    func getEthBalance(foAddress address: String) throws -> BigUInt {
+        let walletAddress = EthereumAddress(address)! // Address which balance we want to know
+        let balanceResult = try web3.eth.getBalance(address: walletAddress)
+//        let balanceString = Web3.Utils.formatToEthereumUnits(balanceResult, toUnits: .eth, decimals: 3)
+        return balanceResult
     }
 
-    func getEthBalanceInWei(_ address: Address) throws -> BigUInt {
-        return try web3.eth.getBalance(address: address)
-    }
-
-    func getEthBalanceInNaturalUnits(_ address: Address) throws -> String {
-        let balanceInWei = try self.getEthBalanceInWei(address)
-        return balanceInWei.string(unitDecimals: Web3Units.eth.decimals)
-    }
-
-    func sendEthTransaction(from: Address, to: Address, amount: BigUInt, password: String) throws -> TransactionSendingResult {
-        var options = Web3Options.default
-        options.from = from
-        return try web3.eth.sendETH(to: to, amount: amount).send(password: password, options: options)
+    func getERC20Balance(forAddress address: String, token: ERC20Token) throws -> BigUInt {
+        let walletAddress = EthereumAddress(address)! // Your wallet address
+        let exploredAddress = EthereumAddress(address)! // Address which balance we want to know. Here we used same wallet address
+        let erc20ContractAddress = EthereumAddress(token.address)
+        let contract = web3.contract(Web3.Utils.erc20ABI, at: erc20ContractAddress, abiVersion: 2)!
+        var options = TransactionOptions.defaultOptions
+        options.from = walletAddress
+        options.gasPrice = .automatic
+        options.gasLimit = .automatic
+        let method = "balanceOf"
+        let tx = contract.read(
+            method,
+            parameters: [exploredAddress] as [AnyObject],
+            extraData: Data(),
+            transactionOptions: options)!
+        let tokenBalance = try tx.call()
+        let balanceBigUInt = tokenBalance["0"] as! BigUInt
+//        let balanceString = Web3.Utils.formatToEthereumUnits(balanceBigUInt, toUnits: .eth, decimals: 3)
+        return balanceBigUInt
     }
 
     func isValidSeedPhrase(_ phrase: String, language: BIP39Language = .english) -> Bool {
-        let splits = phrase.split(separator: Character(language.separator))
-        if splits.count != 12 {
-            return false
-        }
-        let set = Set(splits)
-        if set.count != splits.count {
-            return false
-        }
-        for word in splits {
-            if !language.words.contains(String(word)) {
-                return false
-            }
-        }
-        return true
+        return BIP39.seedFromMmemonics(phrase, password: "", language: language) != nil
     }
 }
+

@@ -2,102 +2,84 @@ PODS:
   - BigInt (3.1.0):
     - SipHash (~> 1.2)
   - CropViewController (2.4.0)
-  - CryptoSwift (0.14.0)
-  - EthereumABI (1.1.1):
-    - BigInt (~> 3.1)
-    - CryptoSwift (~> 0.13)
-    - EthereumAddress (~> 1.0.0)
-  - EthereumAddress (1.0.0):
-    - CryptoSwift (~> 0.13)
-  - GRDB.swift (3.6.2)
+  - CryptoSwift (1.0.0)
+  - GRDB.swift (3.7.0)
   - Nuke (7.5.2)
-  - PromiseKit (6.8.3):
-    - PromiseKit/CorePromise (= 6.8.3)
-    - PromiseKit/Foundation (= 6.8.3)
-    - PromiseKit/UIKit (= 6.8.3)
-  - PromiseKit/CorePromise (6.8.3)
-  - PromiseKit/Foundation (6.8.3):
+  - PromiseKit (6.8.4):
+    - PromiseKit/CorePromise (= 6.8.4)
+    - PromiseKit/Foundation (= 6.8.4)
+    - PromiseKit/UIKit (= 6.8.4)
+  - PromiseKit/CorePromise (6.8.4)
+  - PromiseKit/Foundation (6.8.4):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.8.3):
+  - PromiseKit/UIKit (6.8.4):
     - PromiseKit/CorePromise
   - QRCode (2.0)
   - QRCodeReader.swift (9.0.1)
-  - scrypt (2.0):
-    - CryptoSwift (~> 0.11)
-  - secp256k1_swift (1.0.3)
+  - secp256k1.c (0.1.2)
   - SipHash (1.2.2)
-  - SkyFloatingLabelTextField (3.6.0)
-  - SwiftRLP (1.2):
-    - BigInt (~> 3.1)
+  - SkyFloatingLabelTextField (3.7.0)
+  - Starscream (3.1.0)
   - Toast-Swift (4.0.1)
-  - web3swift (2.0.1):
+  - web3swift (2.2.0):
     - BigInt (~> 3.1)
-    - CryptoSwift (~> 0.13)
-    - EthereumABI (~> 1.1.1)
-    - EthereumAddress (~> 1.0.0)
-    - PromiseKit (~> 6.3)
-    - scrypt (~> 2.0)
-    - secp256k1_swift (~> 1.0.3)
-    - SwiftRLP (~> 1.1)
+    - CryptoSwift (~> 1.0.0)
+    - PromiseKit (~> 6.8.4)
+    - secp256k1.c (~> 0.1)
+    - Starscream (~> 3.1.0)
 
 DEPENDENCIES:
   - BigInt (~> 3.1.0)
   - CropViewController (~> 2.4.0)
-  - GRDB.swift (~> 3.6.1)
+  - GRDB.swift (~> 3.7.0)
   - Nuke (~> 7.5.2)
   - QRCode (~> 2.0)
   - QRCodeReader.swift (~> 9.0.1)
   - SkyFloatingLabelTextField (~> 3.0)
   - Toast-Swift (~> 4.0.0)
-  - web3swift (from `https://github.com/matterinc/web3swift.git`)
+  - web3swift (from `https://github.com/matter-labs/web3swift.git`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - BigInt
     - CropViewController
     - CryptoSwift
-    - EthereumABI
-    - EthereumAddress
     - GRDB.swift
     - Nuke
     - PromiseKit
     - QRCode
     - QRCodeReader.swift
-    - scrypt
-    - secp256k1_swift
+    - secp256k1.c
     - SipHash
     - SkyFloatingLabelTextField
-    - SwiftRLP
+    - Starscream
     - Toast-Swift
 
 EXTERNAL SOURCES:
   web3swift:
-    :git: https://github.com/matterinc/web3swift.git
+    :git: https://github.com/matter-labs/web3swift.git
 
 CHECKOUT OPTIONS:
   web3swift:
-    :commit: 8ae8d6d5cd1d0d9456d97182e3f061bafabde0e8
-    :git: https://github.com/matterinc/web3swift.git
+    :commit: e17d6b157d0d5548d14598eec40e36229b73cdf9
+    :git: https://github.com/matter-labs/web3swift.git
 
 SPEC CHECKSUMS:
   BigInt: 76b5dfdfa3e2e478d4ffdf161aeede5502e2742f
   CropViewController: a090820b15fc3da68e694d7c192a4708c576828b
-  CryptoSwift: 35a10419f4dbf0619c13f8c1c180037e115323fa
-  EthereumABI: f040f5429e5a4366d028c88b88d9441e137593af
-  EthereumAddress: f476e1320dca3a0024431e713ede7a09c7eb7796
-  GRDB.swift: e10787d857b6b8135354b9e08fb23b4bb8e2fab7
+  CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
+  GRDB.swift: 51cc9e57ae8ff7083a9d674c97925aa1de06aac5
   Nuke: 0350d346a688426e8f2331253ef28dc2fc4f6178
-  PromiseKit: 94c6e781838c5bf4717677d0d882b0e7250c80fc
+  PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
   QRCode: f98a1886c8f37523704a7512a4c0cd45b34c18a4
   QRCodeReader.swift: 96292a5612fbc2fd9a0b26f93fa5164c8d02f59d
-  scrypt: 3fe5b1a3b0976f97cd87488673a8f7c65708cc84
-  secp256k1_swift: 4fc5c4b2d2c6d21ee8ccb868cdc92da12f38bed9
+  secp256k1.c: db47b726585d80f027423682eb369729e61b3b20
   SipHash: fad90a4683e420c52ef28063063dbbce248ea6d4
-  SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
-  SwiftRLP: 98a02b2210128353ca02e4c2f4d83e2a9796db4f
+  SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
+  Starscream: 08172b481e145289c4930cb567230fb55897cfa4
   Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
-  web3swift: aadc7a9b0c3b0384227eff181e39ba24ebfcd76c
+  web3swift: 149ab5d1e57edf8125b095f889f089ab55fadcf7
 
-PODFILE CHECKSUM: e3fc070a740d6132099fbba90a118247ee56bd27
+PODFILE CHECKSUM: aa1921f7fb98d3e3059bea342986f0e97a3216da
 
 COCOAPODS: 1.5.3

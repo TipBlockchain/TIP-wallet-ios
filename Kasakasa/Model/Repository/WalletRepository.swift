@@ -27,9 +27,9 @@ class WalletRepository: NSObject {
         WalletUtils.deleteAllWalletFiles()
 
         let now = Date()
-        let keystore = try WalletUtils.generateBip39Wallet(fromSeedPhrase: phrase, password: password)
+        let keystore = Web3Bridge.shared.createAccount(withSeedPhrase: phrase, andPassword: password)
         let walletFileUrl = try WalletUtils.createNewWalletFile(keystore: keystore, password: password)
-        if walletFileUrl != nil, let address = keystore.addresses.first {
+        if walletFileUrl != nil, let address = keystore.addresses?.first {
             tipWallet = Wallet(address: address.address, filePath: walletFileUrl!.path, created: now, balance: BigUInt(0), currency: Currency.TIP, isPrimary: true, blockNumber: BigUInt(0), startBlockNumber: BigUInt(0), lastSynced: now)
             try self.insert(tipWallet!)
 
