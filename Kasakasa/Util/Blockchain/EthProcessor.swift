@@ -13,7 +13,7 @@ import web3swift
 class EthProcessor: ChainProcessor {
 
     func getBalance(_ address: String) throws -> BigUInt {
-        let w3b = Web3Bridge()
+        let w3b = Web3Bridge.shared
         return try w3b.getEthBalance(foAddress: address)
     }
 

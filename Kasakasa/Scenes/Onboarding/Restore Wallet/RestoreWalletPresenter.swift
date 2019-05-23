@@ -19,7 +19,7 @@ class RestoreWalletPresenter: BasePresenter {
             return
         }
 
-        if (Web3Bridge().isValidSeedPhrase(phrase)) {
+        if (Web3Bridge.shared.isValidSeedPhrase(phrase)) {
             view?.onRecoveryPhraseVerified()
         } else {
             view?.onInvalidRecoveryPhrase()

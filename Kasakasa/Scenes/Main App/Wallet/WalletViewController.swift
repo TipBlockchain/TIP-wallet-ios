@@ -14,14 +14,27 @@ class WalletViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var currencyLabel: UILabel!
+    private var transactionProcessor: ChainProcessor?
+    private lazy var presenter = WalletPresenter()
+    private lazy var walletRepo = WalletRepository.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        presenter.attach(self)
         self.navigationController?.isNavigationBarHidden = true
+        if let wallets = walletRepo.allWallets() {
+            let firstWallet = wallets[1]
+            presenter.getBalance(forWallet: firstWallet)
+        }
+
 
 //        self.tableView.tableFooterView = UIView()
         // Do any additional setup after loading the view.
+    }
+
+    deinit {
+        presenter.detach()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -37,17 +50,18 @@ class WalletViewController: BaseViewController {
     
     @IBAction func sendButtonTapped(_ sender: Any) {
     }
+
     @IBAction func receiveButtonTapped(_ sender: Any) {
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func onBalanceFetchError(_ error: AppErrors) {
+        self.showToast("Error fetching account balance: \(error.message)")
     }
-    */
+
+    func onBalanceFetched(_ balance: NSDecimalNumber) {
+        showToast("Balance = \(balance)")
+        debugPrint("Balance = \(balance)")
+        balanceLabel.text = balance.description(withLocale: Locale.current)
+    }
 
 }

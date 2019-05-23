@@ -22,6 +22,7 @@
 		45103FEF2295AAC9001C26D5 /* SipHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FE12295AAC8001C26D5 /* SipHash.framework */; };
 		45103FFC2295B6A8001C26D5 /* GRDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FFB2295B6A8001C26D5 /* GRDB.framework */; };
 		45103FFE2295B760001C26D5 /* GRDBCipher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FFD2295B760001C26D5 /* GRDBCipher.framework */; };
+		451040002295FEF2001C26D5 /* WalletPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45103FFF2295FEF2001C26D5 /* WalletPresenter.swift */; };
 		45129C5B21DFC59C00F585FA /* IntroPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45129C5A21DFC59C00F585FA /* IntroPageViewController.swift */; };
 		4524159A21F1AF03005B53A2 /* AppDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4524159921F1AF03005B53A2 /* AppDefaults.swift */; };
 		4524159D21F1B257005B53A2 /* AuthorizationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4524159C21F1B257005B53A2 /* AuthorizationRepository.swift */; };
@@ -181,6 +182,7 @@
 		45103FE12295AAC8001C26D5 /* SipHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SipHash.framework; path = Carthage/Build/iOS/SipHash.framework; sourceTree = "<group>"; };
 		45103FFB2295B6A8001C26D5 /* GRDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GRDB.framework; path = Carthage/Build/iOS/GRDB.framework; sourceTree = "<group>"; };
 		45103FFD2295B760001C26D5 /* GRDBCipher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GRDBCipher.framework; path = Carthage/Build/iOS/GRDBCipher.framework; sourceTree = "<group>"; };
+		45103FFF2295FEF2001C26D5 /* WalletPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPresenter.swift; sourceTree = "<group>"; };
 		45129C5A21DFC59C00F585FA /* IntroPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPageViewController.swift; sourceTree = "<group>"; };
 		4524159921F1AF03005B53A2 /* AppDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefaults.swift; sourceTree = "<group>"; };
 		4524159C21F1B257005B53A2 /* AuthorizationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRepository.swift; sourceTree = "<group>"; };
@@ -481,6 +483,7 @@
 			isa = PBXGroup;
 			children = (
 				45828C70220D5F4E00594842 /* WalletViewController.swift */,
+				45103FFF2295FEF2001C26D5 /* WalletPresenter.swift */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -1181,6 +1184,7 @@
 				456012C52214DB5E003B04E2 /* UserSearchTableViewCell.swift in Sources */,
 				4579A9F2220EB12600CBCFAE /* ContactListResponse.swift in Sources */,
 				459DEBBE21DFBCAA009F0BE0 /* AppConstants.swift in Sources */,
+				451040002295FEF2001C26D5 /* WalletPresenter.swift in Sources */,
 				45828C66220D35A300594842 /* SplashScreen.swift in Sources */,
 				456012C922152703003B04E2 /* ContactsPresenter.swift in Sources */,
 				4579A9F4220EB13E00CBCFAE /* ContactListStringResponse.swift in Sources */,

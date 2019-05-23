@@ -8,8 +8,12 @@
 
 import Foundation
 import web3swift
+import BigInt
 
 class WalletUtils: NSObject {
+
+    private lazy var queue = DispatchQueue(label: "WalletUtils.queue")
+    private lazy var bridge = Web3Bridge.shared
 
     static func generateBip39Wallet(fromSeedPhrase phrase: String, password: String, language: BIP39Language = .english) throws -> BIP32Keystore? {
         if let bip32ks = try! BIP32Keystore.init(mnemonics: phrase, password: password, mnemonicsPassword: "", language: language) {
@@ -35,6 +39,27 @@ class WalletUtils: NSObject {
             return (bip32keystoreManager?.addresses?.count != 0)
         }
         return false
+    }
 
+    func getBalance(forWallet wallet: Wallet, completion: @escaping ((BigUInt?, AppErrors?) -> Void)) {
+        let currency = wallet.currency
+        let chainProcessor: ChainProcessor!
+        switch currency {
+        case .TIP:
+            chainProcessor = TipProcessor()
+        case .ETH:
+            chainProcessor = EthProcessor()
+        }
+
+
+        queue.async {
+            do {
+                let balanceBigUInt = try chainProcessor.getBalance(wallet.address)
+                completion(balanceBigUInt, nil)
+            } catch {
+                let apperror = AppErrors.error(error: error)
+                completion(nil, apperror)
+            }
+        }
     }
 }

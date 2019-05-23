@@ -12,7 +12,7 @@ class RecoveryPhrasePresenter: BasePresenter {
     weak var view: RecoveryPhraseView?
 
     func getNewMnemonic() {
-        let web3Bridge = Web3Bridge()
+        let web3Bridge = Web3Bridge.shared
         do {
             let mnemonic = try web3Bridge.generateMnemonic()
             view?.onRecoveryPhraseCreated(mnemonic)

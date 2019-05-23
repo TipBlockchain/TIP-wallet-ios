@@ -18,7 +18,7 @@ class SendTransferPresenter: BasePresenter {
 
     private lazy var userRepo = UserRepository.shared
     private lazy var walletRepo = WalletRepository.shared
-    private var web3Bridge: Web3Bridge?
+    private lazy var web3Bridge: Web3Bridge = Web3Bridge.shared
     private lazy var dbPool = AppDatabase.dbPool
 
     private var tipWallet: Wallet?
@@ -26,7 +26,6 @@ class SendTransferPresenter: BasePresenter {
 
     func attach(_ v: SendTransferView) {
         self.view = v
-        web3Bridge = Web3Bridge()
     }
 
     func loadWallets() {
