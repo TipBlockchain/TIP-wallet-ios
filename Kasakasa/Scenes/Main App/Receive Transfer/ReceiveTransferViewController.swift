@@ -8,7 +8,6 @@
 
 import UIKit
 import Nuke
-import QRCode
 
 class ReceiveTransferViewController: BaseViewController {
 
@@ -43,7 +42,7 @@ class ReceiveTransferViewController: BaseViewController {
         usernameLabel.text = currentUser.username
         addressLabel.text = currentUser.address
 
-        qrCodeImageView.image = QRCode(currentUser.address)?.image
+        qrCodeImageView.image = UIImage.qrCode(fromString: currentUser.address, scaleX: 10.0, scaleY: 10.0) //
     }
     
 

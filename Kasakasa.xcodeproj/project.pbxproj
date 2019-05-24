@@ -11,7 +11,6 @@
 		45103FE32295AAC9001C26D5 /* BigInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FD52295AAC7001C26D5 /* BigInt.framework */; };
 		45103FE42295AAC9001C26D5 /* QRCodeReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FD62295AAC7001C26D5 /* QRCodeReader.framework */; };
 		45103FE52295AAC9001C26D5 /* SkyFloatingLabelTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FD72295AAC8001C26D5 /* SkyFloatingLabelTextField.framework */; };
-		45103FE62295AAC9001C26D5 /* QRCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FD82295AAC8001C26D5 /* QRCode.framework */; };
 		45103FE72295AAC9001C26D5 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FD92295AAC8001C26D5 /* Nuke.framework */; };
 		45103FE82295AAC9001C26D5 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FDA2295AAC8001C26D5 /* PromiseKit.framework */; };
 		45103FE92295AAC9001C26D5 /* CropViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FDB2295AAC8001C26D5 /* CropViewController.framework */; };
@@ -23,6 +22,9 @@
 		45103FFC2295B6A8001C26D5 /* GRDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FFB2295B6A8001C26D5 /* GRDB.framework */; };
 		45103FFE2295B760001C26D5 /* GRDBCipher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FFD2295B760001C26D5 /* GRDBCipher.framework */; };
 		451040002295FEF2001C26D5 /* WalletPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45103FFF2295FEF2001C26D5 /* WalletPresenter.swift */; };
+		4510400222965439001C26D5 /* EtherscanApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510400122965439001C26D5 /* EtherscanApiService.swift */; };
+		451040042296550A001C26D5 /* EtherscanApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451040032296550A001C26D5 /* EtherscanApiRequest.swift */; };
+		4510400622965963001C26D5 /* ConfigResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510400522965963001C26D5 /* ConfigResponse.swift */; };
 		45129C5B21DFC59C00F585FA /* IntroPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45129C5A21DFC59C00F585FA /* IntroPageViewController.swift */; };
 		4524159A21F1AF03005B53A2 /* AppDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4524159921F1AF03005B53A2 /* AppDefaults.swift */; };
 		4524159D21F1B257005B53A2 /* AuthorizationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4524159C21F1B257005B53A2 /* AuthorizationRepository.swift */; };
@@ -145,7 +147,7 @@
 		45FD5B5021E0333900C247F0 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FD5B4F21E0333900C247F0 /* TutorialViewController.swift */; };
 		45FD5B5421E0688E00C247F0 /* config.local.json in Resources */ = {isa = PBXBuildFile; fileRef = 45FD5B5321E0688E00C247F0 /* config.local.json */; };
 		45FD5B5621E069A600C247F0 /* config.dev.json in Resources */ = {isa = PBXBuildFile; fileRef = 45FD5B5521E069A600C247F0 /* config.dev.json */; };
-		45FD5B5A21E06BEF00C247F0 /* TipNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FD5B5921E06BEF00C247F0 /* TipNetworkRequest.swift */; };
+		45FD5B5A21E06BEF00C247F0 /* TipApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FD5B5921E06BEF00C247F0 /* TipApiRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +185,9 @@
 		45103FFB2295B6A8001C26D5 /* GRDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GRDB.framework; path = Carthage/Build/iOS/GRDB.framework; sourceTree = "<group>"; };
 		45103FFD2295B760001C26D5 /* GRDBCipher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GRDBCipher.framework; path = Carthage/Build/iOS/GRDBCipher.framework; sourceTree = "<group>"; };
 		45103FFF2295FEF2001C26D5 /* WalletPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletPresenter.swift; sourceTree = "<group>"; };
+		4510400122965439001C26D5 /* EtherscanApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtherscanApiService.swift; sourceTree = "<group>"; };
+		451040032296550A001C26D5 /* EtherscanApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtherscanApiRequest.swift; sourceTree = "<group>"; };
+		4510400522965963001C26D5 /* ConfigResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigResponse.swift; sourceTree = "<group>"; };
 		45129C5A21DFC59C00F585FA /* IntroPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPageViewController.swift; sourceTree = "<group>"; };
 		4524159921F1AF03005B53A2 /* AppDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefaults.swift; sourceTree = "<group>"; };
 		4524159C21F1B257005B53A2 /* AuthorizationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRepository.swift; sourceTree = "<group>"; };
@@ -312,7 +317,7 @@
 		45FD5B4F21E0333900C247F0 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		45FD5B5321E0688E00C247F0 /* config.local.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = config.local.json; sourceTree = "<group>"; };
 		45FD5B5521E069A600C247F0 /* config.dev.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = config.dev.json; sourceTree = "<group>"; };
-		45FD5B5921E06BEF00C247F0 /* TipNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipNetworkRequest.swift; sourceTree = "<group>"; };
+		45FD5B5921E06BEF00C247F0 /* TipApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipApiRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,7 +329,6 @@
 				45103FE32295AAC9001C26D5 /* BigInt.framework in Frameworks */,
 				45103FE42295AAC9001C26D5 /* QRCodeReader.framework in Frameworks */,
 				45103FE52295AAC9001C26D5 /* SkyFloatingLabelTextField.framework in Frameworks */,
-				45103FE62295AAC9001C26D5 /* QRCode.framework in Frameworks */,
 				45103FE72295AAC9001C26D5 /* Nuke.framework in Frameworks */,
 				45103FE82295AAC9001C26D5 /* PromiseKit.framework in Frameworks */,
 				45103FE92295AAC9001C26D5 /* CropViewController.framework in Frameworks */,
@@ -704,6 +708,7 @@
 				4579A9F1220EB12600CBCFAE /* ContactListResponse.swift */,
 				4579A9F3220EB13E00CBCFAE /* ContactListStringResponse.swift */,
 				4579A9F5220EB5A200CBCFAE /* UserSearchResponse.swift */,
+				4510400522965963001C26D5 /* ConfigResponse.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -884,10 +889,12 @@
 		45FD5B5821E06B4600C247F0 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				45FD5B5921E06BEF00C247F0 /* TipNetworkRequest.swift */,
+				45FD5B5921E06BEF00C247F0 /* TipApiRequest.swift */,
 				45BBF05721E1C46B0042EC5D /* NetworkService.swift */,
 				45BBF05921E1C48A0042EC5D /* TipApiService.swift */,
 				45BBF07021E1E0C20042EC5D /* UrlRequestConvertible.swift */,
+				4510400122965439001C26D5 /* EtherscanApiService.swift */,
+				451040032296550A001C26D5 /* EtherscanApiRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -1046,7 +1053,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/CryptoSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Nuke.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PromiseKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/QRCode.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/QRCodeReader.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/secp256k1.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SipHash.framework",
@@ -1065,7 +1071,6 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CryptoSwift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Nuke.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/PromiseKit.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/QRCode.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/QRCodeReader.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/secp256k1.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SipHash.framework",
@@ -1126,7 +1131,7 @@
 				45AD3A3D21E42C4C00198D6F /* CountryTableViewCell.swift in Sources */,
 				455F396022022EEF00516286 /* ExistingAccountPresenter.swift in Sources */,
 				45A6D7B921F01DF7007A6F42 /* RestoreWalletViewController.swift in Sources */,
-				45FD5B5A21E06BEF00C247F0 /* TipNetworkRequest.swift in Sources */,
+				45FD5B5A21E06BEF00C247F0 /* TipApiRequest.swift in Sources */,
 				4524159D21F1B257005B53A2 /* AuthorizationRepository.swift in Sources */,
 				45A6D7AB21EFE20E007A6F42 /* ExistingAccountViewController.swift in Sources */,
 				455F396422023C4000516286 /* RestoreWalletPresenter.swift in Sources */,
@@ -1139,6 +1144,7 @@
 				45AD3A4821E71D2D00198D6F /* UIColorExtension.swift in Sources */,
 				45AD3A4C21E71EA300198D6F /* ColoredButton.swift in Sources */,
 				45AD3A5421E731B100198D6F /* Authorization.swift in Sources */,
+				451040042296550A001C26D5 /* EtherscanApiRequest.swift in Sources */,
 				456D855E21F2A518005150F3 /* Web3Bridge.swift in Sources */,
 				456D856221F2B511005150F3 /* RecoveryPhrase.swift in Sources */,
 				45BBF06221E1C8C90042EC5D /* Json.swift in Sources */,
@@ -1154,6 +1160,7 @@
 				45AD3A2A21E3409900198D6F /* EnterPhoneNumber.swift in Sources */,
 				45BBF05F21E1C86C0042EC5D /* AppErrors.swift in Sources */,
 				4579A9EA220EA19000CBCFAE /* UserSearchPresenter.swift in Sources */,
+				4510400222965439001C26D5 /* EtherscanApiService.swift in Sources */,
 				453A7C522220CF8600E5E3C8 /* PendingTransaction.swift in Sources */,
 				456D856621F2C71C005150F3 /* VerifyRecoveryPhrase.swift in Sources */,
 				456D856421F2C6DB005150F3 /* VerifyRecoveryPhrasePresenter.swift in Sources */,
@@ -1181,6 +1188,7 @@
 				45B7A42721DEC293005A1124 /* AppDelegate.swift in Sources */,
 				45BBF05A21E1C48A0042EC5D /* TipApiService.swift in Sources */,
 				45AD3A5D21E73EEC00198D6F /* PendingSignup.swift in Sources */,
+				4510400622965963001C26D5 /* ConfigResponse.swift in Sources */,
 				456012C52214DB5E003B04E2 /* UserSearchTableViewCell.swift in Sources */,
 				4579A9F2220EB12600CBCFAE /* ContactListResponse.swift in Sources */,
 				459DEBBE21DFBCAA009F0BE0 /* AppConstants.swift in Sources */,
