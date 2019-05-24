@@ -12,7 +12,6 @@ import BigInt
 
 class Web3Bridge {
 
-//    private lazy var tipToken: ERC20 = ERC20(Address(AppConfig.tipContractAddress))
     private var keystoreManager = KeystoreManager.defaultManager
     private let web3 = Web3.InfuraRinkebyWeb3()
 

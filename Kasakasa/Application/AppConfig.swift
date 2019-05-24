@@ -10,12 +10,21 @@ import Foundation
 
 class AppConfig {
 
-    private static var configDict: Json = readConfigJson()
+    private static var configDict: Json!
+    private static var config: Config?
 
+    static func initalize() {
+        configDict = readConfigJson()
+        loadRemoteConfig()
+    }
     static var tipApiBaseUrl: String {
         return configDict[AppConstants.tipApiBaseUrl] as! String
     }
 
+    static var tipApiKey: String {
+        return configDict[AppConstants.tipApiKey] as! String
+    }
+    
     static var ethereumNetworkId: Int {
         return configDict[AppConstants.ethereumNetworkId] as! Int
     }
@@ -28,6 +37,26 @@ class AppConfig {
         return configDict[AppConstants.tipContractAddress] as! String
     }
 
+    static var ethNodeUrl: String? {
+        return config?.ethNodeUrl
+    }
+
+    static var etherscanBaseUrl: String? {
+        return config?.etherscanBaseUrl
+    }
+
+    static var etherscanApiKey: String? {
+        return config?.etherscanApiKey
+    }
+
+    static var ethStartBlock: String? {
+        return config?.appStartBlock
+    }
+
+    static var exchanges: [CryptoExchange]? {
+        return config?.exchanges
+    }
+    
     private static var configFilename: String {
         var configFilename: String!
         #if ENV_LOCAL
@@ -62,5 +91,14 @@ class AppConfig {
             return try? Data(contentsOf: url)
         }
         return nil
+    }
+
+    private static func loadRemoteConfig() {
+        let api = TipApiService.sharedInstance
+        api.getAppConfig { (config, error) in
+            if let config = config {
+                self.config = config
+            }
+        }
     }
 }

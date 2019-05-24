@@ -10,6 +10,7 @@ import Foundation
 
 enum AppConstants {
     static let tipApiBaseUrl = "tip_api_url"
+    static let tipApiKey = "tip_api_key"
     static let ethNodeUrl = "eth_node_url"
     static let tipContractAddress = "tip_contract_address"
     static let etherscanApiKey = "etherscan_api_key"

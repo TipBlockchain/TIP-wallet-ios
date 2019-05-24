@@ -15,14 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let _  = AppStyle()
+        AppStyle.initialize()
+        AppConfig.initalize()
         try! self.setupDatabase(application)
         if let wallets = WalletRepository.shared.allWallets() {
             debugPrint("All Wallets = \(wallets)")
             debugPrint("Wallet count = \(wallets.count)")
-            for wallet in wallets {
-                debugPrint("Wallet = \(wallet)")
-            }
+
         }
 
         // Override point for customization after application launch.

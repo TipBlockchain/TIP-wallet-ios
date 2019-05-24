@@ -18,7 +18,7 @@ enum HTTPMethod: String {
     case HEAD
 }
 
-enum TipNetworkRequest {
+enum TipApiRequest {
 
     private var multipartBoundary: String {
         return "XXX"
@@ -26,7 +26,7 @@ enum TipNetworkRequest {
 
     //TODO: Implement secure authorization
     case authorize(message: SecureMessage)
-
+    case getConfig
     case getCountries
     case getCountry(code: String)
     case startPhoneVerification(verification: PhoneVerificationRequest)
@@ -71,7 +71,9 @@ enum TipNetworkRequest {
     var headers: [String: String] {
         switch self {
         case .createAccount(_, let signupToken, let claimDemoAccount):
-            return ["X-Signup-Token": signupToken, "X-Claim-Demo-Account": String(claimDemoAccount)]
+            return ["x-signup-token": signupToken, "x-claim-demo-account": String(claimDemoAccount)]
+        case .getConfig:
+            return ["x-tip-platform": "ios", "x-tip-api-key": AppConfig.tipApiKey]
         default:
             return [:]
         }
@@ -124,6 +126,8 @@ enum TipNetworkRequest {
         switch self {
         case .authorize:
             return baseUrl.appendingPathComponent("/secure/authorize")
+        case .getConfig:
+            return baseUrl.appendingPathComponent("/appconfig")
         case .getCountries:
             return baseUrl.appendingPathComponent("/countries")
         case .getCountry(let code):
@@ -150,7 +154,7 @@ enum TipNetworkRequest {
     }
 }
 
-extension TipNetworkRequest: UrlRequestConvertible {
+extension TipApiRequest: UrlRequestConvertible {
 
     func toUrlRequest() -> URLRequest {
         let url = self.url
