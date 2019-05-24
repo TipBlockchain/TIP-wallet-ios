@@ -10,7 +10,7 @@ import UIKit
 
 class AppStyle {
     
-    init() {
+    static func initialize() {
         let navigationBarAppearance = UINavigationBar.appearance()
         navigationBarAppearance.tintColor = UIColor.white
         navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
