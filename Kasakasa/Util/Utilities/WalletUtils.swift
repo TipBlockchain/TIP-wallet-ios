@@ -14,6 +14,7 @@ class WalletUtils: NSObject {
 
     private lazy var queue = DispatchQueue(label: "WalletUtils.queue")
     private lazy var bridge = Web3Bridge.shared
+    let walletRepo = WalletRepository.shared
 
     static func generateBip39Wallet(fromSeedPhrase phrase: String, password: String, language: BIP39Language = .english) throws -> BIP32Keystore? {
         if let bip32ks = try! BIP32Keystore.init(mnemonics: phrase, password: password, mnemonicsPassword: "", language: language) {
@@ -51,10 +52,12 @@ class WalletUtils: NSObject {
             chainProcessor = EthProcessor()
         }
 
-
         queue.async {
             do {
                 let balanceBigUInt = try chainProcessor.getBalance(wallet.address)
+                if wallet.balance != balanceBigUInt {
+                    self.walletRepo.updateWallet(wallet, newBalance: balanceBigUInt)
+                }
                 completion(balanceBigUInt, nil)
             } catch {
                 let apperror = AppErrors.error(error: error)

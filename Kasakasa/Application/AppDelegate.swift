@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppConfig.initalize()
         try! self.setupDatabase(application)
         if let wallets = WalletRepository.shared.allWallets() {
-            debugPrint("All Wallets = \(wallets)")
             debugPrint("Wallet count = \(wallets.count)")
 
         }

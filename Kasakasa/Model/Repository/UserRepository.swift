@@ -8,7 +8,8 @@
 
 import Foundation
 
-typealias userListResponse = ([User]?, AppErrors?) -> Void
+typealias UserListClosure = ([User]?, AppErrors?) -> Void
+
 class UserRepository {
     static var shared = UserRepository()
     private var dbPool = AppDatabase.dbPool
@@ -40,7 +41,19 @@ class UserRepository {
         return nil
     }
 
-    func fetchUserBySearch(_ query: String, completion: @escaping userListResponse) {
+    func fetchContactList(_ completion: @escaping UserListClosure) {
+        apiService.getContactList { (response, error) in
+            if let response = response {
+                let contacts = response.contacts
+                try? self.insert(contacts)
+                completion(contacts, nil)
+            } else {
+                completion(nil, error ?? AppErrors.unknowkError)
+            }
+        }
+    }
+
+    func fetchUserBySearch(_ query: String, completion: @escaping UserListClosure) {
         apiService.search(byUsername: query) { (response, errors) in
             if let response = response, let users = response.users {
                 completion(users, nil)

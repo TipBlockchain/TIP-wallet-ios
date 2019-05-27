@@ -1,12 +1,10 @@
 {
-    "tip_api_url": "https://76ceb9c1.ngrok.io",
+    "tip_api_url": "https://7460d1f0.ngrok.io",
     "tip_api_key": "wgoBxrVrEzcUlWgT0NaKUwBv",
     "eth_node_url": "https://rinkeby.infura.io/v3/678b8cde335e4f4ba45d9d010a293508",
     "tip_contract_address": "0xFE55d3E9583D1d7f9907367065737206F9751f6a",
-    "etherscan_api_key": "ZJPDFCKG8WSN5Y1NUERJM699QT615JWRNY",
-    "etherscan_base_url": "https://rinkeby.etherscan.io",
+    "etherscan_base_url": "https://rinkeby.etherscan.io/api",
     "buy_tip_url": "https://idex.market/eth/tip",
     "app_start_block": 338200,
-    "ethereum_network_id": 4,
-    "infura_access_token": "SSWOxqisHlJoSVWYy09p"
+    "ethereum_network_id": 4
 }

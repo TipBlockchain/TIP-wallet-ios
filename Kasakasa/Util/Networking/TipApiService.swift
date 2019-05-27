@@ -45,7 +45,7 @@ public class TipApiService: NSObject {
             }
         }
     }
-    
+
     //MARK:- Countries
     public func getCountries(completion: @escaping ([Country]?, AppErrors?) -> Void) {
         let request = TipApiRequest.getCountries
@@ -234,6 +234,18 @@ public class TipApiService: NSObject {
                 }
             }
         }
+    }
+
+    func getTransaction() {
+
+    }
+
+    func getTransactions() {
+
+    }
+
+    func fillTransactions() {
+        
     }
 }
 

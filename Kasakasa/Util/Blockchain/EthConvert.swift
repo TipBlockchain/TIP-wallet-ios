@@ -46,7 +46,6 @@ class EthConvert {
 
     public static func fromWei(_ number: NSDecimalNumber, toUnit unit: Unit) -> NSDecimalNumber {
         return number.multiplying(byPowerOf10: Int16(unit.rawValue) * -1)
-//        return number.dividing(by: NSDecimalNumber(value: pow(10, unit.rawValue)))
     }
 
     public static func toWei(_ number: BigUInt, toUnit unit: Unit) -> NSDecimalNumber {
@@ -60,5 +59,9 @@ class EthConvert {
 
     public static func toWei(_ number: NSDecimalNumber, toUnit unit: Unit) -> NSDecimalNumber {
         return number.multiplying(by: NSDecimalNumber(integerLiteral: unit.rawValue))
+    }
+
+    public static func toEthereumUnits(_ bigUIntValue: BigUInt, decimals: Int = 4) -> String? {
+        return Web3.Utils.formatToEthereumUnits(bigUIntValue, toUnits: .eth, decimals: decimals)
     }
 }

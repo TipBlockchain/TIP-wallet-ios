@@ -21,6 +21,15 @@ public struct User: Codable, DictionaryEncodable {
     var isBlocked: Bool?
     var lastMessage: Date?
 
+//    t.column("fromUser_id", .text)
+//    t.column("fromUser_username", .text)
+//    t.column("fromUser_fullname", .text)
+//    t.column("fromUser_photoUrl", .text)
+//
+//    t.column("toUser_id", .text)
+//    t.column("toUser_username", .text)
+//    t.column("toUser_fullname", .text)
+//    t.column("toUser_photoUrl", .text)
     var photos: UserPhotos?
 
     enum CodingKeys: String, CodingKey, ColumnExpression {

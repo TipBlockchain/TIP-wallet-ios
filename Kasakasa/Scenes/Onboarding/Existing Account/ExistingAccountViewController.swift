@@ -69,7 +69,7 @@ class ExistingAccountViewController: BaseViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowRecoveryPhraseFromDemoAccount",
+        if segue.identifier == "ShowRestoreWallet",
             let vc = segue.destination as? RestoreWalletViewController {
             vc.existingUser = self.existingUser
         }

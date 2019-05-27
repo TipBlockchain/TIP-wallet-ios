@@ -29,10 +29,6 @@ class AppConfig {
         return configDict[AppConstants.ethereumNetworkId] as! Int
     }
 
-    static var infuraAccessToken: String {
-        return configDict[AppConstants.infuraAccessToken] as! String
-    }
-
     static var tipContractAddress: String {
         return configDict[AppConstants.tipContractAddress] as! String
     }
@@ -41,8 +37,11 @@ class AppConfig {
         return config?.ethNodeUrl
     }
 
-    static var etherscanBaseUrl: String? {
-        return config?.etherscanBaseUrl
+    static var etherscanBaseUrl: String {
+        if let url = config?.etherscanBaseUrl {
+            return url
+        }
+        return configDict[AppConstants.etherscanBaseUrl] as! String
     }
 
     static var etherscanApiKey: String? {

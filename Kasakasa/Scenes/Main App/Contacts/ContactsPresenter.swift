@@ -19,10 +19,13 @@ class ContactsPresenter: BasePresenter {
     }
 
     func fetchContactList() {
-        apiService.getContactList { (response, error) in
-            if let response = response {
-                try? self.repository.insert(response.contacts)
-                self.view?.onContactsFetched(response.contacts)
+        repository.fetchContactList { contacts, error in
+            if let contacts = contacts {
+                self.view?.onContactsFetched(contacts)
+            } else if let error = error {
+                self.view?.onContactsLoadError(error)
+            } else {
+                self.view?.onContactsLoadError(AppErrors.unknowkError)
             }
         }
     }

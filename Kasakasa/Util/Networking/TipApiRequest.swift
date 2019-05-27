@@ -18,6 +18,8 @@ enum HTTPMethod: String {
     case HEAD
 }
 
+typealias Parameters = [String: String]
+
 enum TipApiRequest {
 
     private var multipartBoundary: String {
@@ -42,7 +44,8 @@ enum TipApiRequest {
     case addContacts(_ contacts: ContactListRequest)
     case searchByUsername(_ query: String)
     case deleteContact(_ contact: ContactRequest)
-
+    case getTransactions(params: Parameters)
+    case fillTransactions(params: Parameters)
 
     var baseUrl: URL {
         return URL(string: AppConfig.tipApiBaseUrl)!
@@ -113,7 +116,7 @@ enum TipApiRequest {
         return nil
     }
 
-    var queryParams: [String:String] {
+    var queryParams: Parameters {
         switch self {
         case .checkUsername(let username), .searchByUsername(let username):
             return ["username": username]
@@ -150,6 +153,10 @@ enum TipApiRequest {
             return baseUrl.appendingPathComponent("/contacts/multiple")
         case .searchByUsername:
             return baseUrl.appendingPathComponent("/accounts/search")
+        case .getTransactions:
+            return baseUrl.appendingPathComponent("/transactions")
+        case .fillTransactions:
+            return baseUrl.appendingPathComponent("/transactions/fill")
         }
     }
 }

@@ -32,7 +32,7 @@ class FileUtils {
     static func databaseDirectoryUrl() -> URL? {
         if let documentsDir = self.documentsDirectoryUrl() {
             let dbDir = documentsDir.appendingPathComponent("database")
-            debugPrint("database dir = \(dbDir)")
+            debugPrint("Database dir = \(dbDir.path)")
             return dbDir
         }
         return nil
@@ -66,7 +66,7 @@ class FileUtils {
         if let addresses = keystore.addresses, addresses.count > 0,  let address = addresses.first {
             let now = Date()
             let formatter = DateFormatter.keystoreFileDateFormatter
-            let filename = "UTC--\(formatter.string(from: now))--\(address).json"
+            let filename = "UTC--\(formatter.string(from: now))--\(address.address).json"
             return filename
         }
         return nil

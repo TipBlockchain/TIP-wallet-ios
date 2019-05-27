@@ -28,4 +28,20 @@ extension DateFormatter {
         formatter.timeZone = TimeZone(secondsFromGMT: 0)
         return formatter
     }()
+
+    static let sqlDateFormatter: DateFormatter = {
+        let dateFormat = "YYYY-MM-dd hh-mm-ss.zzz"
+        let formatter = DateFormatter()
+        formatter.dateFormat = dateFormat
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        return formatter
+    }()
+
+    static let displayDateFormatter: DateFormatter = {
+        let dateFormat = "MMM d  YYYY',' hh:mm a"
+        let formatter = DateFormatter()
+        formatter.dateFormat = dateFormat
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        return formatter
+    }()
 }

@@ -17,15 +17,24 @@ class WalletViewController: BaseViewController {
     private var transactionProcessor: ChainProcessor?
     private lazy var presenter = WalletPresenter()
     private lazy var walletRepo = WalletRepository.shared
-
+    private var transactions: [Transaction] = []
+    private var wallet: Wallet? {
+        didSet {
+            self.currencyLabel.text = wallet?.currency.rawValue ?? ""
+        }
+    }
+    private let transactionCellIdentifier = "TransactionCellIdentifier"
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        tableView.register(UINib(nibName: "TransactionTableViewCell", bundle: nil), forCellReuseIdentifier: transactionCellIdentifier)
+        tableView.tableFooterView = UIView()
 
         presenter.attach(self)
         self.navigationController?.isNavigationBarHidden = true
         if let wallets = walletRepo.allWallets() {
-            let firstWallet = wallets[1]
-            presenter.getBalance(forWallet: firstWallet)
+            self.wallet = wallets[0]
+            presenter.getBalance(forWallet: wallet!)
         }
 
 
@@ -41,6 +50,11 @@ class WalletViewController: BaseViewController {
         super.viewWillAppear(animated)
         self.navigationBarHiddenState = self.navigationController?.isNavigationBarHidden ?? false
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presenter.fetchTransactions(forWallet: self.wallet!)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -59,9 +73,63 @@ class WalletViewController: BaseViewController {
     }
 
     func onBalanceFetched(_ balance: NSDecimalNumber) {
-        showToast("Balance = \(balance)")
         debugPrint("Balance = \(balance)")
         balanceLabel.text = balance.description(withLocale: Locale.current)
     }
 
+    func onTransactionsFetched(_ transactions: [Transaction]) {
+        self.transactions = transactions
+        tableView.reloadData()
+    }
+
+    func onTransactionFetchError(_ error: AppErrors) {
+        self.showError(error)
+    }
+
+    func onNoTransactionsFound() {
+        // show no transactions view
+    }
+}
+
+
+extension WalletViewController: UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return transactions.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: transactionCellIdentifier) as! TransactionTableViewCell
+        if let transaction = self.transaction(atIndexPath: indexPath) {
+            cell.transaction = transaction
+        }
+        return cell
+    }
+
+    private func transaction(atIndexPath indexPath: IndexPath) -> Transaction? {
+        if self.transactions.count > indexPath.row {
+            return self.transactions[indexPath.row]
+        }
+        return nil
+    }
+}
+
+extension WalletViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70.0
+    }
+
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let headerView = UIView()
+//        return headerView
+//    }
+//
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 30.0
+//    }
 }

@@ -25,6 +25,13 @@
 		4510400222965439001C26D5 /* EtherscanApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510400122965439001C26D5 /* EtherscanApiService.swift */; };
 		451040042296550A001C26D5 /* EtherscanApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451040032296550A001C26D5 /* EtherscanApiRequest.swift */; };
 		4510400622965963001C26D5 /* ConfigResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510400522965963001C26D5 /* ConfigResponse.swift */; };
+		4510400822979AFA001C26D5 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510400722979AFA001C26D5 /* Transaction.swift */; };
+		4510400A22979B07001C26D5 /* TransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510400922979B07001C26D5 /* TransactionRepository.swift */; };
+		4510400C2299B767001C26D5 /* UserStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510400B2299B767001C26D5 /* UserStub.swift */; };
+		451040102299EB73001C26D5 /* TransactionListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510400F2299EB73001C26D5 /* TransactionListResponse.swift */; };
+		451040122299EBAF001C26D5 /* EtherscanTxListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451040112299EBAF001C26D5 /* EtherscanTxListResponse.swift */; };
+		45104015229A1F14001C26D5 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45104013229A1F14001C26D5 /* TransactionTableViewCell.swift */; };
+		45104016229A1F14001C26D5 /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45104014229A1F14001C26D5 /* TransactionTableViewCell.xib */; };
 		45129C5B21DFC59C00F585FA /* IntroPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45129C5A21DFC59C00F585FA /* IntroPageViewController.swift */; };
 		4524159A21F1AF03005B53A2 /* AppDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4524159921F1AF03005B53A2 /* AppDefaults.swift */; };
 		4524159D21F1B257005B53A2 /* AuthorizationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4524159C21F1B257005B53A2 /* AuthorizationRepository.swift */; };
@@ -88,6 +95,10 @@
 		459DEBBE21DFBCAA009F0BE0 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459DEBBD21DFBCAA009F0BE0 /* AppConstants.swift */; };
 		459DEBC021DFBCBB009F0BE0 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459DEBBF21DFBCBB009F0BE0 /* AppStyle.swift */; };
 		459DEBC221DFBCDE009F0BE0 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459DEBC121DFBCDE009F0BE0 /* AppConfig.swift */; };
+		45A4B76B229B4F7B003676E6 /* JSONDecoderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A4B76A229B4F7B003676E6 /* JSONDecoderExtension.swift */; };
+		45A4B76D229B947A003676E6 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A4B76C229B9479003676E6 /* UIViewControllerExtension.swift */; };
+		45A4B76F229B964E003676E6 /* TransactionDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A4B76E229B964E003676E6 /* TransactionDetailsView.swift */; };
+		45A4B771229B966A003676E6 /* TransactionDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45A4B770229B966A003676E6 /* TransactionDetailsView.xib */; };
 		45A6D7A521EFD782007A6F42 /* VerifyPhone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6D7A421EFD782007A6F42 /* VerifyPhone.swift */; };
 		45A6D7A721EFD8A7007A6F42 /* VerifyPhoneNumberPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6D7A621EFD8A7007A6F42 /* VerifyPhoneNumberPresenterImpl.swift */; };
 		45A6D7AB21EFE20E007A6F42 /* ExistingAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6D7AA21EFE20E007A6F42 /* ExistingAccountViewController.swift */; };
@@ -188,6 +199,13 @@
 		4510400122965439001C26D5 /* EtherscanApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtherscanApiService.swift; sourceTree = "<group>"; };
 		451040032296550A001C26D5 /* EtherscanApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtherscanApiRequest.swift; sourceTree = "<group>"; };
 		4510400522965963001C26D5 /* ConfigResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigResponse.swift; sourceTree = "<group>"; };
+		4510400722979AFA001C26D5 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		4510400922979B07001C26D5 /* TransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepository.swift; sourceTree = "<group>"; };
+		4510400B2299B767001C26D5 /* UserStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStub.swift; sourceTree = "<group>"; };
+		4510400F2299EB73001C26D5 /* TransactionListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListResponse.swift; sourceTree = "<group>"; };
+		451040112299EBAF001C26D5 /* EtherscanTxListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtherscanTxListResponse.swift; sourceTree = "<group>"; };
+		45104013229A1F14001C26D5 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		45104014229A1F14001C26D5 /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
 		45129C5A21DFC59C00F585FA /* IntroPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPageViewController.swift; sourceTree = "<group>"; };
 		4524159921F1AF03005B53A2 /* AppDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefaults.swift; sourceTree = "<group>"; };
 		4524159C21F1B257005B53A2 /* AuthorizationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRepository.swift; sourceTree = "<group>"; };
@@ -252,6 +270,10 @@
 		459DEBBD21DFBCAA009F0BE0 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		459DEBBF21DFBCBB009F0BE0 /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		459DEBC121DFBCDE009F0BE0 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		45A4B76A229B4F7B003676E6 /* JSONDecoderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoderExtension.swift; sourceTree = "<group>"; };
+		45A4B76C229B9479003676E6 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		45A4B76E229B964E003676E6 /* TransactionDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsView.swift; sourceTree = "<group>"; };
+		45A4B770229B966A003676E6 /* TransactionDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionDetailsView.xib; sourceTree = "<group>"; };
 		45A6D7A421EFD782007A6F42 /* VerifyPhone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhone.swift; sourceTree = "<group>"; };
 		45A6D7A621EFD8A7007A6F42 /* VerifyPhoneNumberPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneNumberPresenterImpl.swift; sourceTree = "<group>"; };
 		45A6D7AA21EFE20E007A6F42 /* ExistingAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingAccountViewController.swift; sourceTree = "<group>"; };
@@ -414,6 +436,7 @@
 				4524159C21F1B257005B53A2 /* AuthorizationRepository.swift */,
 				4524159E21F1B893005B53A2 /* UserRepository.swift */,
 				456D856B21F41057005150F3 /* WalletRepository.swift */,
+				4510400922979B07001C26D5 /* TransactionRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -573,6 +596,10 @@
 				45AD3A4B21E71EA300198D6F /* ColoredButton.swift */,
 				456012C42214DB5E003B04E2 /* UserSearchTableViewCell.swift */,
 				456012CA22152FE9003B04E2 /* ContactTableViewCell.swift */,
+				45104013229A1F14001C26D5 /* TransactionTableViewCell.swift */,
+				45104014229A1F14001C26D5 /* TransactionTableViewCell.xib */,
+				45A4B76E229B964E003676E6 /* TransactionDetailsView.swift */,
+				45A4B770229B966A003676E6 /* TransactionDetailsView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -709,6 +736,8 @@
 				4579A9F3220EB13E00CBCFAE /* ContactListStringResponse.swift */,
 				4579A9F5220EB5A200CBCFAE /* UserSearchResponse.swift */,
 				4510400522965963001C26D5 /* ConfigResponse.swift */,
+				4510400F2299EB73001C26D5 /* TransactionListResponse.swift */,
+				451040112299EBAF001C26D5 /* EtherscanTxListResponse.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -732,6 +761,8 @@
 				45AD3A4721E71D2D00198D6F /* UIColorExtension.swift */,
 				45AD3A5621E7375900198D6F /* DateFormatterExtension.swift */,
 				455F39612202348200516286 /* UIImageExtension.swift */,
+				45A4B76A229B4F7B003676E6 /* JSONDecoderExtension.swift */,
+				45A4B76C229B9479003676E6 /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -743,6 +774,8 @@
 				45AD3A5A21E73E0200198D6F /* UserPhotos.swift */,
 				456D856D21F411BA005150F3 /* Wallet.swift */,
 				456D856F21F59AB7005150F3 /* Currency.swift */,
+				4510400722979AFA001C26D5 /* Transaction.swift */,
+				4510400B2299B767001C26D5 /* UserStub.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -1013,10 +1046,12 @@
 				45FD5B5421E0688E00C247F0 /* config.local.json in Resources */,
 				45B7A43221DEC295005A1124 /* Assets.xcassets in Resources */,
 				45B7A43021DEC293005A1124 /* Main.storyboard in Resources */,
+				45104016229A1F14001C26D5 /* TransactionTableViewCell.xib in Resources */,
 				45BBF07A21E2DBFD0042EC5D /* Flags.xcassets in Resources */,
 				45BBF06721E1D3450042EC5D /* Localizable.strings in Resources */,
 				45BBF07821E2CDAE0042EC5D /* Onboarding.storyboard in Resources */,
 				459DEBBA21DFB82B009F0BE0 /* Tutorial.storyboard in Resources */,
+				45A4B771229B966A003676E6 /* TransactionDetailsView.xib in Resources */,
 				45AD3A3821E3E56600198D6F /* FlagKit.xcassets in Resources */,
 				45828C6A220D399000594842 /* SplashScreen.storyboard in Resources */,
 				45FD5B5621E069A600C247F0 /* config.dev.json in Resources */,
@@ -1095,9 +1130,11 @@
 				457F54E321FD905D00EA25AC /* OnboardingUserProfile.swift in Sources */,
 				45828C68220D364C00594842 /* SplashScreenPresenter.swift in Sources */,
 				45A6D7A521EFD782007A6F42 /* VerifyPhone.swift in Sources */,
+				4510400A22979B07001C26D5 /* TransactionRepository.swift in Sources */,
 				459747882217E60200EAD4B8 /* ReceiveTransferViewController.swift in Sources */,
 				453A7C5C2223BC9600E5E3C8 /* EthConvert.swift in Sources */,
 				4524159A21F1AF03005B53A2 /* AppDefaults.swift in Sources */,
+				45A4B76D229B947A003676E6 /* UIViewControllerExtension.swift in Sources */,
 				45AD3A4621E71B6000198D6F /* UIViewExtension.swift in Sources */,
 				4524159F21F1B893005B53A2 /* UserRepository.swift in Sources */,
 				45BBF05821E1C46B0042EC5D /* NetworkService.swift in Sources */,
@@ -1129,6 +1166,7 @@
 				45A6D7B321EFE298007A6F42 /* ChoosePasswordViewController.swift in Sources */,
 				4579A9EE220EB0E300CBCFAE /* ContactRequest.swift in Sources */,
 				45AD3A3D21E42C4C00198D6F /* CountryTableViewCell.swift in Sources */,
+				45A4B76B229B4F7B003676E6 /* JSONDecoderExtension.swift in Sources */,
 				455F396022022EEF00516286 /* ExistingAccountPresenter.swift in Sources */,
 				45A6D7B921F01DF7007A6F42 /* RestoreWalletViewController.swift in Sources */,
 				45FD5B5A21E06BEF00C247F0 /* TipApiRequest.swift in Sources */,
@@ -1137,6 +1175,7 @@
 				455F396422023C4000516286 /* RestoreWalletPresenter.swift in Sources */,
 				45828C75220E851000594842 /* UserSearchViewController.swift in Sources */,
 				45AD3A2821E3405E00198D6F /* EnterPhoneNumberPresenterImpl.swift in Sources */,
+				4510400C2299B767001C26D5 /* UserStub.swift in Sources */,
 				45AD3A2F21E3412B00198D6F /* BaseView.swift in Sources */,
 				45AD3A3621E3DCD400198D6F /* UITextFieldExtension.swift in Sources */,
 				456012CB22152FE9003B04E2 /* ContactTableViewCell.swift in Sources */,
@@ -1154,6 +1193,7 @@
 				4579A9F6220EB5A200CBCFAE /* UserSearchResponse.swift in Sources */,
 				45AD3A5021E7308800198D6F /* PhoneVerificationResponse.swift in Sources */,
 				45AD3A5921E73D7500198D6F /* User.swift in Sources */,
+				45104015229A1F14001C26D5 /* TransactionTableViewCell.swift in Sources */,
 				45AD3A3A21E42B8500198D6F /* SelectCountryViewController.swift in Sources */,
 				457F54DD21FD12C600EA25AC /* WalletUtils.swift in Sources */,
 				4579A9F0220EB11100CBCFAE /* ContactListRequest.swift in Sources */,
@@ -1166,8 +1206,10 @@
 				456D856421F2C6DB005150F3 /* VerifyRecoveryPhrasePresenter.swift in Sources */,
 				457F54E121FD904000EA25AC /* OnboardingUserProfilePresenter.swift in Sources */,
 				45BBF07621E2C29D0042EC5D /* Country.swift in Sources */,
+				451040122299EBAF001C26D5 /* EtherscanTxListResponse.swift in Sources */,
 				45828C64220D358200594842 /* SplashScreenViewController.swift in Sources */,
 				45AD3A4221E5673C00198D6F /* ModalViewController.swift in Sources */,
+				45A4B76F229B964E003676E6 /* TransactionDetailsView.swift in Sources */,
 				45A6D7B621EFE2FF007A6F42 /* OnboardingUserProfileViewController.swift in Sources */,
 				45AD3A5221E730EC00198D6F /* PhoneVerificationConfirmation.swift in Sources */,
 				456D856E21F411BA005150F3 /* Wallet.swift in Sources */,
@@ -1177,6 +1219,7 @@
 				459DEBC221DFBCDE009F0BE0 /* AppConfig.swift in Sources */,
 				45BBF06421E1D2D50042EC5D /* StringExtension.swift in Sources */,
 				452AD7F421EFB839007F11E2 /* VerifyPhoneNumberViewController.swift in Sources */,
+				451040102299EB73001C26D5 /* TransactionListResponse.swift in Sources */,
 				456D856A21F2E2D7005150F3 /* ChoosePassword.swift in Sources */,
 				456D857021F59AB7005150F3 /* Currency.swift in Sources */,
 				459747852215435600EAD4B8 /* ConfirmTransferViewController.swift in Sources */,
@@ -1190,6 +1233,7 @@
 				45AD3A5D21E73EEC00198D6F /* PendingSignup.swift in Sources */,
 				4510400622965963001C26D5 /* ConfigResponse.swift in Sources */,
 				456012C52214DB5E003B04E2 /* UserSearchTableViewCell.swift in Sources */,
+				4510400822979AFA001C26D5 /* Transaction.swift in Sources */,
 				4579A9F2220EB12600CBCFAE /* ContactListResponse.swift in Sources */,
 				459DEBBE21DFBCAA009F0BE0 /* AppConstants.swift in Sources */,
 				451040002295FEF2001C26D5 /* WalletPresenter.swift in Sources */,
