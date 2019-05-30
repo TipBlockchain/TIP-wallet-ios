@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SkyFloatingLabelTextField
 
 class SendTransferViewController: BaseViewController {
 
@@ -16,21 +15,28 @@ class SendTransferViewController: BaseViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var currencyPickerView: UIPickerView!
 
-    @IBOutlet private weak var curencyField: SkyFloatingLabelTextField!
-    @IBOutlet private weak var availableFundsField: SkyFloatingLabelTextField!
-    @IBOutlet private weak var recepientField: SkyFloatingLabelTextField!
-    @IBOutlet private weak var amountField: SkyFloatingLabelTextField!
+    @IBOutlet private weak var currencyField: UITextField?
+    @IBOutlet private weak var availableFundsField: UITextField?
+    @IBOutlet private weak var recepientField: UITextField?
+    @IBOutlet private weak var amountField: UITextField?
 
-    @IBOutlet private weak var networkFeeLabel: UILabel!
+    @IBOutlet private weak var networkFeeLabel: UILabel?
+    @IBOutlet private weak var networkFeeSlider: UISlider?
+    @IBOutlet private weak var pickerView: UIPickerView?
+    @IBOutlet private weak var toolbar: UIToolbar!
     @IBOutlet private weak var tableViewHeightConstraint: NSLayoutConstraint!
 
     private var presenter: SendTransferPresenter?
     private var contactList: [User] = []
 
+    private let tagNetworkFeeLabel = 101
+    private var selectedCurrency: Currency?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationItem.leftItemsSupplementBackButton = true
         self.setupPresenter()
+        self.setupForm()
         // Do any additional setup after loading the view.
     }
 
@@ -38,12 +44,23 @@ class SendTransferViewController: BaseViewController {
         super.viewDidAppear(animated)
         self.setNavigationBarTransparent()
     }
-    
+
+    private func setupForm() {
+
+    }
+
     private func setupPresenter() {
         presenter = SendTransferPresenter()
         presenter?.attach(self)
         presenter?.loadContactList()
         presenter?.loadWallets()
+    }
+    @IBAction func nextButtonTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "ShowConfirmTransfer", sender: self)
+    }
+
+    @IBAction func toolbarSaveButtonTapped(_ sender: Any) {
+        self.currencyField?.resignFirstResponder()
     }
     /*
     // MARK: - Navigation
@@ -55,8 +72,10 @@ class SendTransferViewController: BaseViewController {
     }
     */
 
-    @IBAction func sliderValueChanged(_ sender: Any) {
+    @IBAction @objc func sliderValueChanged(_ sender: UISlider) {
+        self.networkFeeLabel?.text = String.init(format: "Network Fee: %.0f", sender.value.rounded(.toNearestOrAwayFromZero))
     }
+
     private enum SendTransferCell: String {
         case SelectCurrencyCell, CurrencyPickerCell, AvailableFundsCell, RecepientCell, AmountCell, NetworkFeeCell, NoCell
     }
@@ -75,6 +94,7 @@ extension SendTransferViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = self.identifier(forIndexPath: indexPath).rawValue
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        self.setOutlet(forCell: cell, atIndexPath: indexPath)
         return cell
     }
 
@@ -95,17 +115,53 @@ extension SendTransferViewController: UITableViewDataSource {
         }
     }
 
-    private func currencySelected(_ currency: Currency) {
+    private enum CellIndex: Int {
+        case currency = 0
+        case availableFunds
+        case recepient
+        case amount
+        case networkFee
+    }
 
+    private func setOutlet(forCell cell: UITableViewCell, atIndexPath indexPath: IndexPath) {
+        switch indexPath.row {
+        case CellIndex.currency.rawValue:
+            self.currencyField = cell.contentView.subView(ofType: UITextField.self) as? UITextField
+            self.currencyField?.inputView = self.pickerView
+            self.currencyField?.inputAccessoryView = self.toolbar
+        case CellIndex.availableFunds.rawValue:
+            self.availableFundsField = cell.contentView.subView(ofType: UITextField.self) as? UITextField
+        case CellIndex.recepient.rawValue:
+            self.recepientField = cell.contentView.subView(ofType: UITextField.self) as? UITextField
+        case CellIndex.amount.rawValue:
+            self.amountField = cell.contentView.subView(ofType: UITextField.self) as? UITextField
+        case CellIndex.networkFee.rawValue:
+            self.networkFeeSlider = cell.contentView.subView(ofType: UISlider.self) as? UISlider
+            self.networkFeeLabel = cell.contentView.viewWithTag(tagNetworkFeeLabel) as? UILabel
+            self.networkFeeSlider?.isContinuous = true
+            self.networkFeeSlider?.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
+        default:
+            break
+        }
+    }
+
+    private func currencySelected(_ currency: Currency) {
+        self.selectedCurrency = currency
     }
 }
 
 extension SendTransferViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 4 {
-            return 94
+        if identifier(forIndexPath: indexPath) == .NetworkFeeCell {
+            return 120
         }
         return 60
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if identifier(forIndexPath: indexPath) == .RecepientCell {
+            self.performSegue(withIdentifier: "ShowSelectContact", sender: self)
+        }
     }
 }
 
@@ -120,6 +176,7 @@ extension SendTransferViewController: UIPickerViewDelegate {
         default:
             break
         }
+        self.currencyField?.text = selectedCurrency?.rawValue
     }
 }
 
@@ -189,6 +246,14 @@ extension SendTransferViewController: SendTransferView {
 
     func onTransactionFeeCalculated(feeInEth: Double, gasPriceInGwei: Int) {
     }
+}
 
+extension SendTransferViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
 
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+
+    }
 }

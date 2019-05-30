@@ -20,7 +20,6 @@
 		45103FEE2295AAC9001C26D5 /* ToastSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FE02295AAC8001C26D5 /* ToastSwiftFramework.framework */; };
 		45103FEF2295AAC9001C26D5 /* SipHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FE12295AAC8001C26D5 /* SipHash.framework */; };
 		45103FFC2295B6A8001C26D5 /* GRDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FFB2295B6A8001C26D5 /* GRDB.framework */; };
-		45103FFE2295B760001C26D5 /* GRDBCipher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FFD2295B760001C26D5 /* GRDBCipher.framework */; };
 		451040002295FEF2001C26D5 /* WalletPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45103FFF2295FEF2001C26D5 /* WalletPresenter.swift */; };
 		4510400222965439001C26D5 /* EtherscanApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510400122965439001C26D5 /* EtherscanApiService.swift */; };
 		451040042296550A001C26D5 /* EtherscanApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451040032296550A001C26D5 /* EtherscanApiRequest.swift */; };
@@ -66,6 +65,8 @@
 		456D856C21F41057005150F3 /* WalletRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456D856B21F41057005150F3 /* WalletRepository.swift */; };
 		456D856E21F411BA005150F3 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456D856D21F411BA005150F3 /* Wallet.swift */; };
 		456D857021F59AB7005150F3 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456D856F21F59AB7005150F3 /* Currency.swift */; };
+		4577BA82229FB6B500EEFB2B /* SelectContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4577BA81229FB6B500EEFB2B /* SelectContactViewController.swift */; };
+		4577BA84229FB7C300EEFB2B /* SelectContactPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4577BA83229FB7C300EEFB2B /* SelectContactPresenter.swift */; };
 		4579A9EA220EA19000CBCFAE /* UserSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4579A9E9220EA19000CBCFAE /* UserSearchPresenter.swift */; };
 		4579A9EC220EA1B000CBCFAE /* UserSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4579A9EB220EA1B000CBCFAE /* UserSearch.swift */; };
 		4579A9EE220EB0E300CBCFAE /* ContactRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4579A9ED220EB0E300CBCFAE /* ContactRequest.swift */; };
@@ -107,6 +108,7 @@
 		45A6D7B321EFE298007A6F42 /* ChoosePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6D7B221EFE298007A6F42 /* ChoosePasswordViewController.swift */; };
 		45A6D7B621EFE2FF007A6F42 /* OnboardingUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6D7B521EFE2FF007A6F42 /* OnboardingUserProfileViewController.swift */; };
 		45A6D7B921F01DF7007A6F42 /* RestoreWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6D7B821F01DF7007A6F42 /* RestoreWalletViewController.swift */; };
+		45A83C54229CE06A00EAFCCF /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A83C53229CE06A00EAFCCF /* Eureka.framework */; };
 		45AD3A2621E33FBC00198D6F /* EnterPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A2521E33FBC00198D6F /* EnterPhoneNumberViewController.swift */; };
 		45AD3A2821E3405E00198D6F /* EnterPhoneNumberPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A2721E3405E00198D6F /* EnterPhoneNumberPresenterImpl.swift */; };
 		45AD3A2A21E3409900198D6F /* EnterPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A2921E3409900198D6F /* EnterPhoneNumber.swift */; };
@@ -240,6 +242,8 @@
 		456D856B21F41057005150F3 /* WalletRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletRepository.swift; sourceTree = "<group>"; };
 		456D856D21F411BA005150F3 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		456D856F21F59AB7005150F3 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		4577BA81229FB6B500EEFB2B /* SelectContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectContactViewController.swift; sourceTree = "<group>"; };
+		4577BA83229FB7C300EEFB2B /* SelectContactPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectContactPresenter.swift; sourceTree = "<group>"; };
 		4579A9E9220EA19000CBCFAE /* UserSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchPresenter.swift; sourceTree = "<group>"; };
 		4579A9EB220EA1B000CBCFAE /* UserSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearch.swift; sourceTree = "<group>"; };
 		4579A9ED220EB0E300CBCFAE /* ContactRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRequest.swift; sourceTree = "<group>"; };
@@ -282,6 +286,8 @@
 		45A6D7B221EFE298007A6F42 /* ChoosePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePasswordViewController.swift; sourceTree = "<group>"; };
 		45A6D7B521EFE2FF007A6F42 /* OnboardingUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingUserProfileViewController.swift; sourceTree = "<group>"; };
 		45A6D7B821F01DF7007A6F42 /* RestoreWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreWalletViewController.swift; sourceTree = "<group>"; };
+		45A83C53229CE06A00EAFCCF /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
+		45A83C55229CE07700EAFCCF /* SwiftyFORM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyFORM.framework; path = Carthage/Build/iOS/SwiftyFORM.framework; sourceTree = "<group>"; };
 		45AD3A2521E33FBC00198D6F /* EnterPhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberViewController.swift; sourceTree = "<group>"; };
 		45AD3A2721E3405E00198D6F /* EnterPhoneNumberPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberPresenterImpl.swift; sourceTree = "<group>"; };
 		45AD3A2921E3409900198D6F /* EnterPhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumber.swift; sourceTree = "<group>"; };
@@ -360,7 +366,7 @@
 				45103FEE2295AAC9001C26D5 /* ToastSwiftFramework.framework in Frameworks */,
 				45103FEF2295AAC9001C26D5 /* SipHash.framework in Frameworks */,
 				45103FFC2295B6A8001C26D5 /* GRDB.framework in Frameworks */,
-				45103FFE2295B760001C26D5 /* GRDBCipher.framework in Frameworks */,
+				45A83C54229CE06A00EAFCCF /* Eureka.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +390,8 @@
 		45103FD32295AAC7001C26D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				45A83C55229CE07700EAFCCF /* SwiftyFORM.framework */,
+				45A83C53229CE06A00EAFCCF /* Eureka.framework */,
 				45103FFD2295B760001C26D5 /* GRDBCipher.framework */,
 				45103FFB2295B6A8001C26D5 /* GRDB.framework */,
 				45103FD52295AAC7001C26D5 /* BigInt.framework */,
@@ -475,6 +483,15 @@
 			path = Blockchain;
 			sourceTree = "<group>";
 		};
+		4577BA80229FB69E00EEFB2B /* Select Contact */ = {
+			isa = PBXGroup;
+			children = (
+				4577BA81229FB6B500EEFB2B /* SelectContactViewController.swift */,
+				4577BA83229FB7C300EEFB2B /* SelectContactPresenter.swift */,
+			);
+			path = "Select Contact";
+			sourceTree = "<group>";
+		};
 		45828C62220D355E00594842 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
@@ -496,6 +513,7 @@
 		45828C6E220D5F2100594842 /* Main App */ = {
 			isa = PBXGroup;
 			children = (
+				4577BA80229FB69E00EEFB2B /* Select Contact */,
 				459747862217E5EC00EAD4B8 /* Receive Transfer */,
 				459747812215431700EAD4B8 /* Confirm Transfer */,
 				459747802215430B00EAD4B8 /* Send Transfer */,
@@ -1096,7 +1114,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ToastSwiftFramework.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/web3swift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/GRDB.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/GRDBCipher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Eureka.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -1114,7 +1132,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ToastSwiftFramework.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/web3swift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/GRDB.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/GRDBCipher.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Eureka.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1188,6 +1206,7 @@
 				456D856221F2B511005150F3 /* RecoveryPhrase.swift in Sources */,
 				45BBF06221E1C8C90042EC5D /* Json.swift in Sources */,
 				455F396822042D5E00516286 /* AppDatabase.swift in Sources */,
+				4577BA84229FB7C300EEFB2B /* SelectContactPresenter.swift in Sources */,
 				45A6D7A721EFD8A7007A6F42 /* VerifyPhoneNumberPresenterImpl.swift in Sources */,
 				455F39622202348200516286 /* UIImageExtension.swift in Sources */,
 				4579A9F6220EB5A200CBCFAE /* UserSearchResponse.swift in Sources */,
@@ -1218,6 +1237,7 @@
 				456D856021F2A899005150F3 /* RecoveryPhrasePresenter.swift in Sources */,
 				459DEBC221DFBCDE009F0BE0 /* AppConfig.swift in Sources */,
 				45BBF06421E1D2D50042EC5D /* StringExtension.swift in Sources */,
+				4577BA82229FB6B500EEFB2B /* SelectContactViewController.swift in Sources */,
 				452AD7F421EFB839007F11E2 /* VerifyPhoneNumberViewController.swift in Sources */,
 				451040102299EB73001C26D5 /* TransactionListResponse.swift in Sources */,
 				456D856A21F2E2D7005150F3 /* ChoosePassword.swift in Sources */,

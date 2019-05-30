@@ -110,18 +110,6 @@ class BaseViewController: UIViewController {
         }
     }
 
-    func showToast(_ message: String) {
-        self.view.makeToast(message)
-    }
-
-    func setNavigationBarTransparent(_ transparent: Bool = true) {
-        self.navigationController?.isNavigationBarHidden = false
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = UIColor.clear
-    }
-
     func copyToClipboard(_ text: String) {
         let pasteBoard = UIPasteboard.general
         pasteBoard.string = text

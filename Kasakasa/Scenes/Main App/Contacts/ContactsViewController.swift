@@ -12,7 +12,7 @@ import GRDB
 class ContactsViewController: BaseViewController {
 
     @IBOutlet private weak var tableView: UITableView!
-    private var presetner: ContactsPresenter?
+    private var presenter: ContactsPresenter?
     private var controller: FetchedRecordsController<User>!
     private var contactRequest = User.orderedByLastMessage()
     private var selectedContact: User?
@@ -22,7 +22,11 @@ class ContactsViewController: BaseViewController {
         self.configureTableView()
         // Do any additional setup after loading the view.
     }
-    
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setRegularNavigationBar()
+    }
 
     private func configureTableView() {
 

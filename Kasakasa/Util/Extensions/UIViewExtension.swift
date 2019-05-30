@@ -53,4 +53,13 @@ extension UIView {
         animation.duration = duration
         layer.add(animation, forKey: CATransitionType.fade.rawValue)
     }
+
+    func subView(ofType type: AnyClass) -> UIView? {
+        for view in subviews {
+            if view.isKind(of: type) {
+                return view
+            }
+        }
+        return nil
+    }
 }

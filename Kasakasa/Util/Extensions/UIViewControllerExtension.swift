@@ -10,6 +10,25 @@ import UIKit
 
 extension UIViewController {
 
+
+    func showToast(_ message: String) {
+        self.view.makeToast(message)
+    }
+
+    func setNavigationBarTransparent(_ transparent: Bool = true) {
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = UIColor.clear
+    }
+
+    func setRegularNavigationBar() {
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        self.navigationController?.navigationBar.isTranslucent = false
+    }
+    
     func showPickerController(withTitle title: String, message: String? = nil, style: UIAlertController.Style = .actionSheet, view: UIView? = nil, actions: [UIAlertAction]? = nil) {
         let alertController = UIAlertController(title: "Translation Language", message: nil, preferredStyle: .actionSheet)
         if let customView = view {
@@ -22,7 +41,6 @@ extension UIViewController {
 
             alertController.view.translatesAutoresizingMaskIntoConstraints = false
             alertController.view.heightAnchor.constraint(equalToConstant: 430).isActive = true
-
         }
 
 
