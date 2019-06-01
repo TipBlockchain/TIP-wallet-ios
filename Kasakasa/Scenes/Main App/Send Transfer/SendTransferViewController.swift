@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BigInt
 
 class SendTransferViewController: BaseViewController {
 
@@ -30,13 +31,19 @@ class SendTransferViewController: BaseViewController {
     private var contactList: [User] = []
 
     private let tagNetworkFeeLabel = 101
-    private var selectedCurrency: Currency?
+    private let defaultGasPrice: Float = 11.0
+    private var gasPrice: Float = 11.0
+
+    private var selectedCurrency: Currency = .TIP
+    private var pendingTransaction: PendingTransaction? = nil
+    private var txFeeInWei: BigUInt = BigUInt("0")
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationItem.leftItemsSupplementBackButton = true
         self.setupPresenter()
         self.setupForm()
+//        self.endEditingOnTap = true
         // Do any additional setup after loading the view.
     }
 
@@ -52,28 +59,39 @@ class SendTransferViewController: BaseViewController {
     private func setupPresenter() {
         presenter = SendTransferPresenter()
         presenter?.attach(self)
-        presenter?.loadContactList()
+//        presenter?.loadContactList()
         presenter?.loadWallets()
     }
     @IBAction func nextButtonTapped(_ sender: Any) {
-        self.performSegue(withIdentifier: "ShowConfirmTransfer", sender: self)
+//        self.performSegue(withIdentifier: "ShowConfirmTransfer", sender: self)
+        if let user = self.targetUser {
+            self.presenter?.validateTransfer(usernameOrAddress: user.username, value: NSDecimalNumber(string: amountField?.text), txFeeInWei:self.txFeeInWei, currency: selectedCurrency, message: nil)
+        }
     }
 
     @IBAction func toolbarSaveButtonTapped(_ sender: Any) {
-        self.currencyField?.resignFirstResponder()
+//        self.currencyField?.resignFirstResponder()
+        self.view.endEditing(true)
     }
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ShowSelectContact", let selectVC = segue.destination as? SelectContactViewController {
+            selectVC.delegate = self
+        } else if segue.identifier == "ShowConfirmTransfer", let confirmVC = segue.destination as? ConfirmTransferViewController {
+            let gasPriceInWei = EthConvert.toWei(BigUInt(integerLiteral: UInt64(gasPrice.rounded(.toNearestOrEven))), fromUnit: .gwei)
+
+            confirmVC.pendingTransaction = self.pendingTransaction
+            confirmVC.txFee = self.txFeeInWei
+            confirmVC.gasPrice = gasPriceInWei
+        }
     }
-    */
 
     @IBAction @objc func sliderValueChanged(_ sender: UISlider) {
-        self.networkFeeLabel?.text = String.init(format: "Network Fee: %.0f", sender.value.rounded(.toNearestOrAwayFromZero))
+        self.gasPrice = sender.value
+        presenter?.calculateTransactionFee(gasPrice: self.gasPrice)
     }
 
     private enum SendTransferCell: String {
@@ -133,13 +151,17 @@ extension SendTransferViewController: UITableViewDataSource {
             self.availableFundsField = cell.contentView.subView(ofType: UITextField.self) as? UITextField
         case CellIndex.recepient.rawValue:
             self.recepientField = cell.contentView.subView(ofType: UITextField.self) as? UITextField
+            self.recepientField?.text = self.targetUser?.username ?? ""
         case CellIndex.amount.rawValue:
             self.amountField = cell.contentView.subView(ofType: UITextField.self) as? UITextField
+            self.amountField?.inputAccessoryView = self.toolbar
         case CellIndex.networkFee.rawValue:
             self.networkFeeSlider = cell.contentView.subView(ofType: UISlider.self) as? UISlider
             self.networkFeeLabel = cell.contentView.viewWithTag(tagNetworkFeeLabel) as? UILabel
             self.networkFeeSlider?.isContinuous = true
             self.networkFeeSlider?.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
+            self.networkFeeSlider?.setValue(self.defaultGasPrice, animated: false)
+            presenter?.calculateTransactionFee(gasPrice: self.defaultGasPrice)
         default:
             break
         }
@@ -147,10 +169,17 @@ extension SendTransferViewController: UITableViewDataSource {
 
     private func currencySelected(_ currency: Currency) {
         self.selectedCurrency = currency
+        self.currencyField?.text = currency.rawValue
+        presenter?.currencySelected(currency)
+    }
+
+    private func updateNetworkFeeLabel(_ feeInEth: String, gasPrice: Float) {
+        self.networkFeeLabel?.text = String.init(format: "Network Fee: %@ ETH (%.0f GWEI)", feeInEth, gasPrice.rounded(.toNearestOrAwayFromZero))
     }
 }
 
 extension SendTransferViewController: UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if identifier(forIndexPath: indexPath) == .NetworkFeeCell {
             return 120
@@ -159,13 +188,20 @@ extension SendTransferViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if identifier(forIndexPath: indexPath) == .RecepientCell {
+        if identifier(forIndexPath: indexPath) == .CurrencyPickerCell {
+            self.currencyField?.becomeFirstResponder()
+        } else if identifier(forIndexPath: indexPath) == .RecepientCell {
             self.performSegue(withIdentifier: "ShowSelectContact", sender: self)
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
 extension SendTransferViewController: UIPickerViewDelegate {
+
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 50.0
+    }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch row {
@@ -176,12 +212,12 @@ extension SendTransferViewController: UIPickerViewDelegate {
         default:
             break
         }
-        self.currencyField?.text = selectedCurrency?.rawValue
     }
 }
 
 
 extension SendTransferViewController: UIPickerViewDataSource {
+
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -210,18 +246,23 @@ extension SendTransferViewController: SendTransferView {
     }
 
     func onUserNotFound(_ username: String) {
+        self.showError(AppErrors.genericError(message: "No user with username \(username) in your contacts".localized))
     }
 
     func onInvalidRecipient() {
+        self.showError(AppErrors.genericError(message: "The recipient is not a valid username or address.".localized))
     }
 
     func onInsufficientEthBalanceError() {
+        self.showError(AppErrors.genericError(message: "You wallet does not contain enough ETH for the transaction.".localized))
     }
 
     func onInsufficientTipBalanceError() {
+        self.showError(AppErrors.genericError(message: "You wallet does not contain enough TIP for the transaction.".localized))
     }
 
     func onInvalidTransactionValueError() {
+        self.showError(AppErrors.genericError(message: "Invalid transaction value".localized))
     }
 
     func onWalletError() {
@@ -229,9 +270,14 @@ extension SendTransferViewController: SendTransferView {
     }
 
     func onSendPendingTransaction(_ tx: PendingTransaction) {
+        self.pendingTransaction = tx
+        self.performSegue(withIdentifier: "ShowConfirmTransfer", sender: self)
     }
 
-    func onBalanceFetched(_ balance: NSDecimalNumber, forCurrency currency: Currency) {
+    func onBalanceFetched(_ balance: String, forCurrency currency: Currency) {
+        if currency == self.selectedCurrency {
+            self.availableFundsField?.text  = balance
+        }
         debugPrint("Balance fetched: \(balance)")
     }
 
@@ -244,7 +290,15 @@ extension SendTransferViewController: SendTransferView {
         self.showError(error)
     }
 
-    func onTransactionFeeCalculated(feeInEth: Double, gasPriceInGwei: Int) {
+    func onTransactionFeeCalculated(_ txFeeInWei: BigUInt, gasPriceInGwei: Float) {
+        self.txFeeInWei = txFeeInWei
+        if let feeInEth = EthConvert.toEthereumUnits(txFeeInWei, decimals: 5) {
+            self.updateNetworkFeeLabel(feeInEth, gasPrice: gasPriceInGwei)
+        }
+    }
+
+    func onTransactionFeeError() {
+        showError(AppErrors.genericError(message: "Failed to calculated transaction fee. Please try again.".localized))
     }
 }
 
@@ -255,5 +309,14 @@ extension SendTransferViewController: UITextFieldDelegate {
 
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
 
+    }
+}
+
+
+extension SendTransferViewController: SelectContactDelegate {
+
+    func contactSelected(_ user: User) {
+        self.targetUser = user
+        self.recepientField?.text = user.username
     }
 }

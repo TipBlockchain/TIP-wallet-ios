@@ -7,15 +7,33 @@
 //
 
 import Foundation
+import BigInt
+import web3swift
 
 typealias TransactionListClosure = (([Transaction]?, AppErrors?) -> Void)
-
+typealias TransactionSendClosure = ((TransactionSendingResult?, AppErrors?) -> Void)
 class TransactionRepository {
 
     static var shared = TransactionRepository()
     var dbPool = AppDatabase.dbPool
+    lazy var web3Bridge = Web3Bridge.shared
 
     var ethApi = EtherscanApiService.shared
+
+    func sendTransaction(_ transaction: PendingTransaction, withPassword password: String, gasPrice: BigUInt, completion: @escaping TransactionSendClosure) {
+        var result: TransactionSendingResult? = nil
+        do {
+            switch transaction.currency {
+            case .ETH:
+                result = try web3Bridge.sendEthTransaction(value: transaction.value, fromAddress: transaction.from, toAddress: transaction.to, withPassword: password, gasPrice: gasPrice)
+            case .TIP:
+                result = try web3Bridge.sendERC20Transaction(value: transaction.value, from: transaction.from, toAddress: transaction.to, withPassword: password, token: TipProcessor.tipToken)
+            }
+            completion(result, nil)
+        } catch  {
+            completion(nil, AppErrors.error(error: error))
+        }
+    }
 
     func allTransactions() throws -> [Transaction]? {
         return try dbPool?.read({ (db)  in

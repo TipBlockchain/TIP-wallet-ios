@@ -16,7 +16,7 @@ class Web3Bridge {
     private let web3 = Web3.InfuraRinkebyWeb3()
 
     private init() {
-//        self.loadKeystores()
+        let _ = self.restoreAccounts()
     }
 
     private var _keystores: [BIP32Keystore]? = nil
@@ -41,13 +41,13 @@ class Web3Bridge {
         return _keystores!
     }
 
-    func restoreAccounts() -> [BIP32Keystore] {
+    func restoreAccounts() -> [BIP32Keystore]? {
         let dir = FileUtils.walletsDirectoryUrl()
         let path = dir!.path
         debugPrint("Wallet path = \(path)")
         keystoreManager = KeystoreManager.managerForPath(path, scanForHDwallets: true)
         debugPrint("Keystores are: \(keystoreManager!.bip32keystores)")
-        var wallets: [Wallet] = []
+//        var wallets: [Wallet] = []
 //        for keystore in keystoreManager!.bip32keystores {
 //            if let firstAddress = keystore.addresses?.first?.address, let keyData = try? JSONEncoder().encode(keystore.keystoreParams) {
 //                let wallet = Wallet(address: firstAddress, data: keyData, name: "Some Wallet", isHD: true)
@@ -55,7 +55,7 @@ class Web3Bridge {
 //            }
 //        }
         web3.addKeystoreManager(keystoreManager)
-        return keystoreManager!.bip32keystores
+        return keystoreManager?.bip32keystores
     }
 
     func generateMnemonic() throws -> String {
@@ -111,15 +111,19 @@ class Web3Bridge {
         return pkData
     }
 
-    func sendEthTransaction(value: String, fromAddress: String, toAddress toAddressString: String, withPassword password: String) throws -> TransactionSendingResult? {
+    func sendEthTransaction(ethValue: String, fromAddress: String, toAddress toAddressString: String, withPassword password: String, gasPrice: BigUInt? = nil) throws -> TransactionSendingResult? {
+        let value = Web3.Utils.parseToBigUInt(ethValue, units: .eth)!
+        return try self.sendEthTransaction(value: value, fromAddress: fromAddress, toAddress: toAddressString, withPassword: password, gasPrice: gasPrice)
+    }
+
+    func sendEthTransaction(value: BigUInt, fromAddress: String, toAddress toAddressString: String, withPassword password: String, gasPrice: BigUInt? = nil) throws -> TransactionSendingResult? {
         let walletAddress = EthereumAddress(fromAddress)! // Your wallet address
         let toAddress = EthereumAddress(toAddressString)!
         let contract = web3.contract(Web3.Utils.coldWalletABI, at: toAddress, abiVersion: 2)!
-        let amount = Web3.Utils.parseToBigUInt(value, units: .eth)
         var options = TransactionOptions.defaultOptions
-        options.value = amount
+        options.value = value
         options.from = walletAddress
-        options.gasPrice = .automatic
+        options.gasPrice = (gasPrice != nil) ? web3swift.TransactionOptions.GasPricePolicy.manual(gasPrice!) : web3swift.TransactionOptions.GasPricePolicy.automatic
         options.gasLimit = .automatic
         let tx = contract.write(
             "fallback",
@@ -130,20 +134,24 @@ class Web3Bridge {
         return try tx.send(password: password, transactionOptions: nil)
     }
 
-    func sendERC20Transaction(value: String, from fromAddress: String, toAddress toAddressString: String, withPassword password: String, token: ERC20Token) throws -> TransactionSendingResult? {
+    func sendERC20Transaction(ethValue: String, from fromAddress: String, toAddress toAddressString: String, withPassword password: String, token: ERC20Token, gasPrice: BigUInt? = nil) throws -> TransactionSendingResult? {
+        let value = Web3.Utils.parseToBigUInt(ethValue, units: .eth)!
+        return try self.sendERC20Transaction(value: value, from: fromAddress, toAddress: toAddressString, withPassword: password, token: token, gasPrice: gasPrice)
+    }
+
+    func sendERC20Transaction(value: BigUInt, from fromAddress: String, toAddress toAddressString: String, withPassword password: String, token: ERC20Token, gasPrice: BigUInt? = nil) throws -> TransactionSendingResult? {
         let walletAddress = EthereumAddress(fromAddress)! // Your wallet address
         let toAddress = EthereumAddress(toAddressString)!
         let erc20ContractAddress = EthereumAddress(token.address)
         let contract = web3.contract(Web3.Utils.erc20ABI, at: erc20ContractAddress, abiVersion: 2)!
-        let amount = Web3.Utils.parseToBigUInt(value, units: .eth)
         var options = TransactionOptions.defaultOptions
         options.from = walletAddress
-        options.gasPrice = .manual(BigUInt("21000000000"))
+        options.gasPrice = (gasPrice != nil) ? web3swift.TransactionOptions.GasPricePolicy.manual(gasPrice!) : web3swift.TransactionOptions.GasPricePolicy.automatic
         options.gasLimit = .manual(BigUInt("90000"))
         let method = "transfer"
         let tx = contract.write(
             method,
-            parameters: [toAddress, amount] as [AnyObject],
+            parameters: [toAddress, value] as [AnyObject],
             extraData: Data(),
             transactionOptions: options)!
         return try tx.send(password: password, transactionOptions: nil)

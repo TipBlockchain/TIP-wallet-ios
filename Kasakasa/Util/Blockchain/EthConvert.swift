@@ -48,17 +48,23 @@ class EthConvert {
         return number.multiplying(byPowerOf10: Int16(unit.rawValue) * -1)
     }
 
-    public static func toWei(_ number: BigUInt, toUnit unit: Unit) -> NSDecimalNumber {
-        let string = String(number)
-        return self.toWei(NSDecimalNumber(string: string), toUnit: unit)
+    public static func toWei(_ number: BigUInt, fromUnit unit: Unit) -> BigUInt? {
+        return number * BigUInt("10").power(unit.rawValue)
     }
 
-    public static func toWei(_ number: String, toUnit unit: Unit) -> NSDecimalNumber {
-        return self.toWei(NSDecimalNumber(string: number), toUnit: unit)
+    public static func toWei(_ number: String, fromUnit unit: Unit) -> BigUInt? {
+        if let numberAsBigUInt = BigUInt(number) {
+            return self.toWei(numberAsBigUInt, fromUnit: unit)
+        }
+        return nil
     }
 
-    public static func toWei(_ number: NSDecimalNumber, toUnit unit: Unit) -> NSDecimalNumber {
-        return number.multiplying(by: NSDecimalNumber(integerLiteral: unit.rawValue))
+    public static func toWei(_ number: NSDecimalNumber) -> BigUInt? {
+        return toUnit(number, toUnit: .wei)
+    }
+
+    public static func toUnit(_ number: NSDecimalNumber, toUnit unit: Unit) -> BigUInt? {
+        return Web3.Utils.parseToBigUInt(number.description(withLocale: Locale.current), units: .eth)
     }
 
     public static func toEthereumUnits(_ bigUIntValue: BigUInt, decimals: Int = 4) -> String? {

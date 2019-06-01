@@ -28,7 +28,7 @@ extension String {
     }
 
     func isEthAddress() -> Bool {
-        return false
+        return true
     }
 
     func isNumeric() -> Bool {

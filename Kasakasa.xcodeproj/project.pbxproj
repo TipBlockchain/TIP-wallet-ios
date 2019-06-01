@@ -46,6 +46,9 @@
 		453A7C5A2221E26500E5E3C8 /* TipProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A7C592221E26500E5E3C8 /* TipProcessor.swift */; };
 		453A7C5C2223BC9600E5E3C8 /* EthConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A7C5B2223BC9600E5E3C8 /* EthConvert.swift */; };
 		453A7C5E222A53BA00E5E3C8 /* TipTokenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A7C5D222A53BA00E5E3C8 /* TipTokenContract.swift */; };
+		455722CC22A0F2140064D908 /* SelectContactDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455722CB22A0F2140064D908 /* SelectContactDelegate.swift */; };
+		455722D022A2210D0064D908 /* TextUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455722CF22A2210D0064D908 /* TextUtilTests.swift */; };
+		455722D222A24E4A0064D908 /* ConfirmTransferPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455722D122A24E4A0064D908 /* ConfirmTransferPresenter.swift */; };
 		455F396022022EEF00516286 /* ExistingAccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F395F22022EEF00516286 /* ExistingAccountPresenter.swift */; };
 		455F39622202348200516286 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F39612202348200516286 /* UIImageExtension.swift */; };
 		455F396422023C4000516286 /* RestoreWalletPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455F396322023C4000516286 /* RestoreWalletPresenter.swift */; };
@@ -144,6 +147,7 @@
 		45B7A43521DEC295005A1124 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B7A43321DEC295005A1124 /* LaunchScreen.storyboard */; };
 		45B7A44021DEC295005A1124 /* KasakasaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A43F21DEC295005A1124 /* KasakasaTests.swift */; };
 		45B7A44B21DEC295005A1124 /* KasakasaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A44A21DEC295005A1124 /* KasakasaUITests.swift */; };
+		45BA3D1122A256D200D3A9A5 /* TransactionSentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BA3D1022A256D200D3A9A5 /* TransactionSentViewController.swift */; };
 		45BBF05821E1C46B0042EC5D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BBF05721E1C46B0042EC5D /* NetworkService.swift */; };
 		45BBF05A21E1C48A0042EC5D /* TipApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BBF05921E1C48A0042EC5D /* TipApiService.swift */; };
 		45BBF05F21E1C86C0042EC5D /* AppErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BBF05E21E1C86C0042EC5D /* AppErrors.swift */; };
@@ -223,6 +227,9 @@
 		453A7C592221E26500E5E3C8 /* TipProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipProcessor.swift; sourceTree = "<group>"; };
 		453A7C5B2223BC9600E5E3C8 /* EthConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthConvert.swift; sourceTree = "<group>"; };
 		453A7C5D222A53BA00E5E3C8 /* TipTokenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipTokenContract.swift; sourceTree = "<group>"; };
+		455722CB22A0F2140064D908 /* SelectContactDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectContactDelegate.swift; sourceTree = "<group>"; };
+		455722CF22A2210D0064D908 /* TextUtilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextUtilTests.swift; sourceTree = "<group>"; };
+		455722D122A24E4A0064D908 /* ConfirmTransferPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmTransferPresenter.swift; sourceTree = "<group>"; };
 		455F395F22022EEF00516286 /* ExistingAccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingAccountPresenter.swift; sourceTree = "<group>"; };
 		455F39612202348200516286 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		455F396322023C4000516286 /* RestoreWalletPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreWalletPresenter.swift; sourceTree = "<group>"; };
@@ -329,6 +336,7 @@
 		45B7A44621DEC295005A1124 /* KasakasaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KasakasaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B7A44A21DEC295005A1124 /* KasakasaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KasakasaUITests.swift; sourceTree = "<group>"; };
 		45B7A44C21DEC295005A1124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45BA3D1022A256D200D3A9A5 /* TransactionSentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSentViewController.swift; sourceTree = "<group>"; };
 		45BBF05721E1C46B0042EC5D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		45BBF05921E1C48A0042EC5D /* TipApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipApiService.swift; sourceTree = "<group>"; };
 		45BBF05E21E1C86C0042EC5D /* AppErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrors.swift; sourceTree = "<group>"; };
@@ -488,6 +496,7 @@
 			children = (
 				4577BA81229FB6B500EEFB2B /* SelectContactViewController.swift */,
 				4577BA83229FB7C300EEFB2B /* SelectContactPresenter.swift */,
+				455722CB22A0F2140064D908 /* SelectContactDelegate.swift */,
 			);
 			path = "Select Contact";
 			sourceTree = "<group>";
@@ -513,6 +522,7 @@
 		45828C6E220D5F2100594842 /* Main App */ = {
 			isa = PBXGroup;
 			children = (
+				45BA3D1222A256D900D3A9A5 /* TransactionSent */,
 				4577BA80229FB69E00EEFB2B /* Select Contact */,
 				459747862217E5EC00EAD4B8 /* Receive Transfer */,
 				459747812215431700EAD4B8 /* Confirm Transfer */,
@@ -582,6 +592,7 @@
 			isa = PBXGroup;
 			children = (
 				459747842215435600EAD4B8 /* ConfirmTransferViewController.swift */,
+				455722D122A24E4A0064D908 /* ConfirmTransferPresenter.swift */,
 			);
 			path = "Confirm Transfer";
 			sourceTree = "<group>";
@@ -860,6 +871,14 @@
 			path = KasakasaUITests;
 			sourceTree = "<group>";
 		};
+		45BA3D1222A256D900D3A9A5 /* TransactionSent */ = {
+			isa = PBXGroup;
+			children = (
+				45BA3D1022A256D200D3A9A5 /* TransactionSentViewController.swift */,
+			);
+			path = TransactionSent;
+			sourceTree = "<group>";
+		};
 		45BBF05521E1C42D0042EC5D /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -911,6 +930,7 @@
 			children = (
 				45BBF07321E1E1BD0042EC5D /* TipApiServiceTests.swift */,
 				45949C99222F404C008F8BC9 /* TipContractTests.swift */,
+				455722CF22A2210D0064D908 /* TextUtilTests.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -1205,6 +1225,7 @@
 				456D855E21F2A518005150F3 /* Web3Bridge.swift in Sources */,
 				456D856221F2B511005150F3 /* RecoveryPhrase.swift in Sources */,
 				45BBF06221E1C8C90042EC5D /* Json.swift in Sources */,
+				455722D222A24E4A0064D908 /* ConfirmTransferPresenter.swift in Sources */,
 				455F396822042D5E00516286 /* AppDatabase.swift in Sources */,
 				4577BA84229FB7C300EEFB2B /* SelectContactPresenter.swift in Sources */,
 				45A6D7A721EFD8A7007A6F42 /* VerifyPhoneNumberPresenterImpl.swift in Sources */,
@@ -1220,6 +1241,7 @@
 				45BBF05F21E1C86C0042EC5D /* AppErrors.swift in Sources */,
 				4579A9EA220EA19000CBCFAE /* UserSearchPresenter.swift in Sources */,
 				4510400222965439001C26D5 /* EtherscanApiService.swift in Sources */,
+				45BA3D1122A256D200D3A9A5 /* TransactionSentViewController.swift in Sources */,
 				453A7C522220CF8600E5E3C8 /* PendingTransaction.swift in Sources */,
 				456D856621F2C71C005150F3 /* VerifyRecoveryPhrase.swift in Sources */,
 				456D856421F2C6DB005150F3 /* VerifyRecoveryPhrasePresenter.swift in Sources */,
@@ -1257,6 +1279,7 @@
 				4579A9F2220EB12600CBCFAE /* ContactListResponse.swift in Sources */,
 				459DEBBE21DFBCAA009F0BE0 /* AppConstants.swift in Sources */,
 				451040002295FEF2001C26D5 /* WalletPresenter.swift in Sources */,
+				455722CC22A0F2140064D908 /* SelectContactDelegate.swift in Sources */,
 				45828C66220D35A300594842 /* SplashScreen.swift in Sources */,
 				456012C922152703003B04E2 /* ContactsPresenter.swift in Sources */,
 				4579A9F4220EB13E00CBCFAE /* ContactListStringResponse.swift in Sources */,
@@ -1270,6 +1293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				455722D022A2210D0064D908 /* TextUtilTests.swift in Sources */,
 				45949C9A222F404C008F8BC9 /* TipContractTests.swift in Sources */,
 				45BBF07421E1E1BD0042EC5D /* TipApiServiceTests.swift in Sources */,
 				45B7A44021DEC295005A1124 /* KasakasaTests.swift in Sources */,

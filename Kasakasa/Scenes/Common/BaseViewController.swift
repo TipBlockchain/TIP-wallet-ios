@@ -10,7 +10,7 @@ import UIKit
 import ToastSwiftFramework
 
 typealias VoidCompletionBlock = (() -> Void)
-
+typealias StringCompletionBlock = ((String?) -> Void)
 class BaseViewController: UIViewController {
 
     private var activityIndicator: UIActivityIndicatorView?
@@ -19,6 +19,7 @@ class BaseViewController: UIViewController {
     private var endEditingGestureRecognizer: UITapGestureRecognizer {
         if _tapGestureRecognizer == nil {
             _tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard(_:)))
+            _tapGestureRecognizer?.numberOfTapsRequired = 1
         }
         return _tapGestureRecognizer!
     }
@@ -87,6 +88,29 @@ class BaseViewController: UIViewController {
         }
         alert.addAction(okAction)
         alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    func showTextFieldAlert(withTitle title: String, message: String, style: UIAlertController.Style = .alert, isSecure: Bool = false, onOkSelected okCompletionBlock: StringCompletionBlock? = nil, onCancelSelected cancelCompletionBlock: VoidCompletionBlock? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
+
+        //2. Add the text field. You can configure it however you need.
+        alert.addTextField { (textField) in
+            textField.text = ""
+            textField.isSecureTextEntry = isSecure
+        }
+
+        let okAction = UIAlertAction(title: "Okay".localized, style: .default, handler: { [weak alert] (_) in
+            let text: String? = alert?.textFields?.first?.text
+            okCompletionBlock?(text)
+        })
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(okAction)
+        let cancelAction = UIAlertAction(title: "Cancel".localized, style: .cancel) { (action) in
+            cancelCompletionBlock?()
+        }
+        alert.addAction(cancelAction)
+        // 4. Present the alert.
         self.present(alert, animated: true, completion: nil)
     }
 

@@ -15,6 +15,7 @@ class SelectContactViewController: BaseViewController {
     @IBOutlet private weak var tableView: UITableView!
     private var contacts: [User] = []
     let cellIdentifier = "ContactCellIdentifier"
+    var delegate: SelectContactDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +76,12 @@ extension SelectContactViewController: UITableViewDataSource {
 extension SelectContactViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath as IndexPath)?.accessoryType = .checkmark
+        if let contact = self.contact(atIndexPath: indexPath) {
+            self.delegate?.contactSelected(contact)
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200)) {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
     }
 
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {

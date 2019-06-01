@@ -14,7 +14,7 @@ struct PendingTransaction: Codable {
     var fromUsername: String?
     var to: String
     var toUsername: String?
-    var value: BigInt
+    var value: BigUInt
     var currency: Currency
     var message: String?
 }

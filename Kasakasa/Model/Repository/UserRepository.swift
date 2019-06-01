@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GRDB
 
 typealias UserListClosure = ([User]?, AppErrors?) -> Void
 
@@ -34,11 +35,15 @@ class UserRepository {
     }
 
     func findUserById(_ id: String) -> User? {
-        return nil
+        return try? dbPool?.read({ db -> User? in
+            return try? User.filter(Column("id") == id).fetchOne(db)
+        })
     }
 
     func findUserByUsername(_ username: String) -> User? {
-        return nil
+        return try? dbPool?.read({ db -> User? in
+            return try? User.filter(Column("username") == username).fetchOne(db)
+        })
     }
 
     func fetchContactList(_ completion: @escaping UserListClosure) {
