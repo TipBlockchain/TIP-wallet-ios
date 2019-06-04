@@ -23,6 +23,7 @@ class TransactionTableViewCell: UITableViewCell {
             self.updateUI()
         }
     }
+    var wallet: Wallet?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,23 +37,33 @@ class TransactionTableViewCell: UITableViewCell {
     }
 
     private func updateUI() {
-        self.usernameLabel.text = transaction?.from ?? ""
-        if let valueString = EthConvert.toEthereumUnits(transaction?.value ?? BigUInt("0"), decimals: 3), let currency = transaction?.currency {
-            self.amountLabel.text = valueString  + " " + currency
-        } else {
-            self.amountLabel.text = ""
+        guard let transaction = transaction else {
+            return
         }
-        self.messageLabel.text = transaction?.fromUser?.fullname ?? ""
-        if let txDate = transaction?.timestamp {
-            self.dateLabel.text = DateFormatter.displayDateFormatter.string(from: txDate)
-        } else {
-            self.dateLabel.text = ""
-        }
-        if let photoUrl = transaction?.fromUser?.photoUrl, let imageUrl = URL(string: photoUrl) {
+
+        let outgoingTx = transaction.from.lowercased() == wallet?.address.lowercased()
+
+        self.usernameLabel.text = outgoingTx ?
+            (transaction.toUser != nil ? transaction.toUser?.username : transaction.to) :
+            (transaction.fromUser != nil ? transaction.fromUser?.username : transaction.from)
+        let photoUrl = outgoingTx ? transaction.toUser?.photoUrl : transaction.fromUser?.photoUrl
+        if let photoUrl = photoUrl, let imageUrl = URL(string: photoUrl) {
             Nuke.loadImage(with: imageUrl, into: self.userImageView)
         } else {
             userImageView.image = UIImage.placeHolderImage()
         }
+
+        if let valueString = EthConvert.toEthereumUnits(transaction.value, decimals: 3), let currency = transaction.currency {
+            self.amountLabel.text = valueString  + " " + currency
+        } else {
+            self.amountLabel.text = "Pending".localized
+        }
+        self.amountLabel.textColor = outgoingTx ? .outRed : .inGreen
+        self.messageLabel.text = transaction.fromUser?.fullname ?? ""
+        let txDate = transaction.timestamp
+        self.dateLabel.text = DateFormatter.displayDateFormatter.string(from: txDate)
+
+
     }
     
 }

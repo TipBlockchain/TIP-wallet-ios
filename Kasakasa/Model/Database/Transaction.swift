@@ -9,11 +9,12 @@
 import Foundation
 import GRDB
 import BigInt
+import web3swift
 
-public struct Transaction: Codable {
+public struct Transaction: Codable, DictionaryEncodable {
 
     var hash: String
-    var blockHash: String
+    var blockHash: String?
     var from: String
     var to: String
     var currency: String?
@@ -95,10 +96,10 @@ public struct Transaction: Codable {
         try container.encode(from, forKey: CodingKeys.from)
         try container.encode(to, forKey: CodingKeys.to)
         try container.encode(currency, forKey: CodingKeys.currency)
-        try container.encode(value, forKey: CodingKeys.value)
+        try container.encode(String(value), forKey: CodingKeys.value)
         try container.encode(timestamp, forKey: CodingKeys.timestamp)
-        try container.encode(gas, forKey: CodingKeys.gas)
-        try container.encode(confirmations, forKey: CodingKeys.confirmations)
+        try container.encode(String(gas), forKey: CodingKeys.gas)
+        try container.encode(String(confirmations), forKey: CodingKeys.confirmations)
         try container.encode(nonce, forKey: CodingKeys.nonce)
         try container.encode(message, forKey: CodingKeys.message)
         try container.encode(txReceiptStatus, forKey: CodingKeys.txReceiptStatus)
@@ -145,6 +146,10 @@ public struct Transaction: Codable {
 
         self.init(hash: hash, blockHash: blockHash, from: from, to: to, currency: currency, value: value, timestamp: timestamp, gas: gas, confirmations: confirmations, nonce: nonce, message: message, txReceiptStatus: receiptStatus, fromUser: fromUser, toUser: toUser)
     }
+
+//    public init(from pendingTx: PendingTransaction, result: TransactionSendingResult) {
+//        self.init(hash: result.hash, blockHash: result.block, from: <#T##String#>, to: <#T##String#>, currency: <#T##String?#>, value: <#T##BigUInt#>, timestamp: <#T##Date#>, gas: <#T##BigUInt#>, confirmations: <#T##BigUInt#>, nonce: <#T##Int#>, message: <#T##String?#>, txReceiptStatus: <#T##String?#>, fromUser: <#T##UserStub?#>, toUser: <#T##UserStub?#>)
+//    }
 }
 
 // Mark - database stuff

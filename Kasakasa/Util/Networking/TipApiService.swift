@@ -236,6 +236,21 @@ public class TipApiService: NSObject {
         }
     }
 
+    func postTransaction(_ transaction: Transaction, completion: @escaping((Transaction?, AppErrors?) -> Void)) {
+        let request = TipApiRequest.postTransaction(transaction)
+        networkService.sendRequest(request: request) { (result, error) in
+            if let error = error {
+                completion(nil, error)
+            } else {
+                if let data = result as? Data, let response = try? JSONDecoder().decode(Transaction.self, from: data) {
+                    completion(response, nil)
+                } else {
+                    completion(nil, AppErrors.unknowkError)
+                }
+            }
+        }
+    }
+    
     func getTransaction() {
 
     }
@@ -244,8 +259,19 @@ public class TipApiService: NSObject {
 
     }
 
-    func fillTransactions() {
-        
+    func fillTransactions(_ transactions: [Transaction], completion: @escaping((TransactionListResponse?, AppErrors?) -> Void)) {
+        let request = TipApiRequest.fillTransactions(txList: transactions)
+        networkService.sendRequest(request: request) { (result, error) in
+            if let error = error {
+                completion(nil, error)
+            } else {
+                if let data = result as? Data, let response = try? JSONDecoder().decode(TransactionListResponse.self, from: data) {
+                    completion(response, nil)
+                } else {
+                    completion(nil, AppErrors.unknowkError)
+                }
+            }
+        }
     }
 }
 

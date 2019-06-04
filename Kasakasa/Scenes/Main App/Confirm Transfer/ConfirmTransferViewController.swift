@@ -47,7 +47,7 @@ class ConfirmTransferViewController: BaseViewController {
     }
     
     @IBAction func sendTransferTapped(_ sender: Any) {
-        self.showTextFieldAlert(withTitle: "Enter  your password",
+        self.showTextFieldAlert(withTitle: "Enter  your password".localized,
                                 message: "Enter your password to unlock your wallet and send this transcation.".localized,
                                 style: .alert,
                                 isSecure: true,

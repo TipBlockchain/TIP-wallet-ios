@@ -105,6 +105,7 @@ extension WalletViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: transactionCellIdentifier) as! TransactionTableViewCell
         if let transaction = self.transaction(atIndexPath: indexPath) {
+            cell.wallet = self.wallet
             cell.transaction = transaction
         }
         return cell

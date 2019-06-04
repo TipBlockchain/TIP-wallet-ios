@@ -44,8 +44,9 @@ enum TipApiRequest {
     case addContacts(_ contacts: ContactListRequest)
     case searchByUsername(_ query: String)
     case deleteContact(_ contact: ContactRequest)
+    case postTransaction(_ transaction: Transaction)
     case getTransactions(params: Parameters)
-    case fillTransactions(params: Parameters)
+    case fillTransactions(txList: [Transaction])
 
     var baseUrl: URL {
         return URL(string: AppConfig.tipApiBaseUrl)!
@@ -62,7 +63,7 @@ enum TipApiRequest {
 
     var method: HTTPMethod {
         switch self {
-        case .authorize, .startPhoneVerification, .checkPhoneVerification, .createAccount, .uploadPhoto, .addContact, .addContacts:
+        case .authorize, .startPhoneVerification, .checkPhoneVerification, .createAccount, .uploadPhoto, .addContact, .addContacts, .postTransaction, .fillTransactions:
             return .POST
         case .deleteContact:
             return .DELETE
@@ -94,6 +95,13 @@ enum TipApiRequest {
             return contact.dictionary()
         case .addContacts(let contacts):
             return contacts.dictionary()
+        case .postTransaction(let transaction):
+            return transaction.dictionary()
+        case .fillTransactions(let txList):
+            let jsonArray = txList.map { (t) -> Json in
+                return t.dictionary() ?? [:]
+            }
+            return ["transactions": jsonArray]
         default:
             return nil
         }
@@ -103,6 +111,10 @@ enum TipApiRequest {
         switch self {
         case .authorize, .startPhoneVerification, .checkPhoneVerification, .createAccount, .addContact, .addContacts:
             if let jsonBody = self.jsonBody, let data = try? JSONSerialization.data(withJSONObject: jsonBody, options: .prettyPrinted) {
+                return data
+            }
+        case .fillTransactions:
+            if let jsonBody = self.jsonBody, let transactions = jsonBody["transactions"], let data = try? JSONSerialization.data(withJSONObject: transactions, options: .prettyPrinted) {
                 return data
             }
         case .uploadPhoto(let photo):
@@ -153,7 +165,7 @@ enum TipApiRequest {
             return baseUrl.appendingPathComponent("/contacts/multiple")
         case .searchByUsername:
             return baseUrl.appendingPathComponent("/accounts/search")
-        case .getTransactions:
+        case .getTransactions, .postTransaction:
             return baseUrl.appendingPathComponent("/transactions")
         case .fillTransactions:
             return baseUrl.appendingPathComponent("/transactions/fill")

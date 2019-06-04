@@ -14,5 +14,7 @@ class AppStyle {
         let navigationBarAppearance = UINavigationBar.appearance()
         navigationBarAppearance.tintColor = UIColor.white
         navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+
+        UITabBar.appearance().tintColor = UIColor.appPink
     }
 }

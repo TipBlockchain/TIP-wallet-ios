@@ -19,6 +19,7 @@ class TransactionRepository {
     lazy var web3Bridge = Web3Bridge.shared
 
     var ethApi = EtherscanApiService.shared
+    var tipApi = TipApiService.sharedInstance
 
     func sendTransaction(_ transaction: PendingTransaction, withPassword password: String, gasPrice: BigUInt, completion: @escaping TransactionSendClosure) {
         var result: TransactionSendingResult? = nil
@@ -29,6 +30,7 @@ class TransactionRepository {
             case .TIP:
                 result = try web3Bridge.sendERC20Transaction(value: transaction.value, from: transaction.from, toAddress: transaction.to, withPassword: password, token: TipProcessor.tipToken)
             }
+            // TODO: Insert new tx in db here
             completion(result, nil)
         } catch  {
             completion(nil, AppErrors.error(error: error))
@@ -63,16 +65,24 @@ class TransactionRepository {
     func fetchEthTransactions(address: String, completion: @escaping TransactionListClosure) {
         ethApi.getEthTransactions(address: address, startBlock: AppConfig.ethStartBlock ?? "") { (txListResponse, error) in
             if let response = txListResponse {
-                var txList = response.result
-                if txList != nil, !txList!.isEmpty {
-                    txList = txList!.map({ tx -> Transaction in
+                if var txList = response.result, !txList.isEmpty {
+                    txList = txList.map({ tx -> Transaction in
                         var newTx = tx
                         newTx.currency = Currency.ETH.rawValue
                         return newTx
                     })
-                    try! self.insert(txList!) // TODO: Change to try?
+                    txList = txList.filter({ $0.value != BigUInt("0")})
+                    try? self.fillTransactions(txList, completion: { (mergedTxList, error) in
+                        var listToInsert = mergedTxList
+                        if listToInsert == nil || listToInsert!.isEmpty {
+                            listToInsert = txList
+                        }
+                        if let listToInsert = listToInsert, !listToInsert.isEmpty {
+                            try? self.insert(listToInsert)
+                        }
+                        completion(listToInsert, nil)
+                    })
                 }
-                completion(txList, nil)
             } else {
                 completion(nil, error ?? AppErrors.unknowkError)
             }
@@ -82,17 +92,41 @@ class TransactionRepository {
     func fetchERC20Transactions(address: String, token: ERC20Token, completion: @escaping TransactionListClosure) {
         ethApi.getErc20Transactions(address: address, contractAddress: token.address, startBlock: AppConfig.ethStartBlock ?? "") { (txListResponse, error) in
             if let response = txListResponse {
-                if let txList = response.result, !txList.isEmpty {
-                    let updatedTxList = txList.map({ tx -> Transaction in
+                if var txList = response.result, !txList.isEmpty {
+                    txList = txList.map({ tx -> Transaction in
                         var newTx = tx
                         newTx.currency = Currency.TIP.rawValue
                         return newTx
                     })
-                    try! self.insert(updatedTxList) // TODO: Change to try?
+
+                    txList = txList.filter({ $0.value != BigUInt("0")})
+                    try? self.fillTransactions(txList, completion: { (mergedTxList, error) in
+                        var listToInsert = mergedTxList
+                        if listToInsert == nil || listToInsert!.isEmpty {
+                            listToInsert = txList
+                        }
+
+                        if let listToInsert = listToInsert, !listToInsert.isEmpty {
+                            try? self.insert(listToInsert)
+                        }
+                        completion(listToInsert, nil)
+                    })
                 }
-                completion(response.result, nil)
             } else {
                 completion(nil, error ?? AppErrors.unknowkError)
+            }
+        }
+    }
+
+    func fillTransactions(_ txList: [Transaction], completion: @escaping TransactionListClosure) throws {
+        tipApi.fillTransactions(txList) { (response, error) in
+            if let error = error {
+                completion(nil, error)
+            } else if let response = response {
+                let transactions = response.transactions
+                completion(transactions, nil)
+            } else {
+                completion(nil, AppErrors.unknowkError)
             }
         }
     }

@@ -9,7 +9,7 @@
 import Foundation
 import BigInt
 
-struct PendingTransaction: Codable {
+public struct PendingTransaction: Codable {
     var from: String
     var fromUsername: String?
     var to: String

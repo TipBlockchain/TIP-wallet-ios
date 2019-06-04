@@ -18,10 +18,7 @@ class TransactionSentViewController: UIViewController {
     
 
     @IBAction func okayButtonTapped(_ sender: Any) {
-        self.presentingViewController?.dismiss(animated: true
-            , completion: {
-                self.presentingViewController?.navigationController?.popToRootViewController(animated: false)
-        })
+        self.navigationController?.popToRootViewController(animated: false)
     }
     /*
     // MARK: - Navigation
