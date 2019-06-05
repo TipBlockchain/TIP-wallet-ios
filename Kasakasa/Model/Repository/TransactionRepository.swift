@@ -12,6 +12,7 @@ import web3swift
 
 typealias TransactionListClosure = (([Transaction]?, AppErrors?) -> Void)
 typealias TransactionSendClosure = ((TransactionSendingResult?, AppErrors?) -> Void)
+
 class TransactionRepository {
 
     static var shared = TransactionRepository()

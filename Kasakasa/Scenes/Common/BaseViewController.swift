@@ -139,6 +139,10 @@ class BaseViewController: UIViewController {
         pasteBoard.string = text
     }
 
+    func openUrl(_ url: URL, options: [UIApplication.OpenExternalURLOptionsKey : Any] = [:], completionHandler completion: ((Bool) -> Void)? = nil) {
+        UIApplication.shared.open(url, options: options, completionHandler: completion)
+    }
+
     private func switchRootViewController(_ rootViewController: UIViewController, inWindow window: UIWindow, animated: Bool = true, completion: (() -> Void)? = nil) {
         if animated {
             UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {

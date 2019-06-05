@@ -37,14 +37,3 @@ public struct Config: Codable {
     }
 }
 
-public struct CryptoExchange: Codable {
-    var name: String
-    var url: String
-    var logoUrl: String?
-
-    enum CodingKeys: String, CodingKey {
-        case name
-        case url
-        case logoUrl = "logo_url"
-    }
-}

@@ -148,6 +148,13 @@
 		45B7A44021DEC295005A1124 /* KasakasaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A43F21DEC295005A1124 /* KasakasaTests.swift */; };
 		45B7A44B21DEC295005A1124 /* KasakasaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A44A21DEC295005A1124 /* KasakasaUITests.swift */; };
 		45BA3D1122A256D200D3A9A5 /* TransactionSentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BA3D1022A256D200D3A9A5 /* TransactionSentViewController.swift */; };
+		45BA3D1522A6170200D3A9A5 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BA3D1422A6170200D3A9A5 /* MoreViewController.swift */; };
+		45BA3D1A22A7333700D3A9A5 /* TradeTipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BA3D1922A7333700D3A9A5 /* TradeTipViewController.swift */; };
+		45BA3D1C22A7336B00D3A9A5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BA3D1B22A7336B00D3A9A5 /* SettingsViewController.swift */; };
+		45BA3D1E22A7337900D3A9A5 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BA3D1D22A7337900D3A9A5 /* MyProfileViewController.swift */; };
+		45BA3D2022A73D3F00D3A9A5 /* CryptoExchangeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BA3D1F22A73D3F00D3A9A5 /* CryptoExchangeTableViewCell.swift */; };
+		45BA3D2222A7419900D3A9A5 /* CryptoExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BA3D2122A7419900D3A9A5 /* CryptoExchange.swift */; };
+		45BA3D2422A78B8B00D3A9A5 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BA3D2322A78B8B00D3A9A5 /* ImagePicker.swift */; };
 		45BBF05821E1C46B0042EC5D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BBF05721E1C46B0042EC5D /* NetworkService.swift */; };
 		45BBF05A21E1C48A0042EC5D /* TipApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BBF05921E1C48A0042EC5D /* TipApiService.swift */; };
 		45BBF05F21E1C86C0042EC5D /* AppErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BBF05E21E1C86C0042EC5D /* AppErrors.swift */; };
@@ -337,6 +344,13 @@
 		45B7A44A21DEC295005A1124 /* KasakasaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KasakasaUITests.swift; sourceTree = "<group>"; };
 		45B7A44C21DEC295005A1124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45BA3D1022A256D200D3A9A5 /* TransactionSentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSentViewController.swift; sourceTree = "<group>"; };
+		45BA3D1422A6170200D3A9A5 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		45BA3D1922A7333700D3A9A5 /* TradeTipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeTipViewController.swift; sourceTree = "<group>"; };
+		45BA3D1B22A7336B00D3A9A5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		45BA3D1D22A7337900D3A9A5 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		45BA3D1F22A73D3F00D3A9A5 /* CryptoExchangeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoExchangeTableViewCell.swift; sourceTree = "<group>"; };
+		45BA3D2122A7419900D3A9A5 /* CryptoExchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoExchange.swift; sourceTree = "<group>"; };
+		45BA3D2322A78B8B00D3A9A5 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		45BBF05721E1C46B0042EC5D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		45BBF05921E1C48A0042EC5D /* TipApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipApiService.swift; sourceTree = "<group>"; };
 		45BBF05E21E1C86C0042EC5D /* AppErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrors.swift; sourceTree = "<group>"; };
@@ -464,6 +478,7 @@
 				4524159921F1AF03005B53A2 /* AppDefaults.swift */,
 				457F54DC21FD12C600EA25AC /* WalletUtils.swift */,
 				457F54DE21FD154300EA25AC /* FileUtils.swift */,
+				45BA3D2322A78B8B00D3A9A5 /* ImagePicker.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -522,6 +537,10 @@
 		45828C6E220D5F2100594842 /* Main App */ = {
 			isa = PBXGroup;
 			children = (
+				45BA3D1822A7331D00D3A9A5 /* Trade TIP */,
+				45BA3D1722A7331500D3A9A5 /* Settings */,
+				45BA3D1622A7330B00D3A9A5 /* My Profile */,
+				45BA3D1322A616F100D3A9A5 /* More */,
 				45BA3D1222A256D900D3A9A5 /* TransactionSent */,
 				4577BA80229FB69E00EEFB2B /* Select Contact */,
 				459747862217E5EC00EAD4B8 /* Receive Transfer */,
@@ -629,6 +648,7 @@
 				45104014229A1F14001C26D5 /* TransactionTableViewCell.xib */,
 				45A4B76E229B964E003676E6 /* TransactionDetailsView.swift */,
 				45A4B770229B966A003676E6 /* TransactionDetailsView.xib */,
+				45BA3D1F22A73D3F00D3A9A5 /* CryptoExchangeTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -767,6 +787,7 @@
 				4510400522965963001C26D5 /* ConfigResponse.swift */,
 				4510400F2299EB73001C26D5 /* TransactionListResponse.swift */,
 				451040112299EBAF001C26D5 /* EtherscanTxListResponse.swift */,
+				45BA3D2122A7419900D3A9A5 /* CryptoExchange.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -877,6 +898,38 @@
 				45BA3D1022A256D200D3A9A5 /* TransactionSentViewController.swift */,
 			);
 			path = TransactionSent;
+			sourceTree = "<group>";
+		};
+		45BA3D1322A616F100D3A9A5 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				45BA3D1422A6170200D3A9A5 /* MoreViewController.swift */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		45BA3D1622A7330B00D3A9A5 /* My Profile */ = {
+			isa = PBXGroup;
+			children = (
+				45BA3D1D22A7337900D3A9A5 /* MyProfileViewController.swift */,
+			);
+			path = "My Profile";
+			sourceTree = "<group>";
+		};
+		45BA3D1722A7331500D3A9A5 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				45BA3D1B22A7336B00D3A9A5 /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		45BA3D1822A7331D00D3A9A5 /* Trade TIP */ = {
+			isa = PBXGroup;
+			children = (
+				45BA3D1922A7333700D3A9A5 /* TradeTipViewController.swift */,
+			);
+			path = "Trade TIP";
 			sourceTree = "<group>";
 		};
 		45BBF05521E1C42D0042EC5D /* Model */ = {
@@ -1180,6 +1233,7 @@
 				45AD3A5721E7375900198D6F /* DateFormatterExtension.swift in Sources */,
 				453A7C5A2221E26500E5E3C8 /* TipProcessor.swift in Sources */,
 				457F54E521FE9C5800EA25AC /* UsernameResponse.swift in Sources */,
+				45BA3D1E22A7337900D3A9A5 /* MyProfileViewController.swift in Sources */,
 				45AD3A2D21E3411300198D6F /* BasePresenter.swift in Sources */,
 				45129C5B21DFC59C00F585FA /* IntroPageViewController.swift in Sources */,
 				457F54DF21FD154300EA25AC /* FileUtils.swift in Sources */,
@@ -1209,6 +1263,9 @@
 				45A6D7B921F01DF7007A6F42 /* RestoreWalletViewController.swift in Sources */,
 				45FD5B5A21E06BEF00C247F0 /* TipApiRequest.swift in Sources */,
 				4524159D21F1B257005B53A2 /* AuthorizationRepository.swift in Sources */,
+				45BA3D2422A78B8B00D3A9A5 /* ImagePicker.swift in Sources */,
+				45BA3D2222A7419900D3A9A5 /* CryptoExchange.swift in Sources */,
+				45BA3D2022A73D3F00D3A9A5 /* CryptoExchangeTableViewCell.swift in Sources */,
 				45A6D7AB21EFE20E007A6F42 /* ExistingAccountViewController.swift in Sources */,
 				455F396422023C4000516286 /* RestoreWalletPresenter.swift in Sources */,
 				45828C75220E851000594842 /* UserSearchViewController.swift in Sources */,
@@ -1216,6 +1273,7 @@
 				4510400C2299B767001C26D5 /* UserStub.swift in Sources */,
 				45AD3A2F21E3412B00198D6F /* BaseView.swift in Sources */,
 				45AD3A3621E3DCD400198D6F /* UITextFieldExtension.swift in Sources */,
+				45BA3D1C22A7336B00D3A9A5 /* SettingsViewController.swift in Sources */,
 				456012CB22152FE9003B04E2 /* ContactTableViewCell.swift in Sources */,
 				45B7A42B21DEC293005A1124 /* DataViewController.swift in Sources */,
 				45AD3A4821E71D2D00198D6F /* UIColorExtension.swift in Sources */,
@@ -1242,6 +1300,7 @@
 				4579A9EA220EA19000CBCFAE /* UserSearchPresenter.swift in Sources */,
 				4510400222965439001C26D5 /* EtherscanApiService.swift in Sources */,
 				45BA3D1122A256D200D3A9A5 /* TransactionSentViewController.swift in Sources */,
+				45BA3D1522A6170200D3A9A5 /* MoreViewController.swift in Sources */,
 				453A7C522220CF8600E5E3C8 /* PendingTransaction.swift in Sources */,
 				456D856621F2C71C005150F3 /* VerifyRecoveryPhrase.swift in Sources */,
 				456D856421F2C6DB005150F3 /* VerifyRecoveryPhrasePresenter.swift in Sources */,
@@ -1282,6 +1341,7 @@
 				455722CC22A0F2140064D908 /* SelectContactDelegate.swift in Sources */,
 				45828C66220D35A300594842 /* SplashScreen.swift in Sources */,
 				456012C922152703003B04E2 /* ContactsPresenter.swift in Sources */,
+				45BA3D1A22A7333700D3A9A5 /* TradeTipViewController.swift in Sources */,
 				4579A9F4220EB13E00CBCFAE /* ContactListStringResponse.swift in Sources */,
 				45A6D7AD21EFE220007A6F42 /* RecoveryPhraseViewController.swift in Sources */,
 				45BBF07121E1E0C20042EC5D /* UrlRequestConvertible.swift in Sources */,
