@@ -74,6 +74,13 @@ class UserRepository {
 
     }
 
+    func loadCurrentUser(_ completion: @escaping(User?, AppErrors?) -> Void) {
+        apiService.getMyAccount { (user, error) in
+            if let user = user {
+                self.currentUser = user
+            }
+        }
+    }
     func loadContacts() throws -> [User]? {
         return try dbPool?.read({ (db) in
             return try User.fetchAll(db, "SELECT * FROM users WHERE isContact = ? ORDER BY lastMessage", arguments: [true])

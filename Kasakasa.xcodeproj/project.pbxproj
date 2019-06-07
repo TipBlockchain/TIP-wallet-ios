@@ -68,6 +68,16 @@
 		456D856C21F41057005150F3 /* WalletRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456D856B21F41057005150F3 /* WalletRepository.swift */; };
 		456D856E21F411BA005150F3 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456D856D21F411BA005150F3 /* Wallet.swift */; };
 		456D857021F59AB7005150F3 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456D856F21F59AB7005150F3 /* Currency.swift */; };
+		456ED12522A8CC9600F1D133 /* ImageCropperConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456ED11A22A8CC9600F1D133 /* ImageCropperConfiguration.swift */; };
+		456ED12722A8CC9600F1D133 /* ImageCropperConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456ED11C22A8CC9600F1D133 /* ImageCropperConfigurator.swift */; };
+		456ED12822A8CC9600F1D133 /* ImageCropperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456ED11D22A8CC9600F1D133 /* ImageCropperModel.swift */; };
+		456ED12922A8CC9600F1D133 /* ImageCropperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456ED11E22A8CC9600F1D133 /* ImageCropperViewController.swift */; };
+		456ED12A22A8CC9600F1D133 /* ImageCropperPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456ED11F22A8CC9600F1D133 /* ImageCropperPresenter.swift */; };
+		456ED12B22A8CC9600F1D133 /* ImageCropper.xib in Resources */ = {isa = PBXBuildFile; fileRef = 456ED12022A8CC9600F1D133 /* ImageCropper.xib */; };
+		456ED12C22A8CC9600F1D133 /* UIImage+NormalizeOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456ED12122A8CC9600F1D133 /* UIImage+NormalizeOrientation.swift */; };
+		456ED12D22A8CC9600F1D133 /* ImageCropperRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456ED12222A8CC9600F1D133 /* ImageCropperRouter.swift */; };
+		456ED12E22A8CC9600F1D133 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 456ED12422A8CC9600F1D133 /* .gitkeep */; };
+		456ED13022A8DA1E00F1D133 /* MyProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456ED12F22A8DA1E00F1D133 /* MyProfilePresenter.swift */; };
 		4577BA82229FB6B500EEFB2B /* SelectContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4577BA81229FB6B500EEFB2B /* SelectContactViewController.swift */; };
 		4577BA84229FB7C300EEFB2B /* SelectContactPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4577BA83229FB7C300EEFB2B /* SelectContactPresenter.swift */; };
 		4579A9EA220EA19000CBCFAE /* UserSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4579A9E9220EA19000CBCFAE /* UserSearchPresenter.swift */; };
@@ -256,6 +266,16 @@
 		456D856B21F41057005150F3 /* WalletRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletRepository.swift; sourceTree = "<group>"; };
 		456D856D21F411BA005150F3 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		456D856F21F59AB7005150F3 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		456ED11A22A8CC9600F1D133 /* ImageCropperConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCropperConfiguration.swift; sourceTree = "<group>"; };
+		456ED11C22A8CC9600F1D133 /* ImageCropperConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCropperConfigurator.swift; sourceTree = "<group>"; };
+		456ED11D22A8CC9600F1D133 /* ImageCropperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCropperModel.swift; sourceTree = "<group>"; };
+		456ED11E22A8CC9600F1D133 /* ImageCropperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCropperViewController.swift; sourceTree = "<group>"; };
+		456ED11F22A8CC9600F1D133 /* ImageCropperPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCropperPresenter.swift; sourceTree = "<group>"; };
+		456ED12022A8CC9600F1D133 /* ImageCropper.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCropper.xib; sourceTree = "<group>"; };
+		456ED12122A8CC9600F1D133 /* UIImage+NormalizeOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+NormalizeOrientation.swift"; sourceTree = "<group>"; };
+		456ED12222A8CC9600F1D133 /* ImageCropperRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCropperRouter.swift; sourceTree = "<group>"; };
+		456ED12422A8CC9600F1D133 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		456ED12F22A8DA1E00F1D133 /* MyProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfilePresenter.swift; sourceTree = "<group>"; };
 		4577BA81229FB6B500EEFB2B /* SelectContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectContactViewController.swift; sourceTree = "<group>"; };
 		4577BA83229FB7C300EEFB2B /* SelectContactPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectContactPresenter.swift; sourceTree = "<group>"; };
 		4579A9E9220EA19000CBCFAE /* UserSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchPresenter.swift; sourceTree = "<group>"; };
@@ -504,6 +524,46 @@
 				453A7C5D222A53BA00E5E3C8 /* TipTokenContract.swift */,
 			);
 			path = Blockchain;
+			sourceTree = "<group>";
+		};
+		456ED11722A8CC5A00F1D133 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				456ED11822A8CC9600F1D133 /* ImageCropper */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		456ED11822A8CC9600F1D133 /* ImageCropper */ = {
+			isa = PBXGroup;
+			children = (
+				456ED11922A8CC9600F1D133 /* Classes */,
+				456ED12322A8CC9600F1D133 /* Assets */,
+			);
+			path = ImageCropper;
+			sourceTree = "<group>";
+		};
+		456ED11922A8CC9600F1D133 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				456ED11A22A8CC9600F1D133 /* ImageCropperConfiguration.swift */,
+				456ED11C22A8CC9600F1D133 /* ImageCropperConfigurator.swift */,
+				456ED11D22A8CC9600F1D133 /* ImageCropperModel.swift */,
+				456ED11E22A8CC9600F1D133 /* ImageCropperViewController.swift */,
+				456ED11F22A8CC9600F1D133 /* ImageCropperPresenter.swift */,
+				456ED12022A8CC9600F1D133 /* ImageCropper.xib */,
+				456ED12122A8CC9600F1D133 /* UIImage+NormalizeOrientation.swift */,
+				456ED12222A8CC9600F1D133 /* ImageCropperRouter.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		456ED12322A8CC9600F1D133 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				456ED12422A8CC9600F1D133 /* .gitkeep */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		4577BA80229FB69E00EEFB2B /* Select Contact */ = {
@@ -912,6 +972,7 @@
 			isa = PBXGroup;
 			children = (
 				45BA3D1D22A7337900D3A9A5 /* MyProfileViewController.swift */,
+				456ED12F22A8DA1E00F1D133 /* MyProfilePresenter.swift */,
 			);
 			path = "My Profile";
 			sourceTree = "<group>";
@@ -1001,6 +1062,7 @@
 		45FD5B5721E06B3300C247F0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				456ED11722A8CC5A00F1D133 /* External */,
 				456D855C21F2A50A005150F3 /* Blockchain */,
 				452AD7EF21EFAB01007F11E2 /* Utilities */,
 				45AD3A3421E3DCAA00198D6F /* Extensions */,
@@ -1095,10 +1157,12 @@
 					};
 					45B7A43A21DEC295005A1124 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 45B7A42221DEC293005A1124;
 					};
 					45B7A44521DEC295005A1124 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 45B7A42221DEC293005A1124;
 					};
 				};
@@ -1133,7 +1197,9 @@
 				45D7346C2294EB0E002D61E6 /* Cartfile in Resources */,
 				452AD7F621EFBBAB007F11E2 /* Icons.xcassets in Resources */,
 				459DEBBC21DFB84E009F0BE0 /* MainApp.storyboard in Resources */,
+				456ED12E22A8CC9600F1D133 /* .gitkeep in Resources */,
 				45B7A43521DEC295005A1124 /* LaunchScreen.storyboard in Resources */,
+				456ED12B22A8CC9600F1D133 /* ImageCropper.xib in Resources */,
 				45FD5B5421E0688E00C247F0 /* config.local.json in Resources */,
 				45B7A43221DEC295005A1124 /* Assets.xcassets in Resources */,
 				45B7A43021DEC293005A1124 /* Main.storyboard in Resources */,
@@ -1236,7 +1302,9 @@
 				45BA3D1E22A7337900D3A9A5 /* MyProfileViewController.swift in Sources */,
 				45AD3A2D21E3411300198D6F /* BasePresenter.swift in Sources */,
 				45129C5B21DFC59C00F585FA /* IntroPageViewController.swift in Sources */,
+				456ED12822A8CC9600F1D133 /* ImageCropperModel.swift in Sources */,
 				457F54DF21FD154300EA25AC /* FileUtils.swift in Sources */,
+				456ED12922A8CC9600F1D133 /* ImageCropperViewController.swift in Sources */,
 				45FD5B5021E0333900C247F0 /* TutorialViewController.swift in Sources */,
 				453A7C54222116CC00E5E3C8 /* SendTransferPresenter.swift in Sources */,
 				453A7C502220CD2500E5E3C8 /* SendTransferView.swift in Sources */,
@@ -1265,6 +1333,8 @@
 				4524159D21F1B257005B53A2 /* AuthorizationRepository.swift in Sources */,
 				45BA3D2422A78B8B00D3A9A5 /* ImagePicker.swift in Sources */,
 				45BA3D2222A7419900D3A9A5 /* CryptoExchange.swift in Sources */,
+				456ED12D22A8CC9600F1D133 /* ImageCropperRouter.swift in Sources */,
+				456ED13022A8DA1E00F1D133 /* MyProfilePresenter.swift in Sources */,
 				45BA3D2022A73D3F00D3A9A5 /* CryptoExchangeTableViewCell.swift in Sources */,
 				45A6D7AB21EFE20E007A6F42 /* ExistingAccountViewController.swift in Sources */,
 				455F396422023C4000516286 /* RestoreWalletPresenter.swift in Sources */,
@@ -1289,12 +1359,14 @@
 				45A6D7A721EFD8A7007A6F42 /* VerifyPhoneNumberPresenterImpl.swift in Sources */,
 				455F39622202348200516286 /* UIImageExtension.swift in Sources */,
 				4579A9F6220EB5A200CBCFAE /* UserSearchResponse.swift in Sources */,
+				456ED12A22A8CC9600F1D133 /* ImageCropperPresenter.swift in Sources */,
 				45AD3A5021E7308800198D6F /* PhoneVerificationResponse.swift in Sources */,
 				45AD3A5921E73D7500198D6F /* User.swift in Sources */,
 				45104015229A1F14001C26D5 /* TransactionTableViewCell.swift in Sources */,
 				45AD3A3A21E42B8500198D6F /* SelectCountryViewController.swift in Sources */,
 				457F54DD21FD12C600EA25AC /* WalletUtils.swift in Sources */,
 				4579A9F0220EB11100CBCFAE /* ContactListRequest.swift in Sources */,
+				456ED12522A8CC9600F1D133 /* ImageCropperConfiguration.swift in Sources */,
 				45AD3A2A21E3409900198D6F /* EnterPhoneNumber.swift in Sources */,
 				45BBF05F21E1C86C0042EC5D /* AppErrors.swift in Sources */,
 				4579A9EA220EA19000CBCFAE /* UserSearchPresenter.swift in Sources */,
@@ -1313,6 +1385,7 @@
 				45A6D7B621EFE2FF007A6F42 /* OnboardingUserProfileViewController.swift in Sources */,
 				45AD3A5221E730EC00198D6F /* PhoneVerificationConfirmation.swift in Sources */,
 				456D856E21F411BA005150F3 /* Wallet.swift in Sources */,
+				456ED12722A8CC9600F1D133 /* ImageCropperConfigurator.swift in Sources */,
 				456D856C21F41057005150F3 /* WalletRepository.swift in Sources */,
 				45AD3A5F21E7440400198D6F /* DictionaryEncodable.swift in Sources */,
 				456D856021F2A899005150F3 /* RecoveryPhrasePresenter.swift in Sources */,
@@ -1339,6 +1412,7 @@
 				459DEBBE21DFBCAA009F0BE0 /* AppConstants.swift in Sources */,
 				451040002295FEF2001C26D5 /* WalletPresenter.swift in Sources */,
 				455722CC22A0F2140064D908 /* SelectContactDelegate.swift in Sources */,
+				456ED12C22A8CC9600F1D133 /* UIImage+NormalizeOrientation.swift in Sources */,
 				45828C66220D35A300594842 /* SplashScreen.swift in Sources */,
 				456012C922152703003B04E2 /* ContactsPresenter.swift in Sources */,
 				45BA3D1A22A7333700D3A9A5 /* TradeTipViewController.swift in Sources */,
@@ -1582,7 +1656,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.KasakasaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kasakasa.app/Kasakasa";
 			};
@@ -1602,7 +1676,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.KasakasaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kasakasa.app/Kasakasa";
 			};
@@ -1621,7 +1695,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.KasakasaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Kasakasa;
 			};
@@ -1640,7 +1714,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.KasakasaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Kasakasa;
 			};
@@ -1745,7 +1819,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.KasakasaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kasakasa.app/Kasakasa";
 			};
@@ -1764,7 +1838,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.KasakasaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Kasakasa;
 			};
@@ -1869,7 +1943,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.KasakasaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kasakasa.app/Kasakasa";
 			};
@@ -1888,7 +1962,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.KasakasaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Kasakasa;
 			};

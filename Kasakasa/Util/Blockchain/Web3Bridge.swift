@@ -78,8 +78,8 @@ class Web3Bridge {
             password: password,
             mnemonicsPassword: password,
             language: .english)!
-        let name = "New HD Wallet"
-        let keyData = try! JSONEncoder().encode(keystore.keystoreParams)
+//        let name = "New HD Wallet"
+//        let keyData = try! JSONEncoder().encode(keystore.keystoreParams)
         let address = keystore.addresses!.first!.address
 //        let wallet = Wallet(address: address, data: keyData, name: name, isHD: true)
 //

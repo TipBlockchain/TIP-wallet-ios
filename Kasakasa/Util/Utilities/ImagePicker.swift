@@ -31,6 +31,12 @@ class ImagePicker: NSObject {
         self.pickerController.delegate = self
         self.pickerController.allowsEditing = true
         self.pickerController.mediaTypes = ["public.image"]
+        self.pickerController.navigationBar.isTranslucent = false
+        pickerController.navigationBar.barTintColor = .appPink // Background color
+        pickerController.navigationBar.tintColor = .white // Cancel button ~ any UITabBarButton items
+        pickerController.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.white
+        ]
     }
 
     private func action(for type: UIImagePickerController.SourceType, title: String) -> UIAlertAction? {
@@ -70,9 +76,32 @@ class ImagePicker: NSObject {
     }
 
     private func pickerController(_ controller: UIImagePickerController, didSelect image: UIImage?) {
-        controller.dismiss(animated: true, completion: nil)
 
+        controller.dismiss(animated: true, completion: nil)
+//        if let image = image {
+//            self.configureCropper(forImage: image)
+//        }
+//
         self.delegate?.didSelect(image: image)
+    }
+
+    private func configureCropper(forImage image: UIImage) {
+        var config = ImageCropperConfiguration(with: image, and: .square)
+        config.maskFillColor = UIColor.black.withAlphaComponent(0.75)
+        config.borderColor = UIColor.black
+
+        config.showGrid = true
+        config.gridColor = UIColor.white
+        config.doneTitle = "CROP".localized
+        config.cancelTitle = "Cancel".localized
+
+        let imageCropper = ImageCropperViewController.initialize(with: config) { croppedImage in
+            self.presentationController?.dismiss(animated: true, completion: nil)
+
+            self.delegate?.didSelect(image: croppedImage)
+
+        }
+        self.presentationController?.present(imageCropper, animated: false, completion: nil)
     }
 }
 

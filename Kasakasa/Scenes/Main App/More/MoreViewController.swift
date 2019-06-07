@@ -46,22 +46,22 @@ class MoreViewController: BaseViewController {
                 })
             ]),
             MoreListSection(title: "Trade TIP", items: [
-                MoreListItem(title: "Trade TIP", icon: UIImage(named: "icon-buy")!, cellIdentifier: socialCellIdentifier, action: {
+                MoreListItem(title: "Trade TIP", icon: UIImage(named: "icon-stocks")!, cellIdentifier: socialCellIdentifier, action: {
                     self.showDetails(withSegueIdentifier: "ShowTradeTip")
                 })
             ]),
             MoreListSection(title: "Join Our Community", items: [
                 MoreListItem(title: "Telegram", icon: UIImage(named: "icon-telegram")!, cellIdentifier: socialCellIdentifier, action: {
-
+                    self.openUrl(URL(string: "https://t.me/TipBlockchain")!)
                 }),
                 MoreListItem(title: "Twitter", icon: UIImage(named: "icon-twitter-filled")!, cellIdentifier: socialCellIdentifier, action: {
-
+                    self.openUrl(URL(string: "twitter://user?screen_name=TipBlockchain")!, fallbackUrl: URL(string: "https://twitter.com/TipBlockchain")!)
                 }),
                 MoreListItem(title: "Facebook", icon: UIImage(named: "icon-facebook")!, cellIdentifier: socialCellIdentifier, action: {
-
+                    self.openUrl(URL(string: "fb://profile/278043429395476")!, fallbackUrl: URL(string: "https://facebook.com/tipnetworkio"))
                 }),
                 MoreListItem(title: "Reddit", icon: UIImage(named: "icon-reddit")!, cellIdentifier: socialCellIdentifier, action: {
-
+                    self.openUrl(URL(string: "https://www.reddit.com/r/TipBlockchain/")!)
                 }),
                 MoreListItem(title: "Invite friends", icon: UIImage(named: "icon-share")!, cellIdentifier: socialCellIdentifier, action: {
 
@@ -84,6 +84,11 @@ class MoreViewController: BaseViewController {
 
         tableView.reloadData()
         // Do any additional setup after loading the view.
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setRegularNavigationBar()
     }
 
     func showDetails(withSegueIdentifier segueIdentifier: String) {

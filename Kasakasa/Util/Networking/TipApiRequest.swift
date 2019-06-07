@@ -119,7 +119,7 @@ enum TipApiRequest {
             }
         case .uploadPhoto(let photo):
             if let imageData = photo.jpegData(compressionQuality: 0.9) {
-                let multipartData = self.multipartFormData(data: imageData, boundary: multipartBoundary, fileName: "image")
+                let multipartData = self.multipartFormData(data: imageData, boundary: multipartBoundary, fileName: "file")
                 return multipartData
             }
         default:
@@ -219,7 +219,7 @@ extension TipApiRequest: UrlRequestConvertible {
             allowLossyConversion: false)!)
 
         // 2
-        let lineTwo = "Content-Disposition: form-data; name=\"image\"; filename=\"" + fileName + "\"\r\n"
+        let lineTwo = "Content-Disposition: form-data; name=\"file\"; filename=\"" + fileName + "\"\r\n"
         NSLog(lineTwo)
         fullData.append(lineTwo.data(
             using: String.Encoding.utf8,

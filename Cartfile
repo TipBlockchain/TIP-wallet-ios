@@ -5,3 +5,4 @@ github "groue/GRDB.swift" ~> 3.7.0
 github "yannickl/QRCodeReader.swift" ~> 10.1.0
 github "scalessec/Toast-Swift" ~> 5.0.0
 github "matter-labs/web3swift" "master"
+github "nkopilovskii/ImageCropper" ~> 0.1.4

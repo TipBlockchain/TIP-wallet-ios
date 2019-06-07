@@ -24,6 +24,7 @@ class WalletViewController: BaseViewController {
         }
     }
     private let transactionCellIdentifier = "TransactionCellIdentifier"
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,10 +37,6 @@ class WalletViewController: BaseViewController {
             self.wallet = wallets[0]
             presenter.getBalance(forWallet: wallet!)
         }
-
-
-//        self.tableView.tableFooterView = UIView()
-        // Do any additional setup after loading the view.
     }
 
     deinit {
