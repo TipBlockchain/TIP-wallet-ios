@@ -172,6 +172,36 @@ public class TipApiService: NSObject {
         }
     }
 
+    func updateFullname(_ fullname: String, completion: @escaping (User?, AppErrors?) -> Void) {
+        let request = TipApiRequest.updateFullname(fullname: fullname)
+        networkService.sendRequest(request: request) { (result, error) in
+            if let error = error {
+                completion(nil, error)
+            } else {
+                if let data = result as? Data, let response = try? JSONDecoder().decode(User.self, from: data) {
+                    completion(response, nil)
+                } else {
+                    completion(nil, AppErrors.unknowkError)
+                }
+            }
+        }
+    }
+
+    func updateAboutMe(_ aboutMe: String, completion: @escaping (User?, AppErrors?) -> Void) {
+        let request = TipApiRequest.updateAboutMe(aboutMe: aboutMe)
+        networkService.sendRequest(request: request) { (result, error) in
+            if let error = error {
+                completion(nil, error)
+            } else {
+                if let data = result as? Data, let response = try? JSONDecoder().decode(User.self, from: data) {
+                    completion(response, nil)
+                } else {
+                    completion(nil, AppErrors.unknowkError)
+                }
+            }
+        }
+    }
+
     // MARK - Contacts
 
     func getContactList(completion: @escaping (ContactListResponse?, AppErrors?) -> Void) {

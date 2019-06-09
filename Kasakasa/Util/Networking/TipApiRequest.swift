@@ -38,6 +38,8 @@ enum TipApiRequest {
     case createAccount(user: User, signupToken: String, claimDemoAccount: Bool)
     case getMyAccount
     case uploadPhoto(photo: UIImage)
+    case updateAboutMe(aboutMe: String)
+    case updateFullname(fullname: String)
 
     case contactList
     case addContact(_ contact: ContactRequest)
@@ -65,6 +67,8 @@ enum TipApiRequest {
         switch self {
         case .authorize, .startPhoneVerification, .checkPhoneVerification, .createAccount, .uploadPhoto, .addContact, .addContacts, .postTransaction, .fillTransactions:
             return .POST
+        case .updateAboutMe, .updateFullname:
+            return .PATCH
         case .deleteContact:
             return .DELETE
         default:
@@ -91,6 +95,10 @@ enum TipApiRequest {
             return verification.dictionary()
         case .createAccount(let user, _, _):
             return user.dictionary()
+        case .updateAboutMe(let aboutMe):
+            return ["aboutMe": aboutMe]
+        case .updateFullname(let fullname):
+            return ["fullname": fullname]
         case .addContact(let contact):
             return contact.dictionary()
         case .addContacts(let contacts):
@@ -109,7 +117,7 @@ enum TipApiRequest {
 
     var httpBody: Data? {
         switch self {
-        case .authorize, .startPhoneVerification, .checkPhoneVerification, .createAccount, .addContact, .addContacts:
+        case .authorize, .startPhoneVerification, .checkPhoneVerification, .createAccount, .addContact, .addContacts, .updateAboutMe, .updateFullname:
             if let jsonBody = self.jsonBody, let data = try? JSONSerialization.data(withJSONObject: jsonBody, options: .prettyPrinted) {
                 return data
             }
@@ -169,6 +177,10 @@ enum TipApiRequest {
             return baseUrl.appendingPathComponent("/transactions")
         case .fillTransactions:
             return baseUrl.appendingPathComponent("/transactions/fill")
+        case .updateAboutMe:
+            return baseUrl.appendingPathComponent("/accounts/my/aboutme")
+        case .updateFullname:
+            return baseUrl.appendingPathComponent("/accounts/my/fullname")
         }
     }
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import Nuke
+import PhoneNumberKit
 
 class MyProfileViewController: BaseViewController {
 
@@ -38,8 +39,6 @@ class MyProfileViewController: BaseViewController {
         self.presenter = MyProfilePresenter()
         presenter?.attach(self)
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
-        self.user = UserRepository.shared.currentUser
-        self.setupUI()
         // Do any additional setup after loading the view.
     }
 
@@ -52,6 +51,12 @@ class MyProfileViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setNavigationBarTransparent()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.user = UserRepository.shared.currentUser
+        self.setupUI()
     }
 
     @IBAction func cameraButtonTapped(_ sender: UIButton) {
@@ -79,7 +84,7 @@ class MyProfileViewController: BaseViewController {
 
         let imageCropper = ImageCropperViewController.initialize(with: config) { croppedImage in
             if let croppedImage = croppedImage {
-                self.profileImageView.image = croppedImage
+//                self.profileImageView.image = croppedImage
                 self.presenter?.uploadPhoto(croppedImage)
                 self.dismiss(animated: true, completion: nil)
             }
@@ -89,10 +94,20 @@ class MyProfileViewController: BaseViewController {
 
     func onProfileUpdated(_ user: User) {
         self.showToast("Profile photo updated.".localized)
+        self.user = user
+        self.setupUI()
     }
 
     func onPhotoUploadError(_ error: AppErrors) {
         self.showError(error)
+    }
+
+    private func showEditFullname() {
+        self.performSegue(withIdentifier: "ShowEditFullname", sender: self)
+    }
+
+    private func showEditAboutMe() {
+        self.performSegue(withIdentifier: "ShowEditAboutMe", sender: self)
     }
 }
 
@@ -117,6 +132,7 @@ extension MyProfileViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = self.identifier(forIndexPath: indexPath).rawValue
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        self.setOutlet(forCell: cell, atIndexPath: indexPath)
         return cell
     }
 
@@ -133,5 +149,50 @@ extension MyProfileViewController: UITableViewDataSource {
         default:
             return .emptyCell
         }
+    }
+
+
+    private func setOutlet(forCell cell: UITableViewCell, atIndexPath indexPath: IndexPath) {
+        let cellIdentifier = self.identifier(forIndexPath: indexPath)
+        let phoneNumberKit = PhoneNumberKit()
+        let phoneString = String(format: "%@ %@", [user?.countryCode ?? "", user?.phone ?? ""])
+        let phoneNumber = try? phoneNumberKit.parse(phoneString)
+
+        switch cellIdentifier {
+        case .usernameCell:
+            self.usernameField = cell.contentView.subView(ofType: UITextField.self) as? UITextField
+            self.usernameField.text = user?.username
+        case .fullnameCell:
+            self.fullnameField = cell.contentView.subView(ofType: UITextField.self) as? UITextField
+            fullnameField.text = user?.fullname
+        case .phoneNumberCell:
+            self.phoneNumberField = cell.contentView.subView(ofType: UITextField.self) as? UITextField
+            if let phoneNumber = phoneNumber {
+                phoneNumberField.text = phoneNumberKit.format(phoneNumber, toType: .e164)
+            } else if let countryCode = user?.countryCode, let phone = user?.phone {
+                phoneNumberField.text = "\(countryCode)-\(phone)"
+            }
+        case .aboutMeCell:
+            self.aboutMeField = cell.contentView.subView(ofType: UITextField.self) as? UITextField
+            self.aboutMeField.text = user?.aboutMe
+        default:
+            break
+        }
+    }
+}
+
+extension MyProfileViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cellIdentifier = self.identifier(forIndexPath: indexPath)
+        switch cellIdentifier {
+        case .fullnameCell:
+            self.showEditFullname()
+        case .aboutMeCell:
+            self.showEditAboutMe()
+        default:
+            break
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

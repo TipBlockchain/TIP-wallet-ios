@@ -14,6 +14,8 @@ public struct User: Codable, DictionaryEncodable {
     var id: String
     var fullname: String
     var username: String
+    var countryCode: String?
+    var phone: String?
     var address: String
     var imageFileKey: String?
     var pictureUrl: String?
@@ -38,6 +40,8 @@ public struct User: Codable, DictionaryEncodable {
         case fullname
         case username
         case address
+        case countryCode
+        case phone
         case imageFileKey
         case pictureUrl
         case isContact
@@ -47,11 +51,13 @@ public struct User: Codable, DictionaryEncodable {
         case photos
     }
 
-    init(id: String, fullname: String, username: String, address: String, imageFileKey: String? = nil, pictureUrl: String? = nil, isContact: Bool? = false, isBlocked: Bool? = false, lastMessage: Date? = Date(), aboutMe: String? = nil, photos: UserPhotos? = nil) {
+    init(id: String, fullname: String, username: String, address: String, countryCode: String? = nil, phone: String? = nil, imageFileKey: String? = nil, pictureUrl: String? = nil, isContact: Bool? = false, isBlocked: Bool? = false, lastMessage: Date? = Date(), aboutMe: String? = nil, photos: UserPhotos? = nil) {
         self.id = id
         self.fullname = fullname
         self.username = username
         self.address = address
+        self.countryCode = countryCode
+        self.phone = phone
         self.isContact = isContact
         self.isBlocked = isBlocked
         self.lastMessage = lastMessage
@@ -111,7 +117,7 @@ extension  User: TableRecord {
 extension User: FetchableRecord, MutablePersistableRecord {
 
     enum Columns: String, CodingKey, ColumnExpression {
-        case id, fullname, username, address, imageFileKey, pictureUrl, isContact, isBlocked, lastMessage, aboutMe, originalPhotoUrl, smallPhotoUrl, mediumPhotoUrl
+        case id, fullname, username, address, countryCode, phone, imageFileKey, pictureUrl, isContact, isBlocked, lastMessage, aboutMe, originalPhotoUrl, smallPhotoUrl, mediumPhotoUrl
     }
 
     public init(row: Row) {
@@ -119,6 +125,8 @@ extension User: FetchableRecord, MutablePersistableRecord {
         let fullname = row[Columns.fullname] as String
         let username = row[Columns.username] as String
         let address = row[Columns.address] as String
+        let countryCode = row[Columns.countryCode] as String?
+        let phone = row[Columns.phone] as String?
         let imageFileKey = row[Columns.imageFileKey] as String?
         let pictureUrl = row[Columns.imageFileKey] as String?
         let isContact = row[Columns.isContact] as Bool?
@@ -132,7 +140,7 @@ extension User: FetchableRecord, MutablePersistableRecord {
 
         let userPhotos = UserPhotos(original: originalPhoto, medium: mediumPhoto, small: smallPhoto)
 
-        self.init(id: id, fullname: fullname, username: username, address: address, imageFileKey: imageFileKey, pictureUrl: pictureUrl, isContact: isContact, isBlocked: isBlocked, lastMessage: lastMessage, aboutMe: aboutMe, photos: userPhotos)
+        self.init(id: id, fullname: fullname, username: username, address: address, countryCode: countryCode, phone: phone, imageFileKey: imageFileKey, pictureUrl: pictureUrl, isContact: isContact, isBlocked: isBlocked, lastMessage: lastMessage, aboutMe: aboutMe, photos: userPhotos)
     }
 
     public func encode(to container: inout PersistenceContainer) {
@@ -140,6 +148,8 @@ extension User: FetchableRecord, MutablePersistableRecord {
         container[Columns.fullname] = fullname
         container[Columns.username] = username
         container[Columns.address] = address
+        container[Columns.countryCode] = countryCode
+        container[Columns.phone] = phone
         container[Columns.imageFileKey] = imageFileKey
         container[Columns.pictureUrl] = pictureUrl
         container[Columns.isContact] = isContact

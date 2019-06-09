@@ -15,16 +15,15 @@ class MyProfilePresenter: BasePresenter {
     let mainQueue = DispatchQueue.main
 
     func uploadPhoto(_ image: UIImage) {
-        tipApi.uploadPhoto(image) { (updatedUser, error) in
+        UserRepository.shared.updatePhoto(image, completion: { (user, error) in
             self.mainQueue.async {
-                if let user = updatedUser {
+                if let user = user {
                     debugPrint("Updated user = \(user)")
                     self.view?.onProfileUpdated(user)
                 } else {
                     self.view?.onPhotoUploadError(error ?? AppErrors.genericError(message: "Error uploading photo".localized))
                 }
             }
-
-        }
+        })
     }
 }

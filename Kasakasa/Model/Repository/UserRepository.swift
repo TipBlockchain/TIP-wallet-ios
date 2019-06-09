@@ -6,7 +6,7 @@
 //  Copyright © 2019 Tip Blockchain. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import GRDB
 
 typealias UserListClosure = ([User]?, AppErrors?) -> Void
@@ -79,8 +79,37 @@ class UserRepository {
             if let user = user {
                 self.currentUser = user
             }
+            completion(user, error)
         }
     }
+
+    func updatePhoto(_ photo: UIImage, completion: @escaping (User?, AppErrors?) -> Void) {
+        apiService.uploadPhoto(photo) { (user, error) in
+            if let user = user {
+                self.currentUser = user
+            }
+            completion(user, error)
+        }
+    }
+    
+    func updateAboutMe(_ aboutMe: String, completion: @escaping (User?, AppErrors?) -> Void) {
+        apiService.updateAboutMe(aboutMe) { (user, error) in
+            if let user = user {
+                self.currentUser = user
+            }
+            completion(user, error)
+        }
+    }
+
+    func updateFullname(_ fullname: String, completion: @escaping (User?, AppErrors?) -> Void) {
+        apiService.updateFullname(fullname) { (user, error) in
+            if let user = user {
+                self.currentUser = user
+            }
+            completion(user, error)
+        }
+    }
+
     func loadContacts() throws -> [User]? {
         return try dbPool?.read({ (db) in
             return try User.fetchAll(db, "SELECT * FROM users WHERE isContact = ? ORDER BY lastMessage", arguments: [true])

@@ -10,7 +10,6 @@
 		45103FE22295AAC9001C26D5 /* secp256k1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FD42295AAC7001C26D5 /* secp256k1.framework */; };
 		45103FE32295AAC9001C26D5 /* BigInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FD52295AAC7001C26D5 /* BigInt.framework */; };
 		45103FE42295AAC9001C26D5 /* QRCodeReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FD62295AAC7001C26D5 /* QRCodeReader.framework */; };
-		45103FE52295AAC9001C26D5 /* SkyFloatingLabelTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FD72295AAC8001C26D5 /* SkyFloatingLabelTextField.framework */; };
 		45103FE72295AAC9001C26D5 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FD92295AAC8001C26D5 /* Nuke.framework */; };
 		45103FE82295AAC9001C26D5 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FDA2295AAC8001C26D5 /* PromiseKit.framework */; };
 		45103FE92295AAC9001C26D5 /* CropViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FDB2295AAC8001C26D5 /* CropViewController.framework */; };
@@ -78,6 +77,18 @@
 		456ED12D22A8CC9600F1D133 /* ImageCropperRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456ED12222A8CC9600F1D133 /* ImageCropperRouter.swift */; };
 		456ED12E22A8CC9600F1D133 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 456ED12422A8CC9600F1D133 /* .gitkeep */; };
 		456ED13022A8DA1E00F1D133 /* MyProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456ED12F22A8DA1E00F1D133 /* MyProfilePresenter.swift */; };
+		456ED13522AB32A100F1D133 /* EditFullnameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456ED13422AB32A100F1D133 /* EditFullnameViewController.swift */; };
+		456ED13722AB32AE00F1D133 /* EditAboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456ED13622AB32AE00F1D133 /* EditAboutMeViewController.swift */; };
+		456ED13A22AB32F800F1D133 /* EditPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456ED13922AB32F800F1D133 /* EditPhoneNumberViewController.swift */; };
+		456ED13C22AD9DBC00F1D133 /* EditFullnamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456ED13B22AD9DBC00F1D133 /* EditFullnamePresenter.swift */; };
+		456ED13E22ADA8CF00F1D133 /* PhoneNumberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456ED13D22ADA8CF00F1D133 /* PhoneNumberKit.framework */; };
+		456ED14022ADAE3B00F1D133 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456ED13F22ADAE3B00F1D133 /* Accounts.framework */; };
+		456ED14222ADAE4100F1D133 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456ED14122ADAE4100F1D133 /* AddressBook.framework */; };
+		456ED14422ADAE4D00F1D133 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456ED14322ADAE4D00F1D133 /* CoreTelephony.framework */; };
+		456ED14622ADAE6700F1D133 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456ED14522ADAE6700F1D133 /* Contacts.framework */; };
+		456ED14822ADAE7700F1D133 /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456ED14722ADAE7700F1D133 /* ContactsUI.framework */; };
+		456ED14A22ADB3C000F1D133 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456ED14922ADB3C000F1D133 /* File.swift */; };
+		456ED14C22ADB3CE00F1D133 /* EditAboutMePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456ED14B22ADB3CE00F1D133 /* EditAboutMePresenter.swift */; };
 		4577BA82229FB6B500EEFB2B /* SelectContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4577BA81229FB6B500EEFB2B /* SelectContactViewController.swift */; };
 		4577BA84229FB7C300EEFB2B /* SelectContactPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4577BA83229FB7C300EEFB2B /* SelectContactPresenter.swift */; };
 		4579A9EA220EA19000CBCFAE /* UserSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4579A9E9220EA19000CBCFAE /* UserSearchPresenter.swift */; };
@@ -276,6 +287,18 @@
 		456ED12222A8CC9600F1D133 /* ImageCropperRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCropperRouter.swift; sourceTree = "<group>"; };
 		456ED12422A8CC9600F1D133 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		456ED12F22A8DA1E00F1D133 /* MyProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfilePresenter.swift; sourceTree = "<group>"; };
+		456ED13422AB32A100F1D133 /* EditFullnameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFullnameViewController.swift; sourceTree = "<group>"; };
+		456ED13622AB32AE00F1D133 /* EditAboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAboutMeViewController.swift; sourceTree = "<group>"; };
+		456ED13922AB32F800F1D133 /* EditPhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPhoneNumberViewController.swift; sourceTree = "<group>"; };
+		456ED13B22AD9DBC00F1D133 /* EditFullnamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFullnamePresenter.swift; sourceTree = "<group>"; };
+		456ED13D22ADA8CF00F1D133 /* PhoneNumberKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhoneNumberKit.framework; path = Carthage/Build/iOS/PhoneNumberKit.framework; sourceTree = "<group>"; };
+		456ED13F22ADAE3B00F1D133 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		456ED14122ADAE4100F1D133 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		456ED14322ADAE4D00F1D133 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		456ED14522ADAE6700F1D133 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
+		456ED14722ADAE7700F1D133 /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
+		456ED14922ADB3C000F1D133 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		456ED14B22ADB3CE00F1D133 /* EditAboutMePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAboutMePresenter.swift; sourceTree = "<group>"; };
 		4577BA81229FB6B500EEFB2B /* SelectContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectContactViewController.swift; sourceTree = "<group>"; };
 		4577BA83229FB7C300EEFB2B /* SelectContactPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectContactPresenter.swift; sourceTree = "<group>"; };
 		4579A9E9220EA19000CBCFAE /* UserSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchPresenter.swift; sourceTree = "<group>"; };
@@ -395,10 +418,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				456ED14822ADAE7700F1D133 /* ContactsUI.framework in Frameworks */,
+				456ED14622ADAE6700F1D133 /* Contacts.framework in Frameworks */,
+				456ED14422ADAE4D00F1D133 /* CoreTelephony.framework in Frameworks */,
+				456ED14222ADAE4100F1D133 /* AddressBook.framework in Frameworks */,
+				456ED14022ADAE3B00F1D133 /* Accounts.framework in Frameworks */,
 				45103FE22295AAC9001C26D5 /* secp256k1.framework in Frameworks */,
 				45103FE32295AAC9001C26D5 /* BigInt.framework in Frameworks */,
 				45103FE42295AAC9001C26D5 /* QRCodeReader.framework in Frameworks */,
-				45103FE52295AAC9001C26D5 /* SkyFloatingLabelTextField.framework in Frameworks */,
 				45103FE72295AAC9001C26D5 /* Nuke.framework in Frameworks */,
 				45103FE82295AAC9001C26D5 /* PromiseKit.framework in Frameworks */,
 				45103FE92295AAC9001C26D5 /* CropViewController.framework in Frameworks */,
@@ -409,6 +436,7 @@
 				45103FEF2295AAC9001C26D5 /* SipHash.framework in Frameworks */,
 				45103FFC2295B6A8001C26D5 /* GRDB.framework in Frameworks */,
 				45A83C54229CE06A00EAFCCF /* Eureka.framework in Frameworks */,
+				456ED13E22ADA8CF00F1D133 /* PhoneNumberKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +460,12 @@
 		45103FD32295AAC7001C26D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				456ED14722ADAE7700F1D133 /* ContactsUI.framework */,
+				456ED14522ADAE6700F1D133 /* Contacts.framework */,
+				456ED14322ADAE4D00F1D133 /* CoreTelephony.framework */,
+				456ED14122ADAE4100F1D133 /* AddressBook.framework */,
+				456ED13F22ADAE3B00F1D133 /* Accounts.framework */,
+				456ED13D22ADA8CF00F1D133 /* PhoneNumberKit.framework */,
 				45A83C55229CE07700EAFCCF /* SwiftyFORM.framework */,
 				45A83C53229CE06A00EAFCCF /* Eureka.framework */,
 				45103FFD2295B760001C26D5 /* GRDBCipher.framework */,
@@ -566,6 +600,44 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		456ED13122AB324100F1D133 /* User Profile */ = {
+			isa = PBXGroup;
+			children = (
+				456ED13822AB32E500F1D133 /* Edit Phone Number */,
+				456ED13322AB326F00F1D133 /* Edit  About Me */,
+				456ED13222AB326200F1D133 /* Edit Fullname */,
+				45BA3D1622A7330B00D3A9A5 /* My Profile */,
+			);
+			path = "User Profile";
+			sourceTree = "<group>";
+		};
+		456ED13222AB326200F1D133 /* Edit Fullname */ = {
+			isa = PBXGroup;
+			children = (
+				456ED13422AB32A100F1D133 /* EditFullnameViewController.swift */,
+				456ED13B22AD9DBC00F1D133 /* EditFullnamePresenter.swift */,
+			);
+			path = "Edit Fullname";
+			sourceTree = "<group>";
+		};
+		456ED13322AB326F00F1D133 /* Edit  About Me */ = {
+			isa = PBXGroup;
+			children = (
+				456ED13622AB32AE00F1D133 /* EditAboutMeViewController.swift */,
+				456ED14922ADB3C000F1D133 /* File.swift */,
+				456ED14B22ADB3CE00F1D133 /* EditAboutMePresenter.swift */,
+			);
+			path = "Edit  About Me";
+			sourceTree = "<group>";
+		};
+		456ED13822AB32E500F1D133 /* Edit Phone Number */ = {
+			isa = PBXGroup;
+			children = (
+				456ED13922AB32F800F1D133 /* EditPhoneNumberViewController.swift */,
+			);
+			path = "Edit Phone Number";
+			sourceTree = "<group>";
+		};
 		4577BA80229FB69E00EEFB2B /* Select Contact */ = {
 			isa = PBXGroup;
 			children = (
@@ -597,9 +669,9 @@
 		45828C6E220D5F2100594842 /* Main App */ = {
 			isa = PBXGroup;
 			children = (
+				456ED13122AB324100F1D133 /* User Profile */,
 				45BA3D1822A7331D00D3A9A5 /* Trade TIP */,
 				45BA3D1722A7331500D3A9A5 /* Settings */,
-				45BA3D1622A7330B00D3A9A5 /* My Profile */,
 				45BA3D1322A616F100D3A9A5 /* More */,
 				45BA3D1222A256D900D3A9A5 /* TransactionSent */,
 				4577BA80229FB69E00EEFB2B /* Select Contact */,
@@ -1248,12 +1320,12 @@
 				"$(SRCROOT)/Carthage/Build/iOS/QRCodeReader.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/secp256k1.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SipHash.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SkyFloatingLabelTextField.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Starscream.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ToastSwiftFramework.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/web3swift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/GRDB.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Eureka.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PhoneNumberKit.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -1266,12 +1338,12 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/QRCodeReader.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/secp256k1.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SipHash.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SkyFloatingLabelTextField.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Starscream.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ToastSwiftFramework.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/web3swift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/GRDB.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Eureka.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/PhoneNumberKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1306,6 +1378,7 @@
 				457F54DF21FD154300EA25AC /* FileUtils.swift in Sources */,
 				456ED12922A8CC9600F1D133 /* ImageCropperViewController.swift in Sources */,
 				45FD5B5021E0333900C247F0 /* TutorialViewController.swift in Sources */,
+				456ED14A22ADB3C000F1D133 /* File.swift in Sources */,
 				453A7C54222116CC00E5E3C8 /* SendTransferPresenter.swift in Sources */,
 				453A7C502220CD2500E5E3C8 /* SendTransferView.swift in Sources */,
 				45AD3A2621E33FBC00198D6F /* EnterPhoneNumberViewController.swift in Sources */,
@@ -1320,6 +1393,7 @@
 				45AD3A3221E3444900198D6F /* PhoneVerificationRequest.swift in Sources */,
 				45B7A42D21DEC293005A1124 /* ModelController.swift in Sources */,
 				455F396622023D2600516286 /* RestoreWallet.swift in Sources */,
+				456ED13522AB32A100F1D133 /* EditFullnameViewController.swift in Sources */,
 				456012C722152689003B04E2 /* Contacts.swift in Sources */,
 				45A6D7B021EFE242007A6F42 /* VerifyRecoveryPhraseViewController.swift in Sources */,
 				459747832215434B00EAD4B8 /* SendTransferViewController.swift in Sources */,
@@ -1355,6 +1429,7 @@
 				45BBF06221E1C8C90042EC5D /* Json.swift in Sources */,
 				455722D222A24E4A0064D908 /* ConfirmTransferPresenter.swift in Sources */,
 				455F396822042D5E00516286 /* AppDatabase.swift in Sources */,
+				456ED13722AB32AE00F1D133 /* EditAboutMeViewController.swift in Sources */,
 				4577BA84229FB7C300EEFB2B /* SelectContactPresenter.swift in Sources */,
 				45A6D7A721EFD8A7007A6F42 /* VerifyPhoneNumberPresenterImpl.swift in Sources */,
 				455F39622202348200516286 /* UIImageExtension.swift in Sources */,
@@ -1398,15 +1473,18 @@
 				456D857021F59AB7005150F3 /* Currency.swift in Sources */,
 				459747852215435600EAD4B8 /* ConfirmTransferViewController.swift in Sources */,
 				453A7C562221E1F500E5E3C8 /* ChainProcessor.swift in Sources */,
+				456ED13C22AD9DBC00F1D133 /* EditFullnamePresenter.swift in Sources */,
 				45828C77220E852700594842 /* ContactsViewController.swift in Sources */,
 				453A7C582221E23300E5E3C8 /* EthProcessor.swift in Sources */,
 				456D856821F2E296005150F3 /* ChoosePasswordPresenter.swift in Sources */,
 				459DEBC021DFBCBB009F0BE0 /* AppStyle.swift in Sources */,
 				45B7A42721DEC293005A1124 /* AppDelegate.swift in Sources */,
 				45BBF05A21E1C48A0042EC5D /* TipApiService.swift in Sources */,
+				456ED14C22ADB3CE00F1D133 /* EditAboutMePresenter.swift in Sources */,
 				45AD3A5D21E73EEC00198D6F /* PendingSignup.swift in Sources */,
 				4510400622965963001C26D5 /* ConfigResponse.swift in Sources */,
 				456012C52214DB5E003B04E2 /* UserSearchTableViewCell.swift in Sources */,
+				456ED13A22AB32F800F1D133 /* EditPhoneNumberViewController.swift in Sources */,
 				4510400822979AFA001C26D5 /* Transaction.swift in Sources */,
 				4579A9F2220EB12600CBCFAE /* ContactListResponse.swift in Sources */,
 				459DEBBE21DFBCAA009F0BE0 /* AppConstants.swift in Sources */,
