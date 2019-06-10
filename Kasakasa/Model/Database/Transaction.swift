@@ -121,9 +121,17 @@ public struct Transaction: Codable, DictionaryEncodable {
             value = BigUInt(valueString)!
         }
 
-        var timestamp = Date()
-        if let timestampStr = try? container.decode(String.self, forKey: CodingKeys.timestamp), let timeInterval = TimeInterval(timestampStr) {
+        let timestampStr = try? container.decode(String.self, forKey: CodingKeys.timestamp)
+
+        var timestamp: Date? = nil
+        if let timestampStr = timestampStr, let timeInterval = TimeInterval(timestampStr) {
             timestamp = Date(timeIntervalSince1970: timeInterval)
+        }
+        if  timestamp == nil, let timestampStr = timestampStr {
+            timestamp = DateFormatter.jsonFormatter.date(from: timestampStr)
+        }
+        if timestamp == nil {
+            timestamp = Date()
         }
 
         var gas = BigUInt("0")
@@ -144,7 +152,7 @@ public struct Transaction: Codable, DictionaryEncodable {
         let fromUser = try? container.decode(UserStub.self, forKey: CodingKeys.fromUser)
         let toUser = try? container.decode(UserStub.self, forKey: CodingKeys.toUser)
 
-        self.init(hash: hash, blockHash: blockHash, from: from, to: to, currency: currency, value: value, timestamp: timestamp, gas: gas, confirmations: confirmations, nonce: nonce, message: message, txReceiptStatus: receiptStatus, fromUser: fromUser, toUser: toUser)
+        self.init(hash: hash, blockHash: blockHash, from: from, to: to, currency: currency, value: value, timestamp: timestamp!, gas: gas, confirmations: confirmations, nonce: nonce, message: message, txReceiptStatus: receiptStatus, fromUser: fromUser, toUser: toUser)
     }
 
 //    public init(from pendingTx: PendingTransaction, result: TransactionSendingResult) {

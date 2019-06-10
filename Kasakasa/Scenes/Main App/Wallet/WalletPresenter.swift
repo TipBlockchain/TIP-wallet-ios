@@ -52,9 +52,9 @@ class WalletPresenter: BasePresenter {
                 repo.fetchERC20Transactions(address: wallet.address, token: TipProcessor.tipToken) { (transactions, error) in
                     self.mainQueue.async {
                         if let transactions = transactions {
-                            if let newTxList = self.checkForNewTransactions(existingTxList, newList: transactions), !newTxList.isEmpty {
+//                            if let newTxList = self.checkForNewTransactions(existingTxList, newList: transactions), !newTxList.isEmpty {
                                 self.view?.onTransactionsFetched(transactions)
-                            }
+//                            }
                         } else {
                             self.view?.onTransactionFetchError(error ?? AppErrors.unknowkError)
                         }

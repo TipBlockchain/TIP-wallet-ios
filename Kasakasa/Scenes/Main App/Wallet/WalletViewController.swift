@@ -86,6 +86,10 @@ class WalletViewController: BaseViewController {
     func onNoTransactionsFound() {
         // show no transactions view
     }
+
+    private func showTransactionDetails(_ transaction: Transaction) {
+
+    }
 }
 
 
@@ -114,12 +118,20 @@ extension WalletViewController: UITableViewDataSource {
         }
         return nil
     }
+
 }
 
 extension WalletViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70.0
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let transaction = self.transaction(atIndexPath: indexPath) {
+            self.showTransactionDetails(transaction)
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
 //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
