@@ -10,9 +10,15 @@ import Foundation
 
 extension JSONDecoder {
 
-    public static let defaultDecoder: JSONDecoder = {
+    public static let epochDateDecoder: JSONDecoder = {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .secondsSince1970
+        return decoder
+    }()
+
+    public static let isoDateDecoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
         return decoder
     }()
 }

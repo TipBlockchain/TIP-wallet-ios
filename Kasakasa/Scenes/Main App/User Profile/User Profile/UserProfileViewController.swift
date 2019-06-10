@@ -7,24 +7,47 @@
 //
 
 import UIKit
+import Nuke
 
 class UserProfileViewController: BaseViewController {
 
+    @IBOutlet private weak var profileImageView: UIImageView!
+    @IBOutlet private weak var usernameLabel: UILabel!
+    @IBOutlet private weak var fullnameLabel: UILabel!
+    @IBOutlet private weak var aboutMeLabel: UILabel!
+    @IBOutlet private weak var daysOnTipLabel: UILabel!
+    @IBOutlet private weak var submitButton: ColoredButton!
+    private var presenter: UserProfilePresenter?
+
+    var user: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.updateUI()
         // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    deinit {
+        presenter?.detach()
+        presenter = nil
     }
-    */
+    
+    @IBAction private func submitButtonTapped(_ sender: Any) {
+    }
 
+    private func updateUI() {
+        if let user = user {
+            if let photoUrlString = user.originalPhotoUrl, let url = URL(string: photoUrlString) {
+                Nuke.loadImage(with: url, into: self.profileImageView)
+            }
+            usernameLabel.text = user.username
+            fullnameLabel.text = user.fullname
+            aboutMeLabel.text = user.aboutMe ?? AppConstants.defaultAboutMeText
+            if let signupdate = user.created {
+                daysOnTipLabel.text = "\(signupdate.dayDiffreence(Date())) days on TIP"
+            } else {
+                daysOnTipLabel.text = ""
+            }
+        }
+    }
 }

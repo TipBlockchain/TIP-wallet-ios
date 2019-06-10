@@ -19,4 +19,6 @@ enum AppConstants {
     static let chainStartBlock = "app_start_block"
     static let ethereumNetworkId = "ethereum_network_id"
     static let infuraAccessToken = "infura_access_token"
+
+    static let defaultAboutMeText = "I ♥ TIP"
 }

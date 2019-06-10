@@ -9,6 +9,9 @@
 import UIKit
 import Nuke
 
+protocol UserSearchCellDelegate: class {
+    func actionButtonAction(forCell cell: UserSearchTableViewCell)
+}
 class UserSearchTableViewCell: UITableViewCell {
 
     var user: User? {
@@ -25,9 +28,11 @@ class UserSearchTableViewCell: UITableViewCell {
         }
     }
 
-    @IBOutlet var fullnameLabel: UILabel!
-    @IBOutlet var usernameLabel: UILabel!
-    @IBOutlet var displayImageView: UIImageView!
+    weak var delegate: UserSearchCellDelegate?
+
+    @IBOutlet private var fullnameLabel: UILabel!
+    @IBOutlet private var usernameLabel: UILabel!
+    @IBOutlet private var displayImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,6 +43,10 @@ class UserSearchTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+
+    @IBAction private func actionButtonTapped(_ sender: Any) {
+        self.delegate?.actionButtonAction(forCell: self)
     }
 
 }

@@ -18,11 +18,8 @@ class WalletViewController: BaseViewController {
     private lazy var presenter = WalletPresenter()
     private lazy var walletRepo = WalletRepository.shared
     private var transactions: [Transaction] = []
-    private var wallet: Wallet? {
-        didSet {
-            self.currencyLabel.text = wallet?.currency.rawValue ?? ""
-        }
-    }
+
+    var wallet: Wallet?
     private let transactionCellIdentifier = "TransactionCellIdentifier"
 
     override func viewDidLoad() {
@@ -30,13 +27,14 @@ class WalletViewController: BaseViewController {
 
         tableView.register(UINib(nibName: "TransactionTableViewCell", bundle: nil), forCellReuseIdentifier: transactionCellIdentifier)
         tableView.tableFooterView = UIView()
+        self.navigationItem.backBarButtonItem?.title = ""
 
         presenter.attach(self)
-        self.navigationController?.isNavigationBarHidden = true
-        if let wallets = walletRepo.allWallets() {
-            self.wallet = wallets[0]
-            presenter.getBalance(forWallet: wallet!)
+        if let wallet = self.wallet {
+            presenter.getBalance(forWallet: wallet)
         }
+        self.currencyLabel.text = wallet?.currency.rawValue ?? ""
+
     }
 
     deinit {
@@ -45,8 +43,11 @@ class WalletViewController: BaseViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationBarHiddenState = self.navigationController?.isNavigationBarHidden ?? false
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.setNavigationBarTransparent()
+        self.navigationItem.backBarButtonItem?.title = ""
+
+//        self.navigationBarHiddenState = self.navigationController?.isNavigationBarHidden ?? false
+//        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -69,9 +70,9 @@ class WalletViewController: BaseViewController {
         self.showToast("Error fetching account balance: \(error.message)")
     }
 
-    func onBalanceFetched(_ balance: NSDecimalNumber) {
+    func onBalanceFetched(_ balance: String) {
         debugPrint("Balance = \(balance)")
-        balanceLabel.text = balance.description(withLocale: Locale.current)
+        balanceLabel.text = balance
     }
 
     func onTransactionsFetched(_ transactions: [Transaction]) {

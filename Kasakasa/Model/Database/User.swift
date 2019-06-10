@@ -50,7 +50,7 @@ public struct User: Codable, DictionaryEncodable {
         case lastMessage
         case aboutMe
         case photos
-        case created
+//        case created
     }
 
     init(id: String, fullname: String, username: String, address: String, countryCode: String? = nil, phone: String? = nil, imageFileKey: String? = nil, pictureUrl: String? = nil, isContact: Bool? = false, isBlocked: Bool? = false, lastMessage: Date? = Date(), aboutMe: String? = nil, created: Date? = nil, photos: UserPhotos? = nil) {

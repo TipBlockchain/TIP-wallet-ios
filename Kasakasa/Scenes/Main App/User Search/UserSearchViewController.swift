@@ -11,6 +11,7 @@ import UIKit
 class UserSearchViewController: ModalViewController {
 
     private var users: [User] = []
+    private var selectedUser: User? = nil
     var presenter: UserSearchPresenter?
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var emptyView: UIView!
@@ -40,6 +41,15 @@ class UserSearchViewController: ModalViewController {
         }
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowUserProfile", let destination = segue.destination as? UserProfileViewController {
+            destination.user = self.selectedUser
+        }
+    }
+    private func showProfile(_ user: User) {
+        self.performSegue(withIdentifier: "ShowUserProfile", sender: self)
+    }
+
 }
 
 extension UserSearchViewController: UITableViewDataSource {
@@ -56,6 +66,7 @@ extension UserSearchViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserSearchCell", for: indexPath) as! UserSearchTableViewCell
         if let user = self.user(atIndex: indexPath.row) {
             cell.user = user
+            cell.delegate = self
         }
         return cell
     }
@@ -74,15 +85,23 @@ extension UserSearchViewController: UITableViewDataSource {
     }
 }
 
+extension  UserSearchViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.view.endEditing(true)
+    }
+}
+
 extension  UserSearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let user = self.user(atIndex: indexPath.row) {
-            self.showOkCancelAlert(withTitle: "Add to contacts?", message: "Do you want to add \(user.fullname) to your contact list?", style: UIAlertController.Style.actionSheet, onOkSelected: {
-                self.presenter?.addToContacts(user)
-                self.deselectSelectedRow()
-            }, onCancelSelected: {
-                self.deselectSelectedRow()
-            })
+            self.selectedUser = user
+            self.showProfile(user)
+//            self.showOkCancelAlert(withTitle: "Add to contacts?", message: "Do you want to add \(user.fullname) to your contact list?", style: UIAlertController.Style.actionSheet, onOkSelected: {
+//                self.presenter?.addToContacts(user)
+//                self.deselectSelectedRow()
+//            }, onCancelSelected: {
+//                self.deselectSelectedRow()
+//            })
         }
     }
 }
@@ -94,6 +113,8 @@ extension UserSearchViewController: UISearchBarDelegate {
     }
 
     public func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        self.view.endEditing(true)
     }
 
     public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -133,5 +154,10 @@ extension UserSearchViewController: UserSearchView {
             self.tableView.reloadData()
         }
     }
+}
 
+extension UserSearchViewController: UserSearchCellDelegate {
+    func actionButtonAction(forCell cell: UserSearchTableViewCell) {
+        debugPrint("cell tapped")
+    }
 }

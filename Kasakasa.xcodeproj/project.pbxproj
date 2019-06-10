@@ -47,6 +47,10 @@
 		453A7C5E222A53BA00E5E3C8 /* TipTokenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A7C5D222A53BA00E5E3C8 /* TipTokenContract.swift */; };
 		4540B6D622AE0181003B117B /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540B6D522AE0181003B117B /* UserProfileViewController.swift */; };
 		4540B6D822AE0197003B117B /* UserProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540B6D722AE0197003B117B /* UserProfilePresenter.swift */; };
+		4540B6DA22AE04F7003B117B /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540B6D922AE04F7003B117B /* DateExtensions.swift */; };
+		4540B6DD22AF0E07003B117B /* WalletListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540B6DC22AF0E07003B117B /* WalletListPresenter.swift */; };
+		4540B6DF22AF0E1F003B117B /* WalletListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540B6DE22AF0E1F003B117B /* WalletListViewController.swift */; };
+		4540B6E122AF19C5003B117B /* WalletListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540B6E022AF19C5003B117B /* WalletListTableViewCell.swift */; };
 		455722CC22A0F2140064D908 /* SelectContactDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455722CB22A0F2140064D908 /* SelectContactDelegate.swift */; };
 		455722D022A2210D0064D908 /* TextUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455722CF22A2210D0064D908 /* TextUtilTests.swift */; };
 		455722D222A24E4A0064D908 /* ConfirmTransferPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455722D122A24E4A0064D908 /* ConfirmTransferPresenter.swift */; };
@@ -258,6 +262,10 @@
 		453A7C5D222A53BA00E5E3C8 /* TipTokenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipTokenContract.swift; sourceTree = "<group>"; };
 		4540B6D522AE0181003B117B /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		4540B6D722AE0197003B117B /* UserProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePresenter.swift; sourceTree = "<group>"; };
+		4540B6D922AE04F7003B117B /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		4540B6DC22AF0E07003B117B /* WalletListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletListPresenter.swift; sourceTree = "<group>"; };
+		4540B6DE22AF0E1F003B117B /* WalletListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletListViewController.swift; sourceTree = "<group>"; };
+		4540B6E022AF19C5003B117B /* WalletListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletListTableViewCell.swift; sourceTree = "<group>"; };
 		455722CB22A0F2140064D908 /* SelectContactDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectContactDelegate.swift; sourceTree = "<group>"; };
 		455722CF22A2210D0064D908 /* TextUtilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextUtilTests.swift; sourceTree = "<group>"; };
 		455722D122A24E4A0064D908 /* ConfirmTransferPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmTransferPresenter.swift; sourceTree = "<group>"; };
@@ -558,6 +566,15 @@
 			path = "User Profile";
 			sourceTree = "<group>";
 		};
+		4540B6DB22AF0DF7003B117B /* Wallet List */ = {
+			isa = PBXGroup;
+			children = (
+				4540B6DC22AF0E07003B117B /* WalletListPresenter.swift */,
+				4540B6DE22AF0E1F003B117B /* WalletListViewController.swift */,
+			);
+			path = "Wallet List";
+			sourceTree = "<group>";
+		};
 		456D855C21F2A50A005150F3 /* Blockchain */ = {
 			isa = PBXGroup;
 			children = (
@@ -680,6 +697,7 @@
 		45828C6E220D5F2100594842 /* Main App */ = {
 			isa = PBXGroup;
 			children = (
+				4540B6DB22AF0DF7003B117B /* Wallet List */,
 				456ED13122AB324100F1D133 /* User Profile */,
 				45BA3D1822A7331D00D3A9A5 /* Trade TIP */,
 				45BA3D1722A7331500D3A9A5 /* Settings */,
@@ -792,6 +810,7 @@
 				45A4B76E229B964E003676E6 /* TransactionDetailsView.swift */,
 				45A4B770229B966A003676E6 /* TransactionDetailsView.xib */,
 				45BA3D1F22A73D3F00D3A9A5 /* CryptoExchangeTableViewCell.swift */,
+				4540B6E022AF19C5003B117B /* WalletListTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -956,6 +975,7 @@
 				455F39612202348200516286 /* UIImageExtension.swift */,
 				45A4B76A229B4F7B003676E6 /* JSONDecoderExtension.swift */,
 				45A4B76C229B9479003676E6 /* UIViewControllerExtension.swift */,
+				4540B6D922AE04F7003B117B /* DateExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1402,6 +1422,7 @@
 				45B7A42921DEC293005A1124 /* RootViewController.swift in Sources */,
 				4579A9EC220EA1B000CBCFAE /* UserSearch.swift in Sources */,
 				45AD3A3221E3444900198D6F /* PhoneVerificationRequest.swift in Sources */,
+				4540B6DF22AF0E1F003B117B /* WalletListViewController.swift in Sources */,
 				45B7A42D21DEC293005A1124 /* ModelController.swift in Sources */,
 				455F396622023D2600516286 /* RestoreWallet.swift in Sources */,
 				456ED13522AB32A100F1D133 /* EditFullnameViewController.swift in Sources */,
@@ -1418,6 +1439,7 @@
 				4524159D21F1B257005B53A2 /* AuthorizationRepository.swift in Sources */,
 				45BA3D2422A78B8B00D3A9A5 /* ImagePicker.swift in Sources */,
 				45BA3D2222A7419900D3A9A5 /* CryptoExchange.swift in Sources */,
+				4540B6E122AF19C5003B117B /* WalletListTableViewCell.swift in Sources */,
 				456ED12D22A8CC9600F1D133 /* ImageCropperRouter.swift in Sources */,
 				456ED13022A8DA1E00F1D133 /* MyProfilePresenter.swift in Sources */,
 				45BA3D2022A73D3F00D3A9A5 /* CryptoExchangeTableViewCell.swift in Sources */,
@@ -1444,6 +1466,7 @@
 				4577BA84229FB7C300EEFB2B /* SelectContactPresenter.swift in Sources */,
 				45A6D7A721EFD8A7007A6F42 /* VerifyPhoneNumberPresenterImpl.swift in Sources */,
 				455F39622202348200516286 /* UIImageExtension.swift in Sources */,
+				4540B6DA22AE04F7003B117B /* DateExtensions.swift in Sources */,
 				4579A9F6220EB5A200CBCFAE /* UserSearchResponse.swift in Sources */,
 				456ED12A22A8CC9600F1D133 /* ImageCropperPresenter.swift in Sources */,
 				45AD3A5021E7308800198D6F /* PhoneVerificationResponse.swift in Sources */,
@@ -1465,6 +1488,7 @@
 				456D856421F2C6DB005150F3 /* VerifyRecoveryPhrasePresenter.swift in Sources */,
 				457F54E121FD904000EA25AC /* OnboardingUserProfilePresenter.swift in Sources */,
 				45BBF07621E2C29D0042EC5D /* Country.swift in Sources */,
+				4540B6DD22AF0E07003B117B /* WalletListPresenter.swift in Sources */,
 				451040122299EBAF001C26D5 /* EtherscanTxListResponse.swift in Sources */,
 				45828C64220D358200594842 /* SplashScreenViewController.swift in Sources */,
 				45AD3A4221E5673C00198D6F /* ModalViewController.swift in Sources */,

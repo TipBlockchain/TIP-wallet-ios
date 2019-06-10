@@ -33,7 +33,7 @@ class EtherscanApiService: NSObject {
             if let error = error {
                 completion(nil, error)
             } else {
-                if let data = result as? Data, let response = try? JSONDecoder.defaultDecoder.decode(EtherscanTxListResponse.self, from: data) {
+                if let data = result as? Data, let response = try? JSONDecoder.epochDateDecoder.decode(EtherscanTxListResponse.self, from: data) {
                     completion(response, nil)
                 } else {
                     completion(nil, AppErrors.unknowkError)
@@ -55,7 +55,7 @@ class EtherscanApiService: NSObject {
             if let error = error {
                 completion(nil, error)
             } else {
-                if let data = result as? Data, let response = try? JSONDecoder.defaultDecoder.decode(EtherscanTxListResponse.self, from: data) {
+                if let data = result as? Data, let response = try? JSONDecoder.epochDateDecoder.decode(EtherscanTxListResponse.self, from: data) {
                     completion(response, nil)
                 } else {
                     completion(nil, AppErrors.unknowkError)
