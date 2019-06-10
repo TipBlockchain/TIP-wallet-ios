@@ -12,7 +12,7 @@ class SelectContactPresenter: BasePresenter {
     
     typealias View = SelectContactViewController
 
-    var view: SelectContactViewController?
+    weak var view: SelectContactViewController?
     var repository = UserRepository.shared
 
     func attach(_ v: SelectContactViewController) {

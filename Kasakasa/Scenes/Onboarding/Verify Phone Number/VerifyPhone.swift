@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol VerifyPhoneNumberView: BaseView {
+protocol VerifyPhoneNumberView: class, BaseView {
     func onPhoneVerified(withExistingAccount account: User)
     func onPhoneVerified(withPendingSignup signup: PendingSignup)
     func onPhoneVerified(withPendingSignup signup: PendingSignup, andDemoAccount account: User)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserProfileViewController: UIViewController {
+class UserProfileViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

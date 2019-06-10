@@ -9,7 +9,7 @@
 import Foundation
 
 class VerifyPhoneNumberPresenterImpl: VerifyPhoneNumberPresenter {
-    var view: VerifyPhoneNumberView? = nil
+    weak var view: VerifyPhoneNumberView? = nil
 
     private var apiService = TipApiService.sharedInstance
 

@@ -11,7 +11,7 @@ import Foundation
 class EnterPhoneNumberPresenterImpl: EnterPhoneNumberPresenter {
     typealias View = EnterPhoneNumberView
 
-    var view: EnterPhoneNumberView? = nil
+    weak var view: EnterPhoneNumberView? = nil
 
     private let tipApiService = TipApiService.sharedInstance
 

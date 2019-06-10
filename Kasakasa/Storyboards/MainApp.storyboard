@@ -377,14 +377,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jane Joey Smith" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkJ-As-gZM">
-                                <rect key="frame" x="20" y="353" width="335" height="21"/>
+                                <rect key="frame" x="20" y="347" width="335" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⌨︎📆 10 days on TIP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0D-j4-ywU">
-                                <rect key="frame" x="99.333333333333329" y="394" width="176.66666666666669" height="21"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I ♥ TIP" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Cy-Sx-0SR">
+                                <rect key="frame" x="20" y="398" width="335" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -402,9 +402,16 @@
                                     <action selector="copyAddressTapped:" destination="Mfx-pM-gIZ" eventType="touchUpInside" id="0PB-j5-veO"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⌨︎📆 10 days on TIP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0D-j4-ywU">
+                                <rect key="frame" x="20" y="449" width="335" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="t0D-j4-ywU" firstAttribute="leading" secondItem="su4-2b-jxX" secondAttribute="leading" constant="20" id="56S-YG-DQI"/>
                             <constraint firstItem="su4-2b-jxX" firstAttribute="trailing" secondItem="bkJ-As-gZM" secondAttribute="trailing" constant="20" id="5py-ld-h7A"/>
                             <constraint firstItem="su4-2b-jxX" firstAttribute="trailing" secondItem="mob-UG-8MP" secondAttribute="trailing" constant="20" id="AoZ-It-VNO"/>
                             <constraint firstItem="Mcq-LX-Q6w" firstAttribute="bottom" secondItem="su4-2b-jxX" secondAttribute="bottom" id="BvR-IB-kLS"/>
@@ -413,16 +420,19 @@
                             <constraint firstItem="jrd-sn-wUH" firstAttribute="top" secondItem="su4-2b-jxX" secondAttribute="top" constant="50" id="Eft-xs-Ie9"/>
                             <constraint firstItem="Sba-7Y-1XG" firstAttribute="top" secondItem="fpN-Xg-kto" secondAttribute="top" id="Fsa-Td-ojg"/>
                             <constraint firstItem="jrd-sn-wUH" firstAttribute="centerX" secondItem="fpN-Xg-kto" secondAttribute="centerX" id="KHd-8s-n49"/>
-                            <constraint firstItem="t0D-j4-ywU" firstAttribute="top" secondItem="bkJ-As-gZM" secondAttribute="bottom" constant="20" id="PcD-kI-YrT"/>
                             <constraint firstItem="su4-2b-jxX" firstAttribute="trailing" secondItem="8wl-hR-zsS" secondAttribute="trailing" constant="20" id="Rg6-p3-6U0"/>
                             <constraint firstItem="bkJ-As-gZM" firstAttribute="leading" secondItem="su4-2b-jxX" secondAttribute="leading" constant="20" id="TO0-cD-FJ9"/>
+                            <constraint firstItem="su4-2b-jxX" firstAttribute="trailing" secondItem="t0D-j4-ywU" secondAttribute="trailing" constant="20" id="Y0d-Lw-paz"/>
                             <constraint firstItem="Sba-7Y-1XG" firstAttribute="leading" secondItem="su4-2b-jxX" secondAttribute="leading" id="cgU-6G-27K"/>
                             <constraint firstItem="Mcq-LX-Q6w" firstAttribute="trailing" secondItem="su4-2b-jxX" secondAttribute="trailing" id="dsu-IT-l8n"/>
                             <constraint firstItem="Mcq-LX-Q6w" firstAttribute="top" secondItem="fpN-Xg-kto" secondAttribute="top" id="dyY-1F-sq2"/>
-                            <constraint firstItem="t0D-j4-ywU" firstAttribute="centerX" secondItem="fpN-Xg-kto" secondAttribute="centerX" id="dyq-SD-fjx"/>
-                            <constraint firstItem="bkJ-As-gZM" firstAttribute="top" secondItem="8wl-hR-zsS" secondAttribute="bottom" constant="16" id="iwQ-2N-ZXt"/>
+                            <constraint firstItem="7Cy-Sx-0SR" firstAttribute="top" secondItem="bkJ-As-gZM" secondAttribute="bottom" constant="30" id="end-bl-hKQ"/>
+                            <constraint firstItem="su4-2b-jxX" firstAttribute="trailing" secondItem="7Cy-Sx-0SR" secondAttribute="trailing" constant="20" id="hZg-e5-G5b"/>
+                            <constraint firstItem="bkJ-As-gZM" firstAttribute="top" secondItem="8wl-hR-zsS" secondAttribute="bottom" constant="10" id="iwQ-2N-ZXt"/>
+                            <constraint firstItem="t0D-j4-ywU" firstAttribute="top" secondItem="7Cy-Sx-0SR" secondAttribute="bottom" constant="30" id="jIE-am-q7p"/>
                             <constraint firstItem="8wl-hR-zsS" firstAttribute="leading" secondItem="su4-2b-jxX" secondAttribute="leading" constant="20" id="mvd-b9-ayp"/>
                             <constraint firstItem="Sba-7Y-1XG" firstAttribute="bottom" secondItem="su4-2b-jxX" secondAttribute="bottom" id="pcn-vr-3mw"/>
+                            <constraint firstItem="7Cy-Sx-0SR" firstAttribute="leading" secondItem="su4-2b-jxX" secondAttribute="leading" constant="20" id="plf-it-Bqq"/>
                             <constraint firstItem="8wl-hR-zsS" firstAttribute="centerX" secondItem="fpN-Xg-kto" secondAttribute="centerX" id="psN-HG-VfO"/>
                             <constraint firstItem="Sba-7Y-1XG" firstAttribute="trailing" secondItem="su4-2b-jxX" secondAttribute="trailing" id="qeq-X8-7GN"/>
                             <constraint firstItem="su4-2b-jxX" firstAttribute="bottom" secondItem="mob-UG-8MP" secondAttribute="bottom" constant="40" id="rb1-rw-dtp"/>

@@ -10,7 +10,7 @@ import UIKit
 
 class MyProfilePresenter: BasePresenter {
     typealias View = MyProfileViewController
-    var view: MyProfileViewController?
+    weak var view: MyProfileViewController?
     let tipApi = TipApiService.sharedInstance
     let mainQueue = DispatchQueue.main
 

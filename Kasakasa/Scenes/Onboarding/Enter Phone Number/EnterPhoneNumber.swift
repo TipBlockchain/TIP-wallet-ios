@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol EnterPhoneNumberView: BaseView {
+protocol EnterPhoneNumberView: class, BaseView {
     func onCountryListFetched(_ countries: [Country])
     func onCountryListError(err: AppErrors)
     func onEmptyPhoneNumberError()

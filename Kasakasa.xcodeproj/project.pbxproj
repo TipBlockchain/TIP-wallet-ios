@@ -45,6 +45,8 @@
 		453A7C5A2221E26500E5E3C8 /* TipProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A7C592221E26500E5E3C8 /* TipProcessor.swift */; };
 		453A7C5C2223BC9600E5E3C8 /* EthConvert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A7C5B2223BC9600E5E3C8 /* EthConvert.swift */; };
 		453A7C5E222A53BA00E5E3C8 /* TipTokenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A7C5D222A53BA00E5E3C8 /* TipTokenContract.swift */; };
+		4540B6D622AE0181003B117B /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540B6D522AE0181003B117B /* UserProfileViewController.swift */; };
+		4540B6D822AE0197003B117B /* UserProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540B6D722AE0197003B117B /* UserProfilePresenter.swift */; };
 		455722CC22A0F2140064D908 /* SelectContactDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455722CB22A0F2140064D908 /* SelectContactDelegate.swift */; };
 		455722D022A2210D0064D908 /* TextUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455722CF22A2210D0064D908 /* TextUtilTests.swift */; };
 		455722D222A24E4A0064D908 /* ConfirmTransferPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455722D122A24E4A0064D908 /* ConfirmTransferPresenter.swift */; };
@@ -87,7 +89,6 @@
 		456ED14422ADAE4D00F1D133 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456ED14322ADAE4D00F1D133 /* CoreTelephony.framework */; };
 		456ED14622ADAE6700F1D133 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456ED14522ADAE6700F1D133 /* Contacts.framework */; };
 		456ED14822ADAE7700F1D133 /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456ED14722ADAE7700F1D133 /* ContactsUI.framework */; };
-		456ED14A22ADB3C000F1D133 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456ED14922ADB3C000F1D133 /* File.swift */; };
 		456ED14C22ADB3CE00F1D133 /* EditAboutMePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456ED14B22ADB3CE00F1D133 /* EditAboutMePresenter.swift */; };
 		4577BA82229FB6B500EEFB2B /* SelectContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4577BA81229FB6B500EEFB2B /* SelectContactViewController.swift */; };
 		4577BA84229FB7C300EEFB2B /* SelectContactPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4577BA83229FB7C300EEFB2B /* SelectContactPresenter.swift */; };
@@ -255,6 +256,8 @@
 		453A7C592221E26500E5E3C8 /* TipProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipProcessor.swift; sourceTree = "<group>"; };
 		453A7C5B2223BC9600E5E3C8 /* EthConvert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthConvert.swift; sourceTree = "<group>"; };
 		453A7C5D222A53BA00E5E3C8 /* TipTokenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipTokenContract.swift; sourceTree = "<group>"; };
+		4540B6D522AE0181003B117B /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		4540B6D722AE0197003B117B /* UserProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePresenter.swift; sourceTree = "<group>"; };
 		455722CB22A0F2140064D908 /* SelectContactDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectContactDelegate.swift; sourceTree = "<group>"; };
 		455722CF22A2210D0064D908 /* TextUtilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextUtilTests.swift; sourceTree = "<group>"; };
 		455722D122A24E4A0064D908 /* ConfirmTransferPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmTransferPresenter.swift; sourceTree = "<group>"; };
@@ -297,7 +300,6 @@
 		456ED14322ADAE4D00F1D133 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		456ED14522ADAE6700F1D133 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		456ED14722ADAE7700F1D133 /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
-		456ED14922ADB3C000F1D133 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		456ED14B22ADB3CE00F1D133 /* EditAboutMePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAboutMePresenter.swift; sourceTree = "<group>"; };
 		4577BA81229FB6B500EEFB2B /* SelectContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectContactViewController.swift; sourceTree = "<group>"; };
 		4577BA83229FB7C300EEFB2B /* SelectContactPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectContactPresenter.swift; sourceTree = "<group>"; };
@@ -547,6 +549,15 @@
 			path = "Verify Phone Number";
 			sourceTree = "<group>";
 		};
+		4540B6D422AE016D003B117B /* User Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4540B6D522AE0181003B117B /* UserProfileViewController.swift */,
+				4540B6D722AE0197003B117B /* UserProfilePresenter.swift */,
+			);
+			path = "User Profile";
+			sourceTree = "<group>";
+		};
 		456D855C21F2A50A005150F3 /* Blockchain */ = {
 			isa = PBXGroup;
 			children = (
@@ -603,6 +614,7 @@
 		456ED13122AB324100F1D133 /* User Profile */ = {
 			isa = PBXGroup;
 			children = (
+				4540B6D422AE016D003B117B /* User Profile */,
 				456ED13822AB32E500F1D133 /* Edit Phone Number */,
 				456ED13322AB326F00F1D133 /* Edit  About Me */,
 				456ED13222AB326200F1D133 /* Edit Fullname */,
@@ -624,7 +636,6 @@
 			isa = PBXGroup;
 			children = (
 				456ED13622AB32AE00F1D133 /* EditAboutMeViewController.swift */,
-				456ED14922ADB3C000F1D133 /* File.swift */,
 				456ED14B22ADB3CE00F1D133 /* EditAboutMePresenter.swift */,
 			);
 			path = "Edit  About Me";
@@ -1369,6 +1380,7 @@
 				45BBF05821E1C46B0042EC5D /* NetworkService.swift in Sources */,
 				452AD7F121EFAB13007F11E2 /* TextUtils.swift in Sources */,
 				45AD3A5721E7375900198D6F /* DateFormatterExtension.swift in Sources */,
+				4540B6D822AE0197003B117B /* UserProfilePresenter.swift in Sources */,
 				453A7C5A2221E26500E5E3C8 /* TipProcessor.swift in Sources */,
 				457F54E521FE9C5800EA25AC /* UsernameResponse.swift in Sources */,
 				45BA3D1E22A7337900D3A9A5 /* MyProfileViewController.swift in Sources */,
@@ -1378,7 +1390,6 @@
 				457F54DF21FD154300EA25AC /* FileUtils.swift in Sources */,
 				456ED12922A8CC9600F1D133 /* ImageCropperViewController.swift in Sources */,
 				45FD5B5021E0333900C247F0 /* TutorialViewController.swift in Sources */,
-				456ED14A22ADB3C000F1D133 /* File.swift in Sources */,
 				453A7C54222116CC00E5E3C8 /* SendTransferPresenter.swift in Sources */,
 				453A7C502220CD2500E5E3C8 /* SendTransferView.swift in Sources */,
 				45AD3A2621E33FBC00198D6F /* EnterPhoneNumberViewController.swift in Sources */,
@@ -1442,6 +1453,7 @@
 				457F54DD21FD12C600EA25AC /* WalletUtils.swift in Sources */,
 				4579A9F0220EB11100CBCFAE /* ContactListRequest.swift in Sources */,
 				456ED12522A8CC9600F1D133 /* ImageCropperConfiguration.swift in Sources */,
+				4540B6D622AE0181003B117B /* UserProfileViewController.swift in Sources */,
 				45AD3A2A21E3409900198D6F /* EnterPhoneNumber.swift in Sources */,
 				45BBF05F21E1C86C0042EC5D /* AppErrors.swift in Sources */,
 				4579A9EA220EA19000CBCFAE /* UserSearchPresenter.swift in Sources */,

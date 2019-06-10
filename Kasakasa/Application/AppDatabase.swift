@@ -34,6 +34,7 @@ class AppDatabase {
                 t.column(User.Columns.address.rawValue, .text).notNull().indexed()
                 t.column(User.Columns.imageFileKey.rawValue, .text)
                 t.column(User.Columns.pictureUrl.rawValue, .text)
+                t.column(User.Columns.created.rawValue, .date)
                 t.column(User.Columns.isContact.rawValue, .boolean).defaults(to: true)
                 t.column(User.Columns.isBlocked.rawValue, .boolean).defaults(to: false)
                 t.column(User.Columns.lastMessage.rawValue, .datetime)

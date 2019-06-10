@@ -12,7 +12,7 @@ import BigInt
 class ConfirmTransferPresenter: BasePresenter {
     typealias View = ConfirmTransferViewController
 
-    var view: ConfirmTransferViewController?
+    weak var view: ConfirmTransferViewController?
     private lazy var txRepo = TransactionRepository.shared
 
     private let  txQueue = DispatchQueue(label: "ConfirmTransfer")

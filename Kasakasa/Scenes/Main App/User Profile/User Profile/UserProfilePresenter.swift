@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+class UserProfilePresenter: BasePresenter {
+
+    typealias View = UserProfileViewController
+
+    weak var view: UserProfileViewController?
+}

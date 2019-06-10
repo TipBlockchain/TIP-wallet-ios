@@ -24,6 +24,7 @@ public struct User: Codable, DictionaryEncodable {
     var lastMessage: Date?
     var aboutMe: String?
     var photos: UserPhotos?
+    var created: Date?
 
 //    t.column("fromUser_id", .text)
 //    t.column("fromUser_username", .text)
@@ -49,9 +50,10 @@ public struct User: Codable, DictionaryEncodable {
         case lastMessage
         case aboutMe
         case photos
+        case created
     }
 
-    init(id: String, fullname: String, username: String, address: String, countryCode: String? = nil, phone: String? = nil, imageFileKey: String? = nil, pictureUrl: String? = nil, isContact: Bool? = false, isBlocked: Bool? = false, lastMessage: Date? = Date(), aboutMe: String? = nil, photos: UserPhotos? = nil) {
+    init(id: String, fullname: String, username: String, address: String, countryCode: String? = nil, phone: String? = nil, imageFileKey: String? = nil, pictureUrl: String? = nil, isContact: Bool? = false, isBlocked: Bool? = false, lastMessage: Date? = Date(), aboutMe: String? = nil, created: Date? = nil, photos: UserPhotos? = nil) {
         self.id = id
         self.fullname = fullname
         self.username = username
@@ -63,6 +65,7 @@ public struct User: Codable, DictionaryEncodable {
         self.lastMessage = lastMessage
         self.aboutMe = aboutMe
         self.photos = photos
+        self.created = created
     }
 
     func firstname() -> String {
@@ -117,7 +120,7 @@ extension  User: TableRecord {
 extension User: FetchableRecord, MutablePersistableRecord {
 
     enum Columns: String, CodingKey, ColumnExpression {
-        case id, fullname, username, address, countryCode, phone, imageFileKey, pictureUrl, isContact, isBlocked, lastMessage, aboutMe, originalPhotoUrl, smallPhotoUrl, mediumPhotoUrl
+        case id, fullname, username, address, countryCode, phone, imageFileKey, pictureUrl, isContact, isBlocked, lastMessage, aboutMe, originalPhotoUrl, smallPhotoUrl, mediumPhotoUrl, created
     }
 
     public init(row: Row) {
@@ -133,6 +136,7 @@ extension User: FetchableRecord, MutablePersistableRecord {
         let isBlocked = row[Columns.isBlocked] as Bool?
         let aboutMe = row[Columns.aboutMe] as String?
         let lastMessage = row[Columns.lastMessage] as Date?
+        let created = row[Columns.created] as Date?
 
         let originalPhoto = row[Columns.originalPhotoUrl] as String?
         let mediumPhoto = row[Columns.mediumPhotoUrl] as String?
@@ -140,7 +144,7 @@ extension User: FetchableRecord, MutablePersistableRecord {
 
         let userPhotos = UserPhotos(original: originalPhoto, medium: mediumPhoto, small: smallPhoto)
 
-        self.init(id: id, fullname: fullname, username: username, address: address, countryCode: countryCode, phone: phone, imageFileKey: imageFileKey, pictureUrl: pictureUrl, isContact: isContact, isBlocked: isBlocked, lastMessage: lastMessage, aboutMe: aboutMe, photos: userPhotos)
+        self.init(id: id, fullname: fullname, username: username, address: address, countryCode: countryCode, phone: phone, imageFileKey: imageFileKey, pictureUrl: pictureUrl, isContact: isContact, isBlocked: isBlocked, lastMessage: lastMessage, aboutMe: aboutMe, created: created, photos: userPhotos)
     }
 
     public func encode(to container: inout PersistenceContainer) {
@@ -156,6 +160,7 @@ extension User: FetchableRecord, MutablePersistableRecord {
         container[Columns.isBlocked] = isBlocked
         container[Columns.lastMessage] = lastMessage
         container[Columns.aboutMe] = aboutMe
+        container[Columns.created] = created
 
         container[Columns.originalPhotoUrl] = photos?.original
         container[Columns.mediumPhotoUrl] = photos?.medium
