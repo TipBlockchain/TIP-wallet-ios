@@ -562,17 +562,22 @@
                                             <action selector="cameraButtonTapped:" destination="I3X-jy-faw" eventType="touchUpInside" id="CUJ-KY-SR0"/>
                                         </connections>
                                     </button>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="bWU-EI-ovS">
+                                        <rect key="frame" x="56.333333333333329" y="56.666666666666657" width="37" height="37"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Cxt-Zp-MoK" secondAttribute="trailing" id="90m-6J-cj3"/>
                                     <constraint firstAttribute="bottom" secondItem="bpt-78-PF8" secondAttribute="bottom" id="Gkt-rR-1BG"/>
                                     <constraint firstItem="bpt-78-PF8" firstAttribute="top" secondItem="4LR-b0-H0M" secondAttribute="top" id="RGb-KN-5x5"/>
+                                    <constraint firstItem="bWU-EI-ovS" firstAttribute="centerY" secondItem="4LR-b0-H0M" secondAttribute="centerY" id="TEU-EM-CZQ"/>
                                     <constraint firstAttribute="trailing" secondItem="bpt-78-PF8" secondAttribute="trailing" id="YB0-NU-g5i"/>
                                     <constraint firstAttribute="width" secondItem="4LR-b0-H0M" secondAttribute="height" multiplier="1:1" id="fMj-EQ-xhE"/>
                                     <constraint firstAttribute="bottom" secondItem="Cxt-Zp-MoK" secondAttribute="bottom" id="kD8-j0-KnC"/>
                                     <constraint firstAttribute="width" constant="150" id="qHY-7v-dVc"/>
                                     <constraint firstItem="bpt-78-PF8" firstAttribute="leading" secondItem="4LR-b0-H0M" secondAttribute="leading" id="vhX-V6-smm"/>
+                                    <constraint firstItem="bWU-EI-ovS" firstAttribute="centerX" secondItem="4LR-b0-H0M" secondAttribute="centerX" id="xmv-rB-t30"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JaneSmith" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6c-hT-4Al">
@@ -752,6 +757,7 @@
                     </view>
                     <connections>
                         <outlet property="cameraButton" destination="Cxt-Zp-MoK" id="3fv-xY-2j6"/>
+                        <outlet property="profileImageActivityIndicator" destination="bWU-EI-ovS" id="uNm-h0-Ytv"/>
                         <outlet property="profileImageView" destination="bpt-78-PF8" id="hKm-r7-qU8"/>
                         <outlet property="tableView" destination="zNY-Yf-pfa" id="iuP-s2-dpf"/>
                         <outlet property="usernameLabel" destination="L6c-hT-4Al" id="aup-Tf-UxE"/>

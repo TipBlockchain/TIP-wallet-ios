@@ -13,6 +13,7 @@ import PhoneNumberKit
 class MyProfileViewController: BaseViewController {
 
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var profileImageActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var usernameLabel: UILabel!
@@ -85,6 +86,7 @@ class MyProfileViewController: BaseViewController {
         let imageCropper = ImageCropperViewController.initialize(with: config) { croppedImage in
             if let croppedImage = croppedImage {
 //                self.profileImageView.image = croppedImage
+                self.profileImageActivityIndicator.startAnimating()
                 self.presenter?.uploadPhoto(croppedImage)
                 self.dismiss(animated: true, completion: nil)
             }
@@ -93,12 +95,14 @@ class MyProfileViewController: BaseViewController {
     }
 
     func onProfileUpdated(_ user: User) {
+        self.profileImageActivityIndicator.stopAnimating()
         self.showToast("Profile photo updated.".localized)
         self.user = user
         self.setupUI()
     }
 
     func onPhotoUploadError(_ error: AppErrors) {
+        self.profileImageActivityIndicator.stopAnimating()
         self.showError(error)
     }
 
