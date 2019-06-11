@@ -14,10 +14,10 @@ class WalletViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var currencyLabel: UILabel!
-    private var transactionProcessor: ChainProcessor?
     private lazy var presenter = WalletPresenter()
     private lazy var walletRepo = WalletRepository.shared
     private var transactions: [Transaction] = []
+    private var selectedTransaction: Transaction?
 
     var wallet: Wallet?
     private let transactionCellIdentifier = "TransactionCellIdentifier"
@@ -89,7 +89,14 @@ class WalletViewController: BaseViewController {
     }
 
     private func showTransactionDetails(_ transaction: Transaction) {
+        self.selectedTransaction = transaction
+        self.performSegue(withIdentifier: "ShowTransactionDetails", sender: self)
+    }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowTransactionDetails", let destination = segue.destination as? TransactionDetailsViewController {
+            destination.transaction = self.selectedTransaction
+        }
     }
 }
 

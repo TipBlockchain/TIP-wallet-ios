@@ -51,6 +51,8 @@
 		4540B6DD22AF0E07003B117B /* WalletListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540B6DC22AF0E07003B117B /* WalletListPresenter.swift */; };
 		4540B6DF22AF0E1F003B117B /* WalletListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540B6DE22AF0E1F003B117B /* WalletListViewController.swift */; };
 		4540B6E122AF19C5003B117B /* WalletListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540B6E022AF19C5003B117B /* WalletListTableViewCell.swift */; };
+		4540B6E422AF7FEE003B117B /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540B6E322AF7FEE003B117B /* ImageViewController.swift */; };
+		4540B6E722AF8197003B117B /* TransactionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540B6E622AF8197003B117B /* TransactionDetailsViewController.swift */; };
 		455722CC22A0F2140064D908 /* SelectContactDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455722CB22A0F2140064D908 /* SelectContactDelegate.swift */; };
 		455722D022A2210D0064D908 /* TextUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455722CF22A2210D0064D908 /* TextUtilTests.swift */; };
 		455722D222A24E4A0064D908 /* ConfirmTransferPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455722D122A24E4A0064D908 /* ConfirmTransferPresenter.swift */; };
@@ -266,6 +268,8 @@
 		4540B6DC22AF0E07003B117B /* WalletListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletListPresenter.swift; sourceTree = "<group>"; };
 		4540B6DE22AF0E1F003B117B /* WalletListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletListViewController.swift; sourceTree = "<group>"; };
 		4540B6E022AF19C5003B117B /* WalletListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletListTableViewCell.swift; sourceTree = "<group>"; };
+		4540B6E322AF7FEE003B117B /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		4540B6E622AF8197003B117B /* TransactionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewController.swift; sourceTree = "<group>"; };
 		455722CB22A0F2140064D908 /* SelectContactDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectContactDelegate.swift; sourceTree = "<group>"; };
 		455722CF22A2210D0064D908 /* TextUtilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextUtilTests.swift; sourceTree = "<group>"; };
 		455722D122A24E4A0064D908 /* ConfirmTransferPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmTransferPresenter.swift; sourceTree = "<group>"; };
@@ -575,6 +579,22 @@
 			path = "Wallet List";
 			sourceTree = "<group>";
 		};
+		4540B6E222AF7FD1003B117B /* Image View */ = {
+			isa = PBXGroup;
+			children = (
+				4540B6E322AF7FEE003B117B /* ImageViewController.swift */,
+			);
+			path = "Image View";
+			sourceTree = "<group>";
+		};
+		4540B6E522AF8179003B117B /* Transaction Details */ = {
+			isa = PBXGroup;
+			children = (
+				4540B6E622AF8197003B117B /* TransactionDetailsViewController.swift */,
+			);
+			path = "Transaction Details";
+			sourceTree = "<group>";
+		};
 		456D855C21F2A50A005150F3 /* Blockchain */ = {
 			isa = PBXGroup;
 			children = (
@@ -631,9 +651,10 @@
 		456ED13122AB324100F1D133 /* User Profile */ = {
 			isa = PBXGroup;
 			children = (
+				4540B6E222AF7FD1003B117B /* Image View */,
 				4540B6D422AE016D003B117B /* User Profile */,
 				456ED13822AB32E500F1D133 /* Edit Phone Number */,
-				456ED13322AB326F00F1D133 /* Edit  About Me */,
+				456ED13322AB326F00F1D133 /* Edit About Me */,
 				456ED13222AB326200F1D133 /* Edit Fullname */,
 				45BA3D1622A7330B00D3A9A5 /* My Profile */,
 			);
@@ -649,13 +670,13 @@
 			path = "Edit Fullname";
 			sourceTree = "<group>";
 		};
-		456ED13322AB326F00F1D133 /* Edit  About Me */ = {
+		456ED13322AB326F00F1D133 /* Edit About Me */ = {
 			isa = PBXGroup;
 			children = (
 				456ED13622AB32AE00F1D133 /* EditAboutMeViewController.swift */,
 				456ED14B22ADB3CE00F1D133 /* EditAboutMePresenter.swift */,
 			);
-			path = "Edit  About Me";
+			path = "Edit About Me";
 			sourceTree = "<group>";
 		};
 		456ED13822AB32E500F1D133 /* Edit Phone Number */ = {
@@ -697,6 +718,7 @@
 		45828C6E220D5F2100594842 /* Main App */ = {
 			isa = PBXGroup;
 			children = (
+				4540B6E522AF8179003B117B /* Transaction Details */,
 				4540B6DB22AF0DF7003B117B /* Wallet List */,
 				456ED13122AB324100F1D133 /* User Profile */,
 				45BA3D1822A7331D00D3A9A5 /* Trade TIP */,
@@ -1441,6 +1463,7 @@
 				45BA3D2222A7419900D3A9A5 /* CryptoExchange.swift in Sources */,
 				4540B6E122AF19C5003B117B /* WalletListTableViewCell.swift in Sources */,
 				456ED12D22A8CC9600F1D133 /* ImageCropperRouter.swift in Sources */,
+				4540B6E722AF8197003B117B /* TransactionDetailsViewController.swift in Sources */,
 				456ED13022A8DA1E00F1D133 /* MyProfilePresenter.swift in Sources */,
 				45BA3D2022A73D3F00D3A9A5 /* CryptoExchangeTableViewCell.swift in Sources */,
 				45A6D7AB21EFE20E007A6F42 /* ExistingAccountViewController.swift in Sources */,
@@ -1481,6 +1504,7 @@
 				45BBF05F21E1C86C0042EC5D /* AppErrors.swift in Sources */,
 				4579A9EA220EA19000CBCFAE /* UserSearchPresenter.swift in Sources */,
 				4510400222965439001C26D5 /* EtherscanApiService.swift in Sources */,
+				4540B6E422AF7FEE003B117B /* ImageViewController.swift in Sources */,
 				45BA3D1122A256D200D3A9A5 /* TransactionSentViewController.swift in Sources */,
 				45BA3D1522A6170200D3A9A5 /* MoreViewController.swift in Sources */,
 				453A7C522220CF8600E5E3C8 /* PendingTransaction.swift in Sources */,

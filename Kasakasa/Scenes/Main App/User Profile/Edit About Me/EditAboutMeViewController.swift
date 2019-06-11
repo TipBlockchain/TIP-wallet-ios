@@ -22,6 +22,7 @@ class EditAboutMeViewController: BaseViewController {
         presenter = EditAboutMePresenter()
         presenter?.attach(self)
         textView.text = UserRepository.shared.currentUser?.aboutMe ?? ""
+        self.updateCountLabel(textView.text)
         // Do any additional setup after loading the view.
     }
 
@@ -37,7 +38,8 @@ class EditAboutMeViewController: BaseViewController {
         presenter?.updateAboutMe(aboutMeText)
     }
 
-    private func updateCountLabel(_ count: Int) {
+    private func updateCountLabel(_ text: String) {
+        let count = text.count
         countLabel.text = "\(count)/\(maxCount)"
     }
 
@@ -58,7 +60,7 @@ extension EditAboutMeViewController: UITextViewDelegate {
 
     func textViewDidChange(_ textView: UITextView) {
         let text = textView.text ?? ""
-        self.updateCountLabel(text.count)
+        self.updateCountLabel(text)
     }
 
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
