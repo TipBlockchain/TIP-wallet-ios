@@ -38,4 +38,8 @@ class AuthorizationRepository: NSObject {
             }
         }
     }
+
+    func reset() {
+        self.currentAuthorization = nil
+    }
 }

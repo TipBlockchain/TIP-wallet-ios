@@ -43,6 +43,12 @@ class WalletRepository: NSObject {
 
     var _primaryWallet: Wallet? = nil
 
+    func reset() {
+        self.deleteAll()
+        tipWallet = nil
+        ethWallet = nil
+    }
+    
     func primaryWallet() throws -> Wallet? {
         if _primaryWallet == nil {
             _primaryWallet = try dbPool!.read({ db -> Wallet? in

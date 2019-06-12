@@ -34,6 +34,11 @@ class UserRepository {
         }
     }
 
+    func reset() {
+        try? self.removeAllContacts()
+        self.currentUser = nil
+    }
+    
     func findUserById(_ id: String) -> User? {
         return try? dbPool?.read({ db -> User? in
             return try? User.filter(Column("id") == id).fetchOne(db)
@@ -120,10 +125,14 @@ class UserRepository {
         apiService.addContact(contact) { (response, error) in
             if let response = response {
                 if response.contacts.contains(contact.id) {
-                    try! self.insertContact(contact)
-                    debugPrint("User inserted")
-                    completion(true, nil)
-                    return
+                    do {
+                        try self.insertContact(contact)
+                        debugPrint("User inserted")
+                        completion(true, nil)
+                    } catch {
+                        completion(false, AppErrors.error(error: error))
+                    }
+
                 }
             } else {
                 if let error = error {
@@ -137,6 +146,12 @@ class UserRepository {
 
     func removeContact(_ contact: User) {
         
+    }
+
+    func removeAllContacts() throws {
+        try dbPool?.write({ db in
+            try? User.deleteAll(db)
+        })
     }
 
     func insertContact(_ user: User) throws {

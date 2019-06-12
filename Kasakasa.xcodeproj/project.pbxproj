@@ -122,6 +122,7 @@
 		459747832215434B00EAD4B8 /* SendTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459747822215434B00EAD4B8 /* SendTransferViewController.swift */; };
 		459747852215435600EAD4B8 /* ConfirmTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459747842215435600EAD4B8 /* ConfirmTransferViewController.swift */; };
 		459747882217E60200EAD4B8 /* ReceiveTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459747872217E60200EAD4B8 /* ReceiveTransferViewController.swift */; };
+		459D7E8122B07888008B7CD9 /* AppSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459D7E8022B07888008B7CD9 /* AppSession.swift */; };
 		459DEBBA21DFB82B009F0BE0 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 459DEBB921DFB82B009F0BE0 /* Tutorial.storyboard */; };
 		459DEBBC21DFB84E009F0BE0 /* MainApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 459DEBBB21DFB84E009F0BE0 /* MainApp.storyboard */; };
 		459DEBBE21DFBCAA009F0BE0 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459DEBBD21DFBCAA009F0BE0 /* AppConstants.swift */; };
@@ -340,6 +341,7 @@
 		459747822215434B00EAD4B8 /* SendTransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendTransferViewController.swift; sourceTree = "<group>"; };
 		459747842215435600EAD4B8 /* ConfirmTransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmTransferViewController.swift; sourceTree = "<group>"; };
 		459747872217E60200EAD4B8 /* ReceiveTransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveTransferViewController.swift; sourceTree = "<group>"; };
+		459D7E8022B07888008B7CD9 /* AppSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSession.swift; sourceTree = "<group>"; };
 		459DEBB921DFB82B009F0BE0 /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		459DEBBB21DFB84E009F0BE0 /* MainApp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainApp.storyboard; sourceTree = "<group>"; };
 		459DEBBD21DFBCAA009F0BE0 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
@@ -816,6 +818,7 @@
 				459DEBBF21DFBCBB009F0BE0 /* AppStyle.swift */,
 				459DEBC121DFBCDE009F0BE0 /* AppConfig.swift */,
 				455F396722042D5E00516286 /* AppDatabase.swift */,
+				459D7E8022B07888008B7CD9 /* AppSession.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -1439,6 +1442,7 @@
 				45AD3A4421E5862200198D6F /* InsetTextField.swift in Sources */,
 				45828C71220D5F4E00594842 /* WalletViewController.swift in Sources */,
 				453A7C5E222A53BA00E5E3C8 /* TipTokenContract.swift in Sources */,
+				459D7E8122B07888008B7CD9 /* AppSession.swift in Sources */,
 				45D7346A22939BFC002D61E6 /* ERC20Token.swift in Sources */,
 				45AD3A5B21E73E0200198D6F /* UserPhotos.swift in Sources */,
 				45B7A42921DEC293005A1124 /* RootViewController.swift in Sources */,

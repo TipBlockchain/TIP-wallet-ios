@@ -9,6 +9,10 @@
 import UIKit
 import Nuke
 
+protocol ContactTableViewCellDelegate: class {
+    func contactSelected(_ contact: User)
+}
+
 class ContactTableViewCell: UITableViewCell {
     var user: User? {
         didSet {
@@ -28,9 +32,25 @@ class ContactTableViewCell: UITableViewCell {
     @IBOutlet var usernameLabel: UILabel!
     @IBOutlet var displayImageView: UIImageView!
 
+    weak var delegate: ContactTableViewCellDelegate?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.addTapGestureRecognizer()
+    }
+
+    private func addTapGestureRecognizer() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(displayImageTapped(_:)))
+        tapGesture.numberOfTapsRequired = 1
+        tapGesture.numberOfTouchesRequired = 1
+        self.displayImageView.addGestureRecognizer(tapGesture)
+    }
+
+    @objc public func displayImageTapped(_ sender: Any) {
+        if let user = self.user {
+            self.delegate?.contactSelected(user)
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

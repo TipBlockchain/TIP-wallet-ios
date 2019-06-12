@@ -38,6 +38,10 @@ class TransactionRepository {
         }
     }
 
+    func reset() {
+        try? self.deleteAll()
+    }
+
     func allTransactions() throws -> [Transaction]? {
         return try dbPool?.read({ (db)  in
             return try Transaction.fetchAll(db)
@@ -57,10 +61,23 @@ class TransactionRepository {
         })
     }
 
+    func update(_ transaction: Transaction) throws {
+        var toSave = transaction
+        try dbPool?.write({ (db) in
+            try toSave.update(db)
+        })
+    }
+
     func insert(_ transactions: [Transaction]) throws {
         for transaction in transactions {
             try self.insert(transaction)
         }
+    }
+
+    func deleteAll() throws {
+        let _ = try dbPool?.write({ db in
+            try Transaction.deleteAll(db)
+        })
     }
 
     func fetchEthTransactions(address: String, completion: @escaping TransactionListClosure) {

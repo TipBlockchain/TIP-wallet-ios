@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ContactsUI
+import MessageUI
 
 typealias VoidClosure = () -> Void
 typealias MoreViewControllerClosure = (MoreViewController) -> Void
@@ -44,12 +46,12 @@ class MoreViewController: BaseViewController {
                 MoreListItem(title: "Settings", icon: UIImage(named: "icon-settings")!, cellIdentifier: socialCellIdentifier, action: {
                     self.showDetails(withSegueIdentifier: "ShowSettings")
                 })
-            ]),
+                ]),
             MoreListSection(title: "Trade TIP", items: [
                 MoreListItem(title: "Trade TIP", icon: UIImage(named: "icon-stocks")!, cellIdentifier: socialCellIdentifier, action: {
                     self.showDetails(withSegueIdentifier: "ShowTradeTip")
                 })
-            ]),
+                ]),
             MoreListSection(title: "Join Our Community", items: [
                 MoreListItem(title: "Telegram", icon: UIImage(named: "icon-telegram")!, cellIdentifier: socialCellIdentifier, action: {
                     self.openUrl(URL(string: "https://t.me/TipBlockchain")!)
@@ -64,14 +66,23 @@ class MoreViewController: BaseViewController {
                     self.openUrl(URL(string: "https://www.reddit.com/r/TipBlockchain/")!)
                 }),
                 MoreListItem(title: "Invite friends", icon: UIImage(named: "icon-share")!, cellIdentifier: socialCellIdentifier, action: {
-
+                    self.performShare()
                 })
-            ]),
+                ]),
             MoreListSection(title: "Sign Out", items: [
                 MoreListItem(title: "Sign Out", icon: UIImage(named: "icon-exit")!, cellIdentifier: socialCellIdentifier, action: {
+                    self.showOkCancelAlert(withTitle: "Are you sure you want to sign out?".localized,
+                                           message: "Please make sure you have backed up your recovery phrase and password. You will lose access to your account if you sign out without first backing up.".localized,
+                                           style: .alert,
+                                           onOkSelected: {
+                                            AppSession.signOut()
+                                            self.navigateToOnboarding()
+                                        },
+                                           onCancelSelected: {
 
+                                        })
                 })
-            ])
+                ])
         ]
     }
 
@@ -95,16 +106,30 @@ class MoreViewController: BaseViewController {
         self.performSegue(withIdentifier: segueIdentifier, sender: self)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func showContacts() {
+        let contactsPicker = CNContactPickerViewController()
+        contactsPicker.delegate = self
+        self.present(contactsPicker, animated: true, completion: nil)
     }
-    */
 
+    func sendSMS(toContacts contacts: [String]) {
+        if MFMessageComposeViewController.canSendText() {
+            let messagesVC = MFMessageComposeViewController()
+            messagesVC.messageComposeDelegate = self
+            messagesVC.recipients = contacts
+            messagesVC.body = "Check out Kasakasa crypto wallet from TIP blockchain. You can send and receive crypto usign usernames https://tipblockchain.io/kasakasa"
+            self.present(messagesVC, animated: true, completion: nil)
+        } else {
+            showToast("Can not send text messages at this time. Please try again later.".localized)
+        }
+    }
+
+    func performShare() {
+        let text = "Check out Kasakasa crypto wallet from TIP blockchain. You can send and receive crypto usign usernames https://tipblockchain.io/kasakasa"
+        let activity = UIActivityViewController(activityItems: [text], applicationActivities: nil)
+        activity.popoverPresentationController?.sourceView = self.view
+        self.present(activity, animated: true, completion: nil)
+    }
 }
 
 extension MoreViewController: UITableViewDataSource {
@@ -169,6 +194,45 @@ extension MoreViewController: UITableViewDelegate {
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
             tableView.deselectRow(at: indexPath, animated: true)
+        }
+    }
+}
+
+extension MoreViewController: CNContactPickerDelegate {
+
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
+        debugPrint("Did select contact: \(contact)")
+        if let phoneNumber = contact.phoneNumbers.first {
+            let phoneNumberString = phoneNumber.value.stringValue
+            self.sendSMS(toContacts: [phoneNumberString])
+        }
+    }
+
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
+        debugPrint("Did select contacts: \(contacts)")
+        var phoneNumbers = contacts.map { (contact) -> String in
+            if let firstPhoneNumber = contact.phoneNumbers.first {
+                let phoneNumberString = firstPhoneNumber.value.stringValue
+                return phoneNumberString
+            }
+            return ""
+        }
+
+        phoneNumbers = phoneNumbers.filter({ !$0.isEmpty })
+        self.sendSMS(toContacts: phoneNumbers)
+    }
+}
+
+extension MoreViewController: MFMessageComposeViewControllerDelegate {
+
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        switch result {
+        case .sent:
+            showToast("Message sent".localized)
+        case .failed:
+            showOkAlert(withTitle: "Oops".localized, message: "An error occured while sending the message. Please try again later.".localized)
+        default:
+            break
         }
     }
 }

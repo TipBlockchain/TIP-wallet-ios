@@ -18,12 +18,14 @@ class UserProfileViewController: BaseViewController {
     @IBOutlet private weak var daysOnTipLabel: UILabel!
     @IBOutlet private weak var submitButton: ColoredButton!
     private var presenter: UserProfilePresenter?
+    private var profilePicUrl: URL?
 
     var user: User?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.updateUI()
+        self.addGestureRecognizers()
         // Do any additional setup after loading the view.
     }
 
@@ -33,6 +35,39 @@ class UserProfileViewController: BaseViewController {
     }
     
     @IBAction private func submitButtonTapped(_ sender: Any) {
+        if user?.isContact == true {
+            self.sendTransfer()
+        } else {
+            self.addToContacts()
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SendTransferFromUserProfile", let vc = segue.destination as? SendTransferViewController {
+            vc.targetUser = self.user
+        } else if segue.identifier == "ShowImageViewFromUserProfile", let vc = segue.destination as? ImageViewController, let profilePicUrl = self.profilePicUrl {
+            vc.imageUrl = profilePicUrl
+        }
+    }
+
+    private func addToContacts() {
+        if let user = self.user {
+            presenter?.addUserToContacts(user)
+        }
+    }
+
+    private func sendTransfer() {
+        self.performSegue(withIdentifier: "SendTransferFromUserProfile", sender: self)
+    }
+
+    func onContactAdded() {
+        self.showToast("\(self.user?.username ?? "User") has been added to your contacts.")
+        self.user?.isContact = true
+        self.updateUI()
+    }
+
+    func onContactAddError(_ error: AppErrors) {
+        self.showError(error)
     }
 
     private func updateUI() {
@@ -48,6 +83,21 @@ class UserProfileViewController: BaseViewController {
             } else {
                 daysOnTipLabel.text = ""
             }
+            if user.isContact == true {
+                submitButton.setTitle("Send Transfer".localized, for: .normal)
+            }
+        }
+    }
+
+    private func addGestureRecognizers() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(profileImageViewTapped(_:)))
+        self.profileImageView.addGestureRecognizer(tapGesture)
+    }
+
+    @objc func profileImageViewTapped(_ sender: Any) {
+        if let profilePicUrlString = user?.originalPhotoUrl, let url = URL(string: profilePicUrlString) {
+            self.profilePicUrl = url
+            self.performSegue(withIdentifier: "ShowImageViewFromUserProfile", sender: self)
         }
     }
 }

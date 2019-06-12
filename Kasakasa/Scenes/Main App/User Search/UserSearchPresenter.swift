@@ -13,6 +13,7 @@ class UserSearchPresenter: NSObject, BasePresenter {
     weak var view: UserSearchView?
     private var apiService = TipApiService.sharedInstance
     private var userRepository = UserRepository.shared
+    private let mainQueue = DispatchQueue.main
 
     func searchForUser(query: String) {
         NSObject.cancelPreviousPerformRequests(withTarget: self)
@@ -25,21 +26,36 @@ class UserSearchPresenter: NSObject, BasePresenter {
     private func instantSearch(_ query: String) {
         userRepository.fetchUserBySearch(query) { (users, errors) in
             if let users = users {
-                self.view?.refreshSearchList(users)
+                var filteredResults = users.filter({ $0.id != self.userRepository.currentUser?.id })
+                if let contacts = try? self.userRepository.loadContacts() {
+                    filteredResults = filteredResults.map({
+                        var rv = $0
+                        if contacts.contains($0) {
+                            rv.isContact = true
+                        }
+                        return rv
+                    })
+                }
+                self.mainQueue.async {
+                    self.view?.refreshSearchList(filteredResults)
+                }
             } else if let errors = errors {
-                self.view?.onSearchError(errors)
+                self.mainQueue.async {
+                    self.view?.onSearchError(errors)
+                }
             }
         }
     }
 
     func addToContacts(_ contact: User) {
         userRepository.addContact(contact) { (success, errror) in
-            if success {
-                self.view?.onContactAdded(contact)
-            } else {
-                self.view?.onContactAddedError()
+            self.mainQueue.async {
+                if success {
+                    self.view?.onContactAdded(contact)
+                } else {
+                    self.view?.onContactAddedError()
+                }
             }
         }
     }
-
 }

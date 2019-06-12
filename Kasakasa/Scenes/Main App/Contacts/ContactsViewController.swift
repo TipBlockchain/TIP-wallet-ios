@@ -55,13 +55,23 @@ class ContactsViewController: BaseViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? SendTransferViewController {
+        if segue.identifier == "ShowSendTransferFromContacts", let vc = segue.destination as? SendTransferViewController {
             vc.targetUser = self.selectedContact
+        } else if segue.identifier == "ShowContactInfo", let vc = segue.destination as? UserProfileViewController {
+            vc.user = self.selectedContact
         }
     }
 
     private func contact(atIndexPath indexPath: IndexPath) -> User? {
         return controller.record(at: indexPath)
+    }
+
+    private func showSendTransfer() {
+        self.performSegue(withIdentifier: "ShowSendTransferFromContacts", sender: self)
+    }
+
+    private func showContactInfo() {
+        self.performSegue(withIdentifier: "ShowContactInfo", sender: self)
     }
 }
 
@@ -71,13 +81,13 @@ extension ContactsViewController: UITableViewDelegate {
         if let selectedContact = self.contact(atIndexPath: indexPath) {
             self.showOkCancelAlert(withTitle: "Send Transfer?".localized, message: "Do you want to send a transfer to \(selectedContact.username)", style: .actionSheet, onOkSelected: {
                 self.selectedContact = selectedContact
-                self.performSegue(withIdentifier: "ShowSendTransferFromContacts", sender: self)
+                self.showSendTransfer()
+                tableView.deselectRow(at: indexPath, animated: true)
             }) {
-
+                tableView.deselectRow(at: indexPath, animated: true)
             }
         }
     }
-
 }
 
 extension ContactsViewController: UITableViewDataSource {
@@ -91,9 +101,17 @@ extension ContactsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath) as! ContactTableViewCell
+        cell.delegate = self
         if let contact = self.contact(atIndexPath: indexPath) {
             cell.user = contact
         }
         return cell
+    }
+}
+
+extension ContactsViewController: ContactTableViewCellDelegate {
+    func contactSelected(_ contact: User) {
+        self.selectedContact = contact
+        self.showContactInfo()
     }
 }

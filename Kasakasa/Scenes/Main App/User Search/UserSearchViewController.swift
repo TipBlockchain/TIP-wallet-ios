@@ -12,9 +12,10 @@ class UserSearchViewController: ModalViewController {
 
     private var users: [User] = []
     private var selectedUser: User? = nil
+    private var lastSelectedIndexPath: IndexPath?
     var presenter: UserSearchPresenter?
-    @IBOutlet var tableView: UITableView!
-    @IBOutlet weak var emptyView: UIView!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var emptyView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,12 @@ class UserSearchViewController: ModalViewController {
         self.tableView.tableFooterView = UIView()
         // Do any additional setup after loading the view.
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setRegularNavigationBar()
+    }
+    
     @IBAction func closeButtonTapped(_ sender: Any) {
         self.close()
     }
@@ -64,9 +71,11 @@ extension UserSearchViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserSearchCell", for: indexPath) as! UserSearchTableViewCell
+        cell.delegate = self
+
         if let user = self.user(atIndex: indexPath.row) {
             cell.user = user
-            cell.delegate = self
+            debugPrint("******************* Setting up cell for user \(user.username) -> \(String(describing: user.isContact))")
         }
         return cell
     }
@@ -124,40 +133,36 @@ extension UserSearchViewController: UISearchBarDelegate {
 
 extension UserSearchViewController: UserSearchView {
     func onContactAdded(_ contact: User) {
-        DispatchQueue.main.async {
-            self.showToast("\(contact.fullname) has been added to your contact list.".localized)
+        if let indexPath = self.lastSelectedIndexPath {
+            self.tableView.reloadRows(at: [indexPath], with: .automatic)
         }
+        self.showToast("\(contact.fullname) has been added to your contact list.".localized)
     }
 
     func onSearchError(_ error: AppErrors) {
-        DispatchQueue.main.async {
-            self.showError(error)
-        }
+        self.showError(error)
     }
 
     func onContactAddedError() {
-        DispatchQueue.main.async {
-            self.showError(withTitle: "Error adding contact".localized, message: "Please try again".localized)
-        }
+        self.showError(withTitle: "Error adding contact".localized, message: "Please try again".localized)
     }
 
     func onSearchSetupError() {
-        DispatchQueue.main.async {
-            self.showError(withTitle: "Search failed".localized, message: "There was an error setting up your search. Please try again".localized)
-        }
+        self.showError(withTitle: "Search failed".localized, message: "There was an error setting up your search. Please try again".localized)
     }
 
     func refreshSearchList(_ users: [User]) {
         self.users = users
-        DispatchQueue.main.async {
-            self.showEmptyView(false)
-            self.tableView.reloadData()
-        }
+        self.showEmptyView(false)
+        self.tableView.reloadData()
     }
 }
 
 extension UserSearchViewController: UserSearchCellDelegate {
     func actionButtonAction(forCell cell: UserSearchTableViewCell) {
-        debugPrint("cell tapped")
+        if let user = cell.user {
+            lastSelectedIndexPath = self.tableView.indexPath(for: cell)
+            presenter?.addToContacts(user)
+        }
     }
 }

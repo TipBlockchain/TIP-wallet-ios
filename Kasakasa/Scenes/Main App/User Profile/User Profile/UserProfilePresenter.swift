@@ -13,4 +13,13 @@ class UserProfilePresenter: BasePresenter {
     typealias View = UserProfileViewController
 
     weak var view: UserProfileViewController?
+    lazy var userRepo = UserRepository.shared
+
+    func addUserToContacts(_ user: User) {
+        userRepo.addContact(user) { added, error in
+            if added {
+                
+            }
+        }
+    }
 }

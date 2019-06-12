@@ -18,11 +18,15 @@ class UserSearchTableViewCell: UITableViewCell {
         didSet {
             fullnameLabel.text = user?.fullname ?? ""
             usernameLabel.text = user?.username ?? ""
-            if let user = user, let imageUrlString = user.originalPhotoUrl, let imageUrl = URL(string: imageUrlString) {
-                let placeholderImage = UIImage.placeHolderImage()
-                let loadOptions = ImageLoadingOptions(placeholder: placeholderImage, transition: ImageLoadingOptions.Transition.fadeIn(duration: 0.33), failureImage: placeholderImage, failureImageTransition: .fadeIn(duration: 0.33))
-                debugPrint("loading image from \(imageUrl)")
-                Nuke.loadImage(with: imageUrl, options: loadOptions, into: displayImageView)
+            if let user = user {
+                if let imageUrlString = user.originalPhotoUrl, let imageUrl = URL(string: imageUrlString) {
+                    let placeholderImage = UIImage.placeHolderImage()
+                    let loadOptions = ImageLoadingOptions(placeholder: placeholderImage, transition: ImageLoadingOptions.Transition.fadeIn(duration: 0.33), failureImage: placeholderImage, failureImageTransition: .fadeIn(duration: 0.33))
+                    Nuke.loadImage(with: imageUrl, options: loadOptions, into: displayImageView)
+                }
+
+                self.addButton.isHidden = user.isContact ?? false
+                self.accessoryType = user.isContact ?? false ? .checkmark : .none
             }
             self.setNeedsDisplay()
         }
@@ -30,9 +34,10 @@ class UserSearchTableViewCell: UITableViewCell {
 
     weak var delegate: UserSearchCellDelegate?
 
-    @IBOutlet private var fullnameLabel: UILabel!
-    @IBOutlet private var usernameLabel: UILabel!
-    @IBOutlet private var displayImageView: UIImageView!
+    @IBOutlet private weak var fullnameLabel: UILabel!
+    @IBOutlet private weak var usernameLabel: UILabel!
+    @IBOutlet private weak var displayImageView: UIImageView!
+    @IBOutlet private weak var addButton: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -48,5 +53,4 @@ class UserSearchTableViewCell: UITableViewCell {
     @IBAction private func actionButtonTapped(_ sender: Any) {
         self.delegate?.actionButtonAction(forCell: self)
     }
-
 }
