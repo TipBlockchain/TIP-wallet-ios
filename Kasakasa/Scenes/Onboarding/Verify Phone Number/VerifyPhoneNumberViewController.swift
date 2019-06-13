@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VerifyPhoneNumberViewController: BaseViewController {
+class VerifyPhoneNumberViewController: BaseTableViewController {
 
     typealias View = VerifyPhoneNumberView
 
@@ -35,6 +35,7 @@ class VerifyPhoneNumberViewController: BaseViewController {
     }
 
     @IBAction func verifyButtonTapped(_ sender: Any) {
+        self.view.endEditing(true)
         guard let phoneNumber = phoneNumber, let countryCode = countryCode else {
             showNoPhoneNumberProvidedError()
             return
@@ -72,6 +73,7 @@ class VerifyPhoneNumberViewController: BaseViewController {
 }
 
 extension VerifyPhoneNumberViewController: VerifyPhoneNumberView {
+
     func onPhoneVerified(withExistingAccount account: User) {
         showToast("Phone number verified".localized)
         self.existingAccount = account

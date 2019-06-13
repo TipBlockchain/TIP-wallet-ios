@@ -9,7 +9,7 @@
 import UIKit
 import Nuke
 
-class OnboardingUserProfileViewController: BaseViewController {
+class OnboardingUserProfileViewController: BaseTableViewController {
 
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var firstnameField: UITextField!

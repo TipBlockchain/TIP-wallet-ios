@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChoosePasswordViewController: BaseViewController {
+class ChoosePasswordViewController: BaseTableViewController {
 
     var seedPhrase: String = ""
     var password: String  = ""

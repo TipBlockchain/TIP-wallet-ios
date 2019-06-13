@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EnterPhoneNumberViewController: BaseViewController {
+class EnterPhoneNumberViewController: BaseTableViewController {
     typealias View = EnterPhoneNumberView
 
     private var presenter: EnterPhoneNumberPresenterImpl? = nil
@@ -93,6 +93,12 @@ class EnterPhoneNumberViewController: BaseViewController {
         presenter?.detach()
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 2 {
+            self.presentSelectCountryScreen(self)
+        }
+    }
+
 }
 
 // Mark: EnterPhoneNumberView
@@ -139,7 +145,11 @@ extension EnterPhoneNumberViewController: EnterPhoneNumberView {
 // Mark: TextField Delegate
 
 extension EnterPhoneNumberViewController: UITextFieldDelegate {
+
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == self.selectCountryTextField {
+            self.presentSelectCountryScreen(self)
+        }
         return textField != self.selectCountryTextField
     }
     
@@ -150,6 +160,7 @@ extension EnterPhoneNumberViewController: UITextFieldDelegate {
 }
 
 extension EnterPhoneNumberViewController: SelectCountryDelegate {
+
     func countrySelected(_ country: Country) {
         selectedCountry = country
 
@@ -158,7 +169,7 @@ extension EnterPhoneNumberViewController: SelectCountryDelegate {
         selectCountryTextField.text = country.niceName
 
         countryCodeLabel.isHidden = false
-        countryCodeLabel.text = "+\(country.countryCode)"
+        countryCodeLabel.text = "+\(country.countryCode)  "
         countryCodeLabel.sizeToFit()
         enterPhoneTextField.placeholder = ""
     }

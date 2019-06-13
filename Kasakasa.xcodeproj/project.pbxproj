@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		450AF1E022B1F14A00578F89 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450AF1DF22B1F14A00578F89 /* TestTableViewController.swift */; };
+		450AF1E222B223B200578F89 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450AF1E122B223B200578F89 /* BaseTableViewController.swift */; };
 		45103FE22295AAC9001C26D5 /* secp256k1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FD42295AAC7001C26D5 /* secp256k1.framework */; };
 		45103FE32295AAC9001C26D5 /* BigInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FD52295AAC7001C26D5 /* BigInt.framework */; };
 		45103FE42295AAC9001C26D5 /* QRCodeReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FD62295AAC7001C26D5 /* QRCodeReader.framework */; };
@@ -221,6 +223,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		450AF1DF22B1F14A00578F89 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
+		450AF1E122B223B200578F89 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		45103FD42295AAC7001C26D5 /* secp256k1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = secp256k1.framework; path = Carthage/Build/iOS/secp256k1.framework; sourceTree = "<group>"; };
 		45103FD52295AAC7001C26D5 /* BigInt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BigInt.framework; path = Carthage/Build/iOS/BigInt.framework; sourceTree = "<group>"; };
 		45103FD62295AAC7001C26D5 /* QRCodeReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QRCodeReader.framework; path = Carthage/Build/iOS/QRCodeReader.framework; sourceTree = "<group>"; };
@@ -517,6 +521,7 @@
 				45AD3A3321E3CEDB00198D6F /* Select Country */,
 				45AD3A2421E33F9B00198D6F /* Enter Phone Number */,
 				45129C5921DFC51B00F585FA /* Tutorial */,
+				450AF1DF22B1F14A00578F89 /* TestTableViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -951,6 +956,7 @@
 				45AD3A2E21E3412B00198D6F /* BaseView.swift */,
 				45AD3A3F21E5635100198D6F /* BaseViewController.swift */,
 				45AD3A4121E5673C00198D6F /* ModalViewController.swift */,
+				450AF1E122B223B200578F89 /* BaseTableViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1511,6 +1517,7 @@
 				4540B6E422AF7FEE003B117B /* ImageViewController.swift in Sources */,
 				45BA3D1122A256D200D3A9A5 /* TransactionSentViewController.swift in Sources */,
 				45BA3D1522A6170200D3A9A5 /* MoreViewController.swift in Sources */,
+				450AF1E022B1F14A00578F89 /* TestTableViewController.swift in Sources */,
 				453A7C522220CF8600E5E3C8 /* PendingTransaction.swift in Sources */,
 				456D856621F2C71C005150F3 /* VerifyRecoveryPhrase.swift in Sources */,
 				456D856421F2C6DB005150F3 /* VerifyRecoveryPhrasePresenter.swift in Sources */,
@@ -1533,6 +1540,7 @@
 				4577BA82229FB6B500EEFB2B /* SelectContactViewController.swift in Sources */,
 				452AD7F421EFB839007F11E2 /* VerifyPhoneNumberViewController.swift in Sources */,
 				451040102299EB73001C26D5 /* TransactionListResponse.swift in Sources */,
+				450AF1E222B223B200578F89 /* BaseTableViewController.swift in Sources */,
 				456D856A21F2E2D7005150F3 /* ChoosePassword.swift in Sources */,
 				456D857021F59AB7005150F3 /* Currency.swift in Sources */,
 				459747852215435600EAD4B8 /* ConfirmTransferViewController.swift in Sources */,

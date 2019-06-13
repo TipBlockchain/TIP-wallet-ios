@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecoveryPhraseViewController: BaseViewController {
+class RecoveryPhraseViewController: BaseTableViewController {
 
     @IBOutlet private weak var recoveryPhraseTextView: UITextView!
     private var presenter: RecoveryPhrasePresenter?

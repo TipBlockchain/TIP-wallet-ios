@@ -1,18 +1,14 @@
 //
-//  BaseViewController.swift
+//  BaseTableViewController.swift
 //  Kasakasa
 //
-//  Created by John Warmann on 2019-01-08.
+//  Created by John Warmann on 2019-06-13.
 //  Copyright © 2019 Tip Blockchain. All rights reserved.
 //
 
 import UIKit
-import ToastSwiftFramework
 
-typealias VoidCompletionBlock = (() -> Void)
-typealias StringCompletionBlock = ((String?) -> Void)
-
-class BaseViewController: UIViewController {
+class BaseTableViewController: UITableViewController {
 
     private var activityIndicator: UIActivityIndicatorView?
 
@@ -37,7 +33,11 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        let imageView = UIImageView(image: UIImage(named: "gradient_and_shapes")!)
+        imageView.contentMode = .scaleAspectFill
+        self.tableView.backgroundView = imageView
+        self.endEditingOnTap = true
     }
 
     func showActivityIndicator(_ show: Bool = true) {
@@ -54,22 +54,5 @@ class BaseViewController: UIViewController {
         } else {
             activityIndicator?.stopAnimating()
         }
-    }
-
-}
-
-protocol MyP {
-    var myVar: String { get }
-}
-
-extension MyP {
-    var  myVar: String {
-        return "Str"
-    }
-}
-
-class MyC: MyP {
-    func myFunc() {
-        debugPrint("MyVar = \(myVar)")
     }
 }
