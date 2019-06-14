@@ -17,6 +17,9 @@ class ChoosePasswordViewController: BaseTableViewController {
     var existingUser: User?
     @IBOutlet private weak var passwordField: UITextField!
     @IBOutlet private weak var confirmPasswordField: UITextField!
+    @IBOutlet private weak var promptTextLabel: UILabel!
+    @IBOutlet private weak var savePasswordLabel: UILabel!
+    @IBOutlet private weak var savePasswordSwitch: UISwitch!
 
     private var presenter: ChoosePasswordPresenter?
     private var isPasswordSaved = false
@@ -26,6 +29,13 @@ class ChoosePasswordViewController: BaseTableViewController {
 
         self.endEditingOnTap = true
         self.navigationItem.title = "Account Password".localized
+        if self.existingUser != nil {
+            self.promptTextLabel.text = "Enter your password.\nYou must enter the same password you used when you crearted your account.".localized
+
+            self.isPasswordSaved = true
+            self.savePasswordLabel.isHidden = true
+            self.savePasswordSwitch.isHidden = true
+        }
 
         self.setupPresenter()
     }
@@ -42,6 +52,7 @@ class ChoosePasswordViewController: BaseTableViewController {
     }
 
     @IBAction func savePasswordTapped(_ sender: Any) {
+        self.view.endEditing(true)
         self.password = self.passwordField.text ?? ""
         self.password2 = self.confirmPasswordField.text ?? ""
 
@@ -69,7 +80,6 @@ class ChoosePasswordViewController: BaseTableViewController {
         self.performSegue(withIdentifier: "ShowOnboardingUserProfile", sender: self)
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -77,8 +87,6 @@ class ChoosePasswordViewController: BaseTableViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
-
 }
 
 extension ChoosePasswordViewController: UITextFieldDelegate {
@@ -97,11 +105,13 @@ extension ChoosePasswordViewController: ChoosePasswordView {
     }
 
     func onWalletRestored() {
-        self.navigateToMainApp()
+        self.showOkAlert(withTitle: "Hoorah!".localized, message: "Your wallets have been restored on this device. Happy Tipping!".localized, style: .alert) {
+            self.navigateToMainApp()
+        }
     }
 
     func onWalletNotMatchingExistingError() {
-        let error = AppErrors.genericError(message: "The restored wallet address does not match the address for %s. Please enter the same recovery phrase and password used to create the account.".localized)
+        let error = AppErrors.genericError(message: "The restored wallet address does not match the address for \(self.existingUser?.username ?? "this user"). Please enter the same recovery phrase and password used to create the account.".localized)
         showError(error)
     }
 

@@ -11,12 +11,18 @@ import Nuke
 
 class OnboardingUserProfileViewController: BaseTableViewController {
 
-    @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var firstnameField: UITextField!
-    @IBOutlet weak var lastnameField: UITextField!
-    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet private weak var profileImageView: UIImageView!
+    @IBOutlet private weak var profileImageActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var cameraButton: UIButton!
+
+    @IBOutlet private weak var firstnameField: UITextField!
+    @IBOutlet private weak var lastnameField: UITextField!
+    @IBOutlet private weak var usernameField: UITextField!
 
     private var profileImage: UIImage?
+    private var imagePicker: ImagePicker!
+    private var hasPromptedToUploadImage = false
+    private var isUsernameAvailable = false
 
     private var _checkImageView: UIImageView?
     private var checkImageView: UIImageView {
@@ -47,9 +53,12 @@ class OnboardingUserProfileViewController: BaseTableViewController {
         super.viewDidLoad()
 
         self.endEditingOnTap = true
+        
         self.navigationItem.title = "My Profile".localized
         setupPresenter()
         usernameField.rightViewMode = .always
+
+        self.imagePicker = ImagePicker(presentationController: self, delegate: self)
         // Do any additional setup after loading the view.
     }
 
@@ -66,10 +75,12 @@ class OnboardingUserProfileViewController: BaseTableViewController {
 
     @IBAction func continueButtonTapped(_ sender: Any) {
         debugPrint("Continue button tapped")
+        self.view.endEditing(true)
         checkValues()
     }
 
-    @IBAction func cameraButtonTapped(_ sender: Any) {
+    @IBAction func cameraButtonTapped(_ sender: UIView) {
+        self.imagePicker.present(from: sender)
     }
 
     private func navigateToCreateWallet() {
@@ -100,6 +111,13 @@ class OnboardingUserProfileViewController: BaseTableViewController {
             showToast("Username is invalid. Usernames must be between 2 and 16 characters".localized)
             focusView = usernameField
             cancel = true
+        } else if !self.isUsernameAvailable {
+            self.showToast("Chosen username is not available")
+            focusView = usernameField
+            cancel = true
+        }  else if profileImage == nil && !hasPromptedToUploadImage {
+            self.promptToUploadPhoto()
+            cancel = true
         }
 
         if cancel {
@@ -109,26 +127,70 @@ class OnboardingUserProfileViewController: BaseTableViewController {
         }
     }
 
+    private func promptToUploadPhoto() {
+        self.hasPromptedToUploadImage = true
+
+        let alert = UIAlertController(title: "Upload Photo".localized, message: "You should personalize your account with a photo so your contacts know its you.".localized, preferredStyle: .actionSheet)
+        let choosePhotoAction = UIAlertAction(title: "Choose Photo".localized, style: .default) { (action) in
+            self.cameraButtonTapped(self.cameraButton)
+        }
+        let continueAction = UIAlertAction(title: "Continue without photo".localized, style: .default) { (action) in
+            self.checkValues()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
+
+        }
+        alert.addAction(choosePhotoAction)
+        alert.addAction(continueAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+
     private func createAccount(firstname: String, lastname: String, username: String) {
+        self.showActivityIndicator()
         self.presenter?.createAccount(firstname: firstname, lastname: lastname, username: username)
     }
 
     private func showCongratsAlert() {
+        self.showActivityIndicator(false)
         self.showOkAlert(withTitle: "Congrats".localized , message: "You successfully created your TIP account. Welcome to our network".localized, style: UIAlertController.Style.alert) {
             self.navigateToMainApp()
         }
     }
 
-    /*
-    // MARK: - Navigation
+    private func configureCropper(forImage image: UIImage) {
+        var config = ImageCropperConfiguration(with: image, and: .square)
+        config.maskFillColor = UIColor.black.withAlphaComponent(0.5)
+        config.borderColor = UIColor.black
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        config.showGrid = true
+        config.gridColor = UIColor.white
+        config.doneTitle = "Crop"
+        config.cancelTitle = "Cancel"
+
+        let imageCropper = ImageCropperViewController.initialize(with: config) { croppedImage in
+            if let croppedImage = croppedImage {
+                //                self.profileImageView.image = croppedImage
+//                self.profileImageActivityIndicator.startAnimating()
+                self.profileImage = croppedImage
+                self.profileImageView.image = croppedImage
+//                self.presenter?.uploadPhoto(croppedImage)
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                self.showError(withTitle: "Profile photo error".localized, message: "There was a problem cropping your photo. Please try again with a different picture.".localized)
+            }
+        }
+        self.present(imageCropper, animated: false, completion: nil)
     }
-    */
+}
 
+extension OnboardingUserProfileViewController: ImagePickerDelegate {
+
+    func didSelect(image: UIImage?) {
+        if let image = image {
+            self.configureCropper(forImage: image)
+        }
+    }
 }
 
 extension OnboardingUserProfileViewController: UITextFieldDelegate {
@@ -169,6 +231,11 @@ extension OnboardingUserProfileViewController: OnboardingUserProfileView {
         self.showCongratsAlert()
     }
 
+    func onPhotoUploadError(_ error: AppErrors) {
+        self.showActivityIndicator(false)
+        showError(error)
+    }
+
     func onErrorUpdatingUser(_ error: AppErrors) {
         showError(error)
     }
@@ -190,24 +257,27 @@ extension OnboardingUserProfileViewController: OnboardingUserProfileView {
     }
 
     func onUsernameAvailable() {
+        self.isUsernameAvailable = true
         usernameField.rightView = self.checkImageView
     }
 
     func onUsernameUnavailableError(isDemoAccount: Bool) {
+        self.showActivityIndicator(false)
+        self.isUsernameAvailable = false
         usernameField.rightView = self.errorImageView
     }
 
     func onAuthorizationFetched(_ auth: Authorization?, error: AppErrors?) {
         self.view.endEditing(true)
         if let error = error {
+            self.showActivityIndicator(false)
             showError(error)
         } else {
             if let profileImage = profileImage {
-                presenter?.uploadPhoto(profileImage)
+                self.presenter?.uploadPhoto(profileImage)
             } else {
                 self.showCongratsAlert()
             }
         }
     }
-
 }

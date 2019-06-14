@@ -87,8 +87,8 @@ class WalletRepository: NSObject {
     }
 
     func delete(byAddress address: String) throws {
-        let _ = try! dbPool?.write({ db in
-            try! Wallet.deleteOne(db, key: "")
+        let _ = try dbPool?.write({ db in
+            try Wallet.filter(Column("address") == address).deleteAll(db)
         })
     }
 

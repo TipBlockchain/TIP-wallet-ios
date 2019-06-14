@@ -155,7 +155,6 @@ extension MyProfileViewController: UITableViewDataSource {
         }
     }
 
-
     private func setOutlet(forCell cell: UITableViewCell, atIndexPath indexPath: IndexPath) {
         let cellIdentifier = self.identifier(forIndexPath: indexPath)
         let phoneNumberKit = PhoneNumberKit()

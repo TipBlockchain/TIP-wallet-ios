@@ -85,9 +85,8 @@ extension VerifyRecoveryPhraseViewController: VerifyRecoveryPhraseView {
     func onVerificationError() {
         showError(AppErrors.genericError(message: "Incorrect words entered. Please make sure you have saved your recovery phrase.".localized))
     }
-
-
 }
+
 extension VerifyRecoveryPhraseViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)

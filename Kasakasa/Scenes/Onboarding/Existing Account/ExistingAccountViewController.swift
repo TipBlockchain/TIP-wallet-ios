@@ -9,12 +9,11 @@
 import UIKit
 import Nuke
 
-class ExistingAccountViewController: BaseViewController {
+class ExistingAccountViewController: BaseTableViewController {
 
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var createWalletButton: ColoredButton!
 
     var demoAccountUser: User?
     var existingUser: User?
@@ -53,8 +52,7 @@ class ExistingAccountViewController: BaseViewController {
         }
 
         if self.currentUser == self.existingUser {
-            messageLabel.text = "You will have to restore your wallet using the recovery phrase you used to create it.".localized
-            createWalletButton.setTitle("Restore Wallet".localized, for: .normal)
+//            messageLabel.text = "You will have to restore your wallet using the recovery phrase you used to create it.".localized
         }
     }
 

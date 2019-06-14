@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RestoreWalletViewController: BaseViewController {
+class RestoreWalletViewController: BaseTableViewController {
 
     @IBOutlet private weak var recoveryPhraseTextView: UITextView!
     var existingUser: User?
@@ -28,7 +28,8 @@ class RestoreWalletViewController: BaseViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
-        self.recoveryPhrase = recoveryPhraseTextView.text ?? ""
+        self.view.endEditing(true)
+        self.recoveryPhrase = recoveryPhraseTextView.text.trimmingCharacters(in: .newlines)
         presenter?.checkRecoveryPhrase(phrase: recoveryPhrase)
     }
 
@@ -68,5 +69,17 @@ extension RestoreWalletViewController: RestoreWalletView {
 }
 
 extension RestoreWalletViewController: UITextViewDelegate {
-    
+
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        guard Range(range, in: textView.text) != nil else {
+            return false
+        }
+
+        if range.length == 0, text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+
+        return true
+    }
 }

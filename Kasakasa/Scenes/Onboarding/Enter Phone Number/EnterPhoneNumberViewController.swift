@@ -59,6 +59,7 @@ class EnterPhoneNumberViewController: BaseTableViewController {
     }
     
     @IBAction func checkPhoneNumber(_ sender: Any) {
+        self.view.endEditing(true)
         if let countryCode = selectedCountry?.countryCode,
             let phoneNumber = enterPhoneTextField.text {
             self.phoneNumber = phoneNumber
