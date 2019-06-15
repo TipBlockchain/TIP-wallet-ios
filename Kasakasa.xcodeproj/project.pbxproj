@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		450AF1E022B1F14A00578F89 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450AF1DF22B1F14A00578F89 /* TestTableViewController.swift */; };
 		450AF1E222B223B200578F89 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450AF1E122B223B200578F89 /* BaseTableViewController.swift */; };
+		450AF1E422B4935400578F89 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450AF1E322B4935400578F89 /* AVFoundation.framework */; };
 		45103FE22295AAC9001C26D5 /* secp256k1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FD42295AAC7001C26D5 /* secp256k1.framework */; };
 		45103FE32295AAC9001C26D5 /* BigInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FD52295AAC7001C26D5 /* BigInt.framework */; };
 		45103FE42295AAC9001C26D5 /* QRCodeReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FD62295AAC7001C26D5 /* QRCodeReader.framework */; };
@@ -225,6 +226,7 @@
 /* Begin PBXFileReference section */
 		450AF1DF22B1F14A00578F89 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		450AF1E122B223B200578F89 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		450AF1E322B4935400578F89 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		45103FD42295AAC7001C26D5 /* secp256k1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = secp256k1.framework; path = Carthage/Build/iOS/secp256k1.framework; sourceTree = "<group>"; };
 		45103FD52295AAC7001C26D5 /* BigInt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BigInt.framework; path = Carthage/Build/iOS/BigInt.framework; sourceTree = "<group>"; };
 		45103FD62295AAC7001C26D5 /* QRCodeReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QRCodeReader.framework; path = Carthage/Build/iOS/QRCodeReader.framework; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				450AF1E422B4935400578F89 /* AVFoundation.framework in Frameworks */,
 				456ED14822ADAE7700F1D133 /* ContactsUI.framework in Frameworks */,
 				456ED14622ADAE6700F1D133 /* Contacts.framework in Frameworks */,
 				456ED14422ADAE4D00F1D133 /* CoreTelephony.framework in Frameworks */,
@@ -480,6 +483,7 @@
 		45103FD32295AAC7001C26D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				450AF1E322B4935400578F89 /* AVFoundation.framework */,
 				456ED14722ADAE7700F1D133 /* ContactsUI.framework */,
 				456ED14522ADAE6700F1D133 /* Contacts.framework */,
 				456ED14322ADAE4D00F1D133 /* CoreTelephony.framework */,

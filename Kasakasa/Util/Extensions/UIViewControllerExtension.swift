@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ContactsUI
+import MessageUI
 
 extension UIViewController {
 
@@ -173,5 +175,48 @@ extension UIViewController {
         } else if let fallbackUrl = fallbackUrl {
             sharedApp.open(fallbackUrl, options: options, completionHandler: completion)
         }
+    }
+
+    func showContacts() {
+        let contactsPicker = CNContactPickerViewController()
+        contactsPicker.delegate = self
+        self.present(contactsPicker, animated: true, completion: nil)
+    }
+    
+    func sendSMS(toContacts contacts: [String], withDelegate delegate: MFMessageComposeViewControllerDelegate? = nil) {
+        if MFMessageComposeViewController.canSendText() {
+            let messagesVC = MFMessageComposeViewController()
+            messagesVC.messageComposeDelegate = delegate
+            messagesVC.recipients = contacts
+            messagesVC.body = "Check out Kasakasa crypto wallet from TIP blockchain. You can send and receive crypto usign usernames https://tipblockchain.io/kasakasa"
+            self.present(messagesVC, animated: true, completion: nil)
+        } else {
+            showToast("Can not send text messages at this time. Please try again later.".localized)
+        }
+    }
+}
+
+extension UIViewController: CNContactPickerDelegate {
+
+    public func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
+        debugPrint("Did select contact: \(contact)")
+        if let phoneNumber = contact.phoneNumbers.first {
+            let phoneNumberString = phoneNumber.value.stringValue
+            self.sendSMS(toContacts: [phoneNumberString], withDelegate: nil)
+        }
+    }
+
+    public func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
+        debugPrint("Did select contacts: \(contacts)")
+        var phoneNumbers = contacts.map { (contact) -> String in
+            if let firstPhoneNumber = contact.phoneNumbers.first {
+                let phoneNumberString = firstPhoneNumber.value.stringValue
+                return phoneNumberString
+            }
+            return ""
+        }
+
+        phoneNumbers = phoneNumbers.filter({ !$0.isEmpty })
+        self.sendSMS(toContacts: phoneNumbers)
     }
 }

@@ -11,4 +11,5 @@ import Foundation
 
 protocol SelectContactDelegate {
     func contactSelected(_ user: User)
+    func addressEntered(_ address: String)
 }

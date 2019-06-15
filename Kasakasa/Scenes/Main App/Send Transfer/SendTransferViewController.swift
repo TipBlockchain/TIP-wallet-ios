@@ -12,6 +12,15 @@ import BigInt
 class SendTransferViewController: BaseViewController {
 
     var targetUser: User?
+    var targetAddress: String?
+    var targetAddressOrUsername: String? {
+        if let user = self.targetUser {
+            return user.username
+        } else if let address = self.targetAddress {
+            return address
+        }
+        return nil
+    }
 
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var currencyPickerView: UIPickerView!
@@ -59,13 +68,11 @@ class SendTransferViewController: BaseViewController {
     private func setupPresenter() {
         presenter = SendTransferPresenter()
         presenter?.attach(self)
-//        presenter?.loadContactList()
         presenter?.loadWallets()
     }
     @IBAction func nextButtonTapped(_ sender: Any) {
-//        self.performSegue(withIdentifier: "ShowConfirmTransfer", sender: self)
         if let user = self.targetUser {
-            self.presenter?.validateTransfer(usernameOrAddress: user.username, value: NSDecimalNumber(string: amountField?.text), txFeeInWei:self.txFeeInWei, currency: selectedCurrency, message: nil)
+            self.presenter?.validateTransfer(usernameOrAddress: self.targetAddressOrUsername, value: NSDecimalNumber(string: amountField?.text), txFeeInWei:self.txFeeInWei, currency: selectedCurrency, message: nil)
         }
     }
 
@@ -316,7 +323,14 @@ extension SendTransferViewController: UITextFieldDelegate {
 extension SendTransferViewController: SelectContactDelegate {
 
     func contactSelected(_ user: User) {
+        self.targetAddress = nil
         self.targetUser = user
         self.recepientField?.text = user.username
+    }
+
+    func addressEntered(_ address: String) {
+        self.targetUser = nil
+        self.targetAddress = address
+        self.recepientField?.text = address
     }
 }
