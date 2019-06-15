@@ -15,7 +15,6 @@ class UserSearchViewController: ModalViewController {
     private var lastSelectedIndexPath: IndexPath?
     var presenter: UserSearchPresenter?
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var emptyView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,17 +34,6 @@ class UserSearchViewController: ModalViewController {
     
     @IBAction func closeButtonTapped(_ sender: Any) {
         self.close()
-    }
-
-    private func showEmptyView(_ show: Bool) {
-        UIView.animate(withDuration: 0.5) {
-            if show {
-                self.emptyView.alpha = 1.0
-            } else {
-                self.emptyView.alpha = 0.0
-            }
-            self.emptyView.isHidden = !show
-        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

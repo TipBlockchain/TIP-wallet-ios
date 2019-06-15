@@ -24,7 +24,7 @@ class WalletViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.showEmptyView(false)
         tableView.register(UINib(nibName: "TransactionTableViewCell", bundle: nil), forCellReuseIdentifier: transactionCellIdentifier)
         tableView.tableFooterView = UIView()
         self.navigationItem.backBarButtonItem?.title = ""
@@ -76,6 +76,7 @@ class WalletViewController: BaseViewController {
     }
 
     func onTransactionsFetched(_ transactions: [Transaction]) {
+        self.showEmptyView(transactions.isEmpty)
         self.transactions = transactions
         tableView.reloadData()
     }
@@ -86,6 +87,7 @@ class WalletViewController: BaseViewController {
 
     func onNoTransactionsFound() {
         // show no transactions view
+        self.showEmptyView(true)
     }
 
     private func showTransactionDetails(_ transaction: Transaction) {

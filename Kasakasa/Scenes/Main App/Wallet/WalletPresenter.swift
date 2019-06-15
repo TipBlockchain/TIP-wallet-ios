@@ -31,9 +31,7 @@ class WalletPresenter: BasePresenter {
     func fetchTransactions(forWallet wallet: Wallet) {
         do {
             let existingTxList = try repo.transactions(forCurrency: wallet.currency)
-            if !existingTxList.isEmpty {
-                view?.onTransactionsFetched(existingTxList)
-            }
+            self.view?.onTransactionsFetched(existingTxList)
 
             switch wallet.currency {
             case .ETH:

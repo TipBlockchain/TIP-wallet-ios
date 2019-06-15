@@ -12,6 +12,7 @@ import GRDB
 class ContactsViewController: BaseViewController {
 
     @IBOutlet private weak var tableView: UITableView!
+
     private var presenter: ContactsPresenter?
     private var controller: FetchedRecordsController<User>!
     private var contactRequest = User.orderedByLastMessage()
@@ -36,6 +37,7 @@ class ContactsViewController: BaseViewController {
             willChange: { [unowned self] (controller) in
                 self.tableView.beginUpdates()
         }, onChange: { [unowned self] (controller, record, change) in
+
             switch change {
             case .insertion(let indexPath):
                 self.tableView.insertRows(at: [indexPath], with: .automatic)
@@ -46,12 +48,19 @@ class ContactsViewController: BaseViewController {
             }
         }, didChange: { [unowned self] (controller) in
             self.tableView.endUpdates()
+            self.showEmptyView(controller.fetchedRecords.isEmpty)
         })
 
         try? controller.performFetch()
 
         self.tableView.tableFooterView = UIView()
-        self.tableView.reloadData()
+        self.showEmptyView(controller.fetchedRecords.isEmpty)
+
+//        self.tableView.reloadData()
+    }
+
+    @IBAction func inviteFriendsTapped(_ sender: Any) {
+        self.showContacts()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

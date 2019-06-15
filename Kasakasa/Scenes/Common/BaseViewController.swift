@@ -14,6 +14,8 @@ typealias StringCompletionBlock = ((String?) -> Void)
 
 class BaseViewController: UIViewController {
 
+    @IBOutlet private weak var emptyView: UIView?
+
     private var activityIndicator: UIActivityIndicatorView?
 
     private var _tapGestureRecognizer: UITapGestureRecognizer?
@@ -56,6 +58,16 @@ class BaseViewController: UIViewController {
         }
     }
 
+    func showEmptyView(_ show: Bool) {
+        UIView.animate(withDuration: 0.5) {
+            if show {
+                self.emptyView?.alpha = 1.0
+            } else {
+                self.emptyView?.alpha = 0.0
+            }
+            self.emptyView?.isHidden = !show
+        }
+    }
 }
 
 protocol MyP {
