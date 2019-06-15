@@ -23,6 +23,7 @@ class SelectContactViewController: BaseViewController {
         presenter.attach(self)
         // Do any additional setup after loading the view.
 
+
         self.tableView.tableFooterView = UIView()
     }
 
@@ -56,11 +57,9 @@ extension SelectContactViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ContactTableViewCell
         if let contact = self.contact(atIndexPath: indexPath) {
-            cell.imageView?.image = UIImage.placeHolderImage()
-            cell.textLabel?.text = contact.username
-            cell.detailTextLabel?.text = contact.fullname
+            cell.user = contact
         }
         return cell
     }
