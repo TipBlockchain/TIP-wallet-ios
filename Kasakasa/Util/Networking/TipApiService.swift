@@ -225,7 +225,6 @@ public class TipApiService: NSObject {
             if let error = error {
                 completion(nil, error)
             } else {
-                try! JSONDecoder.isoDateDecoder.decode(UserSearchResponse.self, from: result as! Data)
                 if let data = result as? Data, let response = try? JSONDecoder.isoDateDecoder.decode(UserSearchResponse.self, from: data) {
                     completion(response, nil)
                 } else {

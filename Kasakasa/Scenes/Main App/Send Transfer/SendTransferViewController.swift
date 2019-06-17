@@ -13,13 +13,13 @@ class SendTransferViewController: BaseViewController {
 
     var targetUser: User?
     var targetAddress: String?
-    var targetAddressOrUsername: String? {
+    var targetAddressOrUsername: String {
         if let user = self.targetUser {
             return user.username
         } else if let address = self.targetAddress {
             return address
         }
-        return nil
+        return ""
     }
 
     @IBOutlet private weak var tableView: UITableView!
@@ -71,9 +71,7 @@ class SendTransferViewController: BaseViewController {
         presenter?.loadWallets()
     }
     @IBAction func nextButtonTapped(_ sender: Any) {
-        if let user = self.targetUser {
-            self.presenter?.validateTransfer(usernameOrAddress: self.targetAddressOrUsername, value: NSDecimalNumber(string: amountField?.text), txFeeInWei:self.txFeeInWei, currency: selectedCurrency, message: nil)
-        }
+        self.presenter?.validateTransfer(usernameOrAddress: self.targetAddressOrUsername, value: NSDecimalNumber(string: amountField?.text), txFeeInWei:self.txFeeInWei, currency: selectedCurrency, message: nil)
     }
 
     @IBAction func toolbarSaveButtonTapped(_ sender: Any) {

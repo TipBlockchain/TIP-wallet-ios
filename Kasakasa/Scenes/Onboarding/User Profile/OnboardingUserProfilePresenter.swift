@@ -27,7 +27,7 @@ class OnboardingUserProfilePresenter: NSObject, BasePresenter {
             } else {
                 view?.onWalletNotSetupError()
             }
-            self.signupToken = AppDefaults.sharedInstance.pendingSignupToken
+            self.signupToken = AppDefaults.shared.pendingSignupToken
         } catch {
             view?.onWalletNotSetupError()
         }

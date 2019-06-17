@@ -17,7 +17,7 @@ class UserSearchPresenter: NSObject, BasePresenter {
 
     func searchForUser(query: String) {
         NSObject.cancelPreviousPerformRequests(withTarget: self)
-        if query.count >= 2 {
+        if query.count >= 1 {
             self.perform(#selector(instantSearch(_:)), with: query, afterDelay: 0.5)
         }
     }

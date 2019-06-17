@@ -20,10 +20,16 @@ class ContactsViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter = ContactsPresenter()
+        presenter?.attach(self)
+        presenter?.fetchContactList()
         self.configureTableView()
         // Do any additional setup after loading the view.
     }
 
+    deinit {
+        presenter?.detach()
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setRegularNavigationBar()
@@ -122,5 +128,39 @@ extension ContactsViewController: ContactTableViewCellDelegate {
     func contactSelected(_ contact: User) {
         self.selectedContact = contact
         self.showContactInfo()
+    }
+}
+
+extension ContactsViewController: ContactsView {
+    func onContactsFetched(_ contancts: [User]) {
+        self.tableView.reloadData()
+    }
+
+    func onNoContacts() {
+//
+    }
+
+    func onContactsLoadError(_ error: AppErrors) {
+//
+    }
+
+    func onContactsLoading() {
+
+    }
+
+    func onContactAdded(_ contact: User) {
+
+    }
+
+    func onContactRemoved(_ contact: User) {
+
+    }
+
+    func onContactAddError(_ error: AppErrors) {
+
+    }
+
+    func onContactRemoveError(_ error: AppErrors) {
+
     }
 }

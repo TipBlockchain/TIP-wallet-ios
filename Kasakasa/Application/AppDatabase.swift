@@ -29,9 +29,12 @@ class AppDatabase {
             try db.create(table: User.databaseTableName) { t in
 
                 t.column(User.Columns.id.rawValue, .text).primaryKey(onConflict: Database.ConflictResolution.replace, autoincrement: false)
-                t.column(User.Columns.fullname.rawValue, .text).notNull()
+                t.column(User.Columns.fullname.rawValue, .text)
                 t.column(User.Columns.username.rawValue, .text).notNull().indexed()
                 t.column(User.Columns.address.rawValue, .text).notNull().indexed()
+                t.column(User.Columns.countryCode.rawValue, .text)
+                t.column(User.Columns.phone.rawValue, .text)
+                t.column(User.Columns.country.rawValue, .text)
                 t.column(User.Columns.imageFileKey.rawValue, .text)
                 t.column(User.Columns.pictureUrl.rawValue, .text)
                 t.column(User.Columns.created.rawValue, .date)

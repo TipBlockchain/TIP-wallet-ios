@@ -21,4 +21,7 @@ enum AppConstants {
     static let infuraAccessToken = "infura_access_token"
 
     static let defaultAboutMeText = "I ♥ TIP"
+    static let keychainServiceName = "keychain.kasakasa.tipblockchain.io"
+    static let keychainAccountPassword = "password"
+    static let keychainAccountRecoveryPhrase = "recoveryPhrase"
 }

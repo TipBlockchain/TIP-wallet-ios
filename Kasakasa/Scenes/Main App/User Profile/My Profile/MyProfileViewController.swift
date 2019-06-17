@@ -37,6 +37,8 @@ class MyProfileViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.user = UserRepository.shared.currentUser
+
         self.presenter = MyProfilePresenter()
         presenter?.attach(self)
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
@@ -56,7 +58,6 @@ class MyProfileViewController: BaseViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.user = UserRepository.shared.currentUser
         self.setupUI()
     }
 

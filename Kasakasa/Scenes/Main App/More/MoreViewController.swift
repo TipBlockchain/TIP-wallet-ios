@@ -28,7 +28,7 @@ class MoreViewController: BaseViewController {
         var items: [MoreListItem]
     }
 
-    @IBOutlet private var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
 
     private let profileCellIdentifier = "ProfileCell"
     private let socialCellIdentifier = "SocialCell"
@@ -81,7 +81,7 @@ class MoreViewController: BaseViewController {
                                            onCancelSelected: {
 
                                         })
-                })
+                    })
                 ])
         ]
     }
@@ -89,12 +89,8 @@ class MoreViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
         self.sections = makeSections()
-        tableView.tableFooterView = UIView()
-
         tableView.reloadData()
-        // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -107,10 +103,8 @@ class MoreViewController: BaseViewController {
     }
 
     func performShare() {
-        let text = "Check out Kasakasa crypto wallet from TIP blockchain. You can send and receive crypto usign usernames https://tipblockchain.io/kasakasa"
-        let activity = UIActivityViewController(activityItems: [text], applicationActivities: nil)
-        activity.popoverPresentationController?.sourceView = self.view
-        self.present(activity, animated: true, completion: nil)
+        let text = "Check out Kasakasa crypto wallet from TIP blockchain. You can send and receive crypto usign usernames https://tipblockchain.io/kasakasa".localized
+        self.startShareActivity(text)
     }
 }
 

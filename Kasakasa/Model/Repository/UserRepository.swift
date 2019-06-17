@@ -18,19 +18,19 @@ class UserRepository {
     var apiService: TipApiService = TipApiService.sharedInstance
     var currentUser: User? {
         get {
-            return AppDefaults.sharedInstance.currentUser
+            return AppDefaults.shared.currentUser
         }
         set {
-            AppDefaults.sharedInstance.currentUser = newValue
+            AppDefaults.shared.currentUser = newValue
         }
     }
 
     var demoAccountUser: User? {
         get {
-            return AppDefaults.sharedInstance.demoAccountUser
+            return AppDefaults.shared.demoAccountUser
         }
         set {
-            AppDefaults.sharedInstance.demoAccountUser = newValue
+            AppDefaults.shared.demoAccountUser = newValue
         }
     }
 

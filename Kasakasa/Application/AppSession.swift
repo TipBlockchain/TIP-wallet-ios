@@ -15,5 +15,7 @@ class AppSession {
         TransactionRepository.shared.reset()
         WalletRepository.shared.reset()
         AuthorizationRepository.shared.reset()
+        AppDefaults.shared.clear()
+        try? TipKeychain.removeAllValues()
     }
 }

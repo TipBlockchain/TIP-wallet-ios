@@ -13,6 +13,7 @@ class ContactsPresenter: BasePresenter {
     weak var view: ContactsView?
     var repository = UserRepository.shared
     var apiService = TipApiService.sharedInstance
+    private let mainQueue = DispatchQueue.main
 
     func loadContactLst() {
 
@@ -20,12 +21,14 @@ class ContactsPresenter: BasePresenter {
 
     func fetchContactList() {
         repository.fetchContactList { contacts, error in
-            if let contacts = contacts {
-                self.view?.onContactsFetched(contacts)
-            } else if let error = error {
-                self.view?.onContactsLoadError(error)
-            } else {
-                self.view?.onContactsLoadError(AppErrors.unknowkError)
+            self.mainQueue.async {
+                if let contacts = contacts {
+                    self.view?.onContactsFetched(contacts)
+                } else if let error = error {
+                    self.view?.onContactsLoadError(error)
+                } else {
+                    self.view?.onContactsLoadError(AppErrors.unknowkError)
+                }
             }
         }
     }

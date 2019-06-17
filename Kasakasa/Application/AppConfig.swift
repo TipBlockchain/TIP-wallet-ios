@@ -55,6 +55,14 @@ class AppConfig {
     static var exchanges: [CryptoExchange]? {
         return config?.exchanges
     }
+
+    static var versionNumber: String {
+        return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "0"
+    }
+
+    static var buildNumber: String {
+        return Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "0"
+    }
     
     private static var configFilename: String {
         var configFilename: String!

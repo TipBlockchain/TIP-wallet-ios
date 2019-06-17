@@ -11,7 +11,7 @@ import UIKit
 extension Date {
 
     func dayDiffreence(_ otherDate: Date) -> Int {
-        let differenceInComponents = Calendar.current.dateComponents([.day], from: otherDate)
+        let differenceInComponents = Calendar.current.dateComponents([.day], from: self, to: otherDate)
         return differenceInComponents.day ?? 0
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class AppDefaults: NSObject {
 
-    static var sharedInstance = AppDefaults()
+    static var shared = AppDefaults()
     
     private let defaultsSuiteName = "io.tipblockchain.kasakasa"
     private lazy var defaults = UserDefaults(suiteName: defaultsSuiteName)
@@ -21,11 +21,23 @@ class AppDefaults: NSObject {
     private let kDemoAccountUser = "demo_account_user"
     private let kAuthorization = "authorization"
     private let kWalletLastCurrency = "wallet_last_currency"
+    private let kShouldPromptPasswordForTransactions = "should_prompt_password_transactions"
+    private let kShouldPromptPasswordForRecoveryPhrase = "should_prompt_password_recovery_phrase"
+    private let kPrefernecesInitializedKey = "preferences_initialized"
 
     private lazy var encoder = JSONEncoder()
     private lazy var decoder = JSONDecoder()
 
-    private override init() {}
+    private override init() {
+    }
+
+    func initialize() {
+        if !self.preferencesInitialized {
+            self.shouldPromptPasswordForTransactions = true
+            self.shouldPromptPasswordForRecoveryPhrase = true
+            self.preferencesInitialized = true
+        }
+    }
 
     var onboardingComplete: Bool {
         get {
@@ -99,6 +111,36 @@ class AppDefaults: NSObject {
             if let data = try? encoder.encode(newValue) {
                 defaults?.set(data, forKey: kAuthorization)
             }
+        }
+    }
+
+    var preferencesInitialized: Bool {
+        get {
+            return defaults?.bool(forKey: kPrefernecesInitializedKey) ?? false
+        }
+
+        set {
+            defaults?.set(newValue, forKey: kPrefernecesInitializedKey)
+        }
+    }
+
+    var shouldPromptPasswordForRecoveryPhrase: Bool {
+        get {
+            return defaults?.bool(forKey: kShouldPromptPasswordForRecoveryPhrase) ?? true
+        }
+
+        set {
+            defaults?.set(newValue, forKey: kShouldPromptPasswordForRecoveryPhrase)
+        }
+    }
+
+    var shouldPromptPasswordForTransactions: Bool {
+        get {
+            return defaults?.bool(forKey: kShouldPromptPasswordForTransactions) ?? true
+        }
+
+        set {
+            defaults?.set(newValue, forKey: kShouldPromptPasswordForTransactions)
         }
     }
 

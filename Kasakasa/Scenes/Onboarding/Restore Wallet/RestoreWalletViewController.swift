@@ -26,6 +26,10 @@ class RestoreWalletViewController: BaseTableViewController {
 
         // Do any additional setup after loading the view.
     }
+
+    @IBAction func pasteButtonTapped(_ sender: Any) {
+        self.pasteClipboard(into: self.recoveryPhraseTextView)
+    }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
         self.view.endEditing(true)

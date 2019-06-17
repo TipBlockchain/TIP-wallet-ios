@@ -13,6 +13,7 @@ class CryptoExchangeTableViewCell: UITableViewCell {
 
     @IBOutlet private weak var backgroundImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var shadowView: UIView!
 
     var exchange: CryptoExchange? {
         didSet {
@@ -32,6 +33,7 @@ class CryptoExchangeTableViewCell: UITableViewCell {
 
     private func updateUI() {
         if let exchange = self.exchange {
+            self.shadowView.addShadow(offset: CGSize(width: 2.0, height: 5.0), radius: 5.0, opacity: 0.9)
             self.titleLabel.text = exchange.displayName
             if let image = exchange.logoImage {
                 self.backgroundImageView.image = image

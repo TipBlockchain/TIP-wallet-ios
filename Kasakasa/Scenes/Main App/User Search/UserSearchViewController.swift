@@ -15,6 +15,7 @@ class UserSearchViewController: ModalViewController {
     private var lastSelectedIndexPath: IndexPath?
     var presenter: UserSearchPresenter?
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var searchBar: UISearchBar!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,11 @@ class UserSearchViewController: ModalViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setRegularNavigationBar()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.searchBar.becomeFirstResponder()
     }
     
     @IBAction func closeButtonTapped(_ sender: Any) {
@@ -93,13 +99,8 @@ extension  UserSearchViewController: UITableViewDelegate {
         if let user = self.user(atIndex: indexPath.row) {
             self.selectedUser = user
             self.showProfile(user)
-//            self.showOkCancelAlert(withTitle: "Add to contacts?", message: "Do you want to add \(user.fullname) to your contact list?", style: UIAlertController.Style.actionSheet, onOkSelected: {
-//                self.presenter?.addToContacts(user)
-//                self.deselectSelectedRow()
-//            }, onCancelSelected: {
-//                self.deselectSelectedRow()
-//            })
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
@@ -124,7 +125,7 @@ extension UserSearchViewController: UserSearchView {
         if let indexPath = self.lastSelectedIndexPath {
             self.tableView.reloadRows(at: [indexPath], with: .automatic)
         }
-        self.showToast("\(contact.fullname) has been added to your contact list.".localized)
+        self.showToast("\(contact.fullname ?? "The user") has been added to your contact list.".localized)
     }
 
     func onSearchError(_ error: AppErrors) {

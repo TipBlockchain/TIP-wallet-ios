@@ -155,6 +155,12 @@ extension UIViewController {
         }
     }
 
+    func startShareActivity(_ text: String) {
+        let activity = UIActivityViewController(activityItems: [text], applicationActivities: nil)
+        activity.popoverPresentationController?.sourceView = self.view
+        self.present(activity, animated: true, completion: nil)
+    }
+
     @objc func dismissKeyboard(_ force: Bool = true) {
         self.view.endEditing(force)
     }
@@ -162,6 +168,14 @@ extension UIViewController {
     func copyToClipboard(_ text: String) {
         let pasteBoard = UIPasteboard.general
         pasteBoard.string = text
+    }
+
+    func pasteClipboard(into textView: UITextView) {
+        textView.text = UIPasteboard.general.string ?? ""
+    }
+
+    func pasteClipboard(nito textField: UITextField) {
+        textField.text = UIPasteboard.general.string ?? ""
     }
 
     func openUrl(_ url: URL, options: [UIApplication.OpenExternalURLOptionsKey : Any] = [:], completionHandler completion: ((Bool) -> Void)? = nil) {

@@ -23,6 +23,8 @@ class UserSearchTableViewCell: UITableViewCell {
                     let placeholderImage = UIImage.placeHolderImage()
                     let loadOptions = ImageLoadingOptions(placeholder: placeholderImage, transition: ImageLoadingOptions.Transition.fadeIn(duration: 0.33), failureImage: placeholderImage, failureImageTransition: .fadeIn(duration: 0.33))
                     Nuke.loadImage(with: imageUrl, options: loadOptions, into: displayImageView)
+                } else {
+                    displayImageView.image = UIImage.placeHolderImage()
                 }
 
                 self.addButton.isHidden = user.isContact ?? false
