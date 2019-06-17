@@ -56,6 +56,11 @@
 		4540B6E122AF19C5003B117B /* WalletListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540B6E022AF19C5003B117B /* WalletListTableViewCell.swift */; };
 		4540B6E422AF7FEE003B117B /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540B6E322AF7FEE003B117B /* ImageViewController.swift */; };
 		4540B6E722AF8197003B117B /* TransactionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540B6E622AF8197003B117B /* TransactionDetailsViewController.swift */; };
+		4548F4BC22B6F07000F064B1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4548F4BB22B6F07000F064B1 /* Security.framework */; };
+		4548F4CB22B6F31300F064B1 /* TipKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4548F4CA22B6F31300F064B1 /* TipKeychain.swift */; };
+		4548F4CE22B6F68C00F064B1 /* KeychainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4548F4CC22B6F68C00F064B1 /* KeychainConfiguration.swift */; };
+		4548F4CF22B6F68C00F064B1 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4548F4CD22B6F68C00F064B1 /* KeychainPasswordItem.swift */; };
+		4548F4D222B7097C00F064B1 /* BackupRecoveryPhraseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4548F4D122B7097C00F064B1 /* BackupRecoveryPhraseViewController.swift */; };
 		455722CC22A0F2140064D908 /* SelectContactDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455722CB22A0F2140064D908 /* SelectContactDelegate.swift */; };
 		455722D022A2210D0064D908 /* TextUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455722CF22A2210D0064D908 /* TextUtilTests.swift */; };
 		455722D222A24E4A0064D908 /* ConfirmTransferPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455722D122A24E4A0064D908 /* ConfirmTransferPresenter.swift */; };
@@ -143,7 +148,6 @@
 		45A6D7B321EFE298007A6F42 /* ChoosePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6D7B221EFE298007A6F42 /* ChoosePasswordViewController.swift */; };
 		45A6D7B621EFE2FF007A6F42 /* OnboardingUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6D7B521EFE2FF007A6F42 /* OnboardingUserProfileViewController.swift */; };
 		45A6D7B921F01DF7007A6F42 /* RestoreWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A6D7B821F01DF7007A6F42 /* RestoreWalletViewController.swift */; };
-		45A83C54229CE06A00EAFCCF /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A83C53229CE06A00EAFCCF /* Eureka.framework */; };
 		45AD3A2621E33FBC00198D6F /* EnterPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A2521E33FBC00198D6F /* EnterPhoneNumberViewController.swift */; };
 		45AD3A2821E3405E00198D6F /* EnterPhoneNumberPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A2721E3405E00198D6F /* EnterPhoneNumberPresenterImpl.swift */; };
 		45AD3A2A21E3409900198D6F /* EnterPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AD3A2921E3409900198D6F /* EnterPhoneNumber.swift */; };
@@ -230,8 +234,6 @@
 		45103FD42295AAC7001C26D5 /* secp256k1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = secp256k1.framework; path = Carthage/Build/iOS/secp256k1.framework; sourceTree = "<group>"; };
 		45103FD52295AAC7001C26D5 /* BigInt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BigInt.framework; path = Carthage/Build/iOS/BigInt.framework; sourceTree = "<group>"; };
 		45103FD62295AAC7001C26D5 /* QRCodeReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QRCodeReader.framework; path = Carthage/Build/iOS/QRCodeReader.framework; sourceTree = "<group>"; };
-		45103FD72295AAC8001C26D5 /* SkyFloatingLabelTextField.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkyFloatingLabelTextField.framework; path = Carthage/Build/iOS/SkyFloatingLabelTextField.framework; sourceTree = "<group>"; };
-		45103FD82295AAC8001C26D5 /* QRCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QRCode.framework; path = Carthage/Build/iOS/QRCode.framework; sourceTree = "<group>"; };
 		45103FD92295AAC8001C26D5 /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
 		45103FDA2295AAC8001C26D5 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
 		45103FDB2295AAC8001C26D5 /* CropViewController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CropViewController.framework; path = Carthage/Build/iOS/CropViewController.framework; sourceTree = "<group>"; };
@@ -277,6 +279,11 @@
 		4540B6E022AF19C5003B117B /* WalletListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletListTableViewCell.swift; sourceTree = "<group>"; };
 		4540B6E322AF7FEE003B117B /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		4540B6E622AF8197003B117B /* TransactionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewController.swift; sourceTree = "<group>"; };
+		4548F4BB22B6F07000F064B1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		4548F4CA22B6F31300F064B1 /* TipKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipKeychain.swift; sourceTree = "<group>"; };
+		4548F4CC22B6F68C00F064B1 /* KeychainConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainConfiguration.swift; sourceTree = "<group>"; };
+		4548F4CD22B6F68C00F064B1 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
+		4548F4D122B7097C00F064B1 /* BackupRecoveryPhraseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupRecoveryPhraseViewController.swift; sourceTree = "<group>"; };
 		455722CB22A0F2140064D908 /* SelectContactDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectContactDelegate.swift; sourceTree = "<group>"; };
 		455722CF22A2210D0064D908 /* TextUtilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextUtilTests.swift; sourceTree = "<group>"; };
 		455722D122A24E4A0064D908 /* ConfirmTransferPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmTransferPresenter.swift; sourceTree = "<group>"; };
@@ -365,8 +372,6 @@
 		45A6D7B221EFE298007A6F42 /* ChoosePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePasswordViewController.swift; sourceTree = "<group>"; };
 		45A6D7B521EFE2FF007A6F42 /* OnboardingUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingUserProfileViewController.swift; sourceTree = "<group>"; };
 		45A6D7B821F01DF7007A6F42 /* RestoreWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreWalletViewController.swift; sourceTree = "<group>"; };
-		45A83C53229CE06A00EAFCCF /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
-		45A83C55229CE07700EAFCCF /* SwiftyFORM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyFORM.framework; path = Carthage/Build/iOS/SwiftyFORM.framework; sourceTree = "<group>"; };
 		45AD3A2521E33FBC00198D6F /* EnterPhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberViewController.swift; sourceTree = "<group>"; };
 		45AD3A2721E3405E00198D6F /* EnterPhoneNumberPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberPresenterImpl.swift; sourceTree = "<group>"; };
 		45AD3A2921E3409900198D6F /* EnterPhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumber.swift; sourceTree = "<group>"; };
@@ -440,6 +445,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4548F4BC22B6F07000F064B1 /* Security.framework in Frameworks */,
 				450AF1E422B4935400578F89 /* AVFoundation.framework in Frameworks */,
 				456ED14822ADAE7700F1D133 /* ContactsUI.framework in Frameworks */,
 				456ED14622ADAE6700F1D133 /* Contacts.framework in Frameworks */,
@@ -458,7 +464,6 @@
 				45103FEE2295AAC9001C26D5 /* ToastSwiftFramework.framework in Frameworks */,
 				45103FEF2295AAC9001C26D5 /* SipHash.framework in Frameworks */,
 				45103FFC2295B6A8001C26D5 /* GRDB.framework in Frameworks */,
-				45A83C54229CE06A00EAFCCF /* Eureka.framework in Frameworks */,
 				456ED13E22ADA8CF00F1D133 /* PhoneNumberKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,6 +488,7 @@
 		45103FD32295AAC7001C26D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4548F4BB22B6F07000F064B1 /* Security.framework */,
 				450AF1E322B4935400578F89 /* AVFoundation.framework */,
 				456ED14722ADAE7700F1D133 /* ContactsUI.framework */,
 				456ED14522ADAE6700F1D133 /* Contacts.framework */,
@@ -490,8 +496,6 @@
 				456ED14122ADAE4100F1D133 /* AddressBook.framework */,
 				456ED13F22ADAE3B00F1D133 /* Accounts.framework */,
 				456ED13D22ADA8CF00F1D133 /* PhoneNumberKit.framework */,
-				45A83C55229CE07700EAFCCF /* SwiftyFORM.framework */,
-				45A83C53229CE06A00EAFCCF /* Eureka.framework */,
 				45103FFD2295B760001C26D5 /* GRDBCipher.framework */,
 				45103FFB2295B6A8001C26D5 /* GRDB.framework */,
 				45103FD52295AAC7001C26D5 /* BigInt.framework */,
@@ -499,11 +503,9 @@
 				45103FDE2295AAC8001C26D5 /* CryptoSwift.framework */,
 				45103FD92295AAC8001C26D5 /* Nuke.framework */,
 				45103FDA2295AAC8001C26D5 /* PromiseKit.framework */,
-				45103FD82295AAC8001C26D5 /* QRCode.framework */,
 				45103FD62295AAC7001C26D5 /* QRCodeReader.framework */,
 				45103FD42295AAC7001C26D5 /* secp256k1.framework */,
 				45103FE12295AAC8001C26D5 /* SipHash.framework */,
-				45103FD72295AAC8001C26D5 /* SkyFloatingLabelTextField.framework */,
 				45103FDF2295AAC8001C26D5 /* Starscream.framework */,
 				45103FE02295AAC8001C26D5 /* ToastSwiftFramework.framework */,
 				45103FDC2295AAC8001C26D5 /* TOCropViewController.framework */,
@@ -554,7 +556,6 @@
 			isa = PBXGroup;
 			children = (
 				452AD7F021EFAB13007F11E2 /* TextUtils.swift */,
-				4524159921F1AF03005B53A2 /* AppDefaults.swift */,
 				457F54DC21FD12C600EA25AC /* WalletUtils.swift */,
 				457F54DE21FD154300EA25AC /* FileUtils.swift */,
 				45BA3D2322A78B8B00D3A9A5 /* ImagePicker.swift */,
@@ -604,6 +605,24 @@
 				4540B6E622AF8197003B117B /* TransactionDetailsViewController.swift */,
 			);
 			path = "Transaction Details";
+			sourceTree = "<group>";
+		};
+		4548F4B822B6E5DE00F064B1 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				4548F4CC22B6F68C00F064B1 /* KeychainConfiguration.swift */,
+				4548F4CD22B6F68C00F064B1 /* KeychainPasswordItem.swift */,
+				4548F4CA22B6F31300F064B1 /* TipKeychain.swift */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
+		4548F4D022B7096200F064B1 /* Backup Recovery Phrase */ = {
+			isa = PBXGroup;
+			children = (
+				4548F4D122B7097C00F064B1 /* BackupRecoveryPhraseViewController.swift */,
+			);
+			path = "Backup Recovery Phrase";
 			sourceTree = "<group>";
 		};
 		456D855C21F2A50A005150F3 /* Blockchain */ = {
@@ -729,6 +748,7 @@
 		45828C6E220D5F2100594842 /* Main App */ = {
 			isa = PBXGroup;
 			children = (
+				4548F4D022B7096200F064B1 /* Backup Recovery Phrase */,
 				4540B6E522AF8179003B117B /* Transaction Details */,
 				4540B6DB22AF0DF7003B117B /* Wallet List */,
 				456ED13122AB324100F1D133 /* User Profile */,
@@ -823,6 +843,7 @@
 			children = (
 				45FD5B5121E0685100C247F0 /* Config files */,
 				45B7A42621DEC293005A1124 /* AppDelegate.swift */,
+				4524159921F1AF03005B53A2 /* AppDefaults.swift */,
 				459DEBBD21DFBCAA009F0BE0 /* AppConstants.swift */,
 				459DEBBF21DFBCBB009F0BE0 /* AppStyle.swift */,
 				459DEBC121DFBCDE009F0BE0 /* AppConfig.swift */,
@@ -1200,6 +1221,7 @@
 		45FD5B5721E06B3300C247F0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				4548F4B822B6E5DE00F064B1 /* Keychain */,
 				456ED11722A8CC5A00F1D133 /* External */,
 				456D855C21F2A50A005150F3 /* Blockchain */,
 				452AD7EF21EFAB01007F11E2 /* Utilities */,
@@ -1390,7 +1412,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ToastSwiftFramework.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/web3swift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/GRDB.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Eureka.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PhoneNumberKit.framework",
 			);
 			outputFileListPaths = (
@@ -1408,7 +1429,6 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ToastSwiftFramework.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/web3swift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/GRDB.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Eureka.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/PhoneNumberKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1456,6 +1476,7 @@
 				45D7346A22939BFC002D61E6 /* ERC20Token.swift in Sources */,
 				45AD3A5B21E73E0200198D6F /* UserPhotos.swift in Sources */,
 				45B7A42921DEC293005A1124 /* RootViewController.swift in Sources */,
+				4548F4CF22B6F68C00F064B1 /* KeychainPasswordItem.swift in Sources */,
 				4579A9EC220EA1B000CBCFAE /* UserSearch.swift in Sources */,
 				45AD3A3221E3444900198D6F /* PhoneVerificationRequest.swift in Sources */,
 				4540B6DF22AF0E1F003B117B /* WalletListViewController.swift in Sources */,
@@ -1469,6 +1490,7 @@
 				4579A9EE220EB0E300CBCFAE /* ContactRequest.swift in Sources */,
 				45AD3A3D21E42C4C00198D6F /* CountryTableViewCell.swift in Sources */,
 				45A4B76B229B4F7B003676E6 /* JSONDecoderExtension.swift in Sources */,
+				4548F4D222B7097C00F064B1 /* BackupRecoveryPhraseViewController.swift in Sources */,
 				455F396022022EEF00516286 /* ExistingAccountPresenter.swift in Sources */,
 				45A6D7B921F01DF7007A6F42 /* RestoreWalletViewController.swift in Sources */,
 				45FD5B5A21E06BEF00C247F0 /* TipApiRequest.swift in Sources */,
@@ -1493,6 +1515,7 @@
 				45AD3A4821E71D2D00198D6F /* UIColorExtension.swift in Sources */,
 				45AD3A4C21E71EA300198D6F /* ColoredButton.swift in Sources */,
 				45AD3A5421E731B100198D6F /* Authorization.swift in Sources */,
+				4548F4CE22B6F68C00F064B1 /* KeychainConfiguration.swift in Sources */,
 				451040042296550A001C26D5 /* EtherscanApiRequest.swift in Sources */,
 				456D855E21F2A518005150F3 /* Web3Bridge.swift in Sources */,
 				456D856221F2B511005150F3 /* RecoveryPhrase.swift in Sources */,
@@ -1538,6 +1561,7 @@
 				456ED12722A8CC9600F1D133 /* ImageCropperConfigurator.swift in Sources */,
 				456D856C21F41057005150F3 /* WalletRepository.swift in Sources */,
 				45AD3A5F21E7440400198D6F /* DictionaryEncodable.swift in Sources */,
+				4548F4CB22B6F31300F064B1 /* TipKeychain.swift in Sources */,
 				456D856021F2A899005150F3 /* RecoveryPhrasePresenter.swift in Sources */,
 				459DEBC221DFBCDE009F0BE0 /* AppConfig.swift in Sources */,
 				45BBF06421E1D2D50042EC5D /* StringExtension.swift in Sources */,
