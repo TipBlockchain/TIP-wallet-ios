@@ -103,7 +103,7 @@ class MoreViewController: BaseViewController {
     }
 
     func performShare() {
-        let text = "Check out Kasakasa crypto wallet from TIP blockchain. You can send and receive crypto usign usernames https://tipblockchain.io/kasakasa".localized
+        let text = "Check out Kasakasa crypto wallet from TIP blockchain. Send and receive crypto using usernames https://tipblockchain.io/kasakasa".localized
         self.startShareActivity(text)
     }
 }

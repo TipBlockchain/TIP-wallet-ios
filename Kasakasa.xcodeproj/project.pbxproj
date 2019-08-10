@@ -749,20 +749,20 @@
 			isa = PBXGroup;
 			children = (
 				4548F4D022B7096200F064B1 /* Backup Recovery Phrase */,
-				4540B6E522AF8179003B117B /* Transaction Details */,
-				4540B6DB22AF0DF7003B117B /* Wallet List */,
-				456ED13122AB324100F1D133 /* User Profile */,
-				45BA3D1822A7331D00D3A9A5 /* Trade TIP */,
-				45BA3D1722A7331500D3A9A5 /* Settings */,
-				45BA3D1322A616F100D3A9A5 /* More */,
-				45BA3D1222A256D900D3A9A5 /* TransactionSent */,
-				4577BA80229FB69E00EEFB2B /* Select Contact */,
-				459747862217E5EC00EAD4B8 /* Receive Transfer */,
 				459747812215431700EAD4B8 /* Confirm Transfer */,
-				459747802215430B00EAD4B8 /* Send Transfer */,
-				45828C73220E84D700594842 /* User Search */,
 				45828C72220E84CE00594842 /* Contacts */,
+				45BA3D1322A616F100D3A9A5 /* More */,
+				459747862217E5EC00EAD4B8 /* Receive Transfer */,
+				4577BA80229FB69E00EEFB2B /* Select Contact */,
+				459747802215430B00EAD4B8 /* Send Transfer */,
+				45BA3D1722A7331500D3A9A5 /* Settings */,
+				45BA3D1822A7331D00D3A9A5 /* Trade TIP */,
+				4540B6E522AF8179003B117B /* Transaction Details */,
+				45BA3D1222A256D900D3A9A5 /* TransactionSent */,
+				456ED13122AB324100F1D133 /* User Profile */,
+				45828C73220E84D700594842 /* User Search */,
 				45828C6F220D5F3B00594842 /* Wallet */,
+				4540B6DB22AF0DF7003B117B /* Wallet List */,
 			);
 			path = "Main App";
 			sourceTree = "<group>";

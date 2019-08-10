@@ -41,6 +41,13 @@ extension String {
         return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: self)
     }
 
+    func addHexPrefix() -> String {
+        if !self.hasPrefix("0x") {
+            return "0x" + self
+        }
+        return self
+    }
+
     private static func isChecksumAddress(str: String) -> Bool {
         return false
     }

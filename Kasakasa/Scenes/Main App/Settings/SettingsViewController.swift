@@ -36,7 +36,7 @@ class SettingsViewController: BaseTableViewController {
 
         self.versionLabel.text = "Kasakasa v\(AppConfig.versionNumber) (\(AppConfig.buildNumber))"
         let year = Calendar.current.component(.year, from: Date())
-        self.copyrightLabel.text = "Copyright © Tip Blockchain Network S.A. (\(year))"
+        self.copyrightLabel.text = "Copyright © \(year) Tip Blockchain Network S.A."
 
         passwordSwitch.isOn = defaults.shouldPromptPasswordForTransactions
         recoveryPhraseSwitch.isOn = defaults.shouldPromptPasswordForRecoveryPhrase
