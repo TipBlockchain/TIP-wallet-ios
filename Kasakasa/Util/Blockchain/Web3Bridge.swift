@@ -185,6 +185,15 @@ class Web3Bridge {
         return balanceBigUInt
     }
 
+    func signMessage(_ message: String, fromWallet wallet: Wallet, password: String) throws -> String? {
+        var result: String? = nil
+        if let messageData = message.data(using: .utf8) {
+            result = try web3.personal.signPersonalMessage(message: messageData, from: EthereumAddress(wallet.address)!, password: password).toHexString()
+            result = result?.addHexPrefix()
+        }
+        return result
+    }
+    
     func isValidSeedPhrase(_ phrase: String, language: BIP39Language = .english) -> Bool {
         return BIP39.seedFromMmemonics(phrase, password: "", language: language) != nil
     }
