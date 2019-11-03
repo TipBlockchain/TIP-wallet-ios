@@ -28,10 +28,10 @@ class SelectContactViewController: BaseViewController {
             $0.showSwitchCameraButton = false
             $0.showCancelButton       = true
             $0.showOverlayView        = true
-            $0.rectOfInterest         = CGRect(x: 0.2, y: 0.3, width: 0.6, height: 0.3)
+//            $0.rectOfInterest         = CGRect(x: 0.2, y: 0.3, width: 0.6, height: 0.3)
         }
-
-        return QRCodeReaderViewController(builder: builder)
+        let reader = QRCodeReaderViewController(builder: builder)
+        return reader
     }()
 
     override func viewDidLoad() {

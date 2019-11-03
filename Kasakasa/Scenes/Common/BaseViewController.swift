@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ToastSwiftFramework
 
 typealias VoidCompletionBlock = (() -> Void)
 typealias StringCompletionBlock = ((String?) -> Void)

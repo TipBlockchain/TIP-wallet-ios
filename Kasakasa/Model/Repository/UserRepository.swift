@@ -117,7 +117,7 @@ class UserRepository {
 
     func loadContacts() throws -> [User]? {
         return try dbPool?.read({ (db) in
-            return try User.fetchAll(db, "SELECT * FROM users WHERE isContact = ? ORDER BY lastMessage", arguments: [true])
+            return try User.fetchAll(db, sql: "SELECT * FROM users WHERE isContact = ? ORDER BY lastMessage", arguments: [true])
         })
     }
 

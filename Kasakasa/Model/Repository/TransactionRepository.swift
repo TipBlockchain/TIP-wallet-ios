@@ -50,7 +50,7 @@ class TransactionRepository {
 
     func transactions(forCurrency currency: Currency) throws -> [Transaction] {
         return try dbPool!.read({ db -> [Transaction]? in
-            return try Transaction.fetchAll(db, "SELECT * from transactions where currency = ?", arguments: [currency.rawValue])
+            return try Transaction.fetchAll(db, sql: "SELECT * from transactions where currency = ?", arguments: [currency.rawValue])
         })!
     }
 
