@@ -7,21 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02E33DAE14130E4023137B2A /* Pods_Kasakasa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055A1E6BEECDC76AE86E3459 /* Pods_Kasakasa.framework */; };
 		450AF1E022B1F14A00578F89 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450AF1DF22B1F14A00578F89 /* TestTableViewController.swift */; };
 		450AF1E222B223B200578F89 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450AF1E122B223B200578F89 /* BaseTableViewController.swift */; };
 		450AF1E422B4935400578F89 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450AF1E322B4935400578F89 /* AVFoundation.framework */; };
-		45103FE22295AAC9001C26D5 /* secp256k1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FD42295AAC7001C26D5 /* secp256k1.framework */; };
-		45103FE32295AAC9001C26D5 /* BigInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FD52295AAC7001C26D5 /* BigInt.framework */; };
-		45103FE42295AAC9001C26D5 /* QRCodeReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FD62295AAC7001C26D5 /* QRCodeReader.framework */; };
-		45103FE72295AAC9001C26D5 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FD92295AAC8001C26D5 /* Nuke.framework */; };
-		45103FE82295AAC9001C26D5 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FDA2295AAC8001C26D5 /* PromiseKit.framework */; };
-		45103FE92295AAC9001C26D5 /* CropViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FDB2295AAC8001C26D5 /* CropViewController.framework */; };
-		45103FEB2295AAC9001C26D5 /* web3swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FDD2295AAC8001C26D5 /* web3swift.framework */; };
-		45103FEC2295AAC9001C26D5 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FDE2295AAC8001C26D5 /* CryptoSwift.framework */; };
-		45103FED2295AAC9001C26D5 /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FDF2295AAC8001C26D5 /* Starscream.framework */; };
-		45103FEE2295AAC9001C26D5 /* ToastSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FE02295AAC8001C26D5 /* ToastSwiftFramework.framework */; };
-		45103FEF2295AAC9001C26D5 /* SipHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FE12295AAC8001C26D5 /* SipHash.framework */; };
-		45103FFC2295B6A8001C26D5 /* GRDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45103FFB2295B6A8001C26D5 /* GRDB.framework */; };
 		451040002295FEF2001C26D5 /* WalletPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45103FFF2295FEF2001C26D5 /* WalletPresenter.swift */; };
 		4510400222965439001C26D5 /* EtherscanApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4510400122965439001C26D5 /* EtherscanApiService.swift */; };
 		451040042296550A001C26D5 /* EtherscanApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451040032296550A001C26D5 /* EtherscanApiRequest.swift */; };
@@ -56,6 +45,7 @@
 		4540B6E122AF19C5003B117B /* WalletListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540B6E022AF19C5003B117B /* WalletListTableViewCell.swift */; };
 		4540B6E422AF7FEE003B117B /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540B6E322AF7FEE003B117B /* ImageViewController.swift */; };
 		4540B6E722AF8197003B117B /* TransactionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4540B6E622AF8197003B117B /* TransactionDetailsViewController.swift */; };
+		4543A6EB236E5291001363FF /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4548F4BC22B6F07000F064B1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4548F4BB22B6F07000F064B1 /* Security.framework */; };
 		4548F4CB22B6F31300F064B1 /* TipKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4548F4CA22B6F31300F064B1 /* TipKeychain.swift */; };
 		4548F4CE22B6F68C00F064B1 /* KeychainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4548F4CC22B6F68C00F064B1 /* KeychainConfiguration.swift */; };
@@ -97,7 +87,6 @@
 		456ED13722AB32AE00F1D133 /* EditAboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456ED13622AB32AE00F1D133 /* EditAboutMeViewController.swift */; };
 		456ED13A22AB32F800F1D133 /* EditPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456ED13922AB32F800F1D133 /* EditPhoneNumberViewController.swift */; };
 		456ED13C22AD9DBC00F1D133 /* EditFullnamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456ED13B22AD9DBC00F1D133 /* EditFullnamePresenter.swift */; };
-		456ED13E22ADA8CF00F1D133 /* PhoneNumberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456ED13D22ADA8CF00F1D133 /* PhoneNumberKit.framework */; };
 		456ED14022ADAE3B00F1D133 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456ED13F22ADAE3B00F1D133 /* Accounts.framework */; };
 		456ED14222ADAE4100F1D133 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456ED14122ADAE4100F1D133 /* AddressBook.framework */; };
 		456ED14422ADAE4D00F1D133 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456ED14322ADAE4D00F1D133 /* CoreTelephony.framework */; };
@@ -204,10 +193,13 @@
 		45BBF07A21E2DBFD0042EC5D /* Flags.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45BBF07921E2DBFD0042EC5D /* Flags.xcassets */; };
 		45D7346A22939BFC002D61E6 /* ERC20Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D7346922939BFC002D61E6 /* ERC20Token.swift */; };
 		45D7346C2294EB0E002D61E6 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 45D7346B2294EB0D002D61E6 /* Cartfile */; };
+		45FA2779236F8C8600F1948C /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FA2778236F8C8600F1948C /* Toast.swift */; };
 		45FD5B5021E0333900C247F0 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FD5B4F21E0333900C247F0 /* TutorialViewController.swift */; };
 		45FD5B5421E0688E00C247F0 /* config.local.json in Resources */ = {isa = PBXBuildFile; fileRef = 45FD5B5321E0688E00C247F0 /* config.local.json */; };
 		45FD5B5621E069A600C247F0 /* config.dev.json in Resources */ = {isa = PBXBuildFile; fileRef = 45FD5B5521E069A600C247F0 /* config.dev.json */; };
 		45FD5B5A21E06BEF00C247F0 /* TipApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FD5B5921E06BEF00C247F0 /* TipApiRequest.swift */; };
+		6FB16B554370EF0AFEBC5163 /* Pods_KasakasaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED4563A79F9DE69095008E7 /* Pods_KasakasaTests.framework */; };
+		D4A809549A6AFF8745126208 /* Pods_KasakasaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C76D8C4C3F8F7DD918C28F0D /* Pods_KasakasaUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -227,7 +219,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4543A6EA236E5291001363FF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4543A6EB236E5291001363FF /* (null) in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		055A1E6BEECDC76AE86E3459 /* Pods_Kasakasa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kasakasa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BA2B8A31F96240C8CC3DF91 /* Pods-KasakasaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaUITests.debug.xcconfig"; path = "Target Support Files/Pods-KasakasaUITests/Pods-KasakasaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		15D31E65F471459E7AB61D78 /* Pods-KasakasaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaTests.debug.xcconfig"; path = "Target Support Files/Pods-KasakasaTests/Pods-KasakasaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2A51323D4ED6C98E3D0213F3 /* Pods-KasakasaUITests.local.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaUITests.local.xcconfig"; path = "Target Support Files/Pods-KasakasaUITests/Pods-KasakasaUITests.local.xcconfig"; sourceTree = "<group>"; };
+		2ED4563A79F9DE69095008E7 /* Pods_KasakasaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KasakasaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		450AF1DF22B1F14A00578F89 /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		450AF1E122B223B200578F89 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		450AF1E322B4935400578F89 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -434,10 +445,21 @@
 		45BBF07921E2DBFD0042EC5D /* Flags.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Flags.xcassets; sourceTree = "<group>"; };
 		45D7346922939BFC002D61E6 /* ERC20Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERC20Token.swift; sourceTree = "<group>"; };
 		45D7346B2294EB0D002D61E6 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		45FA2778236F8C8600F1948C /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		45FD5B4F21E0333900C247F0 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		45FD5B5321E0688E00C247F0 /* config.local.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = config.local.json; sourceTree = "<group>"; };
 		45FD5B5521E069A600C247F0 /* config.dev.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = config.dev.json; sourceTree = "<group>"; };
 		45FD5B5921E06BEF00C247F0 /* TipApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipApiRequest.swift; sourceTree = "<group>"; };
+		6B7C138538C1232EF94F2E3E /* Pods-KasakasaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaUITests.release.xcconfig"; path = "Target Support Files/Pods-KasakasaUITests/Pods-KasakasaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		78DCFEC6B5B1460A7FFD5415 /* Pods-KasakasaUITests.dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaUITests.dev.xcconfig"; path = "Target Support Files/Pods-KasakasaUITests/Pods-KasakasaUITests.dev.xcconfig"; sourceTree = "<group>"; };
+		93DE509642FD91AE4BA89320 /* Pods-KasakasaTests.local.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaTests.local.xcconfig"; path = "Target Support Files/Pods-KasakasaTests/Pods-KasakasaTests.local.xcconfig"; sourceTree = "<group>"; };
+		A6E6CC12EBD18334B768827E /* Pods-Kasakasa.dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kasakasa.dev.xcconfig"; path = "Target Support Files/Pods-Kasakasa/Pods-Kasakasa.dev.xcconfig"; sourceTree = "<group>"; };
+		B2EF0ACAE7A8FF6027AF0A64 /* Pods-Kasakasa.local.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kasakasa.local.xcconfig"; path = "Target Support Files/Pods-Kasakasa/Pods-Kasakasa.local.xcconfig"; sourceTree = "<group>"; };
+		C76D8C4C3F8F7DD918C28F0D /* Pods_KasakasaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KasakasaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE101484F748B12F9297A4DA /* Pods-Kasakasa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kasakasa.debug.xcconfig"; path = "Target Support Files/Pods-Kasakasa/Pods-Kasakasa.debug.xcconfig"; sourceTree = "<group>"; };
+		D01B229333BDCEEE92974BCE /* Pods-KasakasaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaTests.release.xcconfig"; path = "Target Support Files/Pods-KasakasaTests/Pods-KasakasaTests.release.xcconfig"; sourceTree = "<group>"; };
+		EDE7938507D45359275713C6 /* Pods-KasakasaTests.dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KasakasaTests.dev.xcconfig"; path = "Target Support Files/Pods-KasakasaTests/Pods-KasakasaTests.dev.xcconfig"; sourceTree = "<group>"; };
+		FB4DD2594A907C35F89A29DB /* Pods-Kasakasa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kasakasa.release.xcconfig"; path = "Target Support Files/Pods-Kasakasa/Pods-Kasakasa.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -452,19 +474,7 @@
 				456ED14422ADAE4D00F1D133 /* CoreTelephony.framework in Frameworks */,
 				456ED14222ADAE4100F1D133 /* AddressBook.framework in Frameworks */,
 				456ED14022ADAE3B00F1D133 /* Accounts.framework in Frameworks */,
-				45103FE22295AAC9001C26D5 /* secp256k1.framework in Frameworks */,
-				45103FE32295AAC9001C26D5 /* BigInt.framework in Frameworks */,
-				45103FE42295AAC9001C26D5 /* QRCodeReader.framework in Frameworks */,
-				45103FE72295AAC9001C26D5 /* Nuke.framework in Frameworks */,
-				45103FE82295AAC9001C26D5 /* PromiseKit.framework in Frameworks */,
-				45103FE92295AAC9001C26D5 /* CropViewController.framework in Frameworks */,
-				45103FEB2295AAC9001C26D5 /* web3swift.framework in Frameworks */,
-				45103FEC2295AAC9001C26D5 /* CryptoSwift.framework in Frameworks */,
-				45103FED2295AAC9001C26D5 /* Starscream.framework in Frameworks */,
-				45103FEE2295AAC9001C26D5 /* ToastSwiftFramework.framework in Frameworks */,
-				45103FEF2295AAC9001C26D5 /* SipHash.framework in Frameworks */,
-				45103FFC2295B6A8001C26D5 /* GRDB.framework in Frameworks */,
-				456ED13E22ADA8CF00F1D133 /* PhoneNumberKit.framework in Frameworks */,
+				02E33DAE14130E4023137B2A /* Pods_Kasakasa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +482,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FB16B554370EF0AFEBC5163 /* Pods_KasakasaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +490,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4A809549A6AFF8745126208 /* Pods_KasakasaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +522,9 @@
 				45103FE02295AAC8001C26D5 /* ToastSwiftFramework.framework */,
 				45103FDC2295AAC8001C26D5 /* TOCropViewController.framework */,
 				45103FDD2295AAC8001C26D5 /* web3swift.framework */,
+				055A1E6BEECDC76AE86E3459 /* Pods_Kasakasa.framework */,
+				2ED4563A79F9DE69095008E7 /* Pods_KasakasaTests.framework */,
+				C76D8C4C3F8F7DD918C28F0D /* Pods_KasakasaUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -641,6 +656,7 @@
 		456ED11722A8CC5A00F1D133 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				45FA2777236F8C7100F1948C /* Toast */,
 				456ED11822A8CC9600F1D133 /* ImageCropper */,
 			);
 			path = External;
@@ -1058,6 +1074,7 @@
 				45B7A44921DEC295005A1124 /* KasakasaUITests */,
 				45B7A42421DEC293005A1124 /* Products */,
 				45103FD32295AAC7001C26D5 /* Frameworks */,
+				4ECA5765FFFBB08FC399F87E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1208,6 +1225,14 @@
 			path = util;
 			sourceTree = "<group>";
 		};
+		45FA2777236F8C7100F1948C /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				45FA2778236F8C8600F1948C /* Toast.swift */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
 		45FD5B5121E0685100C247F0 /* Config files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1245,6 +1270,25 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		4ECA5765FFFBB08FC399F87E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE101484F748B12F9297A4DA /* Pods-Kasakasa.debug.xcconfig */,
+				B2EF0ACAE7A8FF6027AF0A64 /* Pods-Kasakasa.local.xcconfig */,
+				A6E6CC12EBD18334B768827E /* Pods-Kasakasa.dev.xcconfig */,
+				FB4DD2594A907C35F89A29DB /* Pods-Kasakasa.release.xcconfig */,
+				15D31E65F471459E7AB61D78 /* Pods-KasakasaTests.debug.xcconfig */,
+				93DE509642FD91AE4BA89320 /* Pods-KasakasaTests.local.xcconfig */,
+				EDE7938507D45359275713C6 /* Pods-KasakasaTests.dev.xcconfig */,
+				D01B229333BDCEEE92974BCE /* Pods-KasakasaTests.release.xcconfig */,
+				0BA2B8A31F96240C8CC3DF91 /* Pods-KasakasaUITests.debug.xcconfig */,
+				2A51323D4ED6C98E3D0213F3 /* Pods-KasakasaUITests.local.xcconfig */,
+				78DCFEC6B5B1460A7FFD5415 /* Pods-KasakasaUITests.dev.xcconfig */,
+				6B7C138538C1232EF94F2E3E /* Pods-KasakasaUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1252,10 +1296,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45B7A44F21DEC295005A1124 /* Build configuration list for PBXNativeTarget "Kasakasa" */;
 			buildPhases = (
+				53CC5E6581E9A4E20BABB99E /* [CP] Check Pods Manifest.lock */,
 				45B7A41F21DEC293005A1124 /* Sources */,
 				45B7A42021DEC293005A1124 /* Frameworks */,
 				45B7A42121DEC293005A1124 /* Resources */,
-				45103FF02295AB06001C26D5 /* ShellScript */,
+				4543A6EA236E5291001363FF /* Embed Frameworks */,
+				259631EB7B2A8A6DFE0A4054 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1270,6 +1316,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45B7A45221DEC295005A1124 /* Build configuration list for PBXNativeTarget "KasakasaTests" */;
 			buildPhases = (
+				AE4EB698437600025230E72E /* [CP] Check Pods Manifest.lock */,
 				45B7A43721DEC295005A1124 /* Sources */,
 				45B7A43821DEC295005A1124 /* Frameworks */,
 				45B7A43921DEC295005A1124 /* Resources */,
@@ -1288,6 +1335,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45B7A45521DEC295005A1124 /* Build configuration list for PBXNativeTarget "KasakasaUITests" */;
 			buildPhases = (
+				8D65C07F880596D28B1438D8 /* [CP] Check Pods Manifest.lock */,
 				45B7A44221DEC295005A1124 /* Sources */,
 				45B7A44321DEC295005A1124 /* Frameworks */,
 				45B7A44421DEC295005A1124 /* Resources */,
@@ -1392,7 +1440,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		45103FF02295AB06001C26D5 /* ShellScript */ = {
+		259631EB7B2A8A6DFE0A4054 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kasakasa/Pods-Kasakasa-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kasakasa/Pods-Kasakasa-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kasakasa/Pods-Kasakasa-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53CC5E6581E9A4E20BABB99E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1400,40 +1465,63 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/BigInt.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/CropViewController.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/CryptoSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Nuke.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/PromiseKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/QRCodeReader.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/secp256k1.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SipHash.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Starscream.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ToastSwiftFramework.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/web3swift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/GRDB.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/PhoneNumberKit.framework",
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/BigInt.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CropViewController.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CryptoSwift.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Nuke.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/PromiseKit.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/QRCodeReader.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/secp256k1.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SipHash.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Starscream.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ToastSwiftFramework.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/web3swift.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/GRDB.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/PhoneNumberKit.framework",
+				"$(DERIVED_FILE_DIR)/Pods-Kasakasa-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D65C07F880596D28B1438D8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KasakasaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE4EB698437600025230E72E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KasakasaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1597,6 +1685,7 @@
 				4579A9F4220EB13E00CBCFAE /* ContactListStringResponse.swift in Sources */,
 				45A6D7AD21EFE220007A6F42 /* RecoveryPhraseViewController.swift in Sources */,
 				45BBF07121E1E0C20042EC5D /* UrlRequestConvertible.swift in Sources */,
+				45FA2779236F8C8600F1948C /* Toast.swift in Sources */,
 				457F54E721FECE4400EA25AC /* SecureMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1776,6 +1865,7 @@
 		};
 		45B7A45021DEC295005A1124 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE101484F748B12F9297A4DA /* Pods-Kasakasa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1799,6 +1889,7 @@
 		};
 		45B7A45121DEC295005A1124 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB4DD2594A907C35F89A29DB /* Pods-Kasakasa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1822,6 +1913,7 @@
 		};
 		45B7A45321DEC295005A1124 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15D31E65F471459E7AB61D78 /* Pods-KasakasaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1842,6 +1934,7 @@
 		};
 		45B7A45421DEC295005A1124 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D01B229333BDCEEE92974BCE /* Pods-KasakasaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1862,6 +1955,7 @@
 		};
 		45B7A45621DEC295005A1124 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BA2B8A31F96240C8CC3DF91 /* Pods-KasakasaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1881,6 +1975,7 @@
 		};
 		45B7A45721DEC295005A1124 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B7C138538C1232EF94F2E3E /* Pods-KasakasaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1962,6 +2057,7 @@
 		};
 		45BBF06921E1DC400042EC5D /* Local */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2EF0ACAE7A8FF6027AF0A64 /* Pods-Kasakasa.local.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1985,6 +2081,7 @@
 		};
 		45BBF06A21E1DC400042EC5D /* Local */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93DE509642FD91AE4BA89320 /* Pods-KasakasaTests.local.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2005,6 +2102,7 @@
 		};
 		45BBF06B21E1DC400042EC5D /* Local */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A51323D4ED6C98E3D0213F3 /* Pods-KasakasaUITests.local.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -2086,6 +2184,7 @@
 		};
 		45BBF06D21E1DC480042EC5D /* Dev */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6E6CC12EBD18334B768827E /* Pods-Kasakasa.dev.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -2109,6 +2208,7 @@
 		};
 		45BBF06E21E1DC480042EC5D /* Dev */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDE7938507D45359275713C6 /* Pods-KasakasaTests.dev.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2129,6 +2229,7 @@
 		};
 		45BBF06F21E1DC480042EC5D /* Dev */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78DCFEC6B5B1460A7FFD5415 /* Pods-KasakasaUITests.dev.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
