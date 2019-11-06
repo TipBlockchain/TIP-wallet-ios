@@ -77,14 +77,14 @@ extension VerifyPhoneNumberViewController: VerifyPhoneNumberView {
     func onPhoneVerified(withExistingAccount account: User) {
         showToast("Phone number verified".localized)
         self.existingAccount = account
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
             self.navigateToExistingAccount()
         }
     }
 
     func onPhoneVerified(withPendingSignup signup: PendingSignup) {
         showToast("Phone number verified".localized)
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
             self.navigateToRecoveryPhrase()
         }
     }
@@ -92,7 +92,7 @@ extension VerifyPhoneNumberViewController: VerifyPhoneNumberView {
     func onPhoneVerified(withPendingSignup signup: PendingSignup, andDemoAccount account: User) {
         showToast("Phone number verified".localized)
         self.demoAccount = account
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
             self.navigateToExistingAccount()
         }
     }

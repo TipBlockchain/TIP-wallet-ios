@@ -17,9 +17,11 @@ class AppStyle {
         navigationBarAppearance.barTintColor = UIColor.appPink
 
         let searchBarAppearance = UISearchBar.appearance()
-        searchBarAppearance.tintColor = UIColor.appPink
-//        searchBarAppearance.backgroundColor = UIColor.appPurple
+        searchBarAppearance.tintColor = UIColor.white
+        searchBarAppearance.backgroundColor = UIColor.white
         searchBarAppearance.barTintColor = UIColor.appPink
+        searchBarAppearance.searchTextField.backgroundColor = UIColor.white
+        searchBarAppearance.searchTextField.tintColor = UIColor.white
 
         let textFieldInSearchBarAppearance = UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self, UIToolbar.self])
         textFieldInSearchBarAppearance.defaultTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]

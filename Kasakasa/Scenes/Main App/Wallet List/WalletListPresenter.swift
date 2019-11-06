@@ -23,25 +23,22 @@ class WalletListPresenter: BasePresenter {
         }
     }
 
-    private func checkForBalanceUpdates(inWallets wallets: [Wallet]) {
+    func checkForBalanceUpdates(inWallets wallets: [Wallet]) {
         let wUtils = WalletUtils()
         let dGroup = DispatchGroup()
 
-        var shouldUpdate = false
         for var wallet in wallets {
             dGroup.enter()
             wUtils.getBalance(forWallet: wallet) { (balance, error) in
-                if let newBalance = balance, newBalance != wallet.balance {
+                if error == nil, let newBalance = balance {
                     wallet.balance = newBalance
-                    shouldUpdate = true
                 }
                 dGroup.leave()
             }
         }
-        if shouldUpdate {
-            dGroup.notify(queue: DispatchQueue.main) {
-                self.view?.onWalletsLoaded(wallets)
-            }
+
+        dGroup.notify(queue: DispatchQueue.main) {
+            self.view?.onWalletsLoaded(wallets)
         }
 
     }

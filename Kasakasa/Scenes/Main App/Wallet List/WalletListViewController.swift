@@ -34,6 +34,11 @@ class WalletListViewController: BaseViewController {
         self.setRegularNavigationBar()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.checkForWalletBalances()
+    }
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -54,6 +59,10 @@ class WalletListViewController: BaseViewController {
 
     private func showWallet() {
         self.performSegue(withIdentifier: "ShowWallet", sender: self)
+    }
+
+    private func checkForWalletBalances() {
+        self.presenter?.checkForBalanceUpdates(inWallets: wallets)
     }
 }
 

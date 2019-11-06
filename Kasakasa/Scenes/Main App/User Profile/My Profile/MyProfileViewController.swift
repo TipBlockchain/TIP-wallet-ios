@@ -42,6 +42,7 @@ class MyProfileViewController: BaseViewController {
         self.presenter = MyProfilePresenter()
         presenter?.attach(self)
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
+        self.usernameLabel.text = ""
         // Do any additional setup after loading the view.
     }
 

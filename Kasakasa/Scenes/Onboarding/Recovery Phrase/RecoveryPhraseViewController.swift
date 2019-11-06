@@ -14,7 +14,17 @@ class RecoveryPhraseViewController: BaseTableViewController {
     private var presenter: RecoveryPhrasePresenter?
     private var isRecoveryPhraseSaved = false
     private var recoveryPhrase: String?
-    
+
+    override func loadView() {
+        super.loadView()
+        debugPrint("LoadView()")
+    }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        debugPrint("AwakeFromNib")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
