@@ -39,6 +39,9 @@ class ReceiveTransferViewController: BaseViewController {
     private func setupViews() {
         guard let currentUser = self.currentUser else { return }
 
+        if let urlString = self.currentUser?.originalPhotoUrl, let url = URL(string: urlString) {
+            Nuke.loadImage(with: url, into: self.displayImageView)
+        }
         usernameLabel.text = currentUser.username
         addressLabel.text = currentUser.address
 

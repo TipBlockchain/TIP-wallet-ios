@@ -29,6 +29,8 @@
 		452AD7F121EFAB13007F11E2 /* TextUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AD7F021EFAB13007F11E2 /* TextUtils.swift */; };
 		452AD7F421EFB839007F11E2 /* VerifyPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AD7F321EFB839007F11E2 /* VerifyPhoneNumberViewController.swift */; };
 		452AD7F621EFBBAB007F11E2 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 452AD7F521EFBBAB007F11E2 /* Icons.xcassets */; };
+		4537F62E23824B3500B847EC /* InfuraApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537F62D23824B3500B847EC /* InfuraApiService.swift */; };
+		4537F63023824C8F00B847EC /* InfuraApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537F62F23824C8F00B847EC /* InfuraApiRequest.swift */; };
 		453A7C502220CD2500E5E3C8 /* SendTransferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A7C4F2220CD2500E5E3C8 /* SendTransferView.swift */; };
 		453A7C522220CF8600E5E3C8 /* PendingTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A7C512220CF8600E5E3C8 /* PendingTransaction.swift */; };
 		453A7C54222116CC00E5E3C8 /* SendTransferPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A7C53222116CC00E5E3C8 /* SendTransferPresenter.swift */; };
@@ -274,6 +276,8 @@
 		452AD7F021EFAB13007F11E2 /* TextUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextUtils.swift; sourceTree = "<group>"; };
 		452AD7F321EFB839007F11E2 /* VerifyPhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneNumberViewController.swift; sourceTree = "<group>"; };
 		452AD7F521EFBBAB007F11E2 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		4537F62D23824B3500B847EC /* InfuraApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfuraApiService.swift; sourceTree = "<group>"; };
+		4537F62F23824C8F00B847EC /* InfuraApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfuraApiRequest.swift; sourceTree = "<group>"; };
 		453A7C4F2220CD2500E5E3C8 /* SendTransferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendTransferView.swift; sourceTree = "<group>"; };
 		453A7C512220CF8600E5E3C8 /* PendingTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingTransaction.swift; sourceTree = "<group>"; };
 		453A7C53222116CC00E5E3C8 /* SendTransferPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendTransferPresenter.swift; sourceTree = "<group>"; };
@@ -1266,6 +1270,8 @@
 				45BBF07021E1E0C20042EC5D /* UrlRequestConvertible.swift */,
 				4510400122965439001C26D5 /* EtherscanApiService.swift */,
 				451040032296550A001C26D5 /* EtherscanApiRequest.swift */,
+				4537F62D23824B3500B847EC /* InfuraApiService.swift */,
+				4537F62F23824C8F00B847EC /* InfuraApiRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -1625,6 +1631,7 @@
 				4579A9F0220EB11100CBCFAE /* ContactListRequest.swift in Sources */,
 				456ED12522A8CC9600F1D133 /* ImageCropperConfiguration.swift in Sources */,
 				4540B6D622AE0181003B117B /* UserProfileViewController.swift in Sources */,
+				4537F62E23824B3500B847EC /* InfuraApiService.swift in Sources */,
 				45AD3A2A21E3409900198D6F /* EnterPhoneNumber.swift in Sources */,
 				45BBF05F21E1C86C0042EC5D /* AppErrors.swift in Sources */,
 				4579A9EA220EA19000CBCFAE /* UserSearchPresenter.swift in Sources */,
@@ -1673,6 +1680,7 @@
 				4510400622965963001C26D5 /* ConfigResponse.swift in Sources */,
 				456012C52214DB5E003B04E2 /* UserSearchTableViewCell.swift in Sources */,
 				456ED13A22AB32F800F1D133 /* EditPhoneNumberViewController.swift in Sources */,
+				4537F63023824C8F00B847EC /* InfuraApiRequest.swift in Sources */,
 				4510400822979AFA001C26D5 /* Transaction.swift in Sources */,
 				4579A9F2220EB12600CBCFAE /* ContactListResponse.swift in Sources */,
 				459DEBBE21DFBCAA009F0BE0 /* AppConstants.swift in Sources */,
@@ -1869,7 +1877,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3P2XQDN98J;
+				CURRENT_PROJECT_VERSION = 12;
+				DEVELOPMENT_TEAM = 72N2U345M5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1880,7 +1889,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.Kasakasa;
+				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.kasakasa.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1893,7 +1902,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3P2XQDN98J;
+				CURRENT_PROJECT_VERSION = 12;
+				DEVELOPMENT_TEAM = 72N2U345M5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1904,7 +1914,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.Kasakasa;
+				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.kasakasa.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2061,7 +2071,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3P2XQDN98J;
+				CURRENT_PROJECT_VERSION = 12;
+				DEVELOPMENT_TEAM = 72N2U345M5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -2072,7 +2083,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.Kasakasa;
+				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.kasakasa.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2188,7 +2199,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3P2XQDN98J;
+				CURRENT_PROJECT_VERSION = 12;
+				DEVELOPMENT_TEAM = 72N2U345M5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -2199,7 +2211,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.Kasakasa;
+				PRODUCT_BUNDLE_IDENTIFIER = io.tipblockchain.kasakasa.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -13,9 +13,10 @@ import BigInt
 class Web3Bridge {
 
     private var keystoreManager = KeystoreManager.defaultManager
-    private let web3 = Web3.InfuraRinkebyWeb3()
+    private let web3: web3!
 
     private init() {
+        web3  = Web3.InfuraRinkebyWeb3(accessToken: AppConfig.infuraAccessToken ?? "")
         let _ = self.restoreAccounts()
     }
 
@@ -162,6 +163,13 @@ class Web3Bridge {
         let balanceResult = try web3.eth.getBalance(address: walletAddress)
 //        let balanceString = Web3.Utils.formatToEthereumUnits(balanceResult, toUnits: .eth, decimals: 3)
         return balanceResult
+    }
+
+    func getEthBalance(forAddress address: String, completion: @escaping (BigUInt?, AppErrors?) -> Void) -> Void {
+        let service = InfuraApiService()
+        service.getEthBalance(address) { (balance, error) in
+            completion(balance, error)
+        }
     }
 
     func getERC20Balance(forAddress address: String, token: ERC20Token) throws -> BigUInt {

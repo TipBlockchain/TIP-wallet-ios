@@ -98,6 +98,8 @@ class WalletViewController: BaseViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowTransactionDetails", let destination = segue.destination as? TransactionDetailsViewController {
             destination.transaction = self.selectedTransaction
+        } else if segue.identifier == "ShowSendTransferFromWallet", let destination = segue.destination as? SendTransferViewController {
+            destination.setCurrency(self.wallet?.currency)
         }
     }
 }

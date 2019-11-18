@@ -13,6 +13,12 @@ class VerifyPhoneNumberPresenterImpl: VerifyPhoneNumberPresenter {
 
     private var apiService = TipApiService.sharedInstance
 
+    func attach(_ v: VerifyPhoneNumberView) {
+        self.view = v
+        UserRepository.shared.currentUser = nil
+        UserRepository.shared.demoAccountUser = nil
+    }
+
     func verifyPhoneNumber(_ verificationRequest: PhoneVerificationRequest) {
         apiService.checkPhoneVerification(verificationRequest: verificationRequest) { (response, error) in
             DispatchQueue.main.async {

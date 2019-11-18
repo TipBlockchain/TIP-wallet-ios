@@ -16,7 +16,7 @@ class SplashScreenPresenter: BasePresenter {
     func checkForUserAndWallet() {
         if let currentUser = UserRepository.shared.currentUser,
             let tipWallet = try! WalletRepository.shared.primaryWallet(),
-            currentUser.address == tipWallet.address {
+            currentUser.address.lowercased() == tipWallet.address.lowercased() {
             self.userRepo.loadCurrentUser { (user, error) in
                 //
             }

@@ -30,6 +30,7 @@ class SelectContactViewController: BaseViewController {
             $0.showOverlayView        = true
 //            $0.rectOfInterest         = CGRect(x: 0.2, y: 0.3, width: 0.6, height: 0.3)
         }
+        builder.rectOfInterest = CGRect(x: 0.2, y: 0.3, width: 0.6, height: 0.3)
         let reader = QRCodeReaderViewController(builder: builder)
         return reader
     }()

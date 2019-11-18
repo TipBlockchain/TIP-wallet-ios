@@ -47,6 +47,8 @@ class SendTransferViewController: BaseViewController {
     private var pendingTransaction: PendingTransaction? = nil
     private var txFeeInWei: BigUInt = BigUInt("0")
 
+    private let currencyLabelTag = 77
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationItem.leftItemsSupplementBackButton = true
@@ -70,8 +72,13 @@ class SendTransferViewController: BaseViewController {
         presenter?.attach(self)
         presenter?.loadWallets()
     }
+
     @IBAction func nextButtonTapped(_ sender: Any) {
-        self.presenter?.validateTransfer(usernameOrAddress: self.targetAddressOrUsername, value: NSDecimalNumber(string: amountField?.text), txFeeInWei:self.txFeeInWei, currency: selectedCurrency, message: nil)
+        self.presenter?.validateTransfer(usernameOrAddress: self.targetAddressOrUsername,
+                                         value: NSDecimalNumber(string: amountField?.text),
+                                         txFeeInWei:self.txFeeInWei,
+                                         currency: selectedCurrency,
+                                         message: nil)
     }
 
     @IBAction func toolbarSaveButtonTapped(_ sender: Any) {
@@ -79,6 +86,12 @@ class SendTransferViewController: BaseViewController {
         self.view.endEditing(true)
     }
 
+    public func setCurrency(_ currency: Currency?) {
+        if let currency = currency {
+            self.currencySelected(currency)
+        }
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -152,6 +165,9 @@ extension SendTransferViewController: UITableViewDataSource {
             self.currencyField = cell.contentView.subView(ofType: UITextField.self) as? UITextField
             self.currencyField?.inputView = self.pickerView
             self.currencyField?.inputAccessoryView = self.toolbar
+            if let currencyLabel = cell.contentView.viewWithTag(self.currencyLabelTag) as? UITextField {
+                currencyLabel.text = self.selectedCurrency.symbol
+            }
         case CellIndex.availableFunds.rawValue:
             self.availableFundsField = cell.contentView.subView(ofType: UITextField.self) as? UITextField
         case CellIndex.recepient.rawValue:
