@@ -10,7 +10,7 @@ import Foundation
 import BigInt
 import GRDB
 
-public struct Wallet: Codable, FetchableRecord, MutablePersistableRecord {
+public class Wallet: Codable, FetchableRecord, MutablePersistableRecord {
     
     var address: String
     var filePath: String
@@ -38,7 +38,7 @@ public struct Wallet: Codable, FetchableRecord, MutablePersistableRecord {
         case address, filePath, created, balance, currency, isPrimary, blockNumber, startBlockNumber, lastSynced
     }
 
-    public init(row: Row) {
+    required public init(row: Row) {
         self.address = row[Columns.address]
         self.filePath = row[Columns.filePath]
         self.created = row[Columns.created]

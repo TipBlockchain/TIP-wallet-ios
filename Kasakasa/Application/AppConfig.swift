@@ -44,6 +44,10 @@ class AppConfig {
         return configDict[AppConstants.etherscanBaseUrl] as! String
     }
 
+    static var infuraAccessToken: String? {
+        return configDict[AppConstants.infuraAccessToken] as! String
+    }
+    
     static var etherscanApiKey: String? {
         return config?.etherscanApiKey
     }

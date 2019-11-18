@@ -2,6 +2,7 @@
     "tip_api_url": "https://03f23507.ngrok.io",
     "tip_api_key": "wgoBxrVrEzcUlWgT0NaKUwBv",
     "eth_node_url": "https://rinkeby.infura.io/v3/678b8cde335e4f4ba45d9d010a293508",
+    "infura_access_token": "fe983ca380534b088a62cb1340721f1d",
     "tip_contract_address": "0xFE55d3E9583D1d7f9907367065737206F9751f6a",
     "etherscan_base_url": "https://rinkeby.etherscan.io/api",
     "buy_tip_url": "https://idex.market/eth/tip",

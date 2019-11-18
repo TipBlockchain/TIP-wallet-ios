@@ -63,7 +63,7 @@ class AppDatabase {
             }
 
             try db.create(table: Transaction.databaseTableName) { t in
-                
+
                 t.column(Transaction.Columns.hash.rawValue, .text).primaryKey(onConflict: .replace, autoincrement: false)
                 t.column(Transaction.Columns.blockHash.rawValue, .text).notNull()
                 t.column(Transaction.Columns.from.rawValue, .text).notNull().indexed()

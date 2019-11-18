@@ -39,6 +39,7 @@ enum EtherscanApiRequest {
 }
 
 extension EtherscanApiRequest: UrlRequestConvertible {
+    
     func toUrlRequest() -> URLRequest {
         let url = self.url
 
