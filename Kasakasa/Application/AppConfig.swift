@@ -45,7 +45,7 @@ class AppConfig {
     }
 
     static var infuraAccessToken: String? {
-        return configDict[AppConstants.infuraAccessToken] as! String
+        return configDict[AppConstants.infuraAccessToken] as? String
     }
     
     static var etherscanApiKey: String? {

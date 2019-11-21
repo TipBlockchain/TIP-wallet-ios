@@ -29,7 +29,7 @@ class UserSearchPresenter: NSObject, BasePresenter {
                 var filteredResults = users.filter({ $0.id != self.userRepository.currentUser?.id })
                 if let contacts = try? self.userRepository.loadContacts() {
                     filteredResults = filteredResults.map({
-                        var rv = $0
+                        let rv = $0
                         if contacts.contains($0) {
                             rv.isContact = true
                         }

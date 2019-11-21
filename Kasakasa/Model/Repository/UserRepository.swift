@@ -149,7 +149,7 @@ class UserRepository {
     }
 
     func removeAllContacts() throws {
-        try dbPool?.write({ db in
+        let _ = try dbPool?.write({ db in
             try? User.deleteAll(db)
         })
     }

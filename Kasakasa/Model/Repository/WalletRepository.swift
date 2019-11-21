@@ -79,7 +79,7 @@ class WalletRepository: NSObject {
     }
 
     func updateWallet(_ wallet: Wallet, newBalance balance: BigUInt) {
-        var walletToUpdate = wallet
+        let walletToUpdate = wallet
         let _ = try! dbPool?.write({ db in
             walletToUpdate.balance = balance
             try walletToUpdate.update(db)

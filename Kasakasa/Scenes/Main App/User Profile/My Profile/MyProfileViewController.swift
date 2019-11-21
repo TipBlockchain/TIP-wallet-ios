@@ -173,7 +173,7 @@ extension MyProfileViewController: UITableViewDataSource {
         case .phoneNumberCell:
             self.phoneNumberField = cell.contentView.subView(ofType: UITextField.self) as? UITextField
             if let phoneNumber = phoneNumber {
-                phoneNumberField.text = phoneNumberKit.format(phoneNumber, toType: .e164)
+                phoneNumberField.text = phoneNumberKit.format(phoneNumber, toType: .international)
             } else if let countryCode = user?.countryCode, let phone = user?.phone {
                 phoneNumberField.text = "\(countryCode)-\(phone)"
             }

@@ -9,7 +9,7 @@
 import Foundation
 import GRDB
 
-public struct User: Codable, DictionaryEncodable {
+public final class User: Codable, DictionaryEncodable {
 
     var id: String
     var fullname: String?
@@ -105,7 +105,7 @@ public struct User: Codable, DictionaryEncodable {
         return photos?.medium
     }
 
-    public init(from decoder: Decoder) throws {
+    public convenience init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let dateFormatter = DateFormatter.defaultFormatter
 
@@ -175,7 +175,7 @@ extension User: FetchableRecord, MutablePersistableRecord {
         case id, fullname, username, address, countryCode, phone, country, imageFileKey, pictureUrl, isContact, isBlocked, lastMessage, aboutMe, originalPhotoUrl, smallPhotoUrl, mediumPhotoUrl, created
     }
 
-    public init(row: Row) {
+    public convenience init(row: Row) {
         let id = row[Columns.id] as String
         let fullname = row[Columns.fullname] as String?
         let username = row[Columns.username] as String

@@ -27,7 +27,7 @@ class WalletListPresenter: BasePresenter {
         let wUtils = WalletUtils()
         let dGroup = DispatchGroup()
 
-        for var wallet in wallets {
+        for wallet in wallets {
             dGroup.enter()
             wUtils.getBalance(forWallet: wallet) { (balance, error) in
                 if error == nil, let newBalance = balance {

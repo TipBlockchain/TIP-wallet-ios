@@ -8,6 +8,7 @@
 
 import Foundation
 import BigInt
+import GRDB
 import web3swift
 
 typealias TransactionListClosure = (([Transaction]?, AppErrors?) -> Void)
@@ -44,13 +45,13 @@ class TransactionRepository {
 
     func allTransactions() throws -> [Transaction]? {
         return try dbPool?.read({ (db)  in
-            return try Transaction.fetchAll(db)
+            return try Transaction.order(Column("timestamp").desc).fetchAll(db)
         })
     }
 
     func transactions(forCurrency currency: Currency) throws -> [Transaction] {
         return try dbPool!.read({ db -> [Transaction]? in
-            return try Transaction.fetchAll(db, sql: "SELECT * from transactions where currency = ?", arguments: [currency.rawValue])
+            return try Transaction.fetchAll(db, sql: "SELECT * from transactions where currency = ? ORDER BY timestamp DESC", arguments: [currency.rawValue])
         })!
     }
 
@@ -62,7 +63,7 @@ class TransactionRepository {
     }
 
     func update(_ transaction: Transaction) throws {
-        var toSave = transaction
+        let toSave = transaction
         try dbPool?.write({ (db) in
             try toSave.update(db)
         })
@@ -85,11 +86,16 @@ class TransactionRepository {
             if let response = txListResponse {
                 if var txList = response.result, !txList.isEmpty {
                     txList = txList.map({ tx -> Transaction in
-                        var newTx = tx
+                        let newTx = tx
                         newTx.currency = Currency.ETH.rawValue
                         return newTx
                     })
                     txList = txList.filter({ $0.value != BigUInt("0")})
+
+                    txList.sort { (a, b) -> Bool in
+                        a.timestamp > b.timestamp
+                    }
+                    
                     try? self.fillTransactions(txList, completion: { (mergedTxList, error) in
                         var listToInsert = mergedTxList
                         if listToInsert == nil || listToInsert!.isEmpty {
@@ -112,12 +118,17 @@ class TransactionRepository {
             if let response = txListResponse {
                 if var txList = response.result, !txList.isEmpty {
                     txList = txList.map({ tx -> Transaction in
-                        var newTx = tx
+                        let newTx = tx
                         newTx.currency = Currency.TIP.rawValue
                         return newTx
                     })
 
                     txList = txList.filter({ $0.value != BigUInt("0")})
+
+                    txList.sort { (a, b) -> Bool in
+                        a.timestamp > b.timestamp
+                    }
+
                     try? self.fillTransactions(txList, completion: { (mergedTxList, error) in
                         var listToInsert = mergedTxList
                         if listToInsert == nil || listToInsert!.isEmpty {

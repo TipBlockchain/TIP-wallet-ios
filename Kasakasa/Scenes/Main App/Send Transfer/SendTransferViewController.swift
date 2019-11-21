@@ -164,6 +164,7 @@ extension SendTransferViewController: UITableViewDataSource {
         case CellIndex.currency.rawValue:
             self.currencyField = cell.contentView.subView(ofType: UITextField.self) as? UITextField
             self.currencyField?.inputView = self.pickerView
+            self.pickerView?.selectRow(self.index(forCurrency: self.selectedCurrency), inComponent: 0, animated: false)
             self.currencyField?.inputAccessoryView = self.toolbar
             if let currencyLabel = cell.contentView.viewWithTag(self.currencyLabelTag) as? UITextField {
                 currencyLabel.text = self.selectedCurrency.symbol
@@ -192,6 +193,15 @@ extension SendTransferViewController: UITableViewDataSource {
         self.selectedCurrency = currency
         self.currencyField?.text = currency.rawValue
         presenter?.currencySelected(currency)
+    }
+
+    private func index(forCurrency currency: Currency) -> Int {
+        switch currency {
+        case .TIP:
+            return 0
+        case .ETH:
+            return 1
+        }
     }
 
     private func updateNetworkFeeLabel(_ feeInEth: String, gasPrice: Float) {
@@ -330,6 +340,13 @@ extension SendTransferViewController: UITextFieldDelegate {
 
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
 
+    }
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == self.currencyField {
+            return false
+        }
+        return true
     }
 }
 

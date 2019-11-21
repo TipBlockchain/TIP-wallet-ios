@@ -11,7 +11,7 @@ import GRDB
 import BigInt
 import web3swift
 
-public struct Transaction: Codable, DictionaryEncodable {
+public final class Transaction: Codable, DictionaryEncodable {
 
     var hash: String
     var blockHash: String?
@@ -107,7 +107,7 @@ public struct Transaction: Codable, DictionaryEncodable {
         try container.encode(toUser, forKey: CodingKeys.toUser)
     }
 
-    public init(from decoder: Decoder) throws {
+    required public convenience init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
         let hash = try container.decode(String.self, forKey: CodingKeys.hash)
@@ -170,7 +170,7 @@ extension  Transaction: TableRecord {
 
 extension Transaction: FetchableRecord, MutablePersistableRecord {
 
-    public init(row: Row) {
+    public convenience init(row: Row) {
         let hash = row[Columns.hash] as String
         let blockHash = row[Columns.blockHash] as String
         let from = row[Columns.from] as String

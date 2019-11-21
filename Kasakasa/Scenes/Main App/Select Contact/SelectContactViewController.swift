@@ -70,8 +70,8 @@ class SelectContactViewController: BaseViewController {
 
         // Or by using the closure pattern
         readerVC.completionBlock = { (result: QRCodeReaderResult?) in
-            debugPrint(result?.metadataType)
-            print(result?.value)
+            debugPrint(result?.metadataType ?? "")
+            print(result?.value ?? "")
         }
 
         // Presents the readerVC as modal form sheet

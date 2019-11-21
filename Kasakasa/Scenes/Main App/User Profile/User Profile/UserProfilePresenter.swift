@@ -16,9 +16,13 @@ class UserProfilePresenter: BasePresenter {
     lazy var userRepo = UserRepository.shared
 
     func addUserToContacts(_ user: User) {
-        userRepo.addContact(user) { added, error in
-            if added {
-                
+        userRepo.addContact(user) { success, error in
+            DispatchQueue.main.async {
+                if success {
+                    self.view?.onContactAdded()
+                } else if let error = error {
+                    self.view?.onContactAddError(error)
+                }
             }
         }
     }

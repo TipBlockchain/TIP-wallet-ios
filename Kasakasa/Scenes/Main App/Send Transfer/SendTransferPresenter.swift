@@ -192,7 +192,7 @@ class SendTransferPresenter: BasePresenter {
     }
 
     private func updateBalance(_ balance: BigUInt, forWallet wallet: Wallet) throws {
-        var wallet = wallet
+        let wallet = wallet
         try dbPool?.write({ db in
             wallet.balance = balance
             try wallet.update(db)

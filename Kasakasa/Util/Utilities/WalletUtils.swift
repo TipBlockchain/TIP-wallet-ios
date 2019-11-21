@@ -49,12 +49,20 @@ class WalletUtils: NSObject {
         case .TIP:
             chainProcessor = TipProcessor()
         case .ETH:
-            chainProcessor = EthProcessor()
+            let ethProcessor = EthProcessor()
+            ethProcessor.getBalaceAsync(wallet.address) { (balance, error) in
+                if let balance = balance, wallet.balance != balance {
+                    self.walletRepo.updateWallet(wallet, newBalance: balance)
+                }
+                completion(balance, error)
+            }
+            return
         }
 
         queue.async {
             do {
                 let balanceBigUInt = try chainProcessor.getBalance(wallet.address)
+                debugPrint("Got balance \(balanceBigUInt) for currency \(currency.name)")
                 if wallet.balance != balanceBigUInt {
                     self.walletRepo.updateWallet(wallet, newBalance: balanceBigUInt)
                 }
