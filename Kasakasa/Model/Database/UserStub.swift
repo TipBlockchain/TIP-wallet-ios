@@ -15,6 +15,11 @@ struct UserStub: Codable {
     var fullname: String?
     var address: String?
     var photoUrl: String?
+    var photos: UserPhotos?
+
+    var originalPhotoUrl: String? {
+        return self.photos?.original
+    }
 
     enum CodingKeys: String, CodingKey {
         case id = "_id"
@@ -22,5 +27,6 @@ struct UserStub: Codable {
         case fullname
         case address
         case photoUrl
+        case photos
     }
 }

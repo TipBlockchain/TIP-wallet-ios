@@ -67,6 +67,16 @@ class AppConfig {
     static var buildNumber: String {
         return Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "0"
     }
+
+    static var isProduction: Bool {
+        #if  ENV_DEV
+            return false
+        #elseif ENV_LOCAL
+            return false
+        #else
+            return true
+        #endif
+    }
     
     private static var configFilename: String {
         var configFilename: String!

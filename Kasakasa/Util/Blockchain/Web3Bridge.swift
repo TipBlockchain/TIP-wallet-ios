@@ -16,7 +16,11 @@ class Web3Bridge {
     private let web3: web3!
 
     private init() {
-        web3  = Web3.InfuraRinkebyWeb3(accessToken: AppConfig.infuraAccessToken ?? "")
+        if AppConfig.isProduction {
+            web3 = Web3.InfuraMainnetWeb3(accessToken: AppConfig.infuraAccessToken ?? "")
+        } else {
+            web3  = Web3.InfuraRinkebyWeb3(accessToken: AppConfig.infuraAccessToken ?? "")
+        }
         let _ = self.restoreAccounts()
     }
 

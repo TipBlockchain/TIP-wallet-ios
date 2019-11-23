@@ -3,7 +3,7 @@
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -1604,6 +1604,7 @@ Your phone number helps you connect with other people on the network</string>
         <image name="placeholder-user" width="150" height="150"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="9el-xe-7Rh"/>
         <segue reference="kTK-mY-cCK"/>
         <segue reference="Z1z-H1-k9A"/>
         <segue reference="QxC-3d-5pb"/>

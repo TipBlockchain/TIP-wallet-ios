@@ -46,7 +46,7 @@ class TransactionTableViewCell: UITableViewCell {
         self.usernameLabel.text = outgoingTx ?
             (transaction.toUser != nil ? transaction.toUser?.username : transaction.to) :
             (transaction.fromUser != nil ? transaction.fromUser?.username : transaction.from)
-        let photoUrl = outgoingTx ? transaction.toUser?.photoUrl : transaction.fromUser?.photoUrl
+        let photoUrl = outgoingTx ? transaction.toUser?.originalPhotoUrl : transaction.fromUser?.originalPhotoUrl
         if let photoUrl = photoUrl, let imageUrl = URL(string: photoUrl) {
             Nuke.loadImage(with: imageUrl, into: self.userImageView)
         } else {
