@@ -41,9 +41,16 @@ extension String {
         return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: self)
     }
 
-    func addHexPrefix() -> String {
+    func withHexPrefix() -> String {
         if !self.hasPrefix("0x") {
             return "0x" + self
+        }
+        return self
+    }
+
+    func withAtPrefix() -> String {
+        if !self.hasPrefix("@") {
+            return "@" + self
         }
         return self
     }

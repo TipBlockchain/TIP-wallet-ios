@@ -34,8 +34,12 @@ class VerifyPhoneNumberViewController: BaseTableViewController {
         }
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.enableInteraction(true)
+    }
+
     @IBAction func verifyButtonTapped(_ sender: Any) {
-        self.view.endEditing(true)
         guard let phoneNumber = phoneNumber, let countryCode = countryCode else {
             showNoPhoneNumberProvidedError()
             return
@@ -45,6 +49,7 @@ class VerifyPhoneNumberViewController: BaseTableViewController {
             return
         }
 
+        self.enableInteraction(false)
         let verificationRequest = PhoneVerificationRequest(countryCode: countryCode, phoneNumber: phoneNumber, verificationCode: verificationCode)
         presenter?.verifyPhoneNumber(verificationRequest)
     }
@@ -68,6 +73,11 @@ class VerifyPhoneNumberViewController: BaseTableViewController {
             viewController.existingUser = self.existingAccount
             viewController.demoAccountUser = self.demoAccount
         }
+    }
+
+    private func enableInteraction(_ enable: Bool) {
+        self.view.endEditing(true)
+        self.navigationItem.rightBarButtonItem?.isEnabled = enable
     }
     
 }
@@ -99,10 +109,12 @@ extension VerifyPhoneNumberViewController: VerifyPhoneNumberView {
 
     func onUnknownError(_ error: AppErrors) {
         showError(error)
+        self.enableInteraction(true)
     }
 
     func onPhoneVerificationError(_ error: AppErrors) {
         showError(error)
+        self.enableInteraction(true)
     }
 
 }

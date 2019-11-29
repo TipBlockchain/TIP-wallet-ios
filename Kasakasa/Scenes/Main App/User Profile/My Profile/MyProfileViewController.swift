@@ -8,7 +8,6 @@
 
 import UIKit
 import Nuke
-import PhoneNumberKit
 
 class MyProfileViewController: BaseViewController {
 
@@ -67,7 +66,7 @@ class MyProfileViewController: BaseViewController {
     }
 
     private func setupUI() {
-        self.usernameLabel.text = self.user?.username
+        self.usernameLabel.text = self.user?.username.withAtPrefix()
         if let urlString = self.user?.originalPhotoUrl, let url = URL(string: urlString) {
             Nuke.loadImage(with: url, into: self.profileImageView)
         }
@@ -159,24 +158,17 @@ extension MyProfileViewController: UITableViewDataSource {
 
     private func setOutlet(forCell cell: UITableViewCell, atIndexPath indexPath: IndexPath) {
         let cellIdentifier = self.identifier(forIndexPath: indexPath)
-        let phoneNumberKit = PhoneNumberKit()
-        let phoneString = String(format: "%@ %@", [user?.countryCode ?? "", user?.phone ?? ""])
-        let phoneNumber = try? phoneNumberKit.parse(phoneString)
 
         switch cellIdentifier {
         case .usernameCell:
             self.usernameField = cell.contentView.subView(ofType: UITextField.self) as? UITextField
-            self.usernameField.text = user?.username
+            self.usernameField.text = user?.username.withAtPrefix()
         case .fullnameCell:
             self.fullnameField = cell.contentView.subView(ofType: UITextField.self) as? UITextField
             fullnameField.text = user?.fullname
         case .phoneNumberCell:
             self.phoneNumberField = cell.contentView.subView(ofType: UITextField.self) as? UITextField
-            if let phoneNumber = phoneNumber {
-                phoneNumberField.text = phoneNumberKit.format(phoneNumber, toType: .international)
-            } else if let countryCode = user?.countryCode, let phone = user?.phone {
-                phoneNumberField.text = "\(countryCode)-\(phone)"
-            }
+            phoneNumberField.text = user?.phoneNumberString
         case .aboutMeCell:
             self.aboutMeField = cell.contentView.subView(ofType: UITextField.self) as? UITextField
             self.aboutMeField.text = user?.aboutMe

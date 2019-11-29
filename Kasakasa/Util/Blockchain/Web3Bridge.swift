@@ -201,7 +201,7 @@ class Web3Bridge {
         var result: String? = nil
         if let messageData = message.data(using: .utf8) {
             result = try web3.personal.signPersonalMessage(message: messageData, from: EthereumAddress(wallet.address)!, password: password).toHexString()
-            result = result?.addHexPrefix()
+            result = result?.withHexPrefix()
         }
         return result
     }

@@ -144,8 +144,25 @@ class UserRepository {
         }
     }
 
-    func removeContact(_ contact: User) {
-        
+    func removeContact(_ contact: User, completion: @escaping (Bool, AppErrors?) -> Void) {
+        apiService.removeContact(contact) { (response, error) in
+            if let response = response {
+                if !response.contacts.contains(contact.id) {
+                    do {
+                        try self.deleteContact(contact)
+                        completion(true, nil)
+                    } catch {
+                        completion(false, AppErrors.error(error: error))
+                    }
+                }
+            }  else {
+               if let error = error {
+                   completion(false, error)
+               } else {
+                   completion(false, AppErrors.unknowkError)
+               }
+           }
+        }
     }
 
     func removeAllContacts() throws {
@@ -159,6 +176,14 @@ class UserRepository {
 
         try dbPool?.write({db in
             userToSave.isContact = true
+            try userToSave.save(db)
+        })
+    }
+
+    func deleteContact(_ user: User) throws {
+        var userToSave = user
+        try dbPool?.write({ (db) in
+            userToSave.isContact = false
             try userToSave.save(db)
         })
     }

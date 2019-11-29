@@ -99,7 +99,7 @@ enum TipApiRequest {
             return ["aboutMe": aboutMe]
         case .updateFullname(let fullname):
             return ["fullname": fullname]
-        case .addContact(let contact):
+        case .addContact(let contact), .deleteContact(let contact):
             return contact.dictionary()
         case .addContacts(let contacts):
             return contacts.dictionary()
@@ -117,7 +117,7 @@ enum TipApiRequest {
 
     var httpBody: Data? {
         switch self {
-        case .authorize, .startPhoneVerification, .checkPhoneVerification, .createAccount, .addContact, .addContacts, .updateAboutMe, .updateFullname:
+        case .authorize, .startPhoneVerification, .checkPhoneVerification, .createAccount, .addContact, .deleteContact, .addContacts, .updateAboutMe, .updateFullname:
             if let jsonBody = self.jsonBody, let data = try? JSONSerialization.data(withJSONObject: jsonBody, options: .prettyPrinted) {
                 return data
             }

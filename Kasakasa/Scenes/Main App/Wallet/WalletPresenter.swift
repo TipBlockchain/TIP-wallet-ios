@@ -31,16 +31,16 @@ class WalletPresenter: BasePresenter {
     func fetchTransactions(forWallet wallet: Wallet) {
         do {
             let existingTxList = try repo.transactions(forCurrency: wallet.currency)
-            self.view?.onTransactionsFetched(existingTxList)
+//            self.view?.onTransactionsFetched(existingTxList)
 
             switch wallet.currency {
             case .ETH:
                 repo.fetchEthTransactions(address: wallet.address) { (transactions, error) in
                     self.mainQueue.async {
                         if let transactions = transactions {
-                            if let newTxList = self.checkForNewTransactions(existingTxList, newList: transactions), !newTxList.isEmpty {
+//                            if let newTxList = self.checkForNewTransactions(existingTxList, newList: transactions), !newTxList.isEmpty {
                                 self.view?.onTransactionsFetched(transactions)
-                            }
+//                            }
                         } else {
                             self.view?.onTransactionFetchError(error ?? AppErrors.unknowkError)
                         }
@@ -50,9 +50,7 @@ class WalletPresenter: BasePresenter {
                 repo.fetchERC20Transactions(address: wallet.address, token: TipProcessor.tipToken) { (transactions, error) in
                     self.mainQueue.async {
                         if let transactions = transactions {
-//                            if let newTxList = self.checkForNewTransactions(existingTxList, newList: transactions), !newTxList.isEmpty {
                                 self.view?.onTransactionsFetched(transactions)
-//                            }
                         } else {
                             self.view?.onTransactionFetchError(error ?? AppErrors.unknowkError)
                         }

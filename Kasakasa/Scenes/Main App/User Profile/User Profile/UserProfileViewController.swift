@@ -56,6 +56,12 @@ class UserProfileViewController: BaseViewController {
         }
     }
 
+    private func removeFromContacts() {
+        if let user = self.user {
+            presenter?.removeContact(user)
+        }
+    }
+
     private func sendTransfer() {
         self.performSegue(withIdentifier: "SendTransferFromUserProfile", sender: self)
     }
@@ -70,12 +76,22 @@ class UserProfileViewController: BaseViewController {
         self.showError(error)
     }
 
+    func onContactRemoved(_ contact: User) {
+        self.showToast("\(self.user?.username ?? "User") has been removed from your contacts.")
+        self.user?.isContact = false
+        self.updateUI()
+    }
+
+    func onContactRemovedError(_ error: AppErrors) {
+        self.showError(error)
+    }
+
     private func updateUI() {
         if let user = user {
             if let photoUrlString = user.originalPhotoUrl, let url = URL(string: photoUrlString) {
                 Nuke.loadImage(with: url, into: self.profileImageView)
             }
-            usernameLabel.text = user.username
+            usernameLabel.text = user.username.withAtPrefix()
             fullnameLabel.text = user.fullname
             aboutMeLabel.text = user.aboutMe ?? AppConstants.defaultAboutMeText
             if let signupdate = user.created {

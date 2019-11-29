@@ -17,7 +17,7 @@ class ContactTableViewCell: UITableViewCell {
     var user: User? {
         didSet {
             fullnameLabel.text = user?.fullname ?? ""
-            usernameLabel.text = user?.username ?? ""
+            usernameLabel.text = user?.username.withAtPrefix() ?? ""
             if let user = user, let imageUrlString = user.originalPhotoUrl, let imageUrl = URL(string: imageUrlString) {
                 let placeholderImage = UIImage.placeHolderImage()
                 let loadOptions = ImageLoadingOptions(placeholder: placeholderImage, transition: ImageLoadingOptions.Transition.fadeIn(duration: 0.33), failureImage: placeholderImage, failureImageTransition: .fadeIn(duration: 0.33))

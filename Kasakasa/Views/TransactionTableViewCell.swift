@@ -44,8 +44,8 @@ class TransactionTableViewCell: UITableViewCell {
         let outgoingTx = transaction.from.lowercased() == wallet?.address.lowercased()
 
         self.usernameLabel.text = outgoingTx ?
-            (transaction.toUser != nil ? transaction.toUser?.username : transaction.to) :
-            (transaction.fromUser != nil ? transaction.fromUser?.username : transaction.from)
+            (transaction.toUser != nil ? transaction.toUser?.username?.withAtPrefix() : transaction.to) :
+            (transaction.fromUser != nil ? transaction.fromUser?.username?.withAtPrefix() : transaction.from)
         let photoUrl = outgoingTx ? transaction.toUser?.originalPhotoUrl : transaction.fromUser?.originalPhotoUrl
         if let photoUrl = photoUrl, let imageUrl = URL(string: photoUrl) {
             Nuke.loadImage(with: imageUrl, into: self.userImageView)

@@ -26,4 +26,16 @@ class UserProfilePresenter: BasePresenter {
             }
         }
     }
+
+    func removeContact(_ user: User) {
+        userRepo.removeContact(user) { (success, error) in
+            DispatchQueue.main.async {
+                if success {
+                    self.view?.onContactRemoved(user)
+                } else if let error = error {
+                    self.view?.onContactRemovedError(error)
+                }
+            }
+        }
+    }
 }

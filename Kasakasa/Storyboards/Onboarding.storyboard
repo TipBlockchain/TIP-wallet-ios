@@ -1604,9 +1604,8 @@ Your phone number helps you connect with other people on the network</string>
         <image name="placeholder-user" width="150" height="150"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9el-xe-7Rh"/>
         <segue reference="kTK-mY-cCK"/>
-        <segue reference="Z1z-H1-k9A"/>
+        <segue reference="ArS-Bg-bct"/>
         <segue reference="QxC-3d-5pb"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.71372549019607845" green="0.16862745098039217" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

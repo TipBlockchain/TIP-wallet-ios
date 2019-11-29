@@ -8,6 +8,7 @@
 
 import Foundation
 import GRDB
+import PhoneNumberKit
 
 public final class User: Codable, DictionaryEncodable {
 
@@ -103,6 +104,15 @@ public final class User: Codable, DictionaryEncodable {
 
     var mediumPhotoUrl: String? {
         return photos?.medium
+    }
+
+    var phoneNumberString: String? {
+        let phoneNumberKit = PhoneNumberKit()
+        let phoneString = "+".appending(self.countryCode ?? "").appending(self.phone ?? "")
+        if let phoneNumber = try? phoneNumberKit.parse(phoneString) {
+            return phoneNumberKit.format(phoneNumber, toType: .international)
+        }
+        return "+\(countryCode ?? "") \(phone ?? "")"
     }
 
     public convenience init(from decoder: Decoder) throws {

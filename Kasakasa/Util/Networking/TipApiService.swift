@@ -249,6 +249,21 @@ public class TipApiService: NSObject {
         }
     }
 
+    func removeContact(_ contact: User, completion: @escaping(ContactListStringResponse?, AppErrors?) -> Void) {
+        let request = TipApiRequest.deleteContact(ContactRequest(contactId: contact.id))
+        networkService.sendRequest(request: request) { (result, error) in
+            if let error = error {
+                completion(nil, error)
+            } else {
+                if let data = result as? Data, let response = try? JSONDecoder.isoDateDecoder.decode(ContactListStringResponse.self, from: data) {
+                    completion(response, nil)
+                } else {
+                    completion(nil, AppErrors.unknowkError)
+                }
+            }
+        }
+    }
+
     func addContacts(_ contacts: [User], completion: @escaping(ContactListStringResponse?, AppErrors?) -> Void) {
         let request = TipApiRequest.addContacts(ContactListRequest(contactIds: contacts.map({ user -> String in
             user.id
