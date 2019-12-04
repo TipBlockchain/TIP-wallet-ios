@@ -27,10 +27,6 @@ extension String {
         return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: self)
     }
 
-    func isEthAddress() -> Bool {
-        return true
-    }
-
     func isNumeric() -> Bool {
         let regex = "^[0-9]+(\\.)?[0-9]*$"
         return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: self)

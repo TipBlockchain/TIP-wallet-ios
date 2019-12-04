@@ -21,7 +21,7 @@ class SelectContactPresenter: BasePresenter {
     }
 
     func fetchContactList() {
-        repository.fetchContactList { contacts, error in
+        repository.loadContactList { contacts, error in
             DispatchQueue.main.async {
                 if let contacts = contacts {
                     self.view?.onContactsFetched(contacts)
@@ -32,6 +32,15 @@ class SelectContactPresenter: BasePresenter {
                 }
             }
 
+        }
+    }
+
+    func verifyAddress(_ address: String) {
+        let address = address.withHexPrefix()
+        if TextUtils.isEthAddress(address) {
+            view?.onAddressVerified(address)
+        } else {
+            view?.onAddressVerificationError(AppErrors.genericError(message: "Invalid crypto address."))
         }
     }
 }

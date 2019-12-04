@@ -56,4 +56,7 @@ extension UIColor {
     static let appPinkLight = UIColor(rgb: 0xD46AB0)
     static let appPurple = UIColor(rgb: 0x341E7D)
     static let appPurpleDark = UIColor(rgb: 0x26144B)
+
+    static let placeHolderText = UIColor(rgb: 0xC4C4C6)
+    static let darkText = UIColor(rgb: 0x555555)
 }

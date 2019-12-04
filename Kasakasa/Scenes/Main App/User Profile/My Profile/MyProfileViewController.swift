@@ -42,7 +42,8 @@ class MyProfileViewController: BaseViewController {
         presenter?.attach(self)
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
         self.usernameLabel.text = ""
-        // Do any additional setup after loading the view.
+
+        self.addGestureRecognizers()
     }
 
     deinit {
@@ -107,12 +108,30 @@ class MyProfileViewController: BaseViewController {
         self.showError(error)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowImageFromMyProfile", let vc = segue.destination as? ImageViewController,
+            let profilePicUrl = self.user?.originalPhotoUrl,
+            let url = URL(string: profilePicUrl) {
+            vc.imageUrl = url
+        }
+    }
+
     private func showEditFullname() {
         self.performSegue(withIdentifier: "ShowEditFullname", sender: self)
     }
 
     private func showEditAboutMe() {
         self.performSegue(withIdentifier: "ShowEditAboutMe", sender: self)
+    }
+
+    @objc private func showProfilePicture(_ sender: Any) {
+        self.performSegue(withIdentifier: "ShowImageFromMyProfile", sender: self)
+    }
+
+    private func addGestureRecognizers() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showProfilePicture(_:)))
+        tapGesture.numberOfTapsRequired = 1
+        self.profileImageView.addGestureRecognizer(tapGesture)
     }
 }
 

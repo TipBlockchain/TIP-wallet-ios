@@ -16,7 +16,7 @@ class ChoosePasswordViewController: BaseTableViewController {
 
     var existingUser: User?
     @IBOutlet private weak var passwordField: UITextField!
-    @IBOutlet private weak var confirmPasswordField: UITextField!
+    @IBOutlet private weak var confirmPasswordField: UITextField?
     @IBOutlet private weak var promptTextLabel: UILabel!
     @IBOutlet private weak var savePasswordLabel: UILabel!
     @IBOutlet private weak var savePasswordSwitch: UISwitch!
@@ -54,16 +54,18 @@ class ChoosePasswordViewController: BaseTableViewController {
     @IBAction func savePasswordTapped(_ sender: Any) {
         self.view.endEditing(true)
         self.password = self.passwordField.text ?? ""
-        self.password2 = self.confirmPasswordField.text ?? ""
+        self.password2 = self.confirmPasswordField?.text ?? ""
 
-        guard password == password2 else {
+        guard self.password.isValidPassword() else {
+              showToast("Password must be at least 8 characters long".localized)
+              return
+        }
+
+        if self.existingUser == nil && password == password2 { // can't use guard
             showToast("Passwords do not match".localized)
             return
         }
-        guard self.password.isValidPassword() else {
-            showToast("Password must be at least 8 characters long".localized)
-            return
-        }
+
         guard isPasswordSaved else {
             showToast("Please make sure you have saved your password before you continue.".localized)
             return
@@ -98,6 +100,8 @@ extension ChoosePasswordViewController: UITextFieldDelegate {
 
 extension ChoosePasswordViewController: ChoosePasswordView {
     func onWalletCreated() {
+        AppAnalytics.logEvent(.savedPassword)
+        
         showToast("Wallet created".localized)
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) {
             self.navigateToUserProfile()
@@ -105,6 +109,8 @@ extension ChoosePasswordViewController: ChoosePasswordView {
     }
 
     func onWalletRestored() {
+        AppAnalytics.logEvent(.savedPassword)
+
         self.showOkAlert(withTitle: "Hoorah!".localized, message: "Your wallets have been restored on this device. Happy Tipping!".localized, style: .alert) {
             self.navigateToMainApp()
         }

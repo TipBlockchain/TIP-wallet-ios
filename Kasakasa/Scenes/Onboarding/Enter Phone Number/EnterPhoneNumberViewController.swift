@@ -124,6 +124,7 @@ extension EnterPhoneNumberViewController: EnterPhoneNumberView {
 
     func onVerificationStartedSuccessfully() {
         showActivityIndicator(false)
+        AppAnalytics.logEvent(.enteredPhoneNumber)
         self.navigateToVerifyPhoneNumber()
     }
 

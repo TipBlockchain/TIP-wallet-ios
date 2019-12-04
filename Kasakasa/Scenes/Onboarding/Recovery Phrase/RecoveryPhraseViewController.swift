@@ -69,6 +69,8 @@ class RecoveryPhraseViewController: BaseTableViewController {
 
 extension RecoveryPhraseViewController: RecoveryPhraseView {
     func onRecoveryPhraseCreated(_ phrase: String) {
+        AppAnalytics.logEvent(.getRecoveryPhrase)
+
         self.recoveryPhrase = phrase
         recoveryPhraseTextView.text = phrase
     }

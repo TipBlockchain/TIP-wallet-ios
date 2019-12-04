@@ -22,7 +22,7 @@ class WalletPresenter: BasePresenter {
                 if let error = error {
                     self.view?.onBalanceFetchError(error)
                 } else if let balance = balance {
-                    self.view?.onBalanceFetched(EthConvert.toEthereumUnits(balance) ?? "0.00")
+                    self.view?.onBalanceFetched(balance)
                 }
             }
         }

@@ -41,6 +41,15 @@ class BaseViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        var title = self.navigationItem.title
+        if title == nil || title!.isEmpty {
+            title = self.title ?? ""
+        }
+        AppAnalytics.trackScreen(title ?? "-", class: self.className)
+    }
+    
     func showActivityIndicator(_ show: Bool = true) {
         if show, activityIndicator == nil {
             activityIndicator = UIActivityIndicatorView(style: .gray)

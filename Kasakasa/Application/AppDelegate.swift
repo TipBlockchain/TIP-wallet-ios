@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let appDefaults = AppDefaults.shared
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        FirebaseApp.configure()
+        
         AppStyle.initialize()
         AppConfig.initalize()
         appDefaults.initialize()
@@ -22,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         try! self.setupDatabase(application)
         if let wallets = WalletRepository.shared.allWallets() {
             debugPrint("Wallet count = \(wallets.count)")
-
         }
 
         // Override point for customization after application launch.

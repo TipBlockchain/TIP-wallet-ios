@@ -22,6 +22,9 @@ class ReceiveTransferViewController: BaseViewController {
         super.viewDidLoad()
 
 //        self.navigationController?.navigationItem.leftItemsSupplementBackButton = true
+        self.navigationItem.backBarButtonItem?.title = ""
+
+
         if currentUser == nil {
             self.showOkAlert(withTitle: "Error reading wallet information".localized, message: "There was a problem reading your wallet information. Please close the app and try again.".localized, style: .alert) {
                 self.navigationController?.popViewController(animated: true)
@@ -42,7 +45,7 @@ class ReceiveTransferViewController: BaseViewController {
         if let urlString = self.currentUser?.originalPhotoUrl, let url = URL(string: urlString) {
             Nuke.loadImage(with: url, into: self.displayImageView)
         }
-        usernameLabel.text = currentUser.username
+        usernameLabel.text = currentUser.username.withAtPrefix()
         addressLabel.text = currentUser.address
 
         qrCodeImageView.image = UIImage.qrCode(fromString: currentUser.address, scaleX: 10.0, scaleY: 10.0) //

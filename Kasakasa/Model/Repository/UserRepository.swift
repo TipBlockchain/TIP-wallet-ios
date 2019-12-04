@@ -51,6 +51,11 @@ class UserRepository {
         })
     }
 
+    func loadContactList(_ completion: @escaping UserListClosure) {
+        let contacts = try? self.loadContacts()
+        completion(contacts, nil)
+    }
+    
     func fetchContactList(_ completion: @escaping UserListClosure) {
         apiService.getContactList { (response, error) in
             if let response = response {
@@ -73,10 +78,6 @@ class UserRepository {
                 completion(nil, AppErrors.unknowkError)
             }
         }
-    }
-
-    func fetchContacts() {
-
     }
 
     func loadCurrentUser(_ completion: @escaping(User?, AppErrors?) -> Void) {
@@ -117,7 +118,7 @@ class UserRepository {
 
     func loadContacts() throws -> [User]? {
         return try dbPool?.read({ (db) in
-            return try User.fetchAll(db, sql: "SELECT * FROM users WHERE isContact = ? ORDER BY lastMessage", arguments: [true])
+            return try User.fetchAll(db, sql: "SELECT * FROM users WHERE isContact = ? ORDER BY fullname", arguments: [true])
         })
     }
 

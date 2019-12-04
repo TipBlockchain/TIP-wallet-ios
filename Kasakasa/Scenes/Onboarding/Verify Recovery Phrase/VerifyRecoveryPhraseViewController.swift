@@ -77,6 +77,8 @@ extension VerifyRecoveryPhraseViewController: VerifyRecoveryPhraseView {
 
     func onPhraseVerified() {
         showToast("Recovery phrase verified".localized)
+        AppAnalytics.logEvent(.confirmedRecoveryPhrase)
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) {
             self.navigateToChoosePassword()
         }

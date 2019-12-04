@@ -37,10 +37,12 @@ class SelectContactViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let presenter = SelectContactPresenter()
-        presenter.attach(self)
-        // Do any additional setup after loading the view.
+        self.navigationItem.backBarButtonItem?.title = ""
 
+
+        self.presenter = SelectContactPresenter()
+        presenter?.attach(self)
+        // Do any additional setup after loading the view.
 
         self.tableView.tableFooterView = UIView()
     }
@@ -78,6 +80,34 @@ class SelectContactViewController: BaseViewController {
         readerVC.modalPresentationStyle = .formSheet
 
         present(readerVC, animated: true, completion: nil)
+    }
+
+    @IBAction private func textButtonTapped(_ sender: Any) {
+        self.showTextFieldAlert(withTitle: "Enter address",
+                                message: "Enter address to send transfer to.",
+                                style: .alert, isSecure: false,
+                                onOkSelected: { (address) in
+                                    if let address = address {
+                                        self.checkAddress(address)
+                                    }
+        }) {
+
+        }
+    }
+
+    private func checkAddress(_ address: String) {
+        presenter?.verifyAddress(address)
+    }
+
+    func onAddressVerificationError(_ error: AppErrors) {
+        self.showError(error)
+    }
+
+    func onAddressVerified(_ address: String){
+        self.delegate?.addressEntered(address)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200)) {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }
 

@@ -15,7 +15,7 @@ class ContactsViewController: BaseViewController {
 
     private var presenter: ContactsPresenter?
     private var controller: FetchedRecordsController<User>!
-    private var contactRequest = User.orderedByLastMessage()
+    private var contactRequest = User.orderedByFullname()
     private var selectedContact: User?
 
     override func viewDidLoad() {

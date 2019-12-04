@@ -27,6 +27,10 @@ class ImageViewController: UIViewController {
     }
     
 
+    @IBAction private func dismiss(_: Any) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+
     /*
     // MARK: - Navigation
 

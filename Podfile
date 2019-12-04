@@ -13,6 +13,9 @@ target 'Kasakasa' do
   pod 'Nuke', '~> 7.6'
   pod 'PhoneNumberKit', '~>2.6.0'
   pod 'QRCodeReader.swift', '~> 10.0.0'
+  pod 'Fabric', '~> 1.10.2'
+  pod 'Crashlytics', '~> 3.14.0'
+  pod 'Firebase/Analytics'
 #  pod 'web3swift', :git => 'https://github.com/TipBlockchain/web3swift.git'
   pod 'web3swift', :git => 'https://github.com/matter-labs/web3swift.git'
 

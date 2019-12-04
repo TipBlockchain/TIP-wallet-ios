@@ -238,6 +238,10 @@ extension User {
         return User.order(Columns.lastMessage)
     }
 
+    static func orderedByFullname() -> QueryInterfaceRequest<User> {
+        return User.order(Columns.fullname)
+    }
+
     static func contacts() -> QueryInterfaceRequest<User> {
         return User.filter(sql: "isContact = ?", arguments: [true])
     }

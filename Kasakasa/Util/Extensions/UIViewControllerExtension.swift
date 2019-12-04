@@ -12,6 +12,9 @@ import MessageUI
 
 extension UIViewController {
 
+    var className: String {
+        return String(describing: type(of: self))
+    }
 
     func showToast(_ message: String) {
         self.view.makeToast(message)
@@ -115,7 +118,7 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 
-    func showTextFieldAlert(withTitle title: String, message: String, style: UIAlertController.Style = .alert, isSecure: Bool = false, onOkSelected okCompletionBlock: StringCompletionBlock? = nil, onCancelSelected cancelCompletionBlock: VoidCompletionBlock? = nil) {
+    func showTextFieldAlert(withTitle title: String, message: String, style: UIAlertController.Style = .alert, isSecure: Bool = false, okButtonTitle: String = "Okay", onOkSelected okCompletionBlock: StringCompletionBlock? = nil, onCancelSelected cancelCompletionBlock: VoidCompletionBlock? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: style)
 
         //2. Add the text field. You can configure it however you need.
@@ -124,7 +127,7 @@ extension UIViewController {
             textField.isSecureTextEntry = isSecure
         }
 
-        let okAction = UIAlertAction(title: "Okay".localized, style: .default, handler: { [weak alert] (_) in
+        let okAction = UIAlertAction(title: okButtonTitle, style: .default, handler: { [weak alert] (_) in
             let text: String? = alert?.textFields?.first?.text
             okCompletionBlock?(text)
         })

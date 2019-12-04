@@ -87,6 +87,7 @@ extension VerifyPhoneNumberViewController: VerifyPhoneNumberView {
     func onPhoneVerified(withExistingAccount account: User) {
         showToast("Phone number verified".localized)
         self.existingAccount = account
+        AppAnalytics.logEvent(.confirmedPhoneNumber)
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
             self.navigateToExistingAccount()
         }

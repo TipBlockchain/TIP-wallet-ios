@@ -907,7 +907,7 @@ Your phone number helps you connect with other people on the network</string>
                     </navigationItem>
                     <connections>
                         <outlet property="recoveryPhraseTextView" destination="aCk-5S-H19" id="wxs-ch-644"/>
-                        <segue destination="2K6-Fg-oqs" kind="show" identifier="ChoosePasswordFromRestore" id="2Nn-5p-yYg"/>
+                        <segue destination="bcK-41-XvC" kind="show" identifier="ChoosePasswordFromRestore" id="lVV-rH-39I"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9q2-Kt-4eu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1176,16 +1176,16 @@ Your phone number helps you connect with other people on the network</string>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoN-L7-t2e">
-                                                            <rect key="frame" x="75" y="75" width="75" height="75"/>
+                                                            <rect key="frame" x="90" y="90" width="60" height="60"/>
                                                             <color key="backgroundColor" red="0.26862597469999999" green="0.25873953100000002" blue="0.62099063399999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="75" id="HoW-3q-gy5"/>
-                                                                <constraint firstAttribute="width" constant="75" id="S8s-Rz-jUN"/>
+                                                                <constraint firstAttribute="height" constant="60" id="HoW-3q-gy5"/>
+                                                                <constraint firstAttribute="width" constant="60" id="S8s-Rz-jUN"/>
                                                             </constraints>
                                                             <state key="normal" image="icon-camera"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="37.5"/>
+                                                                    <real key="value" value="30"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                     <real key="value" value="1"/>
@@ -1595,6 +1595,174 @@ Your phone number helps you connect with other people on the network</string>
             </objects>
             <point key="canvasLocation" x="1414" y="-985"/>
         </scene>
+        <!--Choose Password View Controller-->
+        <scene sceneID="q8h-RM-3MW">
+            <objects>
+                <tableViewController id="bcK-41-XvC" customClass="ChoosePasswordViewController" customModule="Kasakasa" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1pO-x0-TQM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.67343860860000004" green="0.1672935784" blue="0.54986947770000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <sections>
+                            <tableViewSection id="hXk-Qf-xak">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="2e2-61-HKQ">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2e2-61-HKQ" id="Ryk-Iq-2pt">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-password" translatesAutoresizingMaskIntoConstraints="NO" id="hTt-iv-FIu">
+                                                    <rect key="frame" x="177" y="41" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="8Si-nB-5gN"/>
+                                                        <constraint firstAttribute="width" constant="60" id="sNX-fI-bi4"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hTt-iv-FIu" firstAttribute="centerX" secondItem="Ryk-Iq-2pt" secondAttribute="centerX" id="EHd-lf-VCk"/>
+                                                <constraint firstItem="hTt-iv-FIu" firstAttribute="top" secondItem="Ryk-Iq-2pt" secondAttribute="topMargin" constant="30" id="KL9-bO-Xgb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="FeD-ep-mkK">
+                                        <rect key="frame" x="0.0" y="148" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FeD-ep-mkK" id="yDV-aQ-DUc">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a secure password.  This password will be used to secure your account. You will need  it to send transactions." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTx-2Z-GBw">
+                                                    <rect key="frame" x="20" y="9.3333333333333321" width="374" height="61.666666666666671"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="bTx-2Z-GBw" secondAttribute="trailing" constant="20" id="Azl-Zm-SbS"/>
+                                                <constraint firstItem="bTx-2Z-GBw" firstAttribute="leading" secondItem="yDV-aQ-DUc" secondAttribute="leading" constant="20" id="MEn-QY-cGk"/>
+                                                <constraint firstItem="bTx-2Z-GBw" firstAttribute="centerY" secondItem="yDV-aQ-DUc" secondAttribute="centerY" id="vNr-Oa-bJR"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="73" id="XgC-hO-LbX">
+                                        <rect key="frame" x="0.0" y="228" width="414" height="73"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XgC-hO-LbX" id="fLw-Ve-vCC">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="73"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6g0-va-Xyh">
+                                                    <rect key="frame" x="20" y="10" width="374" height="40"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1U-bD-CCT">
+                                                            <rect key="frame" x="8" y="8" width="73" height="24"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="At least 8 characters" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JdP-FP-oCb">
+                                                            <rect key="frame" x="160" y="0.0" width="214" height="40"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="cOS-0f-3gB"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="bcK-41-XvC" id="O5K-1H-mIA"/>
+                                                            </connections>
+                                                        </textField>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="JdP-FP-oCb" secondAttribute="trailing" id="2YG-Yu-ykf"/>
+                                                        <constraint firstAttribute="height" constant="40" id="7IH-fb-KeR"/>
+                                                        <constraint firstItem="JdP-FP-oCb" firstAttribute="top" secondItem="6g0-va-Xyh" secondAttribute="top" id="BHE-k9-yhO"/>
+                                                        <constraint firstItem="s1U-bD-CCT" firstAttribute="leading" secondItem="6g0-va-Xyh" secondAttribute="leading" constant="8" id="sHG-qx-t7c"/>
+                                                        <constraint firstItem="JdP-FP-oCb" firstAttribute="centerY" secondItem="s1U-bD-CCT" secondAttribute="centerY" id="w4Q-5R-H5K"/>
+                                                        <constraint firstItem="JdP-FP-oCb" firstAttribute="leading" secondItem="6g0-va-Xyh" secondAttribute="leading" constant="160" id="ylq-Nh-x1Z"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="6g0-va-Xyh" secondAttribute="trailing" id="6BF-sI-hSt"/>
+                                                <constraint firstItem="6g0-va-Xyh" firstAttribute="top" secondItem="fLw-Ve-vCC" secondAttribute="top" constant="10" id="9XX-nw-jzv"/>
+                                                <constraint firstItem="6g0-va-Xyh" firstAttribute="leading" secondItem="fLw-Ve-vCC" secondAttribute="leadingMargin" id="d4V-OW-M9f"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="veP-HR-a7T">
+                                        <rect key="frame" x="0.0" y="301" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="veP-HR-a7T" id="IXY-8e-cn8">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I have written my password down in a secure location" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoQ-I6-Sqr">
+                                                    <rect key="frame" x="20" y="19.666666666666671" width="307" height="41"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Uxe-xC-7PT">
+                                                    <rect key="frame" x="347" y="24.666666666666671" width="49" height="31"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="47" id="ggB-oV-tos"/>
+                                                        <constraint firstAttribute="height" constant="31" id="ktu-dH-sdI"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="passwordSavedSwitched:" destination="bcK-41-XvC" eventType="valueChanged" id="1dw-8h-58f"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="yoQ-I6-Sqr" firstAttribute="centerY" secondItem="IXY-8e-cn8" secondAttribute="centerY" id="0ZM-g1-Akt"/>
+                                                <constraint firstItem="Uxe-xC-7PT" firstAttribute="leading" secondItem="yoQ-I6-Sqr" secondAttribute="trailing" constant="20" id="DT6-0a-Jpa"/>
+                                                <constraint firstItem="yoQ-I6-Sqr" firstAttribute="leading" secondItem="IXY-8e-cn8" secondAttribute="leadingMargin" id="LuC-mA-zYg"/>
+                                                <constraint firstItem="Uxe-xC-7PT" firstAttribute="trailing" secondItem="IXY-8e-cn8" secondAttribute="trailingMargin" id="PHa-cW-iEE"/>
+                                                <constraint firstItem="Uxe-xC-7PT" firstAttribute="centerY" secondItem="IXY-8e-cn8" secondAttribute="centerY" id="Rga-P6-pUL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="bcK-41-XvC" id="1fD-Ej-6ob"/>
+                            <outlet property="delegate" destination="bcK-41-XvC" id="diN-px-l9g"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="1at-dl-w2A">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="3Cd-gC-xh3">
+                            <connections>
+                                <action selector="savePasswordTapped:" destination="bcK-41-XvC" id="u7m-Cp-Nsn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="passwordField" destination="JdP-FP-oCb" id="5j3-jn-1mY"/>
+                        <outlet property="promptTextLabel" destination="bTx-2Z-GBw" id="s2d-i0-AZb"/>
+                        <outlet property="savePasswordLabel" destination="yoQ-I6-Sqr" id="uOE-rN-pOf"/>
+                        <outlet property="savePasswordSwitch" destination="Uxe-xC-7PT" id="Vsj-BD-SaH"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q5g-Ci-bfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3547.826086956522" y="600"/>
+        </scene>
     </scenes>
     <resources>
         <image name="icon-camera" width="50" height="50"/>
@@ -1604,7 +1772,7 @@ Your phone number helps you connect with other people on the network</string>
         <image name="placeholder-user" width="150" height="150"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kTK-mY-cCK"/>
+        <segue reference="7cG-aR-RiV"/>
         <segue reference="ArS-Bg-bct"/>
         <segue reference="QxC-3d-5pb"/>
     </inferredMetricsTieBreakers>

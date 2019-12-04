@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BigInt
 
 class WalletViewController: BaseViewController {
 
@@ -25,16 +26,19 @@ class WalletViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.showEmptyView(false)
+        self.navigationItem.backBarButtonItem?.title = ""
+
+
         tableView.register(UINib(nibName: "TransactionTableViewCell", bundle: nil), forCellReuseIdentifier: transactionCellIdentifier)
         tableView.tableFooterView = UIView()
         self.navigationItem.backBarButtonItem?.title = ""
 
         presenter.attach(self)
-        if let wallet = self.wallet {
-            presenter.getBalance(forWallet: wallet)
-        }
-        self.currencyLabel.text = wallet?.currency.rawValue ?? ""
 
+        self.currencyLabel.text = wallet?.currency.rawValue ?? ""
+        if let wallet = self.wallet {
+            self.balanceLabel.text = EthConvert.formattedValue(wallet.balance, decimals: 3)
+        }
     }
 
     deinit {
@@ -53,6 +57,9 @@ class WalletViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         presenter.fetchTransactions(forWallet: self.wallet!)
+        if let wallet = self.wallet {
+            presenter.getBalance(forWallet: wallet)
+        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -70,9 +77,10 @@ class WalletViewController: BaseViewController {
         self.showToast("Error fetching account balance: \(error.message)")
     }
 
-    func onBalanceFetched(_ balance: String) {
+    func onBalanceFetched(_ balance: BigUInt) {
         debugPrint("Balance = \(balance)")
-        balanceLabel.text = balance
+
+        balanceLabel.text = EthConvert.formattedValue(balance, decimals: 3)
     }
 
     func onTransactionsFetched(_ transactions: [Transaction]) {

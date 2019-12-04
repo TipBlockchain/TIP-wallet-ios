@@ -13,9 +13,10 @@ import Nuke
 class TransactionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var userImageView: UIImageView!
-    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
+
     @IBOutlet weak var amountLabel: UILabel!
-    @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
 
     var transaction: Transaction? {
@@ -43,9 +44,24 @@ class TransactionTableViewCell: UITableViewCell {
 
         let outgoingTx = transaction.from.lowercased() == wallet?.address.lowercased()
 
-        self.usernameLabel.text = outgoingTx ?
-            (transaction.toUser != nil ? transaction.toUser?.username?.withAtPrefix() : transaction.to) :
-            (transaction.fromUser != nil ? transaction.fromUser?.username?.withAtPrefix() : transaction.from)
+        if outgoingTx {
+            if let recipient = transaction.toUser {
+                self.titleLabel.text = recipient.fullname ?? ""
+                self.subtitleLabel.text = recipient.username?.withAtPrefix() ?? ""
+            } else {
+                self.titleLabel.text = transaction.to
+                self.subtitleLabel.text = ""
+            }
+        } else {
+            if let sender = transaction.fromUser {
+                self.titleLabel.text = sender.fullname ?? ""
+                self.subtitleLabel.text = sender.username?.withAtPrefix() ?? ""
+            } else {
+                self.titleLabel.text = transaction.from
+                self.subtitleLabel.text = ""
+            }
+        }
+
         let photoUrl = outgoingTx ? transaction.toUser?.originalPhotoUrl : transaction.fromUser?.originalPhotoUrl
         if let photoUrl = photoUrl, let imageUrl = URL(string: photoUrl) {
             Nuke.loadImage(with: imageUrl, into: self.userImageView)
@@ -53,17 +69,15 @@ class TransactionTableViewCell: UITableViewCell {
             userImageView.image = UIImage.placeHolderImage()
         }
 
-        if let valueString = EthConvert.toEthereumUnits(transaction.value, decimals: 3), let currency = transaction.currency {
-            self.amountLabel.text = valueString  + " " + currency
+        let formattedValue = EthConvert.formattedValue(transaction.value, decimals: 3)
+        if let currency = transaction.currency {
+            self.amountLabel.text = formattedValue  + " " + currency
         } else {
             self.amountLabel.text = "Pending".localized
         }
         self.amountLabel.textColor = outgoingTx ? .outRed : .inGreen
-        self.messageLabel.text = transaction.fromUser?.fullname ?? ""
         let txDate = transaction.timestamp
         self.dateLabel.text = DateFormatter.displayDateFormatter.string(from: txDate)
-
-
     }
     
 }

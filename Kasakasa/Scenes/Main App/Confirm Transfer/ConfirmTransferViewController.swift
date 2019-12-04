@@ -29,6 +29,8 @@ class ConfirmTransferViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.backBarButtonItem?.title = ""
+
 
         self.presenter = ConfirmTransferPresenter()
         presenter?.attach(self)
@@ -51,6 +53,7 @@ class ConfirmTransferViewController: BaseViewController {
                                 message: "Enter your password to unlock your wallet and send this transcation.".localized,
                                 style: .alert,
                                 isSecure: true,
+                                okButtonTitle: "Send".localized,
                                 onOkSelected: { password in
                                     self.sendTransaction(withPassword: password ?? "")
         })

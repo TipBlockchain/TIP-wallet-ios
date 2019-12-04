@@ -24,6 +24,9 @@ class UserProfileViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.presenter = UserProfilePresenter()
+        presenter?.attach(self)
+        
         self.updateUI()
         self.addGestureRecognizers()
         // Do any additional setup after loading the view.

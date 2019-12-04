@@ -49,7 +49,7 @@ extension DateFormatter {
         let dateFormat = "MMM d  YYYY',' hh:mm a"
         let formatter = DateFormatter()
         formatter.dateFormat = dateFormat
-        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.timeZone = TimeZone.current
         return formatter
     }()
 }

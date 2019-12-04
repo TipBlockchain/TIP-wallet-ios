@@ -70,4 +70,11 @@ class EthConvert {
     public static func toEthereumUnits(_ bigUIntValue: BigUInt, decimals: Int = 4) -> String? {
         return Web3.Utils.formatToEthereumUnits(bigUIntValue, toUnits: .eth, decimals: decimals)
     }
+
+    public static func formattedValue(_ value: BigUInt, decimals: Int = 4) -> String {
+        let balanceString = EthConvert.toEthereumUnits(value, decimals: decimals)
+        let number = NSDecimalNumber(string: balanceString)
+        let formatted = NumberFormatter.currencyFormatter.string(from: number)
+        return formatted ?? "-"
+    }
 }

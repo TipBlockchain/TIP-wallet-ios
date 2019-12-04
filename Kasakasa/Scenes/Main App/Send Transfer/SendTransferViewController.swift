@@ -19,6 +19,7 @@ class SendTransferViewController: BaseViewController {
         } else if let address = self.targetAddress {
             return address
         }
+
         return ""
     }
 
@@ -28,6 +29,7 @@ class SendTransferViewController: BaseViewController {
     @IBOutlet private weak var currencyField: UITextField?
     @IBOutlet private weak var availableFundsField: UITextField?
     @IBOutlet private weak var recepientField: UITextField?
+    @IBOutlet private weak var recepientLabel: UILabel?
     @IBOutlet private weak var amountField: UITextField?
 
     @IBOutlet private weak var networkFeeLabel: UILabel?
@@ -48,10 +50,14 @@ class SendTransferViewController: BaseViewController {
     private var txFeeInWei: BigUInt = BigUInt("0")
 
     private let currencyLabelTag = 77
+    private let placeholderRecipientValue = NSLocalizedString("Username or address", comment: "")
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationItem.leftItemsSupplementBackButton = true
+        self.navigationItem.backBarButtonItem?.title = ""
+
+
         self.setupPresenter()
         self.setupForm()
 //        self.endEditingOnTap = true
@@ -172,8 +178,12 @@ extension SendTransferViewController: UITableViewDataSource {
         case CellIndex.availableFunds.rawValue:
             self.availableFundsField = cell.contentView.subView(ofType: UITextField.self) as? UITextField
         case CellIndex.recepient.rawValue:
-            self.recepientField = cell.contentView.subView(ofType: UITextField.self) as? UITextField
-            self.recepientField?.text = self.targetUser?.username ?? ""
+
+            self.recepientLabel = cell.contentView.viewWithTag(110) as? UILabel
+            self.recepientLabel?.text = self.targetUser?.username ?? self.placeholderRecipientValue
+            if let user = self.targetUser {
+                self.contactSelected(user)
+            }
         case CellIndex.amount.rawValue:
             self.amountField = cell.contentView.subView(ofType: UITextField.self) as? UITextField
             self.amountField?.inputAccessoryView = self.toolbar
@@ -285,7 +295,7 @@ extension SendTransferViewController: SendTransferView {
     }
 
     func onInsufficientEthBalanceError() {
-        self.showError(AppErrors.genericError(message: "You wallet does not contain enough ETH for the transaction.".localized))
+        self.showError(AppErrors.genericError(message: "You wallet does not contain enough ETH for the transaction.\n TIP is an ERC20 token, thus, ETH is required in your wallet to send transactions.".localized))
     }
 
     func onInsufficientTipBalanceError() {
@@ -357,11 +367,15 @@ extension SendTransferViewController: SelectContactDelegate {
         self.targetAddress = nil
         self.targetUser = user
         self.recepientField?.text = user.username
+        self.recepientLabel?.text = user.username.withAtPrefix()
+        self.recepientLabel?.textColor = UIColor.darkText
     }
 
     func addressEntered(_ address: String) {
         self.targetUser = nil
         self.targetAddress = address
         self.recepientField?.text = address
+        self.recepientLabel?.text = address
+        self.recepientLabel?.textColor = UIColor.darkText
     }
 }

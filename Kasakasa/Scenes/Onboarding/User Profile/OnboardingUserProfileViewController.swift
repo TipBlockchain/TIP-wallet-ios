@@ -19,6 +19,8 @@ class OnboardingUserProfileViewController: BaseTableViewController {
     @IBOutlet private weak var lastnameField: UITextField!
     @IBOutlet private weak var usernameField: UITextField!
 
+    @IBOutlet private weak var signupButton: UIBarButtonItem!
+
     private var profileImage: UIImage?
     private var imagePicker: ImagePicker!
     private var hasPromptedToUploadImage = false
@@ -59,6 +61,8 @@ class OnboardingUserProfileViewController: BaseTableViewController {
         usernameField.rightViewMode = .always
 
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
+
+        self.signupButton.isEnabled = true
         // Do any additional setup after loading the view.
     }
 
@@ -76,6 +80,7 @@ class OnboardingUserProfileViewController: BaseTableViewController {
     @IBAction func continueButtonTapped(_ sender: Any) {
         debugPrint("Continue button tapped")
         self.view.endEditing(true)
+        self.signupButton.isEnabled = false
         checkValues()
     }
 
@@ -268,6 +273,8 @@ extension OnboardingUserProfileViewController: OnboardingUserProfileView {
     }
 
     func onAuthorizationFetched(_ auth: Authorization?, error: AppErrors?) {
+        AppAnalytics.logEvent(.signedUp)
+
         self.view.endEditing(true)
         if let error = error {
             self.showActivityIndicator(false)

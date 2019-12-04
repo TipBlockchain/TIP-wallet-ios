@@ -35,7 +35,8 @@ class WalletListTableViewCell: UITableViewCell {
         if let wallet = self.wallet {
             logoImageView.image = UIImage(named: "coin-logo-\(wallet.currency.rawValue.lowercased())")
             titleLabel.text = wallet.currency.name
-            balanceLabel.text = "\(EthConvert.toEthereumUnits(wallet.balance, decimals: 2) ?? "0.00") \(wallet.currency.symbol)"
+            let formattedBalance = EthConvert.formattedValue(wallet.balance, decimals: 2)
+            balanceLabel.text = "\(formattedBalance) \(wallet.currency.symbol)"
         }
     }
 

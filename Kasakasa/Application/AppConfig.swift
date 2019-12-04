@@ -15,7 +15,7 @@ class AppConfig {
 
     static func initalize() {
         configDict = readConfigJson()
-        loadRemoteConfig()
+//        loadRemoteConfig()
     }
     static var tipApiBaseUrl: String {
         return configDict[AppConstants.tipApiBaseUrl] as! String
