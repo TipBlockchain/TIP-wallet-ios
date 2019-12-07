@@ -145,6 +145,13 @@ class OnboardingUserProfileViewController: BaseTableViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
 
         }
+
+        if let popover = alert.popoverPresentationController {
+            popover.sourceView = self.cameraButton
+            popover.sourceRect = self.cameraButton.bounds
+            popover.permittedArrowDirections = [.down, .up]
+        }
+
         alert.addAction(choosePhotoAction)
         alert.addAction(continueAction)
         alert.addAction(cancelAction)

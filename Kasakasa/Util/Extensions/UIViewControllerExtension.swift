@@ -104,17 +104,25 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 
-    func showOkCancelAlert(withTitle title: String, message: String, style: UIAlertController.Style = .alert, onOkSelected okCompletionBlock: VoidCompletionBlock? = nil, onCancelSelected cancelCompletionBlock: VoidCompletionBlock? = nil) {
+    func showOkCancelAlert(withTitle title: String, message: String, style: UIAlertController.Style = .alert, sourceView: UIView? = nil, onOkSelected okCompletionBlock: VoidCompletionBlock? = nil, onCancelSelected cancelCompletionBlock: VoidCompletionBlock? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: style)
         let okAction = UIAlertAction(title: "Okay".localized, style: .default) { (action) in
             okCompletionBlock?()
             //            alert.dismiss(animated: true, completion: completion)
         }
+        alert.addAction(okAction)
+
         let cancelAction = UIAlertAction(title: "Cancel".localized, style: .cancel) { (action) in
             cancelCompletionBlock?()
         }
-        alert.addAction(okAction)
         alert.addAction(cancelAction)
+        
+        alert.modalPresentationStyle = UIModalPresentationStyle.formSheet
+        if let popover = alert.popoverPresentationController, let view = sourceView {
+            popover.sourceView = view
+            popover.sourceRect = view.bounds
+            popover.permittedArrowDirections = [.down, .up]
+        }
         self.present(alert, animated: true, completion: nil)
     }
 

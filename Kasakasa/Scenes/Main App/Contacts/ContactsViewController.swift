@@ -94,7 +94,7 @@ extension ContactsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let selectedContact = self.contact(atIndexPath: indexPath) {
-            self.showOkCancelAlert(withTitle: "Send Transfer?".localized, message: "Do you want to send a transfer to \(selectedContact.username)", style: .actionSheet, onOkSelected: {
+            self.showOkCancelAlert(withTitle: "Send Transfer?".localized, message: "Do you want to send a transfer to \(selectedContact.username)", style: .actionSheet, sourceView: tableView.cellForRow(at: indexPath), onOkSelected: {
                 self.selectedContact = selectedContact
                 self.showSendTransfer()
                 tableView.deselectRow(at: indexPath, animated: true)

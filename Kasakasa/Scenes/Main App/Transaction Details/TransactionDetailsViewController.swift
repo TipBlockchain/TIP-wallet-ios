@@ -74,6 +74,15 @@ extension TransactionDetailsViewController: UITableViewDataSource {
         }
         return cell
     }
+}
 
+extension TransactionDetailsViewController: UITableViewDelegate {
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if details.count > indexPath.row {
+            let detail = details[indexPath.row]
+            self.copyToClipboard(detail.details)
+            self.showToast("\(detail.title) copied")
+        }
+    }
 }
