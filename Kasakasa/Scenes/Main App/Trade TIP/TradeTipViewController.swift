@@ -12,14 +12,30 @@ class TradeTipViewController: BaseViewController {
 
     @IBOutlet private var tableView: UITableView!
 
-    private var exchanges: [CryptoExchange] = []
+    var presenter: TradeTipPresenter? = nil
+    private var exchanges: [CryptoExchange] = [] {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
     private let cellIdentifier = "CryptoExchangeCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.exchanges = AppConfig.exchanges ?? []
-        tableView.reloadData()
+        presenter = TradeTipPresenter()
+        presenter?.attach(self)
+        presenter?.getExchanges()
+    }
+
+
+    deinit {
+        presenter?.detach()
+        self.presenter = nil
+    }
+
+    func setExchanges(_ exchanges: [CryptoExchange]) {
+        self.exchanges = exchanges
     }
 
     private func launchExchange(_ exchange: CryptoExchange) {
@@ -68,6 +84,14 @@ extension TradeTipViewController: UITableViewDelegate {
             })
         } else {
             self.showError(withTitle: "Error openeing exchange", message: "Unable to open excahnege url.")
+        }
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if UIDevice.current.isIPad {
+            return 320
+        } else {
+            return 210
         }
     }
 }

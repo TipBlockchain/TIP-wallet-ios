@@ -26,9 +26,9 @@ class BackupRecoveryPhraseViewController: BaseViewController {
         self.copyToClipboard(self.recoveryPhraseTextView.text)
     }
 
-    @IBAction func backupNowTapped(_ sender: Any) {
+    @IBAction func backupNowTapped(_ sender: UIView) {
         let text = self.recoveryPhraseTextView.text ?? ""
-        self.startShareActivity(text)
+        self.startShareActivity(text, withView: sender)
     }
 
     private func readRecoveryPhrase() {

@@ -281,6 +281,17 @@ public class TipApiService: NSObject {
         }
     }
 
+    func getExchanges(_ params: Parameters, completion: @escaping([CryptoExchange]?, AppErrors?) -> Void) {
+        let request = TipApiRequest.getExchanges(params: params)
+        networkService.sendRequest(request: request) { (result, error) in
+            if let resultData = result as? Data, let exchanges: [CryptoExchange] = try? JSONDecoder.isoDateDecoder.decode([CryptoExchange].self, from: resultData) {
+                completion(exchanges, nil)
+            } else {
+                completion(nil, AppErrors.unknowkError)
+            }
+        }
+    }
+
     func postTransaction(_ transaction: Transaction, completion: @escaping((Transaction?, AppErrors?) -> Void)) {
         let request = TipApiRequest.postTransaction(transaction)
         networkService.sendRequest(request: request) { (result, error) in

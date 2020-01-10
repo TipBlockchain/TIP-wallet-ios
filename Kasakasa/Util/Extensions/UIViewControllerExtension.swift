@@ -166,9 +166,9 @@ extension UIViewController {
         }
     }
 
-    func startShareActivity(_ text: String) {
+    func startShareActivity(_ text: String, withView sourceView: UIView? = nil) {
         let activity = UIActivityViewController(activityItems: [text], applicationActivities: nil)
-        activity.popoverPresentationController?.sourceView = self.view
+        activity.popoverPresentationController?.sourceView = sourceView ?? self.view
         self.present(activity, animated: true, completion: nil)
     }
 
@@ -182,11 +182,15 @@ extension UIViewController {
     }
 
     func pasteClipboard(into textView: UITextView) {
-        textView.text = UIPasteboard.general.string ?? ""
+        textView.paste(self)
+//        textView.text.append( UIPasteboard.general.string ?? "")
     }
 
     func pasteClipboard(nito textField: UITextField) {
-        textField.text = UIPasteboard.general.string ?? ""
+//        let currentText = textField.text ?? ""
+//        let start = textField.selectedTextRange?.start
+//        textField.text?.append(UIPasteboard.general.string ?? "")
+        textField.paste(self)
     }
 
     func openUrl(_ url: URL, options: [UIApplication.OpenExternalURLOptionsKey : Any] = [:], completionHandler completion: ((Bool) -> Void)? = nil) {

@@ -25,8 +25,9 @@ class InfuraApiService {
           "id": 1
         ] as [String : Any]
 
-        if let postData = try? JSONSerialization.data(withJSONObject: parameters, options: []) {
-            let request = NSMutableURLRequest(url: NSURL(string: "https://rinkeby.infura.io/v3/678b8cde335e4f4ba45d9d010a293508")! as URL,
+        if let ethNodeUrlString = AppConfig.ethNodeUrl,
+            let postData = try? JSONSerialization.data(withJSONObject: parameters, options: []) {
+            let request = NSMutableURLRequest(url: NSURL(string: ethNodeUrlString)! as URL,
                                                     cachePolicy: .useProtocolCachePolicy,
                                                 timeoutInterval: 10.0)
             request.httpMethod = "POST"

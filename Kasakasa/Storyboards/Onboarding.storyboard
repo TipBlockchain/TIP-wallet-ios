@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aPQ-yn-0U3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aPQ-yn-0U3">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -88,7 +88,7 @@ Your phone number helps you connect with other people on the network</string>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pYO-dE-E6B">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="214" height="40"/>
+                                                                    <rect key="frame" x="0.0" y="0.66666666666666785" width="214" height="40"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="40" id="O0N-dc-b5Z"/>
@@ -103,7 +103,7 @@ Your phone number helps you connect with other people on the network</string>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="trailing" secondItem="pYO-dE-E6B" secondAttribute="trailing" id="9v4-A9-rGA"/>
-                                                                <constraint firstItem="pYO-dE-E6B" firstAttribute="top" secondItem="qbD-HV-Zxu" secondAttribute="top" id="hvk-Pl-YtE"/>
+                                                                <constraint firstItem="pYO-dE-E6B" firstAttribute="centerY" secondItem="qbD-HV-Zxu" secondAttribute="centerY" id="G8F-ol-KrC"/>
                                                                 <constraint firstItem="pYO-dE-E6B" firstAttribute="leading" secondItem="qbD-HV-Zxu" secondAttribute="leading" id="mQK-wU-mXM"/>
                                                                 <constraint firstItem="zNY-o8-Vwt" firstAttribute="leading" secondItem="qbD-HV-Zxu" secondAttribute="leading" id="tmx-qa-Kk5"/>
                                                                 <constraint firstItem="zNY-o8-Vwt" firstAttribute="centerY" secondItem="qbD-HV-Zxu" secondAttribute="centerY" id="uU7-g1-BLL"/>
@@ -296,9 +296,8 @@ Your phone number helps you connect with other people on the network</string>
                                                                 <outlet property="delegate" destination="5pY-bM-Csh" id="9c4-40-Wao"/>
                                                             </connections>
                                                         </textField>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Verification Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KwX-zm-9rm">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verification Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KwX-zm-9rm">
                                                             <rect key="frame" x="8" y="8" width="134" height="24"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -307,8 +306,10 @@ Your phone number helps you connect with other people on the network</string>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="xeg-G7-eaW" secondAttribute="bottom" id="8wv-66-1Zv"/>
+                                                        <constraint firstItem="KwX-zm-9rm" firstAttribute="leading" secondItem="3PL-qt-2Rv" secondAttribute="leading" constant="8" id="HBN-Mg-9iQ"/>
                                                         <constraint firstItem="xeg-G7-eaW" firstAttribute="top" secondItem="3PL-qt-2Rv" secondAttribute="top" id="MUo-UZ-hHB"/>
                                                         <constraint firstItem="xeg-G7-eaW" firstAttribute="leading" secondItem="3PL-qt-2Rv" secondAttribute="leading" constant="160" id="hc1-g4-1WM"/>
+                                                        <constraint firstItem="KwX-zm-9rm" firstAttribute="centerY" secondItem="3PL-qt-2Rv" secondAttribute="centerY" id="uFb-fw-vLJ"/>
                                                         <constraint firstAttribute="trailing" secondItem="xeg-G7-eaW" secondAttribute="trailing" id="uzz-kr-cRS"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
@@ -415,7 +416,7 @@ Your phone number helps you connect with other people on the network</string>
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="one two three four five six seven eight nine ten eleven twelve" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2HX-jg-bLb">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" editable="NO" text="one two three four five six seven eight nine ten eleven twelve" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2HX-jg-bLb">
                                                     <rect key="frame" x="20" y="10" width="374" height="130"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
@@ -783,7 +784,7 @@ Your phone number helps you connect with other people on the network</string>
                         <sections>
                             <tableViewSection id="FSN-rn-pMx">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="120" id="yOG-az-qXM">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="120" id="yOG-az-qXM">
                                         <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yOG-az-qXM" id="OBb-1C-THo">
@@ -805,7 +806,7 @@ Your phone number helps you connect with other people on the network</string>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="140" id="uRz-Sp-Eg1">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="140" id="uRz-Sp-Eg1">
                                         <rect key="frame" x="0.0" y="148" width="414" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uRz-Sp-Eg1" id="Y0l-iq-RIt">
@@ -838,7 +839,7 @@ Your phone number helps you connect with other people on the network</string>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="4oK-Dh-Opf">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="200" id="4oK-Dh-Opf">
                                         <rect key="frame" x="0.0" y="288" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4oK-Dh-Opf" id="ExD-ZQ-n7a">
@@ -1258,7 +1259,7 @@ Your phone number helps you connect with other people on the network</string>
                                                                 <outlet property="delegate" destination="oTV-pR-Iov" id="faZ-2z-Yb6"/>
                                                             </connections>
                                                         </textField>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose your username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KjL-hh-xqd">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choose your username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KjL-hh-xqd" customClass="RightViewTextField" customModule="Kasakasa" customModuleProvider="target">
                                                             <rect key="frame" x="160" y="82" width="214" height="40"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -1364,6 +1365,7 @@ Your phone number helps you connect with other people on the network</string>
                         <outlet property="lastnameField" destination="qnN-XX-cmx" id="hCu-OA-ddJ"/>
                         <outlet property="profileImageActivityIndicator" destination="ec5-tT-SdW" id="dl8-jt-H8h"/>
                         <outlet property="profileImageView" destination="qgC-90-BQg" id="PSS-Lq-pye"/>
+                        <outlet property="signupButton" destination="voM-hD-Sbt" id="Giq-xj-zJ2"/>
                         <outlet property="usernameField" destination="KjL-hh-xqd" id="gwB-hb-cia"/>
                         <segue destination="oze-ea-e1F" kind="showDetail" identifier="GoBackToEnterPhoneNumber" id="QxC-3d-5pb"/>
                     </connections>
@@ -1606,7 +1608,7 @@ Your phone number helps you connect with other people on the network</string>
                         <sections>
                             <tableViewSection id="hXk-Qf-xak">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="2e2-61-HKQ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="2e2-61-HKQ">
                                         <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2e2-61-HKQ" id="Ryk-Iq-2pt">
@@ -1628,7 +1630,7 @@ Your phone number helps you connect with other people on the network</string>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="FeD-ep-mkK">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="FeD-ep-mkK">
                                         <rect key="frame" x="0.0" y="148" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FeD-ep-mkK" id="yDV-aQ-DUc">

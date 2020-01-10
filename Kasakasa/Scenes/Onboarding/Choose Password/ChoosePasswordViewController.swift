@@ -61,7 +61,7 @@ class ChoosePasswordViewController: BaseTableViewController {
               return
         }
 
-        if self.existingUser == nil && password == password2 { // can't use guard
+        if self.existingUser == nil && password != password2 { // can't use guard
             showToast("Passwords do not match".localized)
             return
         }

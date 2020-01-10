@@ -23,7 +23,6 @@ public struct Config: Codable {
     var etherscanBaseUrl: String
     var buyTipUrl: String
     var appStartBlock: String
-    var exchanges: [CryptoExchange]
 
     enum CodingKeys: String, CodingKey {
         case tipApiUrl = "tip_api_url"
@@ -35,7 +34,6 @@ public struct Config: Codable {
         case etherscanBaseUrl = "etherscan_base_url"
         case buyTipUrl = "buy_tip_url"
         case appStartBlock = "app_start_block"
-        case exchanges = "exchanges"
     }
 }
 

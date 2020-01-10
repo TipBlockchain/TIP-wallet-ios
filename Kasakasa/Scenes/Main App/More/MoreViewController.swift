@@ -36,6 +36,7 @@ class MoreViewController: BaseViewController {
     private let signOutCellIdentifier = "SignOutCell"
 
     private var sections: [MoreListSection] = []
+    private var lastSelectedCell: UITableViewCell? = nil
 
     private func makeSections() -> [MoreListSection] {
         return [
@@ -104,7 +105,7 @@ class MoreViewController: BaseViewController {
 
     func performShare() {
         let text = "Check out Kasakasa crypto wallet from TIP blockchain. Send and receive crypto using usernames https://tipblockchain.io/kasakasa".localized
-        self.startShareActivity(text)
+        self.startShareActivity(text, withView: self.lastSelectedCell)
     }
 }
 
@@ -165,6 +166,8 @@ extension MoreViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.lastSelectedCell = tableView.cellForRow(at: indexPath)
+
         if let item = self.item(atIndexPath: indexPath) {
             item.action()
         }

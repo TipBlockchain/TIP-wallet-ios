@@ -30,6 +30,7 @@ enum TipApiRequest {
     case authorize(message: SecureMessage)
     case getConfig
     case getCountries
+    case getExchanges(params: Parameters)
     case getCountry(code: String)
     case startPhoneVerification(verification: PhoneVerificationRequest)
     case checkPhoneVerification(verification: PhoneVerificationRequest)
@@ -140,6 +141,8 @@ enum TipApiRequest {
         switch self {
         case .checkUsername(let username), .searchByUsername(let username):
             return ["username": username]
+        case .getExchanges(let params):
+            return params
         default:
             return [:]
         }
@@ -153,6 +156,8 @@ enum TipApiRequest {
             return baseUrl.appendingPathComponent("/appconfig")
         case .getCountries:
             return baseUrl.appendingPathComponent("/countries")
+        case .getExchanges(_):
+            return baseUrl.appendingPathComponent("/exchanges")
         case .getCountry(let code):
             return baseUrl.appendingPathComponent("/countries/\(code)")
         case .startPhoneVerification:

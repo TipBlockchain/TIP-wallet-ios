@@ -14,6 +14,7 @@ class RestoreWalletViewController: BaseTableViewController {
     var existingUser: User?
     private var presenter: RestoreWalletPresenter?
     private var recoveryPhrase: String = ""
+    private let maxCount = 160
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +76,8 @@ extension RestoreWalletViewController: RestoreWalletView {
 extension RestoreWalletViewController: UITextViewDelegate {
 
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        guard Range(range, in: textView.text) != nil else {
+
+        guard let rangeOfTextToReplace = Range(range, in: textView.text) else {
             return false
         }
 
@@ -83,7 +85,8 @@ extension RestoreWalletViewController: UITextViewDelegate {
             textView.resignFirstResponder()
             return false
         }
-
-        return true
+        let substringToReplace = textView.text[rangeOfTextToReplace]
+        let count = textView.text.count - substringToReplace.count + text.count
+        return count <= maxCount
     }
 }

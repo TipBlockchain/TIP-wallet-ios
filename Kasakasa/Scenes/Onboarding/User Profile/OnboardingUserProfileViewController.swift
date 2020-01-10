@@ -33,6 +33,7 @@ class OnboardingUserProfileViewController: BaseTableViewController {
             let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
             imageView.contentMode = .scaleAspectFit
             imageView.image = image
+            imageView.clipsToBounds = true
             _checkImageView = imageView
         }
         return _checkImageView!
@@ -81,6 +82,9 @@ class OnboardingUserProfileViewController: BaseTableViewController {
         debugPrint("Continue button tapped")
         self.view.endEditing(true)
         self.signupButton.isEnabled = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+            self.signupButton.isEnabled = true
+        }
         checkValues()
     }
 
@@ -100,6 +104,7 @@ class OnboardingUserProfileViewController: BaseTableViewController {
         var cancel = false
         var focusView: UIView?
 
+        self.view.endEditing(true)
         let firstname = firstnameField.text ?? ""
         let lastname = lastnameField.text ?? ""
         let username = usernameField.text ?? ""
@@ -244,6 +249,8 @@ extension OnboardingUserProfileViewController: OnboardingUserProfileView {
     }
 
     func onPhotoUploadError(_ error: AppErrors) {
+        self.signupButton.isEnabled = true
+
         self.showActivityIndicator(false)
         showError(error)
     }
@@ -253,18 +260,24 @@ extension OnboardingUserProfileViewController: OnboardingUserProfileView {
     }
 
     func onWalletNotSetupError() {
+        self.signupButton.isEnabled = true
+
         self.showOkAlert(withTitle: "Error".localized , message: "You do not have a valid wallet setup. Please create one to proceed".localized, style: UIAlertController.Style.alert) {
             self.navigateToCreateWallet()
         }
     }
 
     func onSignupTokenError() {
+        self.signupButton.isEnabled = true
+
         self.showOkAlert(withTitle: "Timeout".localized, message: "Your session has timed out. Signup must be completed withing 15 minutes from starting.".localized, style: .alert) {
             self.navigateToEnterPhoneNubmer()
         }
     }
 
     func onInvalidUser() {
+        self.signupButton.isEnabled = true
+
         showError(withTitle: "Error creating account".localized, message: "There was a problem creating your account. Please try again.".localized)
     }
 
@@ -274,6 +287,8 @@ extension OnboardingUserProfileViewController: OnboardingUserProfileView {
     }
 
     func onUsernameUnavailableError(isDemoAccount: Bool) {
+        self.signupButton.isEnabled = true
+
         self.showActivityIndicator(false)
         self.isUsernameAvailable = false
         usernameField.rightView = self.errorImageView
@@ -281,6 +296,7 @@ extension OnboardingUserProfileViewController: OnboardingUserProfileView {
 
     func onAuthorizationFetched(_ auth: Authorization?, error: AppErrors?) {
         AppAnalytics.logEvent(.signedUp)
+        self.signupButton.isEnabled = true
 
         self.view.endEditing(true)
         if let error = error {

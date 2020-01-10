@@ -18,10 +18,10 @@ public struct CryptoExchange: Codable {
 
     enum CodingKeys: String, CodingKey {
         case name
-        case displayName = "display_name"
+        case displayName = "displayName"
         case url
-        case logoUrl = "logo_url"
-        case logoName = "logo_name"
+        case logoUrl = "logoUrl"
+        case logoName = "logoName"
     }
 
     var logoImage: UIImage? {

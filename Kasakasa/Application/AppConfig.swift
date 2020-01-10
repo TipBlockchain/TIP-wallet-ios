@@ -15,7 +15,7 @@ class AppConfig {
 
     static func initalize() {
         configDict = readConfigJson()
-//        loadRemoteConfig()
+        loadRemoteConfig()
     }
     static var tipApiBaseUrl: String {
         return configDict[AppConstants.tipApiBaseUrl] as! String
@@ -34,7 +34,7 @@ class AppConfig {
     }
 
     static var ethNodeUrl: String? {
-        return config?.ethNodeUrl
+        return configDict[AppConstants.ethNodeUrl] as? String
     }
 
     static var etherscanBaseUrl: String {
@@ -54,10 +54,6 @@ class AppConfig {
 
     static var ethStartBlock: String? {
         return config?.appStartBlock
-    }
-
-    static var exchanges: [CryptoExchange]? {
-        return config?.exchanges
     }
 
     static var versionNumber: String {
