@@ -45,7 +45,7 @@ class BaseViewController: UIViewController {
         super.viewDidAppear(animated)
         var title = self.navigationItem.title
         if title == nil || title!.isEmpty {
-            title = self.title ?? ""
+            title = self.className
         }
         AppAnalytics.trackScreen(title ?? "-", class: self.className)
     }

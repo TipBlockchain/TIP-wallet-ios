@@ -20,8 +20,13 @@ class AppStyle {
         searchBarAppearance.tintColor = UIColor.white
         searchBarAppearance.backgroundColor = UIColor.white
         searchBarAppearance.barTintColor = UIColor.appPink
-        searchBarAppearance.searchTextField.backgroundColor = UIColor.white
-        searchBarAppearance.searchTextField.tintColor = UIColor.white
+        if #available(iOS 13.0, *) {
+            searchBarAppearance.searchTextField.backgroundColor = UIColor.white
+            searchBarAppearance.searchTextField.tintColor = UIColor.white
+
+        } else {
+            // Fallback on earlier versions
+        }
 
         let textFieldInSearchBarAppearance = UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self, UIToolbar.self])
         textFieldInSearchBarAppearance.defaultTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
