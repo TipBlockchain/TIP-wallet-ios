@@ -8,12 +8,13 @@
 
 import UIKit
 
-class RestoreWalletViewController: BaseViewController {
+class RestoreWalletViewController: BaseTableViewController {
 
     @IBOutlet private weak var recoveryPhraseTextView: UITextView!
     var existingUser: User?
     private var presenter: RestoreWalletPresenter?
     private var recoveryPhrase: String = ""
+    private let maxCount = 160
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +27,14 @@ class RestoreWalletViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
     }
+
+    @IBAction func pasteButtonTapped(_ sender: Any) {
+        self.pasteClipboard(into: self.recoveryPhraseTextView)
+    }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
-        self.recoveryPhrase = recoveryPhraseTextView.text ?? ""
+        self.view.endEditing(true)
+        self.recoveryPhrase = recoveryPhraseTextView.text.trimmingCharacters(in: .newlines)
         presenter?.checkRecoveryPhrase(phrase: recoveryPhrase)
     }
 
@@ -68,5 +74,19 @@ extension RestoreWalletViewController: RestoreWalletView {
 }
 
 extension RestoreWalletViewController: UITextViewDelegate {
-    
+
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+
+        guard let rangeOfTextToReplace = Range(range, in: textView.text) else {
+            return false
+        }
+
+        if range.length == 0, text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        let substringToReplace = textView.text[rangeOfTextToReplace]
+        let count = textView.text.count - substringToReplace.count + text.count
+        return count <= maxCount
+    }
 }

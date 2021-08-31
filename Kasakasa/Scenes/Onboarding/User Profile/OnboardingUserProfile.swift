@@ -11,6 +11,7 @@ import Foundation
 protocol OnboardingUserProfileView: class, BaseView {
     func onDemoAccountFound(_ user: User)
     func onPhotoUploaded()
+    func onPhotoUploadError(_ error: AppErrors)
     func onErrorUpdatingUser(_ error: AppErrors)
     func onWalletNotSetupError()
     func onSignupTokenError()

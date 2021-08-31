@@ -53,4 +53,28 @@ extension UIView {
         animation.duration = duration
         layer.add(animation, forKey: CATransitionType.fade.rawValue)
     }
+
+    func subView(ofType type: AnyClass) -> UIView? {
+        for view in subviews {
+            if view.isKind(of: type) {
+                return view
+            }
+        }
+        return nil
+    }
+
+    func addShadow(color: UIColor = .black, offset: CGSize, radius: CGFloat, opacity: Float) {
+        self.layer.shadowColor = color.cgColor
+        self.layer.shadowOffset = offset
+        self.layer.shadowRadius = radius
+        self.layer.shadowOpacity = opacity
+        self.layer.masksToBounds = false
+    }
+
+    func removeShadow() {
+        self.layer.shadowOffset = CGSize.zero
+        self.layer.shadowRadius = 0.0
+        self.layer.shadowOpacity = 0.0
+        self.layer.masksToBounds = true
+    }
 }

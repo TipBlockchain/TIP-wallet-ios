@@ -12,11 +12,11 @@ import BigInt
 
 class TipProcessor: ChainProcessor {
 
-    let tipToken = ERC20Token(name: "TIP Token", address: AppConfig.tipContractAddress, decimals: "18", symbol: "TIP")
+    static let tipToken = ERC20Token(name: "TIP Token", address: AppConfig.tipContractAddress, decimals: "18", symbol: "TIP")
 
     func getBalance(_ address: String) throws -> BigUInt {
-        let w3b = Web3Bridge()
-        return try w3b.getERC20Balance(forAddress: address, token: tipToken)
+        let w3b = Web3Bridge.shared
+        return try w3b.getERC20Balance(forAddress: address, token: TipProcessor.tipToken)
     }
 
     func getBalanceInNaturalUnits(_ address: String) throws -> String? {

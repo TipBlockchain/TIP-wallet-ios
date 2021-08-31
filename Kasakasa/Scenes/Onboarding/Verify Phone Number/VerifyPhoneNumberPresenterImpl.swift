@@ -9,9 +9,15 @@
 import Foundation
 
 class VerifyPhoneNumberPresenterImpl: VerifyPhoneNumberPresenter {
-    var view: VerifyPhoneNumberView? = nil
+    weak var view: VerifyPhoneNumberView? = nil
 
     private var apiService = TipApiService.sharedInstance
+
+    func attach(_ v: VerifyPhoneNumberView) {
+        self.view = v
+        UserRepository.shared.currentUser = nil
+        UserRepository.shared.demoAccountUser = nil
+    }
 
     func verifyPhoneNumber(_ verificationRequest: PhoneVerificationRequest) {
         apiService.checkPhoneVerification(verificationRequest: verificationRequest) { (response, error) in
@@ -27,7 +33,7 @@ class VerifyPhoneNumberPresenterImpl: VerifyPhoneNumberPresenter {
                         UserRepository.shared.demoAccountUser = demoAccount
                         self.view?.onPhoneVerified(withPendingSignup: pendingSignup, andDemoAccount: demoAccount)
                     } else if let pendingSignup = response.pendingSignup {
-                        AppDefaults.sharedInstance.pendingSignupToken = pendingSignup.token
+                        AppDefaults.shared.pendingSignupToken = pendingSignup.token
                         self.view?.onPhoneVerified(withPendingSignup: pendingSignup)
                     } else {
                         self.view?.onUnknownError(AppErrors.unknowkError)

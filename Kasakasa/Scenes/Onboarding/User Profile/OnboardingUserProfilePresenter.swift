@@ -16,7 +16,8 @@ class OnboardingUserProfilePresenter: NSObject, BasePresenter {
     private var walletRepository = WalletRepository.shared
     private var primaryWallet: Wallet?
     private var signupToken: String?
-    private let apiService = TipApiService.sharedInstance
+    private let tipApi = TipApiService.sharedInstance
+    private let mainQueue = DispatchQueue.main
 
     func attach(_ v: OnboardingUserProfileView) {
         self.view = v
@@ -26,7 +27,7 @@ class OnboardingUserProfilePresenter: NSObject, BasePresenter {
             } else {
                 view?.onWalletNotSetupError()
             }
-            self.signupToken = AppDefaults.sharedInstance.pendingSignupToken
+            self.signupToken = AppDefaults.shared.pendingSignupToken
         } catch {
             view?.onWalletNotSetupError()
         }
@@ -41,9 +42,9 @@ class OnboardingUserProfilePresenter: NSObject, BasePresenter {
 
     @objc
     private func doUsernameCheck(_ username: String) {
-        apiService.checkUsername(username) { (response, error) in
+        tipApi.checkUsername(username) { (response, error) in
             if let response = response {
-                DispatchQueue.main.async {
+                self.mainQueue.async {
                     if response.isAvailable {
                         self.view?.onUsernameAvailable()
                     } else {
@@ -69,9 +70,9 @@ class OnboardingUserProfilePresenter: NSObject, BasePresenter {
             fullname.append(contentsOf: " \(lastname)")
         }
         let user = User(id: "", fullname: fullname, username: username, address: primaryWallet.address)
-        apiService.createAccount(user: user, signupToken: signupToken, claimDemoAccount: demoAccountFound) { (newUser, error) in
+        tipApi.createAccount(user: user, signupToken: signupToken, claimDemoAccount: demoAccountFound) { (newUser, error) in
             guard error == nil else {
-                DispatchQueue.main.async {
+                self.mainQueue.async {
                     self.view?.onErrorUpdatingUser(error!)
                 }
                 return
@@ -80,30 +81,39 @@ class OnboardingUserProfilePresenter: NSObject, BasePresenter {
                 UserRepository.shared.currentUser = newUser
                 self.getNewAuthorization()
             } else {
-                DispatchQueue.main.async {
+                self.mainQueue.async {
                     self.view?.onInvalidUser()
                 }
             }
         }
     }
 
+    func uploadPhoto(_ image: UIImage) {
+        UserRepository.shared.updatePhoto(image, completion: { (user, error) in
+            self.mainQueue.async {
+                if user != nil {
+                    self.view?.onPhotoUploaded()
+                } else {
+                    self.view?.onPhotoUploadError(error ?? AppErrors.genericError(message: "Error uploading photo".localized))
+                }
+            }
+        })
+    }
+
     private func getNewAuthorization() {
         AuthorizationRepository.shared.getNewAuthorization { (authorization, error) in
-            DispatchQueue.main.async {
+            self.mainQueue.async {
                 self.view?.onAuthorizationFetched(authorization, error: error)
             }
         }
     }
 
-    func uploadPhoto(_ image: UIImage) {
-
-    }
-
     func checkForDemoAccount() {
         if let demoAccount = UserRepository.shared.demoAccountUser {
             demoAccountFound = true
-            view?.onDemoAccountFound(demoAccount)
+            self.mainQueue.async {
+                self.view?.onDemoAccountFound(demoAccount)
+            }
         }
     }
-
 }

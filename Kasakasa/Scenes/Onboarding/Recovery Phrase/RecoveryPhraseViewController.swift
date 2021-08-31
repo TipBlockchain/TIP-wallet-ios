@@ -8,13 +8,23 @@
 
 import UIKit
 
-class RecoveryPhraseViewController: BaseViewController {
+class RecoveryPhraseViewController: BaseTableViewController {
 
     @IBOutlet private weak var recoveryPhraseTextView: UITextView!
     private var presenter: RecoveryPhrasePresenter?
     private var isRecoveryPhraseSaved = false
     private var recoveryPhrase: String?
-    
+
+    override func loadView() {
+        super.loadView()
+        debugPrint("LoadView()")
+    }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        debugPrint("AwakeFromNib")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -59,6 +69,8 @@ class RecoveryPhraseViewController: BaseViewController {
 
 extension RecoveryPhraseViewController: RecoveryPhraseView {
     func onRecoveryPhraseCreated(_ phrase: String) {
+        AppAnalytics.logEvent(.getRecoveryPhrase)
+
         self.recoveryPhrase = phrase
         recoveryPhraseTextView.text = phrase
     }

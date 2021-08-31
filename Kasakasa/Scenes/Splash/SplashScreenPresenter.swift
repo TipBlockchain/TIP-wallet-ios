@@ -10,13 +10,16 @@ import Foundation
 
 class SplashScreenPresenter: BasePresenter {
     typealias View = SplashScreenView
-
+    lazy var userRepo = UserRepository.shared
     weak var view: SplashScreenView?
 
     func checkForUserAndWallet() {
         if let currentUser = UserRepository.shared.currentUser,
             let tipWallet = try! WalletRepository.shared.primaryWallet(),
-            currentUser.address == tipWallet.address {
+            currentUser.address.lowercased() == tipWallet.address.lowercased() {
+            self.userRepo.loadCurrentUser { (user, error) in
+                //
+            }
             view?.goToMainApp()
         } else {
             view?.goToOnboarding()

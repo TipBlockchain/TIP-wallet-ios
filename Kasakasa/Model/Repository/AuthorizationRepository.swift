@@ -16,10 +16,10 @@ class AuthorizationRepository: NSObject {
 
     var currentAuthorization: Authorization? {
         get {
-            return AppDefaults.sharedInstance.authorization
+            return AppDefaults.shared.authorization
         }
         set {
-            AppDefaults.sharedInstance.authorization = newValue
+            AppDefaults.shared.authorization = newValue
         }
     }
 
@@ -37,5 +37,9 @@ class AuthorizationRepository: NSObject {
                 }
             }
         }
+    }
+
+    func reset() {
+        self.currentAuthorization = nil
     }
 }

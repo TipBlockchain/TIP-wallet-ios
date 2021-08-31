@@ -27,10 +27,6 @@ extension String {
         return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: self)
     }
 
-    func isEthAddress() -> Bool {
-        return false
-    }
-
     func isNumeric() -> Bool {
         let regex = "^[0-9]+(\\.)?[0-9]*$"
         return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: self)
@@ -39,6 +35,20 @@ extension String {
     func isValidPassword() -> Bool {
         let passwordRegex = "\\w{8,255}"
         return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: self)
+    }
+
+    func withHexPrefix() -> String {
+        if !self.hasPrefix("0x") {
+            return "0x" + self
+        }
+        return self
+    }
+
+    func withAtPrefix() -> String {
+        if !self.hasPrefix("@") {
+            return "@" + self
+        }
+        return self
     }
 
     private static func isChecksumAddress(str: String) -> Bool {

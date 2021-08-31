@@ -12,9 +12,16 @@ import web3swift
 
 class EthProcessor: ChainProcessor {
 
+    let w3b = Web3Bridge.shared
+
     func getBalance(_ address: String) throws -> BigUInt {
-        let w3b = Web3Bridge()
         return try w3b.getEthBalance(foAddress: address)
+    }
+
+    func getBalaceAsync(_ address: String, completion: @escaping (BigUInt?, AppErrors?) -> Void) {
+        w3b.getEthBalance(forAddress: address) { (balance, error) in
+            completion(balance, error)
+        }
     }
 
     func getBalanceInNaturalUnits(_ address: String) throws -> String? {

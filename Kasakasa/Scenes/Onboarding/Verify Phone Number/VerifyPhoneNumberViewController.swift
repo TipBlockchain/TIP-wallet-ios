@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VerifyPhoneNumberViewController: BaseViewController {
+class VerifyPhoneNumberViewController: BaseTableViewController {
 
     typealias View = VerifyPhoneNumberView
 
@@ -34,6 +34,11 @@ class VerifyPhoneNumberViewController: BaseViewController {
         }
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.enableInteraction(true)
+    }
+
     @IBAction func verifyButtonTapped(_ sender: Any) {
         guard let phoneNumber = phoneNumber, let countryCode = countryCode else {
             showNoPhoneNumberProvidedError()
@@ -44,6 +49,7 @@ class VerifyPhoneNumberViewController: BaseViewController {
             return
         }
 
+        self.enableInteraction(false)
         let verificationRequest = PhoneVerificationRequest(countryCode: countryCode, phoneNumber: phoneNumber, verificationCode: verificationCode)
         presenter?.verifyPhoneNumber(verificationRequest)
     }
@@ -68,21 +74,28 @@ class VerifyPhoneNumberViewController: BaseViewController {
             viewController.demoAccountUser = self.demoAccount
         }
     }
+
+    private func enableInteraction(_ enable: Bool) {
+        self.view.endEditing(true)
+        self.navigationItem.rightBarButtonItem?.isEnabled = enable
+    }
     
 }
 
 extension VerifyPhoneNumberViewController: VerifyPhoneNumberView {
+
     func onPhoneVerified(withExistingAccount account: User) {
         showToast("Phone number verified".localized)
         self.existingAccount = account
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) {
+        AppAnalytics.logEvent(.confirmedPhoneNumber)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
             self.navigateToExistingAccount()
         }
     }
 
     func onPhoneVerified(withPendingSignup signup: PendingSignup) {
         showToast("Phone number verified".localized)
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
             self.navigateToRecoveryPhrase()
         }
     }
@@ -90,17 +103,19 @@ extension VerifyPhoneNumberViewController: VerifyPhoneNumberView {
     func onPhoneVerified(withPendingSignup signup: PendingSignup, andDemoAccount account: User) {
         showToast("Phone number verified".localized)
         self.demoAccount = account
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
             self.navigateToExistingAccount()
         }
     }
 
     func onUnknownError(_ error: AppErrors) {
         showError(error)
+        self.enableInteraction(true)
     }
 
     func onPhoneVerificationError(_ error: AppErrors) {
         showError(error)
+        self.enableInteraction(true)
     }
 
 }

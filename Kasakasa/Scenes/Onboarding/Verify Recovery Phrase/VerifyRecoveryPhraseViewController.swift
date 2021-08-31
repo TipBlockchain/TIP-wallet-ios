@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VerifyRecoveryPhraseViewController: BaseViewController {
+class VerifyRecoveryPhraseViewController: BaseTableViewController {
 
     @IBOutlet weak var recoveryPhraseTextView: UITextView!
     @IBOutlet weak var firstWordTextField: UITextField!
@@ -41,11 +41,14 @@ class VerifyRecoveryPhraseViewController: BaseViewController {
     }
 
     @IBAction func verifyRecoveryButtonTapped(_ sender: Any) {
-        if let firstWord = firstWordTextField.text, let secondWord = secondWordTextField.text,
-            !firstWord.isEmpty, !secondWord.isEmpty {
-            presenter?.verifyRecoveryPhrase(modifiedrecoveryPhrase, word1: firstWord, word2: secondWord)
-        } else {
-            showToast("Please enter the missing words in the text fields.".localized)
+        self.view.endEditing(true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200)) {
+            if let firstWord = self.firstWordTextField.text, let secondWord = self.secondWordTextField.text,
+                !firstWord.isEmpty, !secondWord.isEmpty {
+                self.presenter?.verifyRecoveryPhrase(self.modifiedrecoveryPhrase, word1: firstWord, word2: secondWord)
+            } else {
+                self.showToast("Please enter the missing words in the text fields.".localized)
+            }
         }
     }
 
@@ -74,6 +77,8 @@ extension VerifyRecoveryPhraseViewController: VerifyRecoveryPhraseView {
 
     func onPhraseVerified() {
         showToast("Recovery phrase verified".localized)
+        AppAnalytics.logEvent(.confirmedRecoveryPhrase)
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) {
             self.navigateToChoosePassword()
         }
@@ -82,9 +87,8 @@ extension VerifyRecoveryPhraseViewController: VerifyRecoveryPhraseView {
     func onVerificationError() {
         showError(AppErrors.genericError(message: "Incorrect words entered. Please make sure you have saved your recovery phrase.".localized))
     }
-
-
 }
+
 extension VerifyRecoveryPhraseViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)

@@ -2,8 +2,7 @@ github "attaswift/BigInt" ~> 3.1
 github "TimOliver/TOCropViewController" ~> 2.5.0
 github "kean/Nuke" ~> 7.6
 github "groue/GRDB.swift" ~> 3.7.0
-github "inn0vative1/QRCode" "master"
 github "yannickl/QRCodeReader.swift" ~> 10.1.0
-github "Skyscanner/SkyFloatingLabelTextField" ~> 3.7.0
 github "scalessec/Toast-Swift" ~> 5.0.0
 github "matter-labs/web3swift" "master"
+github "marmelroy/PhoneNumberKit" ~> 2.6.0

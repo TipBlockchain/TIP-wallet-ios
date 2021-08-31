@@ -10,6 +10,7 @@ import Foundation
 
 enum AppConstants {
     static let tipApiBaseUrl = "tip_api_url"
+    static let tipApiKey = "tip_api_key"
     static let ethNodeUrl = "eth_node_url"
     static let tipContractAddress = "tip_contract_address"
     static let etherscanApiKey = "etherscan_api_key"
@@ -18,4 +19,9 @@ enum AppConstants {
     static let chainStartBlock = "app_start_block"
     static let ethereumNetworkId = "ethereum_network_id"
     static let infuraAccessToken = "infura_access_token"
+
+    static let defaultAboutMeText = "I ♥ TIP"
+    static let keychainServiceName = "keychain.kasakasa.tipblockchain.io"
+    static let keychainAccountPassword = "password"
+    static let keychainAccountRecoveryPhrase = "recoveryPhrase"
 }

@@ -12,17 +12,28 @@ import GRDB
 class ContactsViewController: BaseViewController {
 
     @IBOutlet private weak var tableView: UITableView!
-    private var presetner: ContactsPresenter?
+
+    private var presenter: ContactsPresenter?
     private var controller: FetchedRecordsController<User>!
-    private var contactRequest = User.orderedByLastMessage()
+    private var contactRequest = User.orderedByFullname()
     private var selectedContact: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter = ContactsPresenter()
+        presenter?.attach(self)
+        presenter?.fetchContactList()
         self.configureTableView()
         // Do any additional setup after loading the view.
     }
-    
+
+    deinit {
+        presenter?.detach()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setRegularNavigationBar()
+    }
 
     private func configureTableView() {
 
@@ -32,6 +43,7 @@ class ContactsViewController: BaseViewController {
             willChange: { [unowned self] (controller) in
                 self.tableView.beginUpdates()
         }, onChange: { [unowned self] (controller, record, change) in
+
             switch change {
             case .insertion(let indexPath):
                 self.tableView.insertRows(at: [indexPath], with: .automatic)
@@ -42,22 +54,39 @@ class ContactsViewController: BaseViewController {
             }
         }, didChange: { [unowned self] (controller) in
             self.tableView.endUpdates()
+            self.showEmptyView(controller.fetchedRecords.isEmpty)
         })
 
         try? controller.performFetch()
 
         self.tableView.tableFooterView = UIView()
-        self.tableView.reloadData()
+        self.showEmptyView(controller.fetchedRecords.isEmpty)
+
+//        self.tableView.reloadData()
+    }
+
+    @IBAction func inviteFriendsTapped(_ sender: Any) {
+        self.showContacts()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? SendTransferViewController {
+        if segue.identifier == "ShowSendTransferFromContacts", let vc = segue.destination as? SendTransferViewController {
             vc.targetUser = self.selectedContact
+        } else if segue.identifier == "ShowContactInfo", let vc = segue.destination as? UserProfileViewController {
+            vc.user = self.selectedContact
         }
     }
 
     private func contact(atIndexPath indexPath: IndexPath) -> User? {
         return controller.record(at: indexPath)
+    }
+
+    private func showSendTransfer() {
+        self.performSegue(withIdentifier: "ShowSendTransferFromContacts", sender: self)
+    }
+
+    private func showContactInfo() {
+        self.performSegue(withIdentifier: "ShowContactInfo", sender: self)
     }
 }
 
@@ -65,15 +94,15 @@ extension ContactsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let selectedContact = self.contact(atIndexPath: indexPath) {
-            self.showOkCancelAlert(withTitle: "Send Transfer?".localized, message: "Do you want to send a transfer to \(selectedContact.username)", style: .actionSheet, onOkSelected: {
+            self.showOkCancelAlert(withTitle: "Send Transfer?".localized, message: "Do you want to send a transfer to \(selectedContact.username)", style: .actionSheet, sourceView: tableView.cellForRow(at: indexPath), onOkSelected: {
                 self.selectedContact = selectedContact
-                self.performSegue(withIdentifier: "ShowSendTransferFromContacts", sender: self)
+                self.showSendTransfer()
+                tableView.deselectRow(at: indexPath, animated: true)
             }) {
-
+                tableView.deselectRow(at: indexPath, animated: true)
             }
         }
     }
-
 }
 
 extension ContactsViewController: UITableViewDataSource {
@@ -87,9 +116,51 @@ extension ContactsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath) as! ContactTableViewCell
+        cell.delegate = self
         if let contact = self.contact(atIndexPath: indexPath) {
             cell.user = contact
         }
         return cell
+    }
+}
+
+extension ContactsViewController: ContactTableViewCellDelegate {
+    func contactSelected(_ contact: User) {
+        self.selectedContact = contact
+        self.showContactInfo()
+    }
+}
+
+extension ContactsViewController: ContactsView {
+    func onContactsFetched(_ contancts: [User]) {
+        self.tableView.reloadData()
+    }
+
+    func onNoContacts() {
+//
+    }
+
+    func onContactsLoadError(_ error: AppErrors) {
+//
+    }
+
+    func onContactsLoading() {
+
+    }
+
+    func onContactAdded(_ contact: User) {
+
+    }
+
+    func onContactRemoved(_ contact: User) {
+
+    }
+
+    func onContactAddError(_ error: AppErrors) {
+
+    }
+
+    func onContactRemoveError(_ error: AppErrors) {
+
     }
 }

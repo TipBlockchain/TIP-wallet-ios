@@ -43,6 +43,12 @@ class WalletRepository: NSObject {
 
     var _primaryWallet: Wallet? = nil
 
+    func reset() {
+        self.deleteAll()
+        tipWallet = nil
+        ethWallet = nil
+    }
+    
     func primaryWallet() throws -> Wallet? {
         if _primaryWallet == nil {
             _primaryWallet = try dbPool!.read({ db -> Wallet? in
@@ -73,7 +79,7 @@ class WalletRepository: NSObject {
     }
 
     func updateWallet(_ wallet: Wallet, newBalance balance: BigUInt) {
-        var walletToUpdate = wallet
+        let walletToUpdate = wallet
         let _ = try! dbPool?.write({ db in
             walletToUpdate.balance = balance
             try walletToUpdate.update(db)
@@ -81,8 +87,8 @@ class WalletRepository: NSObject {
     }
 
     func delete(byAddress address: String) throws {
-        let _ = try! dbPool?.write({ db in
-            try! Wallet.deleteOne(db, key: "")
+        let _ = try dbPool?.write({ db in
+            try Wallet.filter(Column("address") == address).deleteAll(db)
         })
     }
 

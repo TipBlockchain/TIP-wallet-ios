@@ -1,11 +1,11 @@
 {
     "tip_api_url": "https://ksapi.tipblockchain.io",
+    "tip_api_key": "wgoBxrVrEzcUlWgT0NaKUwBv",
     "eth_node_url": "https://mainnet.infura.io/v3/678b8cde335e4f4ba45d9d010a293508",
+    "infura_access_token": "fe983ca380534b088a62cb1340721f1d",
     "tip_contract_address": "0x59ae863232238a8BD7953bDFC1B4796f8E9A5b4e",
-    "etherscan_api_key": "H6ZGN9CC83YFHAPNHD1QMYG5M1UEVPYKAA",
-    "etherscan_base_url": "https://api.etherscan.io",
+    "etherscan_base_url": "https://api.etherscan.io/api",
     "buy_tip_url": "https://idex.market/eth/tip",
     "app_start_block": 6197652,
-    "ethereum_network_id": 1,
-    "infura_access_token": "SSWOxqisHlJoSVWYy09p",
+    "ethereum_network_id": 1
 }

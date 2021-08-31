@@ -25,51 +25,67 @@ class AppDatabase {
         var migrator = DatabaseMigrator()
 
         migrator.registerMigration("create initial db") { (db) in
-            try db.create(table: "users") { t in
+
+            try db.create(table: User.databaseTableName) { t in
+
                 t.column(User.Columns.id.rawValue, .text).primaryKey(onConflict: Database.ConflictResolution.replace, autoincrement: false)
-                t.column(User.Columns.fullname.rawValue, .text).notNull()
+                t.column(User.Columns.fullname.rawValue, .text)
                 t.column(User.Columns.username.rawValue, .text).notNull().indexed()
                 t.column(User.Columns.address.rawValue, .text).notNull().indexed()
+                t.column(User.Columns.countryCode.rawValue, .text)
+                t.column(User.Columns.phone.rawValue, .text)
+                t.column(User.Columns.country.rawValue, .text)
                 t.column(User.Columns.imageFileKey.rawValue, .text)
                 t.column(User.Columns.pictureUrl.rawValue, .text)
+                t.column(User.Columns.created.rawValue, .date)
                 t.column(User.Columns.isContact.rawValue, .boolean).defaults(to: true)
                 t.column(User.Columns.isBlocked.rawValue, .boolean).defaults(to: false)
                 t.column(User.Columns.lastMessage.rawValue, .datetime)
+                t.column(User.Columns.aboutMe.rawValue, .text)
                 t.column(User.Columns.smallPhotoUrl.rawValue, .text)
                 t.column(User.Columns.mediumPhotoUrl.rawValue, .text)
                 t.column(User.Columns.originalPhotoUrl.rawValue, .text)
             }
 
-            try db.create(table: "wallets") { t in
-                t.column("address", .text)
-                t.column("filepath", .text)
-                t.column("created", .datetime)
-                t.column("balance", .text)
-                t.column("currency", .text)
-                t.column("isPrimary", .boolean)
-                t.column("blockNumber", .text)
-                t.column("startBlockNumber", .text)
-                t.column("lastSynced", .datetime)
-                t.primaryKey(["address", "currency"])
+            try db.create(table: Wallet.databaseTableName) { t in
+
+                t.column(Wallet.Columns.address.rawValue, .text)
+                t.column(Wallet.Columns.filePath.rawValue, .text)
+                t.column(Wallet.Columns.created.rawValue, .datetime)
+                t.column(Wallet.Columns.balance.rawValue, .text)
+                t.column(Wallet.Columns.currency.rawValue, .text)
+                t.column(Wallet.Columns.isPrimary.rawValue, .boolean)
+                t.column(Wallet.Columns.blockNumber.rawValue, .text)
+                t.column(Wallet.Columns.startBlockNumber.rawValue, .text)
+                t.column(Wallet.Columns.lastSynced.rawValue, .datetime)
+
+                t.primaryKey([Wallet.Columns.address.rawValue, Wallet.Columns.currency.rawValue])
             }
 
-            try db.create(table: "transactions") { t in
-                t.column("hash", .text).primaryKey(onConflict: .replace, autoincrement: false)
-                t.column("blockHash", .text).unique(onConflict: .replace).notNull()
-                t.column("from", .text).notNull().indexed()
-                t.column("to", .text).notNull().indexed()
-                t.column("currency", .text).notNull().indexed()
-                t.column("value", .text).notNull()
-                t.column("timestamp", .datetime)
-                t.column("gas", .text)
-                t.column("confirmations", .text)
-                t.column("nonce", .integer)
-                t.column("message", .text)
-                t.column("txReceipttatus", .text)
-                t.column("fromUser_id", .text)
-                t.column("fromUser_username", .text)
-                t.column("fromUser_fullname", .text)
-                t.column("fromuser_photoUrl", .text)
+            try db.create(table: Transaction.databaseTableName) { t in
+
+                t.column(Transaction.Columns.hash.rawValue, .text).primaryKey(onConflict: .replace, autoincrement: false)
+                t.column(Transaction.Columns.blockHash.rawValue, .text).notNull()
+                t.column(Transaction.Columns.from.rawValue, .text).notNull().indexed()
+                t.column(Transaction.Columns.to.rawValue, .text).notNull().indexed()
+                t.column(Transaction.Columns.currency.rawValue, .text).notNull().indexed()
+                t.column(Transaction.Columns.value.rawValue, .text).notNull()
+                t.column(Transaction.Columns.timestamp.rawValue, .datetime)
+                t.column(Transaction.Columns.gas.rawValue, .text)
+                t.column(Transaction.Columns.confirmations.rawValue, .text)
+                t.column(Transaction.Columns.nonce.rawValue, .integer)
+                t.column(Transaction.Columns.message.rawValue, .text)
+                t.column(Transaction.Columns.txReceiptStatus.rawValue, .text)
+
+                t.column(Transaction.Columns.fromUserId.rawValue, .text)
+                t.column(Transaction.Columns.fromUsername.rawValue, .text)
+                t.column(Transaction.Columns.fromFullname.rawValue, .text)
+                t.column(Transaction.Columns.fromPhotoUrl.rawValue, .text)
+
+                t.column(Transaction.Columns.toUserId.rawValue, .text)
+                t.column(Transaction.Columns.toUsername.rawValue, .text)
+                t.column(Transaction.Columns.toFullname.rawValue, .text)
+                t.column(Transaction.Columns.toPhotoUrl.rawValue, .text)
             }
         }
 

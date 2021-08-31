@@ -23,13 +23,15 @@ class ChoosePasswordPresenter: BasePresenter {
         do {
             if let wallet = try walletRepository.newWallet(withPhrase: phrase, andPassword: password) {
                 if let existingUser = existingUser {
-                    if wallet.address != existingUser.address {
+                    if wallet.address.lowercased() != existingUser.address.lowercased() {
                         try? walletRepository.delete(byAddress: wallet.address)
                         view?.onWalletNotMatchingExistingError()
                     } else {
+                        try self.saveToKeychain(password, recoveryPhrase: phrase)
                         view?.onWalletRestored()
                     }
                 } else {
+                    try saveToKeychain(password, recoveryPhrase: phrase)
                     view?.onWalletCreated()
                 }
             } else {
@@ -39,5 +41,10 @@ class ChoosePasswordPresenter: BasePresenter {
             let appError = AppErrors.error(error: error)
             view?.onWalletCreationError(appError)
         }
+    }
+
+    func saveToKeychain(_ password: String, recoveryPhrase: String) throws {
+        try TipKeychain.savePassword(password)
+        try TipKeychain.saveRecoveryPhrase(recoveryPhrase)
     }
 }

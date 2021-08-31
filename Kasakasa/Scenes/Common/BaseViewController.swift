@@ -7,11 +7,13 @@
 //
 
 import UIKit
-import ToastSwiftFramework
 
 typealias VoidCompletionBlock = (() -> Void)
+typealias StringCompletionBlock = ((String?) -> Void)
 
 class BaseViewController: UIViewController {
+
+    @IBOutlet private weak var emptyView: UIView?
 
     private var activityIndicator: UIActivityIndicatorView?
 
@@ -19,6 +21,7 @@ class BaseViewController: UIViewController {
     private var endEditingGestureRecognizer: UITapGestureRecognizer {
         if _tapGestureRecognizer == nil {
             _tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard(_:)))
+            _tapGestureRecognizer?.numberOfTapsRequired = 1
         }
         return _tapGestureRecognizer!
     }
@@ -38,62 +41,15 @@ class BaseViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-   func navigateToMainApp() {
-        if let viewController = UIStoryboard(name: "MainApp", bundle: nil).instantiateInitialViewController(),
-            let keyWindow = UIApplication.shared.keyWindow {
-            switchRootViewController(viewController, inWindow: keyWindow)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        var title = self.navigationItem.title
+        if title == nil || title!.isEmpty {
+            title = self.className
         }
+        AppAnalytics.trackScreen(title ?? "-", class: self.className)
     }
-
-    func navigateToOnboarding() {
-        if let viewController = UIStoryboard(name: "Onboarding", bundle: nil).instantiateInitialViewController(),
-            let keyWindow = UIApplication.shared.keyWindow {
-            switchRootViewController(viewController, inWindow: keyWindow)
-        }
-    }
-
-    func showError(_ error: AppErrors, completion: VoidCompletionBlock? = nil) {
-        self.showError(withTitle: "Sorry".localized, message: error.message, completion: completion)
-    }
-
-
-    func showError(withTitle title: String, message: String, style: UIAlertController.Style = .alert, completion: VoidCompletionBlock? = nil) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
-        let okAction = UIAlertAction(title: "Okay".localized, style: .cancel) { (action) in
-            alert.dismiss(animated: true, completion: completion)
-        }
-        alert.addAction(okAction)
-        self.present(alert, animated: true, completion: nil)
-    }
-
-    func showOkAlert(withTitle title: String, message: String, style: UIAlertController.Style = .alert, completion: VoidCompletionBlock? = nil) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
-        let okAction = UIAlertAction(title: "Okay".localized, style: .cancel) { (action) in
-            completion?()
-//            alert.dismiss(animated: true, completion: completion)
-        }
-        alert.addAction(okAction)
-        self.present(alert, animated: true, completion: nil)
-    }
-
-    func showOkCancelAlert(withTitle title: String, message: String, style: UIAlertController.Style = .alert, onOkSelected okCompletionBlock: VoidCompletionBlock? = nil, onCancelSelected cancelCompletionBlock: VoidCompletionBlock? = nil) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
-        let okAction = UIAlertAction(title: "Okay".localized, style: .default) { (action) in
-            okCompletionBlock?()
-            //            alert.dismiss(animated: true, completion: completion)
-        }
-        let cancelAction = UIAlertAction(title: "Cancel".localized, style: .cancel) { (action) in
-            cancelCompletionBlock?()
-        }
-        alert.addAction(okAction)
-        alert.addAction(cancelAction)
-        self.present(alert, animated: true, completion: nil)
-    }
-
-    @objc func dismissKeyboard(_ force: Bool = true) {
-        self.view.endEditing(force)
-    }
-
+    
     func showActivityIndicator(_ show: Bool = true) {
         if show, activityIndicator == nil {
             activityIndicator = UIActivityIndicatorView(style: .gray)
@@ -110,37 +66,30 @@ class BaseViewController: UIViewController {
         }
     }
 
-    func showToast(_ message: String) {
-        self.view.makeToast(message)
-    }
-
-    func setNavigationBarTransparent(_ transparent: Bool = true) {
-        self.navigationController?.isNavigationBarHidden = false
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = UIColor.clear
-    }
-
-    func copyToClipboard(_ text: String) {
-        let pasteBoard = UIPasteboard.general
-        pasteBoard.string = text
-    }
-
-    private func switchRootViewController(_ rootViewController: UIViewController, inWindow window: UIWindow, animated: Bool = true, completion: (() -> Void)? = nil) {
-        if animated {
-            UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {
-                let oldState: Bool = UIView.areAnimationsEnabled
-                UIView.setAnimationsEnabled(false)
-                window.rootViewController = rootViewController
-                UIView.setAnimationsEnabled(oldState)
-            }, completion: { (finished: Bool) -> () in
-                if (completion != nil) {
-                    completion!()
-                }
-            })
-        } else {
-            window.rootViewController = rootViewController
+    func showEmptyView(_ show: Bool) {
+        UIView.animate(withDuration: 0.5) {
+            if show {
+                self.emptyView?.alpha = 1.0
+            } else {
+                self.emptyView?.alpha = 0.0
+            }
+            self.emptyView?.isHidden = !show
         }
+    }
+}
+
+protocol MyP {
+    var myVar: String { get }
+}
+
+extension MyP {
+    var  myVar: String {
+        return "Str"
+    }
+}
+
+class MyC: MyP {
+    func myFunc() {
+        debugPrint("MyVar = \(myVar)")
     }
 }

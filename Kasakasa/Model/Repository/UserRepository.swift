@@ -6,9 +6,11 @@
 //  Copyright © 2019 Tip Blockchain. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import GRDB
 
-typealias userListResponse = ([User]?, AppErrors?) -> Void
+typealias UserListClosure = ([User]?, AppErrors?) -> Void
+
 class UserRepository {
     static var shared = UserRepository()
     private var dbPool = AppDatabase.dbPool
@@ -16,31 +18,57 @@ class UserRepository {
     var apiService: TipApiService = TipApiService.sharedInstance
     var currentUser: User? {
         get {
-            return AppDefaults.sharedInstance.currentUser
+            return AppDefaults.shared.currentUser
         }
         set {
-            AppDefaults.sharedInstance.currentUser = newValue
+            AppDefaults.shared.currentUser = newValue
         }
     }
 
     var demoAccountUser: User? {
         get {
-            return AppDefaults.sharedInstance.demoAccountUser
+            return AppDefaults.shared.demoAccountUser
         }
         set {
-            AppDefaults.sharedInstance.demoAccountUser = newValue
+            AppDefaults.shared.demoAccountUser = newValue
         }
     }
 
+    func reset() {
+        try? self.removeAllContacts()
+        self.currentUser = nil
+    }
+    
     func findUserById(_ id: String) -> User? {
-        return nil
+        return try? dbPool?.read({ db -> User? in
+            return try? User.filter(Column("id") == id).fetchOne(db)
+        })
     }
 
     func findUserByUsername(_ username: String) -> User? {
-        return nil
+        return try? dbPool?.read({ db -> User? in
+            return try? User.filter(Column("username") == username).fetchOne(db)
+        })
     }
 
-    func fetchUserBySearch(_ query: String, completion: @escaping userListResponse) {
+    func loadContactList(_ completion: @escaping UserListClosure) {
+        let contacts = try? self.loadContacts()
+        completion(contacts, nil)
+    }
+    
+    func fetchContactList(_ completion: @escaping UserListClosure) {
+        apiService.getContactList { (response, error) in
+            if let response = response {
+                let contacts = response.contacts
+                try? self.insert(contacts)
+                completion(contacts, nil)
+            } else {
+                completion(nil, error ?? AppErrors.unknowkError)
+            }
+        }
+    }
+
+    func fetchUserBySearch(_ query: String, completion: @escaping UserListClosure) {
         apiService.search(byUsername: query) { (response, errors) in
             if let response = response, let users = response.users {
                 completion(users, nil)
@@ -52,13 +80,45 @@ class UserRepository {
         }
     }
 
-    func fetchContacts() {
+    func loadCurrentUser(_ completion: @escaping(User?, AppErrors?) -> Void) {
+        apiService.getMyAccount { (user, error) in
+            if let user = user {
+                self.currentUser = user
+            }
+            completion(user, error)
+        }
+    }
 
+    func updatePhoto(_ photo: UIImage, completion: @escaping (User?, AppErrors?) -> Void) {
+        apiService.uploadPhoto(photo) { (user, error) in
+            if let user = user {
+                self.currentUser = user
+            }
+            completion(user, error)
+        }
+    }
+    
+    func updateAboutMe(_ aboutMe: String, completion: @escaping (User?, AppErrors?) -> Void) {
+        apiService.updateAboutMe(aboutMe) { (user, error) in
+            if let user = user {
+                self.currentUser = user
+            }
+            completion(user, error)
+        }
+    }
+
+    func updateFullname(_ fullname: String, completion: @escaping (User?, AppErrors?) -> Void) {
+        apiService.updateFullname(fullname) { (user, error) in
+            if let user = user {
+                self.currentUser = user
+            }
+            completion(user, error)
+        }
     }
 
     func loadContacts() throws -> [User]? {
         return try dbPool?.read({ (db) in
-            return try User.fetchAll(db, "SELECT * FROM users WHERE isContact = ? ORDER BY lastMessage", arguments: [true])
+            return try User.fetchAll(db, sql: "SELECT * FROM users WHERE isContact = ? ORDER BY fullname", arguments: [true])
         })
     }
 
@@ -66,10 +126,14 @@ class UserRepository {
         apiService.addContact(contact) { (response, error) in
             if let response = response {
                 if response.contacts.contains(contact.id) {
-                    try! self.insertContact(contact)
-                    debugPrint("User inserted")
-                    completion(true, nil)
-                    return
+                    do {
+                        try self.insertContact(contact)
+                        debugPrint("User inserted")
+                        completion(true, nil)
+                    } catch {
+                        completion(false, AppErrors.error(error: error))
+                    }
+
                 }
             } else {
                 if let error = error {
@@ -81,8 +145,31 @@ class UserRepository {
         }
     }
 
-    func removeContact(_ contact: User) {
-        
+    func removeContact(_ contact: User, completion: @escaping (Bool, AppErrors?) -> Void) {
+        apiService.removeContact(contact) { (response, error) in
+            if let response = response {
+                if !response.contacts.contains(contact.id) {
+                    do {
+                        try self.deleteContact(contact)
+                        completion(true, nil)
+                    } catch {
+                        completion(false, AppErrors.error(error: error))
+                    }
+                }
+            }  else {
+               if let error = error {
+                   completion(false, error)
+               } else {
+                   completion(false, AppErrors.unknowkError)
+               }
+           }
+        }
+    }
+
+    func removeAllContacts() throws {
+        let _ = try dbPool?.write({ db in
+            try? User.deleteAll(db)
+        })
     }
 
     func insertContact(_ user: User) throws {
@@ -90,6 +177,14 @@ class UserRepository {
 
         try dbPool?.write({db in
             userToSave.isContact = true
+            try userToSave.save(db)
+        })
+    }
+
+    func deleteContact(_ user: User) throws {
+        var userToSave = user
+        try dbPool?.write({ (db) in
+            userToSave.isContact = false
             try userToSave.save(db)
         })
     }

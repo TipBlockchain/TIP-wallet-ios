@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChoosePasswordViewController: BaseViewController {
+class ChoosePasswordViewController: BaseTableViewController {
 
     var seedPhrase: String = ""
     var password: String  = ""
@@ -16,7 +16,10 @@ class ChoosePasswordViewController: BaseViewController {
 
     var existingUser: User?
     @IBOutlet private weak var passwordField: UITextField!
-    @IBOutlet private weak var confirmPasswordField: UITextField!
+    @IBOutlet private weak var confirmPasswordField: UITextField?
+    @IBOutlet private weak var promptTextLabel: UILabel!
+    @IBOutlet private weak var savePasswordLabel: UILabel!
+    @IBOutlet private weak var savePasswordSwitch: UISwitch!
 
     private var presenter: ChoosePasswordPresenter?
     private var isPasswordSaved = false
@@ -26,6 +29,13 @@ class ChoosePasswordViewController: BaseViewController {
 
         self.endEditingOnTap = true
         self.navigationItem.title = "Account Password".localized
+        if self.existingUser != nil {
+            self.promptTextLabel.text = "Enter your password.\nYou must enter the same password you used when you crearted your account.".localized
+
+            self.isPasswordSaved = true
+            self.savePasswordLabel.isHidden = true
+            self.savePasswordSwitch.isHidden = true
+        }
 
         self.setupPresenter()
     }
@@ -42,17 +52,20 @@ class ChoosePasswordViewController: BaseViewController {
     }
 
     @IBAction func savePasswordTapped(_ sender: Any) {
+        self.view.endEditing(true)
         self.password = self.passwordField.text ?? ""
-        self.password2 = self.confirmPasswordField.text ?? ""
+        self.password2 = self.confirmPasswordField?.text ?? ""
 
-        guard password == password2 else {
+        guard self.password.isValidPassword() else {
+              showToast("Password must be at least 8 characters long".localized)
+              return
+        }
+
+        if self.existingUser == nil && password != password2 { // can't use guard
             showToast("Passwords do not match".localized)
             return
         }
-        guard self.password.isValidPassword() else {
-            showToast("Password must be at least 8 characters long".localized)
-            return
-        }
+
         guard isPasswordSaved else {
             showToast("Please make sure you have saved your password before you continue.".localized)
             return
@@ -69,7 +82,6 @@ class ChoosePasswordViewController: BaseViewController {
         self.performSegue(withIdentifier: "ShowOnboardingUserProfile", sender: self)
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -77,8 +89,6 @@ class ChoosePasswordViewController: BaseViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
-
 }
 
 extension ChoosePasswordViewController: UITextFieldDelegate {
@@ -90,6 +100,8 @@ extension ChoosePasswordViewController: UITextFieldDelegate {
 
 extension ChoosePasswordViewController: ChoosePasswordView {
     func onWalletCreated() {
+        AppAnalytics.logEvent(.savedPassword)
+        
         showToast("Wallet created".localized)
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1000)) {
             self.navigateToUserProfile()
@@ -97,11 +109,15 @@ extension ChoosePasswordViewController: ChoosePasswordView {
     }
 
     func onWalletRestored() {
-        self.navigateToMainApp()
+        AppAnalytics.logEvent(.savedPassword)
+
+        self.showOkAlert(withTitle: "Hoorah!".localized, message: "Your wallets have been restored on this device. Happy Tipping!".localized, style: .alert) {
+            self.navigateToMainApp()
+        }
     }
 
     func onWalletNotMatchingExistingError() {
-        let error = AppErrors.genericError(message: "The restored wallet address does not match the address for %s. Please enter the same recovery phrase and password used to create the account.".localized)
+        let error = AppErrors.genericError(message: "The restored wallet address does not match the address for \(self.existingUser?.username ?? "this user"). Please enter the same recovery phrase and password used to create the account.".localized)
         showError(error)
     }
 
